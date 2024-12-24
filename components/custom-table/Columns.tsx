@@ -90,7 +90,7 @@ export const columns: ColumnDef<ColumnType>[] = [
     id: "actions",
     header: "Action",
     enableHiding: false,
-    cell: ({ row }) => {
+    cell: ({}) => {
       return (
         <Select>
           <SelectTrigger className="w-[180px]">
