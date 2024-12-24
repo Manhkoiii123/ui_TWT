@@ -15,7 +15,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
   const pathName = usePathname();
   const isActive = (link: string) => {
     // return item.link
-    return pathName === link;
+    return pathName === link || pathName.includes(link);
     // : item.subMenu?.some((sub) => pathName.includes(sub.link!));
   };
   const [isOpen, setIsOpen] = useState<TExpand[]>(
@@ -53,7 +53,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
         >
           <div className="flex items-center gap-3 py-2">
             <div>{item.icon}</div>
-            <span>{item.name}</span>
+            <span className="font-medium">{item.name}</span>
           </div>
         </Link>
       );
@@ -68,7 +68,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
           >
             <div className="flex items-center gap-3">
               <div>{item.icon}</div>
-              <span>{item.name}</span>
+              <span className="font-medium">{item.name}</span>
             </div>
 
             <div>
@@ -99,7 +99,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
                     }`}
                   >
                     <div className="w-3 h-3 border border-[#ffffffb3] rounded-full"></div>
-                    <span>{subItem.name}</span>
+                    <span className="font-medium">{subItem.name}</span>
                   </div>
                 </Link>
               ))}
@@ -110,7 +110,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
     }
   };
   return (
-    <div className="w-[300px] h-screen bg-primary pt-4">
+    <div className="w-[280px] h-screen bg-primary pt-4">
       <div className="flex items-center justify-center mb-4 border-b border-gray-700 ">
         <Image
           src="https://newsletters.tkgplatform.com.au/assets/images/logo-twt-white.png"
