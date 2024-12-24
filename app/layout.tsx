@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` antialiased ${beVietnam.className} `}>
-        <div className="flex  bg-gray-100">
+        <div className="flex w-[100vw] bg-gray-100">
           <div className="max-xl:hidden">
             <Sidebar />
           </div>
