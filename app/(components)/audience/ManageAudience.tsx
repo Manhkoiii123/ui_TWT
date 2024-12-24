@@ -1,7 +1,7 @@
+import ModalUploadAudience from "@/app/(components)/audience/ModalUploadAudience";
 import { Separator } from "@/components/ui/separator";
 import EyeIcon from "@/icon/EyeIcon";
 import FolderIcon from "@/icon/FolderIcon";
-import UploadIcon from "@/icon/UploadIcon";
 import UsersIcon from "@/icon/UsersIcon";
 import React from "react";
 
@@ -46,14 +46,7 @@ const ManageAudience = () => {
         </div>
         <Separator className="mt-2" />
 
-        <div className="flex items-center gap-4 cursor-pointer">
-          <div className="w-[22px]">
-            <UploadIcon width={24} height={24} stroke="#0a8fdc" />
-          </div>
-          <span className="text-[14px] font-normal leading-[1.5]">
-            Import/add Audience
-          </span>
-        </div>
+        <ModalUploadAudience />
         <Separator className="mt-2" />
         <div className="flex items-center gap-4 cursor-pointer">
           <div className="w-[22px]">
