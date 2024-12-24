@@ -32,14 +32,14 @@ const RecentGrowth = () => {
             </div>
           </div>
         </div>
-        <div className="flex-[1] flex gap-2  w-[100%]">
-          <div className="flex-1 flex flex-col gap-2">
+        <div className="flex-[1] flex gap-2 items-start  w-[100%]">
+          <div className="flex-[1] flex flex-col gap-2">
             <span className="cursor-pointer text-[#0a8fdc] font-bold text-[18px]">
               0
             </span>
             <span className="text-[13px]">Subscribed</span>
           </div>
-          <div className="flex-1 flex flex-col gap-1">
+          <div className="flex-[1.2] flex flex-col gap-2">
             <span className="cursor-pointer text-[#0a8fdc] font-bold text-[18px]">
               1
             </span>

@@ -29,7 +29,10 @@ const AudienceType = () => {
         label: "All Audience",
         link: "",
         icon: (
-          <UsersIcon fill={pathname === "/audience" ? "#0A8FDC" : "gray"} />
+          <UsersIcon
+            fill={pathname === "/audience" ? "#0A8FDC" : "gray"}
+            stroke={pathname === "/audience" ? "#0A8FDC" : "gray"}
+          />
         ),
       },
       {
@@ -71,7 +74,7 @@ const AudienceType = () => {
   }, [dummyData]);
   return (
     <>
-      <div className="bg-white py-4 pr-4 rounded-2xl w-[340px] h-fit shadow-md">
+      <div className="bg-white py-4 pr-4 rounded-2xl w-[300px] shadow-md lg:h-fit h-full">
         <div className="flex flex-col gap-1">
           {loading ? (
             <>

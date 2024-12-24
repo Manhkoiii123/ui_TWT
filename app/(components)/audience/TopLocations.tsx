@@ -25,7 +25,7 @@ const TopLocations = () => {
           .fill(0)
           .map((item, index) => (
             <>
-              <TopLocationItem key={index} index={index} />
+              <TopLocationItem key={index} index={index + 1} />
               {index !== 2 && <Separator />}
             </>
           ))}

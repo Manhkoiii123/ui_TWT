@@ -1,10 +1,12 @@
 import AudienceMain from "@/app/(components)/audience/AudienceMain";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = () => {
   return (
     <div className="w-full">
-      <AudienceMain />
+      <Suspense fallback={<div>Loading...</div>}>
+        <AudienceMain />
+      </Suspense>
     </div>
   );
 };
