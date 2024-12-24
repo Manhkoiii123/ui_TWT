@@ -2,14 +2,9 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import { Checkbox } from "@/components/ui/checkbox";
+import CustomSelect from "@/components/custom-select/CustomSelect";
 export type ColumnType = {
   id: number;
   first_name: string;
@@ -91,18 +86,7 @@ export const columns: ColumnDef<ColumnType>[] = [
     header: "Action",
     enableHiding: false,
     cell: ({}) => {
-      return (
-        <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Theme" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="light">Light</SelectItem>
-            <SelectItem value="dark">Dark</SelectItem>
-            <SelectItem value="system">System</SelectItem>
-          </SelectContent>
-        </Select>
-      );
+      return <CustomSelect />;
     },
   },
 ];
