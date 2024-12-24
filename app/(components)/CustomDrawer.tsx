@@ -11,11 +11,13 @@ const CustomDrawer = ({
   text,
   side = "left",
   children,
+  width = "280px",
 }: {
   icon: React.ReactNode;
   text: string;
   side?: "left" | "top" | "bottom" | "right" | null | undefined;
   children?: React.ReactNode;
+  width?: string;
 }) => {
   return (
     <Sheet>
@@ -32,7 +34,7 @@ const CustomDrawer = ({
         </div>
       </SheetTrigger>
 
-      <SheetContent className="w-[280px]" side={side}>
+      <SheetContent className={`w-[${width}]`} side={side}>
         {children}
       </SheetContent>
     </Sheet>
