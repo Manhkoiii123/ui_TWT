@@ -110,7 +110,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
     }
   };
   return (
-    <div className="w-[280px] h-screen bg-primary pt-4">
+    <div className="w-[280px] sticky top-0 h-screen bg-primary pt-4">
       <div className="flex items-center justify-center mb-4 border-b border-gray-700 ">
         <Image
           src="https://newsletters.tkgplatform.com.au/assets/images/logo-twt-white.png"
