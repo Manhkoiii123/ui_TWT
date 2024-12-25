@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useEffect } from "react";
@@ -12,6 +13,7 @@ const GrapeComponent = () => {
   const [editor, setEditor] = useState<Editor | null>();
   //dựa vao cài này để call api
   const [textInput, setTextInput] = useState("");
+  console.log("🚀 ~ GrapeComponent ~ textInput:", textInput);
 
   const windowWidth = useWindowWidth();
   useEffect(() => {
@@ -25,32 +27,34 @@ const GrapeComponent = () => {
         grapesjsBlocksBasic: {},
       },
     });
-    editor.DomComponents.addType("table", {
-      isComponent: (el) => el.tagName === "table",
-      model: {
-        defaults: {
-          tagName: "table",
+    editor.TraitManager.addType("live-input", {
+      createInput({ trait }: any) {
+        const el = document.createElement("input");
+        el.type = "text";
+        el.placeholder = trait.get("placeholder") || "";
+
+        el.addEventListener("input", (event: Event) => {
+          const value = (event.target as HTMLInputElement).value;
+          trait.set("value", value);
+          setTextInput(value);
+        });
+
+        return el;
+      },
+    });
+    editor.on("component:selected", (component) => {
+      if (component.get("tagName") === "body") {
+        component.set({
           traits: [
             {
-              type: "text",
-              label: "Text",
-              name: "text",
-              placeholder: "Enter text...",
-              changeProp: true,
+              type: "live-input",
+              name: "customInput",
+              label: "Custom Input",
+              placeholder: "Nhập nội dung ở đây...",
             },
           ],
-        },
-        init() {
-          this.on("change:text", this.handleTextChange);
-        },
-
-        handleTextChange() {
-          const component = editor.getSelected() as Component;
-
-          const textValue = component.getTrait("text").getValue();
-          setTextInput(textValue);
-        },
-      },
+        });
+      }
     });
 
     editor.BlockManager.add("section", {
@@ -826,12 +830,6 @@ const GrapeComponent = () => {
 `,
       category: "Custom",
     });
-
-    // editor.on("component:selected", (model) => {
-    //   const content = model.view.el.innerText;
-    //   setSelectedId(model.ccid);
-    //   setSelectedText(content);
-    // });
 
     setEditor(editor);
     return () => {
