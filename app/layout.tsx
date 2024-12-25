@@ -26,7 +26,7 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.22.4/css/grapes.min.css"
         />
       </head>
-      <body className={` antialiased ${beVietnam.className} `}>
+      <body className={` antialiased ${beVietnam.className}  `}>
         <div className="flex w-[100vw] bg-gray-100">
           <div className="max-xl:hidden">
             <Sidebar />
