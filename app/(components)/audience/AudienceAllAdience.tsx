@@ -10,9 +10,14 @@ import {
 } from "@/components/ui/sheet";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EyeIcon from "@/icon/EyeIcon";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 export function AudienceAllAdience() {
+  const [isSubscribe, setIsSubscribe] = useState("subscribers");
+  console.log("🚀 ~ AudienceAllAdience ~ isSubscribe:", isSubscribe);
+  const handleSelectSub = (value: string) => {
+    setIsSubscribe(value);
+  };
   const dummyDataa = useMemo(() => {
     return [
       {
@@ -179,10 +184,18 @@ export function AudienceAllAdience() {
           <Separator />
           <Tabs defaultValue="subscribers" className="w-[100%] pb-4">
             <TabsList className="flex w-full gap-10">
-              <TabsTrigger className="py-2" value="subscribers">
+              <TabsTrigger
+                onClick={() => handleSelectSub("subscribers")}
+                className="py-2"
+                value="subscribers"
+              >
                 SUBSCRIBERS
               </TabsTrigger>
-              <TabsTrigger className="py-2" value="unsubscribers">
+              <TabsTrigger
+                onClick={() => handleSelectSub("unsubscribers")}
+                className="py-2"
+                value="unsubscribers"
+              >
                 UNSUBSCRIBERS
               </TabsTrigger>
             </TabsList>

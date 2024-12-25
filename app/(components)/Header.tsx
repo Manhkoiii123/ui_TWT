@@ -15,7 +15,7 @@ import CustomDrawer from "@/app/(components)/CustomDrawer";
 
 const Header = () => {
   return (
-    <header className="flex h-[70px] items-center justify-between shadow-sm p-6 bg-white">
+    <header className="flex h-[82px] items-center justify-between shadow-sm p-6 bg-white">
       <div className="relative w-[250px] flex gap-2 items-center">
         <div className=" max-xl:block xl:hidden">
           <CustomDrawer
