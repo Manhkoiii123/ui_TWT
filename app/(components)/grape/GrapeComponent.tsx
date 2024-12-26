@@ -43,14 +43,14 @@ const GrapeComponent = () => {
       },
     });
     editor.on("component:selected", (component) => {
-      if (component.get("tagName") === "body") {
+      if (component.get("tagName") === "table") {
         component.set({
           traits: [
             {
               type: "live-input",
-              name: "customInput",
-              label: "Custom Input",
-              placeholder: "Nhập nội dung ở đây...",
+              name: "Input",
+              label: "Input",
+              placeholder: "Nhập...",
             },
           ],
         });
