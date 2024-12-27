@@ -366,16 +366,12 @@ const GrapeComponent = () => {
   //dựa vao cài này để call api
   const [textInput, setTextInput] = useState("");
   const debouncedInputValue = useDebounce(textInput, 500);
-  const [selectedId, setSelectedId] = useState<string>("");
-  const [selectedElements, setSelectedElements] = useState<
-    Component | undefined | null
-  >(null);
 
   const windowWidth = useWindowWidth();
   useEffect(() => {
     const editor = grapesjs.init({
       container: "#editor",
-      width: windowWidth > 1200 ? String(windowWidth * 0.8) : "100%",
+      width: windowWidth > 1280 ? String((windowWidth - 300) * 0.9) : "100%",
       height: String(window.innerHeight * 0.8),
       plugins: [grapesjsPresetWebpage, grapesjsBlocksBasic],
       pluginsOpts: {
@@ -415,9 +411,6 @@ const GrapeComponent = () => {
     });
     editor.on("component:selected", (component) => {
       const blockId = component.getId();
-      setSelectedId(blockId);
-      const selectedElement = editor.getSelected();
-      setSelectedElements(selectedElement);
       if (component.get("tagName") === "table") {
         component.set({
           traits: [
