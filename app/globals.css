@@ -70,3 +70,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 768px) {
+  .gjs-cell {
+    width: 100%;
+    display: block;
+    height: auto !important;
+  }
+}

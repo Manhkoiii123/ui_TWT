@@ -16,6 +16,15 @@ const GrapeComponent = () => {
     location: "Upland, California, United States",
     ip: "47.149.53.167",
   };
+  const cardContentTemplate = {
+    image:
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1110442652475031330/original/b6d87652-2a44-423c-8396-c81e6df23628.jpeg?im_w=720",
+    title: "Apartament in Miami",
+    star: 4.5,
+    beds: 4,
+    day: "24 jun - 5 jul",
+    price: "100",
+  };
   const content = (data: any) => {
     return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" lang="en">
@@ -354,6 +363,67 @@ const GrapeComponent = () => {
 </html>
 `;
   };
+  const cardContent = (data: any) => {
+    return `
+    <table
+      height="auto"
+      align="center"
+      width="100%"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      role="presentation"
+      style="padding: 20px; padding-bottom: 0"
+    >
+      <tbody style="width: 100%">
+        <tr style="width: 100%">
+          <td data-id="__react-email-column">
+            <img
+              style="
+                display: block;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+              "
+              src="${data.image}"
+            />
+            <div style="display: flex; flex-direction: column;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <div style="font-size: 18px;">${data.title}</div>
+                <div style="font-size: 18px;">★ ${data.star}</div>
+              </div>
+              <div style="font-size: 18px; margin-bottom: 10px; color: #555">${data.beds} Beds</div>
+              <div style="font-size: 18px; margin-bottom: 10px; color: #555;">${data.day}</div>
+              <div style="font-size: 18px; margin-bottom: 10px;">$${data.price} USD / night</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <style>
+      @media only screen and (max-width: 600px) {
+        table {
+          padding: 10px;
+        }
+        .gjs-cell {
+          font-size: 14px !important;
+        }
+        .gjs-cell img {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .gjs-cell div {
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+  `;
+  };
+
   const [editor, setEditor] = useState<Editor | null>();
 
   const windowWidth = useWindowWidth();
@@ -370,6 +440,9 @@ const GrapeComponent = () => {
         grapesjsBlocksBasic: {
           blocks: [],
         },
+      },
+      cssComposer: {
+        rules: [".gjs-cell { height: auto !important; }"],
       },
     });
 
@@ -433,6 +506,11 @@ const GrapeComponent = () => {
     editor.BlockManager.add("section", {
       label: "Section",
       content: content(apiData),
+      category: "Custom",
+    });
+    editor.BlockManager.add("card-content", {
+      label: "Card Content",
+      content: cardContent(cardContentTemplate),
       category: "Custom",
     });
 
