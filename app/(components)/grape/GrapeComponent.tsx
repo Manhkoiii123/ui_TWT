@@ -8,7 +8,6 @@ import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
 import useWindowWidth from "@/hooks/useWindowSize";
 import useDebounce from "@/hooks/useDebounce";
-import { AnyAaaaRecord } from "dns";
 const GrapeComponent = () => {
   const apiData = {
     name: "John Doe",
@@ -17,16 +16,16 @@ const GrapeComponent = () => {
     location: "Upland, California, United States",
     ip: "47.149.53.167",
   };
-  function replaceTemplateValues(template: any, data: any) {
-    let updatedTemplate = template;
+  const apiData2 = {
+    name: "John Doe2 ",
+    time: "September 7, 2022 at 10:58 AM  22222222",
+    device: "Chrome on Mac OS X22222222",
+    location: "Upland, California, United States22222222",
+    ip: "47.149.53.167222222222",
+  };
 
-    for (const [key, value] of Object.entries(data)) {
-      updatedTemplate = updatedTemplate.split(`${key}`).join(value);
-    }
-
-    return updatedTemplate;
-  }
-  const content = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  const content = (data: any) => {
+    return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" lang="en">
   <head>
     <link
@@ -166,7 +165,7 @@ const GrapeComponent = () => {
                                 text-align: center;
                               "
                             >
-                              Hi, ${"name"}
+                              Hi, <span class="name">${data.name}</span>
                             </h1>
                             <h2
                               style="
@@ -184,7 +183,7 @@ const GrapeComponent = () => {
                                 margin: 16px 0;
                               "
                             >
-                              <b>Time: </b>${"time"}
+                              <b>Time: </b> <span class="time">${data.time}</span>
                             </p>
                             <p
                               style="
@@ -194,7 +193,7 @@ const GrapeComponent = () => {
                                 margin-top: -5px;
                               "
                             >
-                              <b>Device: </b>${"device"}
+                              <b>Device: </b><span class="device">${data.device}</span>
                             </p>
                             <p
                               style="
@@ -204,7 +203,7 @@ const GrapeComponent = () => {
                                 margin-top: -5px;
                               "
                             >
-                              <b>Location: </b>${"location"}
+                              <b>Location: </b><span class="location">${data.location}</span>
                             </p>
                             <p
                               style="
@@ -216,7 +215,7 @@ const GrapeComponent = () => {
                               "
                             >
                               *Approximate geographic location based on IP
-                              address:${"ip"}
+                              address:<!-- --> <span class="ip">${data.ip}</span>
                             </p>
                             <p
                               style="
@@ -362,13 +361,15 @@ const GrapeComponent = () => {
   </body>
 </html>
 `;
+  };
   const [editor, setEditor] = useState<Editor | null>();
-  const [selectId, setSelectedId] = useState<string>("");
-  const [selectElement, setSelectedElement] = useState<Component | null>();
   //dựa vao cài này để call api
   const [textInput, setTextInput] = useState("");
-  const dataName = "Manh 2222";
   const debouncedInputValue = useDebounce(textInput, 500);
+  const [selectedId, setSelectedId] = useState<string>("");
+  const [selectedElements, setSelectedElements] = useState<
+    Component | undefined | null
+  >(null);
 
   const windowWidth = useWindowWidth();
   useEffect(() => {
@@ -393,13 +394,30 @@ const GrapeComponent = () => {
           trait.set("value", value);
           setTextInput(value);
         });
+        el.addEventListener("keydown", (event: KeyboardEvent) => {
+          if (event.key === "Enter") {
+            const selectedId = trait.get("selectedId");
+            const wrapper = editor?.getWrapper();
+            const tableId = wrapper?.find(`#${selectedId}`)[0];
+
+            for (const [key, value] of Object.entries(apiData2)) {
+              const spanComponents = tableId?.find(`[class="${key}"]`)[0];
+              if (spanComponents) {
+                const currentContent = spanComponents.get("content");
+                spanComponents.components(`${currentContent} ${value}`);
+              }
+            }
+          }
+        });
 
         return el;
       },
     });
     editor.on("component:selected", (component) => {
-      const domElement = component.getEl();
-      setSelectedElement(domElement);
+      const blockId = component.getId();
+      setSelectedId(blockId);
+      const selectedElement = editor.getSelected();
+      setSelectedElements(selectedElement);
       if (component.get("tagName") === "table") {
         component.set({
           traits: [
@@ -408,6 +426,7 @@ const GrapeComponent = () => {
               name: "Input",
               label: "Input",
               placeholder: "Nhập...",
+              selectedId: blockId,
             },
           ],
         });
@@ -416,421 +435,16 @@ const GrapeComponent = () => {
 
     editor.BlockManager.add("section", {
       label: "Section",
-      content: replaceTemplateValues(content, apiData),
+      content: content(apiData),
       category: "Custom",
     });
-    editor.BlockManager.add("policy", {
-      label: "Policy",
-      content: `
-        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html dir="ltr" lang="en">
-  <head>
-    <link
-      rel="preload"
-      as="image"
-      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-header.png"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-logo.png"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-chat.png"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-icon.png"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-academy.png"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-footer.png"
-    />
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-    <meta name="x-apple-disable-message-reformatting" />
-    <!--$-->
-  </head>
-  <div
-    style="display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0"
-  >
-    Google Play developers
-    <div>
-       ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿
-    </div>
-  </div>
-  <table
-    style='background-color:#dbddde;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif'
-  >
-    <table
-      align="center"
-      width="100%"
-      border="0"
-      cellpadding="0"
-      cellspacing="0"
-      role="presentation"
-      style="max-width:37.5em;margin:30px auto;background-color:#fff;border-radius:5px;overflow:hidden"
-    >
-      <tbody>
-        <tr style="width:100%">
-          <td>
-            <table
-              align="center"
-              width="100%"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              role="presentation"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <table
-                      align="center"
-                      width="100%"
-                      border="0"
-                      cellpadding="0"
-                      cellspacing="0"
-                      role="presentation"
-                    >
-                      <tbody style="width:100%">
-                        <tr style="width:100%">
-                          <td data-id="__react-email-column">
-                            <img
-                              alt="Google Play developers header blue transparent"
-                              height="28"
-                              src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-header.png"
-                              style="display:block;outline:none;border:none;text-decoration:none;margin-top:-1px"
-                              width="305"
-                            /><img
-                              alt="Google Play"
-                              height="31"
-                              src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-logo.png"
-                              style="display:block;outline:none;border:none;text-decoration:none;padding:0 40px"
-                              width="155"
-                            />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table
-              align="center"
-              width="100%"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              role="presentation"
-              style="padding:0 40px"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <hr
-                      style="width:100%;border:none;border-top:1px solid #eaeaea;border-color:#e8eaed;margin:20px 0"
-                    />
-                    <p
-                      style="font-size:14px;line-height:26px;margin:16px 0;font-weight:700;color:#004dcf"
-                    >
-                      DEVELOPER UPDATE
-                    </p>
-                    <p
-                      style="font-size:14px;line-height:22px;margin:16px 0;color:#3c4043"
-                    >
-                      Hello Google Play Developer,
-                    </p>
-                    <p
-                      style="font-size:14px;line-height:22px;margin:16px 0;color:#3c4043"
-                    >
-                      We strive to make Google Play a safe and trusted
-                      experience for users.
-                    </p>
-                    <p
-                      style="font-size:14px;line-height:22px;margin:16px 0;color:#3c4043"
-                    >
-                      We&#x27;ve added clarifications to our<!-- -->
-                      <a
-                        href="https://notifications.google.com"
-                        style="color:#004dcf;text-decoration-line:none;font-size:14px;line-height:22px"
-                        target="_blank"
-                        >Target API Level policy</a
-                      >. Because this is a clarification, our enforcement
-                      standards and practices for this policy remain the same.
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table
-              align="center"
-              width="100%"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              role="presentation"
-              style="padding-left:40px"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <p
-                      style="font-size:14px;line-height:22px;margin:16px 0;color:#3c4043"
-                    >
-                      We’re noting exceptions to the<!-- -->
-                      <a
-                        href="https://notifications.google.com"
-                        style="color:#004dcf;text-decoration-line:none;font-size:14px;line-height:22px"
-                        target="_blank"
-                        >Target API Level policy</a
-                      >, which can be found in our updated<!-- -->
-                      <a
-                        href="https://notifications.google.com"
-                        style="color:#004dcf;text-decoration-line:none;font-size:14px;line-height:22px"
-                        target="_blank"
-                        >Help Center article.</a
-                      >These exceptions include permanently private apps and
-                      apps that target automotive or wearables form factors and
-                      are bundled within the same package.<!-- -->
-                      <a
-                        href="https://notifications.google.com"
-                        style="color:#004dcf;text-decoration-line:none;font-size:14px;line-height:22px"
-                        target="_blank"
-                        >Learn more</a
-                      >
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table
-              align="center"
-              width="100%"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              role="presentation"
-              style="padding:0 40px"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <p
-                      style="font-size:14px;line-height:22px;margin:16px 0;color:#3c4043"
-                    >
-                      We’re also extending the deadline to give you more time to
-                      adjust to these changes. Now, apps that target API level
-                      29 or below will start experiencing reduced distribution
-                      starting <b>Jan 31, 2023</b>
-                      <!-- -->instead of Nov 1, 2022. If you need more time to
-                      update your app, you can request an extension to keep your
-                      app discoverable to all users until May 1, 2023.
-                    </p>
-                    <hr
-                      style="width:100%;border:none;border-top:1px solid #eaeaea;border-color:#e8eaed;margin:20px 0"
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table
-              align="center"
-              width="100%"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              role="presentation"
-              style="padding:0 40px"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <p
-                      style="font-size:14px;line-height:22px;margin:16px 0;color:#3c4043"
-                    >
-                      Thank you,
-                    </p>
-                    <p
-                      style="font-size:20px;line-height:22px;margin:16px 0;color:#3c4043"
-                    >
-                      The Google Play team
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table
-              align="center"
-              width="100%"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              role="presentation"
-              style="background-color:#f0fcff;width:90%;border-radius:5px;overflow:hidden;padding-left:20px"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <table
-                      align="center"
-                      width="100%"
-                      border="0"
-                      cellpadding="0"
-                      cellspacing="0"
-                      role="presentation"
-                    >
-                      <tbody style="width:100%">
-                        <tr style="width:100%">
-                          <p
-                            style="font-size:14px;line-height:22px;margin:16px 0;color:#3c4043"
-                          >
-                            Connect with us
-                          </p>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table
-                      align="left"
-                      width="100%"
-                      border="0"
-                      cellpadding="0"
-                      cellspacing="0"
-                      role="presentation"
-                      style="width:84px;float:left"
-                    >
-                      <tbody style="width:100%">
-                        <tr style="width:100%">
-                          <td
-                            data-id="__react-email-column"
-                            style="padding-right:4px"
-                          >
-                            <a
-                              href="https://notifications.google.com"
-                              style="color:#067df7;text-decoration-line:none"
-                              target="_blank"
-                              ><img
-                                height="28"
-                                src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-chat.png"
-                                style="display:block;outline:none;border:none;text-decoration:none"
-                                width="28"
-                            /></a>
-                          </td>
-                          <td
-                            data-id="__react-email-column"
-                            style="padding-right:4px"
-                          >
-                            <a
-                              href="https://notifications.google.com"
-                              style="color:#067df7;text-decoration-line:none"
-                              target="_blank"
-                              ><img
-                                height="28"
-                                src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-icon.png"
-                                style="display:block;outline:none;border:none;text-decoration:none"
-                                width="28"
-                            /></a>
-                          </td>
-                          <td
-                            data-id="__react-email-column"
-                            style="padding-right:4px"
-                          >
-                            <a
-                              href="https://notifications.google.com"
-                              style="color:#067df7;text-decoration-line:none"
-                              target="_blank"
-                              ><img
-                                height="28"
-                                src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-academy.png"
-                                style="display:block;outline:none;border:none;text-decoration:none"
-                                width="28"
-                            /></a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table
-                      align="center"
-                      width="100%"
-                      border="0"
-                      cellpadding="0"
-                      cellspacing="0"
-                      role="presentation"
-                    >
-                      <tbody style="width:100%">
-                        <tr style="width:100%">
-                          <img
-                            height="48"
-                            src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/google-play-footer.png"
-                            style="display:block;outline:none;border:none;text-decoration:none;max-width:100%"
-                            width="540"
-                          />
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table
-              align="center"
-              width="100%"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              role="presentation"
-              style="padding:0 40px;padding-bottom:30px"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <p
-                      style="font-size:12px;line-height:22px;margin:0;color:#3c4043;text-align:center"
-                    >
-                      © 2022 Google LLC 1600 Amphitheatre Parkway, Mountain
-                      View, CA 94043, USA
-                    </p>
-                    <p
-                      style="font-size:12px;line-height:22px;margin:0;color:#3c4043;text-align:center"
-                    >
-                      You have received this mandatory email service
-                      announcement to update you about important changes to your
-                      Google Play Developer account.
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <!--/$-->
-  </body>
-</html>
 
-      `,
-      category: "Custom",
-    });
     setEditor(editor);
     return () => {
       editor.destroy();
     };
-  }, [dataName, windowWidth]);
-  useEffect(() => {
-    if (editor && selectElement) {
-      const selectedElement = editor.getSelected();
-    }
-  }, [editor, selectElement]);
+  }, [windowWidth]);
+
   return (
     <div>
       <div id="editor"></div>
