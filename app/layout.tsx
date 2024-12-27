@@ -3,6 +3,7 @@ import "./globals.css";
 import { Be_Vietnam_Pro } from "next/font/google";
 import Sidebar from "@/app/(components)/Sidebar";
 import Header from "@/app/(components)/Header";
+import TanstackWrapper from "@/providers/tanstack.provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,15 +28,17 @@ export default function RootLayout({
         />
       </head>
       <body className={` antialiased ${beVietnam.className}  `}>
-        <div className="flex w-[100vw] max-xl:h-screen bg-gray-100">
-          <div className="max-xl:hidden">
-            <Sidebar />
+        <TanstackWrapper>
+          <div className="flex w-[100vw] max-xl:h-screen bg-gray-100">
+            <div className="max-xl:hidden">
+              <Sidebar />
+            </div>
+            <main className="flex-1 ">
+              <Header />
+              <div className="pt-[48px] px-8">{children}</div>
+            </main>
           </div>
-          <main className="flex-1 ">
-            <Header />
-            <div className="pt-[48px] px-8">{children}</div>
-          </main>
-        </div>
+        </TanstackWrapper>
       </body>
     </html>
   );

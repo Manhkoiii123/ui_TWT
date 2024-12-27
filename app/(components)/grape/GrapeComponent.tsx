@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import grapesjs, { Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
 import useWindowWidth from "@/hooks/useWindowSize";
 import useDebounce from "@/hooks/useDebounce";
+import { useQuery } from "@tanstack/react-query";
+import { testRequest } from "@/api/test";
 const GrapeComponent = () => {
   const apiData = {
     name: "John Doe",
@@ -16,6 +18,30 @@ const GrapeComponent = () => {
     location: "Upland, California, United States",
     ip: "47.149.53.167",
   };
+  //dựa vao cài này để call api
+  const [textInput, setTextInput] = useState("");
+  const debouncedInputValue = useDebounce(textInput, 500);
+  const [data, setData] = useState<any>(apiData);
+  const handleFetchList = async (id: string) => {
+    const res = await testRequest.getTest(id);
+    return res;
+  };
+  const { data: data2, isLoading } = useQuery({
+    queryKey: ["test"],
+    queryFn: () => handleFetchList(debouncedInputValue),
+    enabled: !!debouncedInputValue,
+  });
+  const fakeData = useMemo(() => {
+    const tmp = data2?.data.data.first_name;
+    return {
+      name: `${tmp} 12123123 `,
+      time: "September 7, 2022 at 10:58 AM",
+      device: "Chrome on Mac OS X",
+      location: "Upland, California, United States",
+      ip: "47.149.53.167",
+    };
+  }, [data2]);
+
   const apiData2 = {
     name: "John Doe2 ",
     time: "September 7, 2022 at 10:58 AM  22222222",
@@ -363,9 +389,6 @@ const GrapeComponent = () => {
 `;
   };
   const [editor, setEditor] = useState<Editor | null>();
-  //dựa vao cài này để call api
-  const [textInput, setTextInput] = useState("");
-  const debouncedInputValue = useDebounce(textInput, 500);
 
   const windowWidth = useWindowWidth();
   useEffect(() => {
@@ -401,7 +424,7 @@ const GrapeComponent = () => {
             const wrapper = editor?.getWrapper();
             const tableId = wrapper?.find(`#${selectedId}`)[0];
 
-            for (const [key, value] of Object.entries(apiData2)) {
+            for (const [key, value] of Object.entries(fakeData)) {
               const spanComponents = tableId?.find(`[class="${key}"]`)[0];
               if (spanComponents) {
                 const currentContent = spanComponents.get("content");
