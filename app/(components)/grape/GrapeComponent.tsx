@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useEffect } from "react";
-import grapesjs, { Component, Editor } from "grapesjs";
+import grapesjs, { Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
@@ -375,10 +375,15 @@ const GrapeComponent = () => {
       height: String(window.innerHeight * 0.8),
       plugins: [grapesjsPresetWebpage, grapesjsBlocksBasic],
       pluginsOpts: {
-        grapesjsPresetWebpage: {},
-        grapesjsBlocksBasic: {},
+        grapesjsPresetWebpage: {
+          blocks: [],
+        },
+        grapesjsBlocksBasic: {
+          blocks: [],
+        },
       },
     });
+
     editor.TraitManager.addType("live-input", {
       createInput({ trait }: any) {
         const el = document.createElement("input");
@@ -403,6 +408,9 @@ const GrapeComponent = () => {
                 spanComponents.components(`${currentContent} ${value}`);
               }
             }
+            trait.set("value", "");
+            setTextInput("");
+            el.value = "";
           }
         });
 
