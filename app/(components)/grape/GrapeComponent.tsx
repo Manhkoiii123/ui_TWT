@@ -1,14 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import grapesjs, { Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
 import useWindowWidth from "@/hooks/useWindowSize";
-import useDebounce from "@/hooks/useDebounce";
-import { useQuery } from "@tanstack/react-query";
 import { testRequest } from "@/api/test";
 const GrapeComponent = () => {
   const apiData = {
@@ -18,38 +16,6 @@ const GrapeComponent = () => {
     location: "Upland, California, United States",
     ip: "47.149.53.167",
   };
-  //dựa vao cài này để call api
-  const [textInput, setTextInput] = useState("");
-  const debouncedInputValue = useDebounce(textInput, 500);
-  const [data, setData] = useState<any>(apiData);
-  const handleFetchList = async (id: string) => {
-    const res = await testRequest.getTest(id);
-    return res;
-  };
-  const { data: data2, isLoading } = useQuery({
-    queryKey: ["test"],
-    queryFn: () => handleFetchList(debouncedInputValue),
-    enabled: !!debouncedInputValue,
-  });
-  const fakeData = useMemo(() => {
-    const tmp = data2?.data.data.first_name;
-    return {
-      name: `${tmp} 12123123 `,
-      time: "September 7, 2022 at 10:58 AM",
-      device: "Chrome on Mac OS X",
-      location: "Upland, California, United States",
-      ip: "47.149.53.167",
-    };
-  }, [data2]);
-
-  const apiData2 = {
-    name: "John Doe2 ",
-    time: "September 7, 2022 at 10:58 AM  22222222",
-    device: "Chrome on Mac OS X22222222",
-    location: "Upland, California, United States22222222",
-    ip: "47.149.53.167222222222",
-  };
-
   const content = (data: any) => {
     return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" lang="en">
@@ -416,15 +382,23 @@ const GrapeComponent = () => {
         el.addEventListener("input", (event: Event) => {
           const value = (event.target as HTMLInputElement).value;
           trait.set("value", value);
-          setTextInput(value);
         });
-        el.addEventListener("keydown", (event: KeyboardEvent) => {
+        el.addEventListener("keydown", async (event: KeyboardEvent) => {
           if (event.key === "Enter") {
             const selectedId = trait.get("selectedId");
             const wrapper = editor?.getWrapper();
             const tableId = wrapper?.find(`#${selectedId}`)[0];
+            const res = await testRequest.getTest(trait.get("value"));
+            const tmp = res?.data.data.first_name;
+            const tmpData = {
+              name: `${tmp}`,
+              time: "September 7, 2022 at 10:58 AM",
+              device: "Chrome on Mac OS X",
+              location: "Upland, California, United States",
+              ip: "47.149.53.167",
+            };
 
-            for (const [key, value] of Object.entries(fakeData)) {
+            for (const [key, value] of Object.entries(tmpData)) {
               const spanComponents = tableId?.find(`[class="${key}"]`)[0];
               if (spanComponents) {
                 const currentContent = spanComponents.get("content");
@@ -432,7 +406,6 @@ const GrapeComponent = () => {
               }
             }
             trait.set("value", "");
-            setTextInput("");
             el.value = "";
           }
         });
