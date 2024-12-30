@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useEffect } from "react";
-import grapesjs, { Component, Editor } from "grapesjs";
+import grapesjs, { Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
@@ -140,7 +140,6 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       });
 
       editor.on("component:selected", (component) => {
-        const blockId = component.getId();
         const parentTable = findParentTable(component);
         if (parentTable) {
           component.set({
