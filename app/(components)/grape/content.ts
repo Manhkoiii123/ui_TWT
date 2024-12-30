@@ -9,7 +9,7 @@ export const apiData = {
 export const cardContentTemplate = {
   image:
     "https://a0.muscache.com/im/pictures/miso/Hosting-1110442652475031330/original/b6d87652-2a44-423c-8396-c81e6df23628.jpeg?im_w=720",
-  name: "Apartament in Miami Beach Miami Beach, Florida, United States",
+  name: "Apartament in Miami",
   star: 4.5,
   beds: 4,
   day: "24 jun - 5 jul",
