@@ -8,7 +8,10 @@ import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
 import useWindowWidth from "@/hooks/useWindowSize";
 import { testRequest } from "@/api/test";
-const GrapeComponent = () => {
+type Props = {
+  isCreate?: boolean;
+};
+const GrapeComponent = ({ isCreate = false }: Props) => {
   const apiData = {
     name: "John Doe",
     time: "September 7, 2022 at 10:58 AM",
@@ -372,18 +375,19 @@ const GrapeComponent = () => {
       border="0"
       cellpadding="0"
       cellspacing="0"
+      style="padding: 20px; " 
       role="presentation"
-      style="padding: 20px; padding-bottom: 0"
     >
-      <tbody style="width: 100%;height:100%">
-        <tr style="width: 100%;height:100%">
-          <td data-id="__react-email-column">
+      <tbody style="width: 100%;height:100%;">
+        <tr style="width: 100%;height:100%; ">
+          <td data-id="__react-email-column" style="border: 1px solid #ddd; border-radius: 10px; ">
             <img
               style="
                 display: block;
                 outline: none;
                 border: none;
-                border-radius: 10px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
                 width: 100%;
                 max-width: 100%;
                 height:auto;
@@ -391,14 +395,23 @@ const GrapeComponent = () => {
               "
               src="${data.image}"
             />
-            <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; flex-direction: column; width: 100%; padding:10px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                <div style="font-size: 18px;" class='name'>${data.name}</div>
-                <div style="font-size: 18px;">★ ${data.star}</div>
+                <div style="font-size: 24px;font-weight: bold" class='name'>${data.name}</div>
               </div>
-                <div style="font-size: 18px; margin-bottom: 10px; color: #555">${data.beds} Beds</div>
-                <div style="font-size: 18px; margin-bottom: 10px; color: #555;">${data.day}</div>
-                <div style="font-size: 18px; margin-bottom: 10px;">$${data.price} USD / night</div>
+              <div style="font-size: 18px; margin-bottom: 10px; color: #555">${data.beds} Beds</div>
+              <div style="font-size: 18px; margin-bottom: 10px; color: #555;">${data.day}</div>
+              <div style="font-size: 18px; margin-bottom:20px;">$${data.price} USD / night</div>
+              <div style= "display: flex; justify-content:center; width: 100%;" >
+                <button style="
+                  padding: 10px 20px;
+                  border: none;
+                  border-radius: 5px;
+                  background-color: #007bff;
+                  color: #fff;
+                  cursor: pointer;
+                ">Book Now</button>
+              </div>
             </div>
           </td>
         </tr>
@@ -430,12 +443,26 @@ const GrapeComponent = () => {
     editor.CssComposer.getAll().add(`
       .gjs-cell {
         height: auto !important;
+        flex-shrink: 0 !important; 
+        width: 33.33% !important;
+      }
+      @media (max-width: 768px) {
+        .gjs-cell {
+          width: 100% !important; 
+        }
       }
     `);
     editor.on("load", () => {
       editor.CssComposer.getAll().add(`
       .gjs-cell {
         height: auto !important;
+        flex-shrink: 0 !important; 
+        width: 33.33% !important;
+      }
+      @media (max-width: 768px) {
+        .gjs-cell {
+          width: 100% !important; 
+        }
       }
     `);
     });
@@ -443,6 +470,13 @@ const GrapeComponent = () => {
       editor.CssComposer.getAll().add(`
       .gjs-cell {
         height: auto !important;
+        flex-shrink: 0 !important; 
+        width: 33.33% !important;
+      }
+      @media (max-width: 768px) {
+        .gjs-cell {
+          width: 100% !important; 
+        }
       }
     `);
     });
@@ -451,6 +485,13 @@ const GrapeComponent = () => {
       editor.CssComposer.getAll().add(`
       .gjs-cell {
         height: auto !important;
+        flex-shrink: 0 !important; 
+        width: 33.33% !important;
+      }
+      @media (max-width: 768px) {
+        .gjs-cell {
+          width: 100% !important; 
+        }
       }
     `);
     });
@@ -479,62 +520,64 @@ const GrapeComponent = () => {
     if (exportButton) {
       exportButton.addEventListener("click", handleExportEditorHTMLAndCSS);
     }
-    editor.TraitManager.addType("live-input", {
-      createInput({ trait }: any) {
-        const el = document.createElement("input");
-        el.type = "text";
-        el.placeholder = trait.get("placeholder") || "";
+    if (!isCreate) {
+      editor.TraitManager.addType("live-input", {
+        createInput({ trait }: any) {
+          const el = document.createElement("input");
+          el.type = "text";
+          el.placeholder = trait.get("placeholder") || "";
 
-        el.addEventListener("input", (event: Event) => {
-          const value = (event.target as HTMLInputElement).value;
-          trait.set("value", value);
-        });
-        el.addEventListener("keydown", async (event: KeyboardEvent) => {
-          if (event.key === "Enter") {
-            const selectedId = trait.get("selectedId");
-            const wrapper = editor?.getWrapper();
-            const tableId = wrapper?.find(`#${selectedId}`)[0];
-            const res = await testRequest.getTest(trait.get("value"));
-            const tmp = res?.data.data.first_name;
-            const tmpData = {
-              name: `${tmp}`,
-              time: "September 7, 2022 at 10:58 AM",
-              device: "Chrome on Mac OS X",
-              location: "Upland, California, United States",
-              ip: "47.149.53.167",
-            };
+          el.addEventListener("input", (event: Event) => {
+            const value = (event.target as HTMLInputElement).value;
+            trait.set("value", value);
+          });
+          el.addEventListener("keydown", async (event: KeyboardEvent) => {
+            if (event.key === "Enter") {
+              const selectedId = trait.get("selectedId");
+              const wrapper = editor?.getWrapper();
+              const tableId = wrapper?.find(`#${selectedId}`)[0];
+              const res = await testRequest.getTest(trait.get("value"));
+              const tmp = res?.data.data.first_name;
+              const tmpData = {
+                name: `${tmp}`,
+                time: "September 7, 2022 at 10:58 AM",
+                device: "Chrome on Mac OS X",
+                location: "Upland, California, United States",
+                ip: "47.149.53.167",
+              };
 
-            for (const [key, value] of Object.entries(tmpData)) {
-              const spanComponents = tableId?.find(`[class="${key}"]`)[0];
-              if (spanComponents) {
-                const currentContent = spanComponents.get("content");
-                spanComponents.components(`${currentContent} ${value}`);
+              for (const [key, value] of Object.entries(tmpData)) {
+                const spanComponents = tableId?.find(`[class="${key}"]`)[0];
+                if (spanComponents) {
+                  const currentContent = spanComponents.get("content");
+                  spanComponents.components(`${currentContent} ${value}`);
+                }
               }
+              trait.set("value", "");
+              el.value = "";
             }
-            trait.set("value", "");
-            el.value = "";
-          }
-        });
+          });
 
-        return el;
-      },
-    });
-    editor.on("component:selected", (component) => {
-      const blockId = component.getId();
-      if (component.get("tagName") === "table") {
-        component.set({
-          traits: [
-            {
-              type: "live-input",
-              name: "Input",
-              label: "Input",
-              placeholder: "Nhập...",
-              selectedId: blockId,
-            },
-          ],
-        });
-      }
-    });
+          return el;
+        },
+      });
+      editor.on("component:selected", (component) => {
+        const blockId = component.getId();
+        if (component.get("tagName") === "table") {
+          component.set({
+            traits: [
+              {
+                type: "live-input",
+                name: "Input",
+                label: "Input",
+                placeholder: "Nhập...",
+                selectedId: blockId,
+              },
+            ],
+          });
+        }
+      });
+    }
 
     editor.BlockManager.add("section", {
       label: "Section",
