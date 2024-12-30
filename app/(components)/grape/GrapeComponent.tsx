@@ -22,7 +22,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
   const cardContentTemplate = {
     image:
       "https://a0.muscache.com/im/pictures/miso/Hosting-1110442652475031330/original/b6d87652-2a44-423c-8396-c81e6df23628.jpeg?im_w=720",
-    name: "Apartament in Miami",
+    name: "Apartament in Miami Beach Miami Beach, Florida, United States",
     star: 4.5,
     beds: 4,
     day: "24 jun - 5 jul",
@@ -380,7 +380,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
     >
       <tbody style="width: 100%;height:100%;">
         <tr style="width: 100%;height:100%; ">
-          <td data-id="__react-email-column" style="border: 1px solid #ddd; border-radius: 10px; ">
+          <td data-id="__react-email-column" style="border: 1px solid #ddd; border-radius: 10px; display: flex; flex-direction: column; width: 100%; height: 100%; align-items: space-between; ">
             <img
               style="
                 display: block;
@@ -395,29 +395,39 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
               "
               src="${data.image}"
             />
-            <div style="display: flex; flex-direction: column; width: 100%; padding:10px;">
+            <div style="display: flex; flex-direction: column; width: 100%;height: 100%; padding:10px;justify-content:space-between; ">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <div style="font-size: 24px;font-weight: bold" class='name'>${data.name}</div>
               </div>
-              <div style="font-size: 18px; margin-bottom: 10px; color: #555">${data.beds} Beds</div>
-              <div style="font-size: 18px; margin-bottom: 10px; color: #555;">${data.day}</div>
-              <div style="font-size: 18px; margin-bottom:20px;">$${data.price} USD / night</div>
-              <div style= "display: flex; justify-content:center; width: 100%;" >
-                <button style="
-                  padding: 10px 20px;
-                  border: none;
-                  border-radius: 5px;
-                  background-color: #007bff;
-                  color: #fff;
-                  cursor: pointer;
-                ">Book Now</button>
+              <div>
+               <div style="font-size: 18px; margin-bottom: 10px; color: #555">${data.beds} Beds</div>
+                <div style="font-size: 18px; margin-bottom: 10px; color: #555;">${data.day}</div>
+                <div style="font-size: 18px; margin-bottom:20px;">$${data.price} USD / night</div>
+                <div style= "display: flex; justify-content:center; width: 100%;" >
+                  <button style="
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #007bff;
+                    color: #fff;
+                    cursor: pointer;
+                  ">Book Now</button>
+                </div>
               </div>
+             
             </div>
           </td>
         </tr>
       </tbody>
     </table>
-    
+    <style>
+      @media (max-width: 768px) {
+        /* Make the button full width on screens smaller than 768px */
+        .gjs-cell button {
+          width: 100% !important;
+        }
+      }
+    </style>
   `;
   };
 
@@ -445,10 +455,12 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
         height: auto !important;
         flex-shrink: 0 !important; 
         width: 33.33% !important;
+        max-width: 33.33% !important;
       }
       @media (max-width: 768px) {
         .gjs-cell {
           width: 100% !important; 
+          max-width: 100% !important; 
         }
       }
     `);
@@ -458,10 +470,12 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
         height: auto !important;
         flex-shrink: 0 !important; 
         width: 33.33% !important;
+        max-width: 33.33% !important;
       }
       @media (max-width: 768px) {
         .gjs-cell {
           width: 100% !important; 
+          max-width: 100% !important; 
         }
       }
     `);
@@ -472,10 +486,12 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
         height: auto !important;
         flex-shrink: 0 !important; 
         width: 33.33% !important;
+        max-width: 33.33% !important;
       }
       @media (max-width: 768px) {
         .gjs-cell {
           width: 100% !important; 
+          max-width: 100% !important; 
         }
       }
     `);
@@ -487,10 +503,12 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
         height: auto !important;
         flex-shrink: 0 !important; 
         width: 33.33% !important;
+        max-width: 33.33% !important;
       }
       @media (max-width: 768px) {
         .gjs-cell {
           width: 100% !important; 
+          max-width: 100% !important; 
         }
       }
     `);
