@@ -19,7 +19,7 @@ const GrapeComponent = () => {
   const cardContentTemplate = {
     image:
       "https://a0.muscache.com/im/pictures/miso/Hosting-1110442652475031330/original/b6d87652-2a44-423c-8396-c81e6df23628.jpeg?im_w=720",
-    title: "Apartament in Miami",
+    name: "Apartament in Miami",
     star: 4.5,
     beds: 4,
     day: "24 jun - 5 jul",
@@ -366,7 +366,7 @@ const GrapeComponent = () => {
   const cardContent = (data: any) => {
     return `
     <table
-      height="auto"
+      height="100%"
       align="center"
       width="100%"
       border="0"
@@ -375,8 +375,8 @@ const GrapeComponent = () => {
       role="presentation"
       style="padding: 20px; padding-bottom: 0"
     >
-      <tbody style="width: 100%">
-        <tr style="width: 100%">
+      <tbody style="width: 100%;height:100%">
+        <tr style="width: 100%;height:100%">
           <td data-id="__react-email-column">
             <img
               style="
@@ -386,47 +386,32 @@ const GrapeComponent = () => {
                 border-radius: 10px;
                 width: 100%;
                 max-width: 100%;
-                height: auto;
+                height:auto;
                 margin-bottom: 10px;
               "
               src="${data.image}"
             />
             <div style="display: flex; flex-direction: column;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                <div style="font-size: 18px;">${data.title}</div>
+                <div style="font-size: 18px;" class='name'>${data.name}</div>
                 <div style="font-size: 18px;">★ ${data.star}</div>
               </div>
-              <div style="font-size: 18px; margin-bottom: 10px; color: #555">${data.beds} Beds</div>
-              <div style="font-size: 18px; margin-bottom: 10px; color: #555;">${data.day}</div>
-              <div style="font-size: 18px; margin-bottom: 10px;">$${data.price} USD / night</div>
+                <div style="font-size: 18px; margin-bottom: 10px; color: #555">${data.beds} Beds</div>
+                <div style="font-size: 18px; margin-bottom: 10px; color: #555;">${data.day}</div>
+                <div style="font-size: 18px; margin-bottom: 10px;">$${data.price} USD / night</div>
             </div>
           </td>
         </tr>
       </tbody>
     </table>
-    <style>
-      @media only screen and (max-width: 600px) {
-        table {
-          padding: 10px;
-        }
-        .gjs-cell {
-          font-size: 14px !important;
-        }
-        .gjs-cell img {
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-        .gjs-cell div {
-          margin-bottom: 5px;
-        }
-      }
-    </style>
+    
   `;
   };
 
   const [editor, setEditor] = useState<Editor | null>();
 
   const windowWidth = useWindowWidth();
+
   useEffect(() => {
     const editor = grapesjs.init({
       container: "#editor",
@@ -441,11 +426,59 @@ const GrapeComponent = () => {
           blocks: [],
         },
       },
-      cssComposer: {
-        rules: [".gjs-cell { height: auto !important; }"],
-      },
+    });
+    editor.CssComposer.getAll().add(`
+      .gjs-cell {
+        height: auto !important;
+      }
+    `);
+    editor.on("load", () => {
+      editor.CssComposer.getAll().add(`
+      .gjs-cell {
+        height: auto !important;
+      }
+    `);
+    });
+    editor.on("component:add component:update component:drag:stop", () => {
+      editor.CssComposer.getAll().add(`
+      .gjs-cell {
+        height: auto !important;
+      }
+    `);
     });
 
+    editor.on("device:change", () => {
+      editor.CssComposer.getAll().add(`
+      .gjs-cell {
+        height: auto !important;
+      }
+    `);
+    });
+    const getEditorHTMLAndCSS = () => {
+      const html = editor.getHtml();
+      const css = editor.getCss();
+      console.log("Editor HTML:", html);
+      console.log("Editor CSS:", css);
+
+      const combinedContent = `
+      <style>${css}</style>
+      <div id="editor">
+        ${html}
+      </div>
+    `;
+      return combinedContent;
+    };
+
+    const handleExportEditorHTMLAndCSS = () => {
+      const content = getEditorHTMLAndCSS();
+
+      console.log("Exported HTML & CSS:", content);
+    };
+
+    const exportButton = document.getElementById("exportEditorHtmlCssButton");
+    if (exportButton) {
+      exportButton.addEventListener("click", handleExportEditorHTMLAndCSS);
+    }
     editor.TraitManager.addType("live-input", {
       createInput({ trait }: any) {
         const el = document.createElement("input");
@@ -517,12 +550,16 @@ const GrapeComponent = () => {
     setEditor(editor);
     return () => {
       editor.destroy();
+      document
+        .getElementById("exportEditorHtmlCssButton")
+        ?.removeEventListener("click", handleExportEditorHTMLAndCSS);
     };
   }, [windowWidth]);
 
   return (
     <div>
       <div id="editor"></div>
+      <button id="exportEditorHtmlCssButton">Export HTML</button>
     </div>
   );
 };
