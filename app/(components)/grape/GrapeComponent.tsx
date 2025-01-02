@@ -23,6 +23,7 @@ import {
   templateCard1,
   layoutCard2,
   textDescription,
+  column1Props,
 } from "@/app/(components)/grape/content";
 type Props = {
   isCreate?: boolean;
@@ -72,10 +73,17 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       });
     }
 
-    const findParentTable = (comp: any) => {
-      if (!comp) return null;
-      if (comp.get("tagName") === "td") return comp;
-      return findParentTable(comp.parent());
+    const findParentTable = (comp: any): any => {
+      let outermostTable = null;
+
+      while (comp) {
+        if (comp.get("tagName") === "td") {
+          outermostTable = comp;
+        }
+        comp = comp.parent();
+      }
+
+      return outermostTable;
     };
 
     const addCustomCSS = () => {
@@ -160,6 +168,10 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
               for (const [key, value] of Object.entries(tmpData)) {
                 const spanComponents = tableId?.find(`[class="${key}"]`)[0];
                 if (spanComponents) {
+                  console.log(
+                    "🚀 ~ el.addEventListener ~ spanComponents:",
+                    spanComponents
+                  );
                   const currentContent = spanComponents.get("content");
                   spanComponents.components(`${currentContent} ${value}`);
                 }
@@ -224,7 +236,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
 
     editor.BlockManager.add("layoutCard2", {
       label: "layoutCard2",
-      content: layoutCard2(),
+      content: layoutCard2(column1Props),
       category: "Custom",
     });
     editor.BlockManager.add("startNow", {

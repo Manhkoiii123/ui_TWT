@@ -1354,7 +1354,6 @@ export const startNow = () => {
 };
 
 interface ColumnProps {
-  columnClass: string;
   imageUrl: string;
   price: string;
   name: string;
@@ -1363,9 +1362,9 @@ interface ColumnProps {
 }
 
 const renderColumn = (props: ColumnProps) => {
-  const { columnClass, imageUrl, price, name, description, details } = props;
+  const { imageUrl, price, name, description, details } = props;
   return `
-    <td class="${columnClass}" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #ffffff; border-bottom: 10px solid #F6F8F8; border-left: 10px solid #F6F8F8; border-right: 10px solid #F6F8F8; border-top: 10px solid #F6F8F8; vertical-align: top;">
+    <td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #ffffff; border-bottom: 10px solid #F6F8F8; border-left: 10px solid #F6F8F8; border-right: 10px solid #F6F8F8; border-top: 10px solid #F6F8F8; vertical-align: top;">
       <table class="image_block block-1" width="100%" border="0" cellpadding="16" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
         <tr>
           <td class="pad">
@@ -1403,7 +1402,7 @@ const renderColumn = (props: ColumnProps) => {
         <tr>
           <td class="pad" style="padding-bottom:15px;padding-left:24px;padding-right:24px;">
             <div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;line-height:180%;text-align:left;mso-line-height-alt:28.8px;">
-              <p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #2b3940;"><strong>${name}</strong></span></p>
+              <p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #2b3940;"><strong class="name">${name}</strong></span></p>
             </div>
           </td>
         </tr>
@@ -1455,8 +1454,7 @@ const renderColumn = (props: ColumnProps) => {
     </td>
   `;
 };
-const column1Props: ColumnProps = {
-  columnClass: "column column-1",
+export const column1Props: ColumnProps = {
   imageUrl:
     "https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/Img8.jpg",
   price: "$475,000",
@@ -1465,7 +1463,7 @@ const column1Props: ColumnProps = {
     "Quisque vitae tristique sem. Nullam vulputate nisi sed purus pulvinar dictum. Vestibulum ante ipsum.",
   details: "5 Bedrooms, 2 Bathrooms, 1075 sq.f.",
 };
-export const layoutCard2 = () => {
+export const layoutCard2 = (column1Props: any) => {
   return `<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 <head>
@@ -1479,7 +1477,7 @@ export const layoutCard2 = () => {
   <table class="row row-15" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
     <tbody>
       <tr>
-        <td>
+        <div>
           <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 640px; margin: 0 auto;" width="640">
             <tbody>
               <tr>
@@ -1488,7 +1486,7 @@ export const layoutCard2 = () => {
               </tr>
             </tbody>
           </table>
-        </td>
+        </div>
       </tr>
     </tbody>
   </table>
