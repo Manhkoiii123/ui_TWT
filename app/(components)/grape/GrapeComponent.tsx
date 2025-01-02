@@ -13,7 +13,16 @@ import {
   cardContent,
   cardContentTemplate,
   content,
+  footer,
   footerContent,
+  header,
+  heroSection,
+  imageText,
+  productSection,
+  startNow,
+  templateCard1,
+  layoutCard2,
+  textDescription,
 } from "@/app/(components)/grape/content";
 type Props = {
   isCreate?: boolean;
@@ -65,7 +74,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
 
     const findParentTable = (comp: any) => {
       if (!comp) return null;
-      if (comp.get("tagName") === "table") return comp;
+      if (comp.get("tagName") === "td") return comp;
       return findParentTable(comp.parent());
     };
 
@@ -135,6 +144,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
           el.addEventListener("keydown", async (event: KeyboardEvent) => {
             if (event.key === "Enter") {
               const selectedId = trait.get("selectedId");
+              console.log("🚀 ~ el.addEventListener ~ selectedId:", selectedId);
               const wrapper = editor?.getWrapper();
               const tableId = wrapper?.find(`#${selectedId}`)[0];
               const res = await testRequest.getTest(trait.get("value"));
@@ -184,6 +194,52 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
     editor.BlockManager.add("section", {
       label: "Section",
       content: content(apiData),
+      category: "Custom",
+    });
+    editor.BlockManager.add("Header", {
+      label: "Header",
+      content: header(),
+      category: "Custom",
+    });
+    editor.BlockManager.add("heroSection", {
+      label: "heroSection",
+      content: heroSection(),
+      category: "Custom",
+    });
+    editor.BlockManager.add("productSection", {
+      label: "productSection",
+      content: productSection(),
+      category: "Custom",
+    });
+    editor.BlockManager.add("footer", {
+      label: "footer",
+      content: footer(),
+      category: "Custom",
+    });
+    editor.BlockManager.add("templateCard1", {
+      label: "templateCard1",
+      content: templateCard1(cardContentTemplate),
+      category: "Custom",
+    });
+
+    editor.BlockManager.add("layoutCard2", {
+      label: "layoutCard2",
+      content: layoutCard2(),
+      category: "Custom",
+    });
+    editor.BlockManager.add("startNow", {
+      label: "startNow",
+      content: startNow(),
+      category: "Custom",
+    });
+    editor.BlockManager.add("textDescription", {
+      label: "textDescription",
+      content: textDescription(),
+      category: "Custom",
+    });
+    editor.BlockManager.add("imageText", {
+      label: "imageText",
+      content: imageText(),
       category: "Custom",
     });
 
