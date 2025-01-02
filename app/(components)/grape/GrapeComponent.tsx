@@ -81,7 +81,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
 
       while (comp) {
         // comp.get("tagName") === "td" ||
-        if (comp.get("tagName") === "table") {
+        if (comp.get("tagName") === "td") {
           outermostTable = comp;
         }
         comp = comp.parent();
