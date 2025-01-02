@@ -24,6 +24,8 @@ import {
   layoutCard2,
   textDescription,
   column1Props,
+  templateFlight,
+  templateCredit,
 } from "@/app/(components)/grape/content";
 type Props = {
   isCreate?: boolean;
@@ -42,6 +44,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       pluginsOpts: {
         grapesjsPresetWebpage: {
           blocks: [],
+          undoManager: false,
         },
         grapesjsBlocksBasic: {
           blocks: [],
@@ -77,7 +80,8 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       let outermostTable = null;
 
       while (comp) {
-        if (comp.get("tagName") === "td") {
+        // comp.get("tagName") === "td" ||
+        if (comp.get("tagName") === "table") {
           outermostTable = comp;
         }
         comp = comp.parent();
@@ -152,7 +156,6 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
           el.addEventListener("keydown", async (event: KeyboardEvent) => {
             if (event.key === "Enter") {
               const selectedId = trait.get("selectedId");
-              console.log("🚀 ~ el.addEventListener ~ selectedId:", selectedId);
               const wrapper = editor?.getWrapper();
               const tableId = wrapper?.find(`#${selectedId}`)[0];
               const res = await testRequest.getTest(trait.get("value"));
@@ -164,14 +167,9 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
                 location: "Upland, California, United States",
                 ip: "47.149.53.167",
               };
-
               for (const [key, value] of Object.entries(tmpData)) {
                 const spanComponents = tableId?.find(`[class="${key}"]`)[0];
                 if (spanComponents) {
-                  console.log(
-                    "🚀 ~ el.addEventListener ~ spanComponents:",
-                    spanComponents
-                  );
                   const currentContent = spanComponents.get("content");
                   spanComponents.components(`${currentContent} ${value}`);
                 }
@@ -254,6 +252,16 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       content: imageText(),
       category: "Custom",
     });
+    editor.BlockManager.add("templateFlight", {
+      label: "templateFlight",
+      content: templateFlight(),
+      category: "Custom",
+    });
+    editor.BlockManager.add("templateCredit", {
+      label: "templateCredit",
+      content: templateCredit(),
+      category: "Custom",
+    });
 
     editor.BlockManager.add("card-content", {
       label: "Card Content",
@@ -299,6 +307,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       <input
         type="text"
         id="nameInput"
+        className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
         placeholder="Nhập tên người và nhấn Enter"
       />
     </div>
