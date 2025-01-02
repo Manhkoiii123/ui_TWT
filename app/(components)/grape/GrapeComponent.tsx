@@ -39,6 +39,30 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       },
     });
 
+    const nameInput = document.getElementById("nameInput");
+    if (nameInput) {
+      nameInput.addEventListener("keydown", (event: KeyboardEvent) => {
+        if (event.key === "Enter") {
+          const name = (event.target as HTMLInputElement).value;
+          const arrayName = name.split(",");
+          const components = [];
+          for (let i = 0; i < arrayName.length; i++) {
+            const data = {
+              name: arrayName[i],
+              time: "September 7, 2022 at 10:58 AM",
+              device: "Chrome on Mac OS X",
+              location: "Upland, California, United States",
+              ip: "47.149.53.167",
+            };
+            const template = content(data);
+            components.push(template);
+          }
+          editor.addComponents(components);
+          (event.target as HTMLInputElement).value = "";
+        }
+      });
+    }
+
     const findParentTable = (comp: any) => {
       if (!comp) return null;
       if (comp.get("tagName") === "table") return comp;
@@ -78,11 +102,11 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       console.log("Editor CSS:", css);
 
       const combinedContent = `
-      <style>${css}</style>
-      <div id="editor">
-        ${html}
-      </div>
-    `;
+        <style>${css}</style>
+        <div id="editor">
+          ${html}
+        </div>
+      `;
       return combinedContent;
     };
 
@@ -194,6 +218,9 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       document
         .getElementById("exportEditorHtmlCssButton")
         ?.removeEventListener("click", handleExportEditorHTMLAndCSS);
+      if (nameInput) {
+        nameInput.removeEventListener("keydown", () => {});
+      }
     };
   }, [windowWidth]);
 
@@ -201,6 +228,11 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
     <div>
       <div id="editor"></div>
       <button id="exportEditorHtmlCssButton">Export HTML</button>
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="Nhập tên người và nhấn Enter"
+      />
     </div>
   );
 };
