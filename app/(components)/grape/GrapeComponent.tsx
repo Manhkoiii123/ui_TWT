@@ -80,7 +80,6 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       let outermostTable = null;
 
       while (comp) {
-        // comp.get("tagName") === "td" ||
         if (comp.get("tagName") === "td") {
           outermostTable = comp;
         }
