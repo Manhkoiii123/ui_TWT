@@ -1789,3 +1789,367 @@ export const layoutCard2 = (column1Props: any) => {
     </style>
   `;
 };
+
+export const templateFakeAPI = [
+  {
+    name: "email",
+    label: "Email",
+    content: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+  <head>
+    <link
+      rel="preload"
+      as="image"
+      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/yelp-logo.png"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/yelp-header.png"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/yelp-footer.png"
+    />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <!--$-->
+  </head>
+  <div
+    style="
+      display: none;
+      overflow: hidden;
+      line-height: 1px;
+      opacity: 0;
+      max-height: 0;
+      max-width: 0;
+    "
+  >
+    Yelp recent login
+    <div>
+       ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿
+    </div>
+  </div>
+  <body
+    style="
+      background-color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    "
+  >
+    <table
+      align="center"
+      width="100%"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      role="presentation"
+      style="max-width: 37.5em"
+    >
+      <tbody>
+        <tr style="width: 100%">
+          <td>
+            <table
+              align="center"
+              width="100%"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              role="presentation"
+              style="padding: 30px 20px"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/yelp-logo.png"
+                      style="
+                        display: block;
+                        outline: none;
+                        border: none;
+                        text-decoration: none;
+                      "
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              align="center"
+              width="100%"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              role="presentation"
+              style="
+                border: 1px solid rgb(0, 0, 0, 0.1);
+                border-radius: 3px;
+                overflow: hidden;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align="center"
+                      width="100%"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      role="presentation"
+                    >
+                      <tbody style="width: 100%">
+                        <tr style="width: 100%">
+                          <img
+                            src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/yelp-header.png"
+                            style="
+                              display: block;
+                              outline: none;
+                              border: none;
+                              text-decoration: none;
+                              max-width: 100%;
+                            "
+                            width="620"
+                          />
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table
+                      align="center"
+                      width="100%"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      role="presentation"
+                      style="padding: 20px; padding-bottom: 0"
+                    >
+                      <tbody style="width: 100%">
+                        <tr style="width: 100%">
+                          <td data-id="__react-email-column">
+                            <h1
+                              style="
+                                font-size: 32px;
+                                font-weight: bold;
+                                text-align: center;
+                              "
+                            >
+                              Hi, <span class="name">Manh</span>
+                            </h1>
+                            <h2
+                              style="
+                                font-size: 26px;
+                                font-weight: bold;
+                                text-align: center;
+                              "
+                            >
+                              We noticed a recent login to your Yelp account.
+                            </h2>
+                            <p
+                              style="
+                                font-size: 16px;
+                                line-height: 24px;
+                                margin: 16px 0;
+                              "
+                            >
+                              <b>Time: </b> <span class="time">Manh</span>
+                            </p>
+                            <p
+                              style="
+                                font-size: 16px;
+                                line-height: 24px;
+                                margin: 16px 0;
+                                margin-top: -5px;
+                              "
+                            >
+                              <b>Device: </b><span class="device">Manh</span>
+                            </p>
+                            <p
+                              style="
+                                font-size: 16px;
+                                line-height: 24px;
+                                margin: 16px 0;
+                                margin-top: -5px;
+                              "
+                            >
+                              <b>Location: </b><span class="location">Manh</span>
+                            </p>
+                            <p
+                              style="
+                                font-size: 14px;
+                                line-height: 24px;
+                                margin: 16px 0;
+                                color: rgb(0, 0, 0, 0.5);
+                                margin-top: -5px;
+                              "
+                            >
+                              *Approximate geographic location based on IP
+                              address:<!-- --> <span class="ip">Manh</span>
+                            </p>
+                            <p
+                              style="
+                                font-size: 16px;
+                                line-height: 24px;
+                                margin: 16px 0;
+                              "
+                            >
+                              If this was you, there&#x27;s nothing else you
+                              need to do.
+                            </p>
+                            <p
+                              style="
+                                font-size: 16px;
+                                line-height: 24px;
+                                margin: 16px 0;
+                                margin-top: -5px;
+                              "
+                            >
+                              If this wasn&#x27;t you or if you have additional
+                              questions, please see our support page.
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table
+                      align="center"
+                      width="100%"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      role="presentation"
+                      style="padding: 20px; padding-top: 0"
+                    >
+                      <tbody style="width: 100%">
+                        <tr style="width: 100%">
+                          <td
+                            colspan="2"
+                            data-id="__react-email-column"
+                            style="
+                              display: flex;
+                              justify-content: center;
+                              width: 100%;
+                            "
+                          >
+                            <a
+                              style="
+                                line-height: 100%;
+                                text-decoration: none;
+                                display: inline-block;
+                                max-width: 100%;
+                                mso-padding-alt: 0px;
+                                background-color: #e00707;
+                                border-radius: 3px;
+                                color: #fff;
+                                font-weight: bold;
+                                border: 1px solid rgb(0, 0, 0, 0.1);
+                                cursor: pointer;
+                                padding: 12px 30px 12px 30px;
+                              "
+                              target="_blank"
+                              ><span
+                                ><!--[if mso
+                                  ]><i
+                                    style="
+                                      mso-font-width: 500%;
+                                      mso-text-raise: 18;
+                                    "
+                                    hidden
+                                    >&#8202;&#8202;&#8202;</i
+                                  ><!
+                                [endif]--></span
+                              ><span
+                                style="
+                                  max-width: 100%;
+                                  display: inline-block;
+                                  line-height: 120%;
+                                  mso-padding-alt: 0px;
+                                  mso-text-raise: 9px;
+                                "
+                                >Learn More</span
+                              ><span
+                                ><!--[if mso
+                                  ]><i style="mso-font-width: 500%" hidden
+                                    >&#8202;&#8202;&#8202;&#8203;</i
+                                  ><!
+                                [endif]--></span
+                              ></a
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              align="center"
+              width="100%"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              role="presentation"
+              style="padding: 45px 0 0 0"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="https://react-email-demo-lpdmf0ryo-resend.vercel.app/static/yelp-footer.png"
+                      style="
+                        display: block;
+                        outline: none;
+                        border: none;
+                        text-decoration: none;
+                        max-width: 100%;
+                      "
+                      width="620"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p
+              style="
+                font-size: 12px;
+                line-height: 24px;
+                margin: 16px 0;
+                text-align: center;
+                color: rgb(0, 0, 0, 0.7);
+              "
+            >
+              © 2022 | Yelp Inc., 350 Mission Street, San Francisco, CA 94105,
+              U.S.A. | www.yelp.com
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--/$-->
+  </body>
+</html>
+`,
+    category: "Custom",
+  },
+  {
+    name: "example",
+    label: "Example email",
+    content: `
+        <style>* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}a[x-apple-data-detectors]{color:inherit !important;text-decoration-line:inherit !important;text-decoration-thickness:inherit !important;text-decoration-style:inherit !important;text-decoration-color:inherit !important;}#MessageViewBody a{color:inherit;text-decoration-line:none;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial;}p{line-height:inherit;}.desktop_hide, .desktop_hide table{display:none;max-height:0px;overflow-x:hidden;overflow-y:hidden;}.image_block img + div{display:none;}sup, sub{font-size:75%;line-height:0;}#ikx5{color:#000000;width:550px;margin:0 auto;}#im0gy{font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0px;border-right:0px;border-bottom:0px;border-left:0px;}#i23qn{padding-left:25px;width:100%;padding-right:0px;}#i4mwu{line-height:10px;}#i04e8{max-width:68.75px;}#iofg9{display:block;height:auto;border:0;width:100%;}#iypqm{font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0px;border-right:0px;border-bottom:0px;border-left:0px;}#ir6pn{word-break:break-word;}#iy012{color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:12px;line-height:120%;text-align:right;mso-line-height-alt:14.399999999999999px;}#iog4h{margin:0;word-break:break-word;}#izx0p{margin:0;word-break:break-word;}#i7wh3{word-break:break-word;color:#ea5256;}#iemwl{word-break:break-word;color:#ea5256;}#i43l9{margin:0;word-break:break-word;}#iyv8l{word-break:break-word;color:#ea5256;}#in06d{margin-bottom:20px;}#isq8t{max-width:640px;margin:0 auto;background-color:#ffffff;color:#000000;border-radius:8px;overflow:hidden;}#ie84q{display:flex;align-items:center;}#i9lbj{flex:1;max-width:33.333%;}#i0eof{text-align:center;}#isrz5{display:block;height:auto;border:0;width:100%;max-width:181.333px;border-radius:8px;}#ic6il{flex:2;max-width:66.666%;padding-left:16px;display:flex;flex-direction:column;gap:12px;}#i5xgv{color:#2b3940;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:20px;line-height:120%;}#i0uyj{margin:0;}#i8mza{color:#2b3940;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;}#idxsu{margin:0;}#ikqvy{border-top:1px solid #E9EBEB;width:100%;}#i7lon{color:#7e8989;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;}#izin4{margin:0;}#irsjw{background-color:#f75c03;border-radius:3px;color:#ffffff;display:inline-block;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;padding:5px 20px;text-align:center;text-decoration:none;}#iaaac{display:flex;align-items:center;justify-content:center;margin:0 auto;margin-bottom:20px;}#ik8qk{width:100%;}#ikpkl{font-weight:400;text-align:left;background-color:#ffffff;border:10px solid #F6F8F8;vertical-align:top;}#iuoq8{width:100%;}#iydkk{padding:16px;}#iacw3{display:block;height:auto;border:0;width:100%;}#i2ueq{width:100%;}#in9ku{padding:16px 24px;text-align:left;}#in5en{background-color:#e5f7f1;border-radius:3px;color:#00b074;display:inline-block;font-family:Montserrat, sans-serif;font-size:12px;padding:1px 10px;text-align:center;text-decoration:none;}#i9dq1{font-size:16px;line-height:2;}#i17jg{padding:10px 24px 5px;}#iupbr{color:#2b3940;font-family:Montserrat, sans-serif;font-size:24px;line-height:120%;}#i3497{padding:0 24px 15px;}#i2zkg{color:#2b3940;font-family:Montserrat, sans-serif;font-size:16px;line-height:180%;}#ipxixl{padding:5px 24px;}#ij1l7i{color:#7e8989;font-family:Montserrat, sans-serif;font-size:14px;line-height:180%;}#i8l2pl{padding:20px 24px;}#ibcapt{border-top:1px solid #E9EBEB;}#i69dym{padding:5px 24px 10px;}#iosnln{color:#7e8989;font-family:Montserrat, sans-serif;font-size:14px;line-height:150%;}#i2cqhf{padding:20px 24px 32px;text-align:left;}#ie1euh{background-color:#f75c03;border-radius:3px;color:#ffffff;display:inline-block;font-family:Montserrat, sans-serif;font-size:14px;padding:5px 20px;text-align:center;text-decoration:none;}#io30ci{width:100%;}#ipywhj{font-weight:400;text-align:left;background-color:#ffffff;border:10px solid #F6F8F8;vertical-align:top;}#id38xs{width:100%;}#i8obif{padding:16px;}#i2jlbk{display:block;height:auto;border:0;width:100%;}#ipttd5{width:100%;}#injwyt{padding:16px 24px;text-align:left;}#i8b43g{background-color:#e5f7f1;border-radius:3px;color:#00b074;display:inline-block;font-family:Montserrat, sans-serif;font-size:12px;padding:1px 10px;text-align:center;text-decoration:none;}#iuiem9{font-size:16px;line-height:2;}#ifl9sg{padding:10px 24px 5px;}#iroox8{color:#2b3940;font-family:Montserrat, sans-serif;font-size:24px;line-height:120%;}#i788z2{padding:0 24px 15px;}#inc2bh{color:#2b3940;font-family:Montserrat, sans-serif;font-size:16px;line-height:180%;}#ialfjj{padding:5px 24px;}#iapf3i{color:#7e8989;font-family:Montserrat, sans-serif;font-size:14px;line-height:180%;}#izbvli{padding:20px 24px;}#isdfre{border-top:1px solid #E9EBEB;}#i4zl1j{padding:5px 24px 10px;}#icb333{color:#7e8989;font-family:Montserrat, sans-serif;font-size:14px;line-height:150%;}#im28q2{padding:20px 24px 32px;text-align:left;}#i6jslt{background-color:#f75c03;border-radius:3px;color:#ffffff;display:inline-block;font-family:Montserrat, sans-serif;font-size:14px;padding:5px 20px;text-align:center;text-decoration:none;}@media only screen and (max-width: 700px){.container{width:100% !important;}.flex-container{flex-direction:column !important;align-items:center !important;}.image-container-card{max-width:100% !important;padding-top:0px !important;padding-right:16px !important;padding-bottom:0px !important;padding-left:16px !important;text-align:center !important;margin-bottom:16px;}.content-container{max-width:100% !important;padding-top:0px !important;padding-right:16px !important;padding-bottom:0px !important;padding-left:0px !important;text-align:center !important;}.button{width:100% !important;text-align:center !important;}.row{flex-direction:column;width:100%;}}@media only screen and (min-width: 700px){.row.layout2{width:60%;}}@media (max-width: 650px){.desktop_hide table.icons-inner, .social_block.desktop_hide .social-table{display:inline-block !important;}.icons-inner td{margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;}.image_block div.fullWidth{max-width:100% !important;}.row-content{width:100% !important;}.stack .column{width:100%;display:block;}.desktop_hide, .desktop_hide table{display:table !important;max-height:none !important;}}</style>
+        <div id="editor">
+          <body><table width="550" class="row-content" id="ikx5"><tbody><tr><td width="50%" class="column column-1" id="im0gy"><table width="100%" class="image_block block-1"><tbody><tr><td class="pad" id="i23qn"><div align="left" class="alignment" id="i4mwu"><div id="i04e8"><img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1661/logo_airline.png" width="68.75" alt="Alternate text" title="Alternate text" height="auto" id="iofg9"/></div></div></td></tr></tbody></table></td><td width="50%" class="column column-2" id="iypqm"><table width="100%" border="0" cellpadding="10" class="paragraph_block block-1" id="ir6pn"><tbody><tr><td class="pad"><div id="iy012"><p id="iog4h">James Brown</p><p id="izx0p">Member Nr. <span id="i7wh3"><strong>688969807</strong></span> | Level <span id="iemwl"><strong>Basic</strong></span></p><p id="i43l9">Reward Points <strong><span id="iyv8l">2000</span></strong></p></div></td></tr></tbody></table></td></tr></tbody></table><table width="100%" cellpadding="0" cellspacing="0" border="0" id="in06d"><tbody><tr><td align="center"><table width="640" cellpadding="0" cellspacing="0" border="0" class="container" id="isq8t"><tbody><tr><td><div class="flex-container" id="ie84q"><div class="image-container-card" id="i9lbj"><div id="i0eof"><img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb1.jpg" alt="Apartment Image" title="Apartment Image" id="isrz5"/></div></div><div class="content-container" id="ic6il"><div><div id="i5xgv"><p id="i0uyj"><strong>$475,000</strong></p></div></div><div><div id="i8mza"><p id="idxsu"><strong class="name">Apartament in Miami</strong></p></div></div><div><div id="ikqvy"></div></div><div><div id="i7lon"><p id="izin4">5 Bedrooms, 2 Bathrooms, 1075 sq.f.</p></div></div><div><a href="#" class="button" id="irsjw"><strong>View Property</strong></a></div></div></div></td></tr></tbody></table></td></tr></tbody></table><div class="row layout2" id="iaaac"><table width="100%" border="0" cellpadding="0" class="column" id="ik8qk"><tbody><tr><td id="ikpkl"><div class="image-block" id="iuoq8"><div class="pad" id="iydkk"><img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/Img8.jpg" alt="Image" width="268" height="auto" id="iacw3"/></div></div><div class="button-block" id="i2ueq"><div class="pad" id="in9ku"><div class="button" id="in5en"><span id="i9dq1"><strong>JUST LISTED</strong></span></div></div></div><div class="price-block" id="i17jg"><div id="iupbr"><strong>$475,000</strong></div></div><div class="name-block" id="i3497"><div id="i2zkg"><strong class="name">Springfield Gardens, New York</strong></div></div><div class="description-block" id="ipxixl"><div id="ij1l7i">
+              Quisque vitae tristique sem. Nullam vulputate nisi sed purus pulvinar dictum. Vestibulum ante ipsum.
+            </div></div><div class="divider-block" id="i8l2pl"><div id="ibcapt"></div></div><div class="details-block" id="i69dym"><div id="iosnln">
+              5 Bedrooms, 2 Bathrooms, 1075 sq.f.
+            </div></div><div class="contact-block" id="i2cqhf"><div class="button" id="ie1euh"><strong>Contact Us</strong></div></div></td></tr></tbody></table><table width="100%" border="0" cellpadding="0" class="column" id="io30ci"><tbody><tr><td id="ipywhj"><div class="image-block" id="id38xs"><div class="pad" id="i8obif"><img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/Img8.jpg" alt="Image" width="268" height="auto" id="i2jlbk"/></div></div><div class="button-block" id="ipttd5"><div class="pad" id="injwyt"><div class="button" id="i8b43g"><span id="iuiem9"><strong>JUST LISTED</strong></span></div></div></div><div class="price-block" id="ifl9sg"><div id="iroox8"><strong>$475,000</strong></div></div><div class="name-block" id="i788z2"><div id="inc2bh"><strong class="name">Springfield Gardens, New York</strong></div></div><div class="description-block" id="ialfjj"><div id="iapf3i">
+              Quisque vitae tristique sem. Nullam vulputate nisi sed purus pulvinar dictum. Vestibulum ante ipsum.
+            </div></div><div class="divider-block" id="izbvli"><div id="isdfre"></div></div><div class="details-block" id="i4zl1j"><div id="icb333">
+              5 Bedrooms, 2 Bathrooms, 1075 sq.f.
+            </div></div><div class="contact-block" id="im28q2"><div class="button" id="i6jslt"><strong>Contact Us</strong></div></div></td></tr></tbody></table></div></body>
+        </div>
+      
+`,
+    category: "Custom",
+  },
+];
