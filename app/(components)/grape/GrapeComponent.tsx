@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+import html2canvas from "html2canvas";
 import { useEffect } from "react";
 import grapesjs, { Editor } from "grapesjs";
 import { useState } from "react";
@@ -34,6 +35,43 @@ type Props = {
 };
 const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
   const [editor, setEditor] = useState<Editor | null>();
+
+  function renderHtmlToImage(
+    htmlContent: string = "",
+    width: number = 1200,
+    height: number = 1200
+  ) {
+    return new Promise((resolve, reject) => {
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+        <foreignObject width="100%" height="100%">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:16px; font-family: Arial, sans-serif; width: 100%; height: 100%; box-sizing: border-box;background:#ffffff">
+            ${htmlContent}
+          </div>
+        </foreignObject>
+      </svg>
+    `;
+
+      const img = new Image();
+      img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d")!;
+
+        ctx.drawImage(img, 0, 0);
+
+        const imgData = canvas.toDataURL("image/png");
+        resolve(imgData);
+      };
+
+      img.onerror = (error) => {
+        reject(error);
+      };
+    });
+  }
 
   const windowWidth = useWindowWidth();
 
@@ -87,9 +125,6 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         width: 33.33% !important;
         max-width: 33.33% !important;
       }
-      span[title="Open Blocks"] {
-            display: none !important;
-        }
 
 
       @media (max-width: 768px) {
@@ -124,6 +159,19 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
 
     const handleExportEditorHTMLAndCSS = () => {
       const content = getEditorHTMLAndCSS();
+      console.log("🚀 ~ handleExportEditorHTMLAndCSS ~ content:", content);
+      // const content = document.querySelector("#editor")?.innerHTML;
+
+      renderHtmlToImage(content)
+        .then((imgData) => {
+          const link = document.createElement("a");
+          link.href = imgData as string;
+          link.download = "rendered-image.png";
+          link.click();
+        })
+        .catch((error) => {
+          console.error("Error rendering HTML to image:", error);
+        });
       console.log("Exported HTML & CSS:", content);
     };
 

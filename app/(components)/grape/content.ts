@@ -686,7 +686,7 @@ export const header = () => {
 <head>
   ${globalStyles}
 </head>
-									<table class="row-content"  style=" color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content"  style=" color: #000000; width: 550px; margin: 0 auto;background:#ffffff" width="550">
 										<tbody>
 											<tr>
 												<td class="column column-1" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
