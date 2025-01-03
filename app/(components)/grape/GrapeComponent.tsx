@@ -27,11 +27,12 @@ import {
   templateFlight,
   templateCredit,
   flightData,
+  templateFakeAPI,
 } from "@/app/(components)/grape/content";
 type Props = {
-  isCreate?: boolean;
+  isCreateTemplate?: boolean;
 };
-const GrapeComponent = ({ isCreate = false }: Props) => {
+const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
   const [editor, setEditor] = useState<Editor | null>();
 
   const windowWidth = useWindowWidth();
@@ -41,18 +42,24 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       container: "#editor",
       width: windowWidth > 1280 ? String((windowWidth - 300) * 0.9) : "100%",
       height: String(window.innerHeight * 0.8),
-      plugins: [grapesjsPresetWebpage, grapesjsBlocksBasic],
+      plugins: [grapesjsPresetWebpage],
       pluginsOpts: {
         grapesjsPresetWebpage: {
           blocks: [],
           undoManager: false,
         },
-        grapesjsBlocksBasic: {
-          blocks: [],
-        },
       },
+
+      storageManager: false,
     });
 
+    editor.BlockManager.getAll().forEach((block: any) => {
+      if (block) {
+        if (block.changed.category.id === "Basic") {
+          editor.BlockManager.remove(block.getId());
+        }
+      }
+    });
     const nameInput = document.getElementById("nameInput");
     if (nameInput) {
       nameInput.addEventListener("keydown", (event: KeyboardEvent) => {
@@ -134,7 +141,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       exportButton.addEventListener("click", handleExportEditorHTMLAndCSS);
     }
 
-    if (!isCreate) {
+    if (!isCreateTemplate) {
       editor.TraitManager.addType("live-input", {
         createInput({ trait }: any) {
           const el = document.createElement("input");
@@ -196,73 +203,74 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       });
     }
 
-    editor.BlockManager.add("section", {
-      label: "Section",
-      content: content(apiData),
-      category: "Custom",
-    });
-    editor.BlockManager.add("Header", {
-      label: "Header",
-      content: header(),
-      category: "Custom",
-    });
-    editor.BlockManager.add("heroSection", {
-      label: "heroSection",
-      content: heroSection(),
-      category: "Custom",
-    });
-    editor.BlockManager.add("productSection", {
-      label: "productSection",
-      content: productSection(),
-      category: "Custom",
-    });
-    editor.BlockManager.add("footer", {
-      label: "footer",
-      content: footer(),
-      category: "Custom",
-    });
-    editor.BlockManager.add("templateCard1", {
-      label: "templateCard1",
-      content: templateCard1(cardContentTemplate),
-      category: "Custom",
-    });
+    if (isCreateTemplate) {
+      editor.BlockManager.add("section", {
+        label: "Section",
+        content: content(apiData),
+        category: "Custom",
+      });
+      editor.BlockManager.add("Header", {
+        label: "Header",
+        content: header(),
+        category: "Custom",
+      });
+      editor.BlockManager.add("heroSection", {
+        label: "heroSection",
+        content: heroSection(),
+        category: "Custom",
+      });
+      editor.BlockManager.add("productSection", {
+        label: "productSection",
+        content: productSection(),
+        category: "Custom",
+      });
+      editor.BlockManager.add("footer", {
+        label: "footer",
+        content: footer(),
+        category: "Custom",
+      });
+      editor.BlockManager.add("templateCard1", {
+        label: "templateCard1",
+        content: templateCard1(cardContentTemplate),
+        category: "Custom",
+      });
 
-    editor.BlockManager.add("layoutCard2", {
-      label: "layoutCard2",
-      content: layoutCard2(column1Props),
-      category: "Custom",
-    });
-    editor.BlockManager.add("startNow", {
-      label: "startNow",
-      content: startNow(),
-      category: "Custom",
-    });
-    editor.BlockManager.add("textDescription", {
-      label: "textDescription",
-      content: textDescription(),
-      category: "Custom",
-    });
-    editor.BlockManager.add("imageText", {
-      label: "imageText",
-      content: imageText(),
-      category: "Custom",
-    });
-    editor.BlockManager.add("templateFlight", {
-      label: "templateFlight",
-      content: templateFlight(flightData),
-      category: "Custom",
-    });
-    editor.BlockManager.add("templateCredit", {
-      label: "templateCredit",
-      content: templateCredit(),
-      category: "Custom",
-    });
+      editor.BlockManager.add("layoutCard2", {
+        label: "layoutCard2",
+        content: layoutCard2(column1Props),
+        category: "Custom",
+      });
+      editor.BlockManager.add("startNow", {
+        label: "startNow",
+        content: startNow(),
+        category: "Custom",
+      });
+      editor.BlockManager.add("textDescription", {
+        label: "textDescription",
+        content: textDescription(),
+        category: "Custom",
+      });
+      editor.BlockManager.add("imageText", {
+        label: "imageText",
+        content: imageText(),
+        category: "Custom",
+      });
+      editor.BlockManager.add("templateFlight", {
+        label: "templateFlight",
+        content: templateFlight(flightData),
+        category: "Custom",
+      });
+      editor.BlockManager.add("templateCredit", {
+        label: "templateCredit",
+        content: templateCredit(),
+        category: "Custom",
+      });
 
-    editor.BlockManager.add("card-content", {
-      label: "Card Content",
-      content: cardContent(cardContentTemplate),
-      category: "Custom",
-      media: `<div style="display:flex; align-items:center; justify-content:center  ">
+      editor.BlockManager.add("card-content", {
+        label: "Card Content",
+        content: cardContent(cardContentTemplate),
+        category: "Custom",
+        media: `<div style="display:flex; align-items:center; justify-content:center  ">
       <svg xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 24 24" fill="none">
         <path d="M14 4H10C6.22876 4 4.34315 4 3.17157 5.17157C2.32803 6.01511 2.09185 7.22882 2.02572 9.25H21.9743C21.9082 7.22882 21.672 6.01511 20.8284 5.17157C19.6569 4 17.7712 4 14 4Z" fill="#B9A5A6"/>
         <path d="M10 20H14C17.7712 20 19.6569 20 20.8284 18.8284C22 17.6569 22 15.7712 22 12C22 11.5581 22 11.142 21.9981 10.75H2.00189C2 11.142 2 11.5581 2 12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20Z" fill="#B9A5A6"/>
@@ -270,18 +278,32 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.75 16C11.75 15.5858 12.0858 15.25 12.5 15.25H14C14.4142 15.25 14.75 15.5858 14.75 16C14.75 16.4142 14.4142 16.75 14 16.75H12.5C12.0858 16.75 11.75 16.4142 11.75 16Z" fill="white"/>
       </svg>
     </div>`,
-    });
+      });
 
-    editor.BlockManager.add("footer-content", {
-      label: "Footer Content",
-      content: footerContent(),
-      category: "Custom",
-      media: `<div style="display:flex; align-items:center; justify-content:center  ">
+      editor.BlockManager.add("footer-content", {
+        label: "Footer Content",
+        content: footerContent(),
+        category: "Custom",
+        media: `<div style="display:flex; align-items:center; justify-content:center  ">
       <svg xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 24 24" fill="#B9A5A6">
         <path d="M2 5h20v14H2V5zm2 2v6h16V7H4zm16 8H4v2h16v-2z" fill="#B9A5A6"/>
       </svg>
     </div>`,
-    });
+      });
+    } else {
+      templateFakeAPI.forEach((item) => {
+        editor.BlockManager.add(item.name, {
+          label: item.label,
+          content: item.content,
+          category: item.category,
+          media: `<div style="display:flex; align-items:center; justify-content:center  ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 24 24" fill="#B9A5A6">
+        <path d="M2 5h20v14H2V5zm2 2v6h16V7H4zm16 8H4v2h16v-2z" fill="#B9A5A6"/>
+      </svg>
+    </div>`,
+        });
+      });
+    }
 
     setEditor(editor);
     return () => {
@@ -298,7 +320,9 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
   return (
     <div>
       <div id="editor"></div>
-      <button id="exportEditorHtmlCssButton">Export HTML</button>
+      {isCreateTemplate && (
+        <button id="exportEditorHtmlCssButton">Export HTML</button>
+      )}
       <input
         type="text"
         id="nameInput"
