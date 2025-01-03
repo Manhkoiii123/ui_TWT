@@ -77,18 +77,6 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       });
     }
 
-    // const findParentTable = (comp: any): any => {
-    //   let outermostTable = null;
-
-    //   while (comp) {
-    //     if (comp.get("tagName") === "td") {
-    //       outermostTable = comp;
-    //     }
-    //     comp = comp.parent();
-    //   }
-
-    //   return outermostTable;
-    // };
     const findParentTable = (comp: any) => {
       if (!comp) return null;
       if (comp.get("tagName") === "td") return comp;
