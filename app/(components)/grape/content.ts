@@ -1881,13 +1881,7 @@ const renderColumn = (props: any) => {
         </td>
       </tr>
     </table>
-    <style>
-      @media only screen and (max-width: 700px) {
-        .column {
-          width: 100%; 
-        }
-      }
-    </style>
+   
   `;
 };
 
