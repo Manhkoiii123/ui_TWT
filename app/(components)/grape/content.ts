@@ -1591,99 +1591,6 @@ interface ColumnProps {
   details: string;
 }
 
-const renderColumn = (props: ColumnProps) => {
-  const { imageUrl, price, name, description, details } = props;
-  return `
-    <td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #ffffff; border-bottom: 10px solid #F6F8F8; border-left: 10px solid #F6F8F8; border-right: 10px solid #F6F8F8; border-top: 10px solid #F6F8F8; vertical-align: top;">
-      <table class="image_block block-1" width="100%" border="0" cellpadding="16" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-        <tr>
-          <td class="pad">
-            <div class="alignment" align="left" style="line-height:10px">
-              <div style="max-width: 268px;"><img src="${imageUrl}" style="display: block; height: auto; border: 0; width: 100%;" width="268" alt="I'm an image" title="I'm an image" height="auto"></div>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-        <tr>
-          <td class="pad" style="padding-bottom:20px;padding-left:24px;padding-right:24px;padding-top:16px;text-align:left;">
-            <div class="alignment" align="left">
-              <div class="button" style="background-color:#e5f7f1;border-bottom:0px solid transparent;border-left:0px solid transparent;border-radius:3px;border-right:0px solid transparent;border-top:0px solid transparent;color:#00b074;display:inline-block;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:12px;font-weight:undefined;mso-border-alt:none;padding-bottom:2px;padding-top:1px;text-align:center;text-decoration:none;width:auto;word-break:keep-all;">
-                <span style="word-break: break-word; padding-left: 10px; padding-right: 10px; font-size: 12px; display: inline-block; letter-spacing: normal;">
-                  <span style="font-size: 16px; margin: 0; word-break: break-word; line-height: 2; mso-line-height-alt: 32px;">
-                    <strong><span style="word-break: break-word; font-size: 12px;" data-mce-style="font-size:12px;">JUST LISTED</span></strong>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <table class="paragraph_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-        <tr>
-          <td class="pad" style="padding-bottom:5px;padding-left:24px;padding-right:24px;padding-top:10px;">
-            <div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:24px;line-height:120%;text-align:left;mso-line-height-alt:28.799999999999997px;">
-              <p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #2b3940;"><strong>${price}</strong></span></p>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <table class="paragraph_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-        <tr>
-          <td class="pad" style="padding-bottom:15px;padding-left:24px;padding-right:24px;">
-            <div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;line-height:180%;text-align:left;mso-line-height-alt:28.8px;">
-              <p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #2b3940;"><strong class="name">${name}</strong></span></p>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <table class="paragraph_block block-5" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-        <tr>
-          <td class="pad" style="padding-bottom:5px;padding-left:24px;padding-right:24px;padding-top:5px;">
-            <div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:180%;text-align:left;mso-line-height-alt:25.2px;">
-              <p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #7e8989;">${description}</span></p>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <table class="divider_block block-6" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-        <tr>
-          <td class="pad" style="padding-bottom:20px;padding-left:24px;padding-right:24px;padding-top:20px;">
-            <div class="alignment" align="center">
-              <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                <tr>
-                  <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #E9EBEB;"><span style="word-break: break-word;">&#8202;</span></td>
-                </tr>
-              </table>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <table class="paragraph_block block-7" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-        <tr>
-          <td class="pad" style="padding-bottom:10px;padding-left:24px;padding-right:24px;padding-top:5px;">
-            <div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;">
-              <p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #7e8989;">${details}</span></p>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <table class="button_block block-8" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-        <tr>
-          <td class="pad" style="padding-bottom:32px;padding-left:24px;padding-right:24px;padding-top:20px;text-align:left;">
-            <div class="alignment" align="left">
-              <div class="button" style="background-color:#f75c03;border-bottom:0px solid transparent;border-left:0px solid transparent;border-radius:3px;border-right:0px solid transparent;border-top:0px solid transparent;color:#ffffff;display:inline-block;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;font-weight:undefined;mso-border-alt:none;padding-bottom:06px;padding-top:5px;text-align:center;text-decoration:none;width:auto;word-break:keep-all;">
-                <span style="word-break: break-word; padding-left: 20px; padding-right: 20px; font-size: 14px; display: inline-block; letter-spacing: normal;">
-                  <span style="margin: 0; word-break: break-word;"><span style="word-break: break-word; line-height: 28px;" data-mce-style><strong>Contact Us</strong></span></span>
-                </span>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </td>
-  `;
-};
 export const column1Props: ColumnProps = {
   imageUrl:
     "https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/Img8.jpg",
@@ -1693,36 +1600,7 @@ export const column1Props: ColumnProps = {
     "Quisque vitae tristique sem. Nullam vulputate nisi sed purus pulvinar dictum. Vestibulum ante ipsum.",
   details: "5 Bedrooms, 2 Bathrooms, 1075 sq.f.",
 };
-export const layoutCard2 = (column1Props: any) => {
-  return `<!DOCTYPE html>
-<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
-<head>
-  <title></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-  ${globalCss}
-</head>
-<body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-  <table class="row row-15" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-    <tbody>
-      <tr>
-        <div>
-          <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 640px; margin: 0 auto;" width="640">
-            <tbody>
-              <tr>
-                ${renderColumn(column1Props)}
-                ${renderColumn(column1Props)}
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </tr>
-    </tbody>
-  </table>
-</body>
-</html>`;
-};
+
 export const templateCredit = () => {
   return `
 <head>
@@ -1949,4 +1827,91 @@ export const templateCredit = () => {
 						</tbody>
 					</table>
 </body>`;
+};
+
+const renderColumn = (props: any) => {
+  const { imageUrl, price, name, description, details } = props;
+
+  return `
+    <table class="column" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+      <tr>
+        <td  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #ffffff; border: 10px solid #F6F8F8; vertical-align: top;">
+          <div class="image-block" style="width: 100%;">
+            <div class="pad" style="padding: 16px;">
+              <img src="${imageUrl}" alt="Image" style="display: block; height: auto; border: 0; width: 100%;" width="268" height="auto">
+            </div>
+          </div>
+          <div class="button-block" style="width: 100%;">
+            <div class="pad" style="padding: 16px 24px; text-align: left;">
+              <div class="button" style="background-color: #e5f7f1; border-radius: 3px; color: #00b074; display: inline-block; font-family: Montserrat, sans-serif; font-size: 12px; padding: 1px 10px; text-align: center; text-decoration: none;">
+                <span style="font-size: 16px; line-height: 2;">
+                  <strong>JUST LISTED</strong>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="price-block" style="padding: 10px 24px 5px;">
+            <div style="color: #2b3940; font-family: Montserrat, sans-serif; font-size: 24px; line-height: 120%;">
+              <strong>${price}</strong>
+            </div>
+          </div>
+          <div class="name-block" style="padding: 0 24px 15px;">
+            <div style="color: #2b3940; font-family: Montserrat, sans-serif; font-size: 16px; line-height: 180%;">
+              <strong class="name">${name}</strong>
+            </div>
+          </div>
+          <div class="description-block" style="padding: 5px 24px;">
+            <div style="color: #7e8989; font-family: Montserrat, sans-serif; font-size: 14px; line-height: 180%;">
+              ${description}
+            </div>
+          </div>
+          <div class="divider-block" style="padding: 20px 24px;">
+            <div style="border-top: 1px solid #E9EBEB;"></div>
+          </div>
+          <div class="details-block" style="padding: 5px 24px 10px;">
+            <div style="color: #7e8989; font-family: Montserrat, sans-serif; font-size: 14px; line-height: 150%;">
+              ${details}
+            </div>
+          </div>
+          <div class="contact-block" style="padding: 20px 24px 32px; text-align: left;">
+            <div class="button" style="background-color: #f75c03; border-radius: 3px; color: #ffffff; display: inline-block; font-family: Montserrat, sans-serif; font-size: 14px; padding: 5px 20px; text-align: center; text-decoration: none;">
+              <strong>Contact Us</strong>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <style>
+      @media only screen and (max-width: 700px) {
+        .column {
+          width: 100%; 
+        }
+      }
+    </style>
+  `;
+};
+
+export const layoutCard2 = (column1Props: any) => {
+  const column1 = renderColumn(column1Props);
+  const column2 = renderColumn(column1Props);
+
+  return `
+    <div class="row" style="display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+      ${column1}
+      ${column2}
+    </div>
+    <style>
+      @media only screen and (max-width: 700px) {
+        .row {
+          flex-direction: column; 
+          width: 100%; 
+        }
+      }
+      @media only screen and (min-width: 700px) {
+        .row {
+          width: 60%; 
+        }
+      }
+    </style>
+  `;
 };
