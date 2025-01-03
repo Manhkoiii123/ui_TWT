@@ -77,17 +77,10 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
       });
     }
 
-    const findParentTable = (comp: any): any => {
-      let outermostTable = null;
-
-      while (comp) {
-        if (comp.get("tagName") === "td") {
-          outermostTable = comp;
-        }
-        comp = comp.parent();
-      }
-
-      return outermostTable;
+    const findParentTable = (comp: any) => {
+      if (!comp) return null;
+      if (comp.get("tagName") === "td") return comp;
+      return findParentTable(comp.parent());
     };
 
     const addCustomCSS = () => {
@@ -156,6 +149,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
           el.addEventListener("keydown", async (event: KeyboardEvent) => {
             if (event.key === "Enter") {
               const selectedId = trait.get("selectedId");
+
               const wrapper = editor?.getWrapper();
               const tableId = wrapper?.find(`#${selectedId}`)[0];
               const res = await testRequest.getTest(trait.get("value"));
@@ -185,6 +179,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
 
       editor.on("component:selected", (component) => {
         const parentTable = findParentTable(component);
+
         if (parentTable) {
           component.set({
             traits: [
