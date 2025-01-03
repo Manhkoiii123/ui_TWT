@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const apiData = {
   name: "John Doe",
@@ -681,25 +682,15 @@ export const footerContent = () => {
 `;
 };
 export const header = () => {
-  return `<!DOCTYPE html>
-<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+  return `
 <head>
-  <title></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
   ${globalStyles}
 </head>
-<body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-						<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content"  style=" color: #000000; width: 550px; margin: 0 auto;" width="550">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+												<td class="column column-1" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="image_block block-1" width="100%"style="">
 														<tr>
 															<td class="pad" style="padding-left:25px;width:100%;padding-right:0px;">
 																<div class="alignment" align="left" style="line-height:10px">
@@ -709,8 +700,8 @@ export const header = () => {
 														</tr>
 													</table>
 												</td>
-												<td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-2" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad">
 																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:12px;line-height:120%;text-align:right;mso-line-height-alt:14.399999999999999px;">
@@ -725,266 +716,171 @@ export const header = () => {
 											</tr>
 										</tbody>
 									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-</body>
-</html>`;
+`;
 };
-export const templateFlight = () => {
-  return `<!DOCTYPE html>
-<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
-<head>
-  <title></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-  ${globalStyles}
-</head>
-<body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-						<table class="row row-5" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ea5256; color: #000000; width: 550px; margin: 0 auto;" width="550">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<div class="spacer_block block-1" style="height:40px;line-height:40px;font-size:1px;">&#8202;</div>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-top:10px;">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:42px;line-height:120%;text-align:center;mso-line-height-alt:50.4px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;"><strong>OTP</strong></span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-3" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:120%;text-align:center;mso-line-height-alt:20.4px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;">Bucharest</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<div class="spacer_block block-4" style="height:30px;line-height:30px;font-size:1px;">&#8202;</div>
-												</td>
-												<td class="column column-2" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<div class="spacer_block block-1" style="height:60px;line-height:60px;font-size:1px;">&#8202;</div>
-													<table class="image_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
-																<div class="alignment" align="center" style="line-height:10px">
-																	<div style="max-width: 137.5px;"><img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1661/Airplane_.gif" style="display: block; height: auto; border: 0; width: 100%;" width="137.5" alt="Alternate text" title="Alternate text" height="auto"></div>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad" style="padding-left:10px;padding-right:10px;">
-																<div style="color:#f0efef;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:12px;line-height:120%;text-align:center;mso-line-height-alt:14.399999999999999px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;">Flight Duration</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;">
-																<div style="color:#f0efef;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:12px;line-height:120%;text-align:center;mso-line-height-alt:14.399999999999999px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;">2h 54m</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-												<td class="column column-3" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<div class="spacer_block block-1" style="height:40px;line-height:40px;font-size:1px;">&#8202;</div>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-top:10px;">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:42px;line-height:120%;text-align:center;mso-line-height-alt:50.4px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;"><strong>LHR</strong></span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-3" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:120%;text-align:center;mso-line-height-alt:20.4px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;">London</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<div class="spacer_block block-4" style="height:30px;line-height:30px;font-size:1px;">&#8202;</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ea5256; color: #000000; width: 550px; margin: 0 auto;" width="550">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="divider_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad">
-																<div class="alignment" align="center">
-																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="90%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-																		<tr>
-																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #FFFFFF;"><span style="word-break: break-word;">&#8202;</span></td>
-																		</tr>
-																	</table>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table class="row row-7" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ea5256; color: #000000; width: 550px; margin: 0 auto;" width="550">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:120%;text-align:center;mso-line-height-alt:18px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;">Terminal</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;">
-																	<p style="margin: 0; word-break: break-word;"><strong><span style="word-break: break-word;">A</span></strong></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-												<td class="column column-2" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:120%;text-align:center;mso-line-height-alt:18px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;">Bording Time</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;">
-																	<p style="margin: 0; word-break: break-word;"><strong><span style="word-break: break-word;">16:45</span></strong></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-												<td class="column column-3" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:120%;text-align:center;mso-line-height-alt:18px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;">Class</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;">
-																	<p style="margin: 0; word-break: break-word;"><strong><span style="word-break: break-word;">Economy</span></strong></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-												<td class="column column-4" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:120%;text-align:center;mso-line-height-alt:18px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word;">Seat</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;">
-																	<p style="margin: 0; word-break: break-word;"><strong><span style="word-break: break-word;">17A</span></strong></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table class="row row-8" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ea5256; color: #000000; width: 550px; margin: 0 auto;" width="550">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<div class="spacer_block block-1" style="height:5px;line-height:5px;font-size:1px;">&#8202;</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-</body>
-</html>`;
+export const flightData = {
+  departure: {
+    code: "OTP",
+    city: "Bucharest",
+  },
+  name: "aaaa",
+  arrival: {
+    code: "LHR",
+    city: "London",
+  },
+  flightDuration: "2h 54m",
+  terminal: "A",
+  boardingTime: "16:45",
+  class: "Economy",
+  seat: "17A",
+};
+export const templateFlight = (flightData: any) => {
+  return `
+    <head>
+      ${globalStyles}
+      <style>
+        
+        .body {
+          background-color: #bdd6c4;
+          margin: 0;
+          padding: 0;
+          -webkit-text-size-adjust: none;
+          text-size-adjust: none;
+          font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+        }
+        .container {
+          max-width: 550px;
+          margin: 0 auto;
+          background-color: #ea5256;
+          color: #ffffff;
+        }
+        
+        .column {
+          flex: 1;
+          text-align: center;
+          padding: 10px;
+        }
+        .spacer {
+          height: 40px;
+        }
+        .flight-code {
+          font-size: 42px;
+          font-weight: bold;
+          line-height: 1.2;
+        }
+        .city {
+          font-size: 17px;
+          line-height: 1.2;
+        }
+        .flight-duration {
+          font-size: 12px;
+          color: #f0efef;
+        }
+        .details {
+          font-size: 15px;
+          line-height: 1.2;
+        }
+        .details strong {
+          font-size: 18px;
+        }
+        .divider {
+          border-top: 1px solid #ffffff;
+          margin: 10px auto;
+          width: 90%;
+        }
+
+        
+        @media only screen and (max-width: 700px) {
+          .row-flight {
+            flex-direction: column; 
+          }
+          .column {
+            padding: 5px 0; 
+          }
+          .flight-code {
+            font-size: 32px; 
+          }
+          .city {
+            font-size: 14px; 
+          }
+          .details {
+            font-size: 14px; 
+          }
+          .details strong {
+            font-size: 16px; 
+          }
+          .spacer{
+            height: 20px;
+          }
+        }
+      </style>
+    </head>
+   <table  style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td>
+      <div class="container">
+        
+        <div style="display: flex;justify-content: center;padding:10px 0" class="row-flight">
+          <div class="column">
+            <div class="spacer"></div>
+            <div class="flight-code">${flightData.departure.code}</div>
+            <div class="name">${flightData.name}</div>
+          </div>
+          <div class="column">
+            <div class="spacer"></div>
+            <img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1661/Airplane_.gif" alt="Airplane" style="display: block; height: auto; width: 100%; max-width: 137.5px; margin: 0 auto;">
+            <div class="flight-duration">Flight Duration</div>
+            <div class="flight-duration">${flightData.flightDuration}</div>
+          </div>
+          <div class="column">
+            <div class="spacer"></div>
+            <div class="flight-code">${flightData.arrival.code}</div>
+            <div class="city">${flightData.arrival.city}</div>
+          </div>
+        </div>
+
+        
+        <div class="divider"></div>
+
+        
+        <div style="display: flex;justify-content: center;padding:10px 0" class="row-flight">
+          <div class="column">
+            <div class="details">Terminal</div>
+            <div class="details"><strong>${flightData.terminal}</strong></div>
+          </div>
+          <div class="column">
+            <div class="details">Boarding Time</div>
+            <div class="details"><strong>${flightData.boardingTime}</strong></div>
+          </div>
+          <div class="column">
+            <div class="details">Class</div>
+            <div class="details"><strong>${flightData.class}</strong></div>
+          </div>
+          <div class="column">
+            <div class="details">Seat</div>
+            <div class="details"><strong>${flightData.seat}</strong></div>
+          </div>
+        </div>
+
+        
+        <div class="spacer" style="height: 5px;"></div>
+      </div>
+      </td>
+  </tr>
+</table>
+  `;
 };
 export const heroSection = () => {
   return `
-    <table class="row row-3" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <table class="row row-3" align="center" width="100%" border="0" cellpadding="0"  style="">
       <tbody>
         <tr>
           <td>
-            <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f3f3f3; color: #000000; width: 630px; margin: 0 auto;" width="630">
+            <table class="row-content stack" align="center" border="0" cellpadding="0"  style=" background-color: #f3f3f3; color: #000000; width: 630px; margin: 0 auto;" width="630">
               <tbody>
                 <tr>
-                  <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                    <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                  <td class="column column-1" width="100%" style=" font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                    <table class="image_block block-1" width="100%" border="0" cellpadding="0"  style="">
                       <tr>
                         <td class="pad" style="padding-bottom:10px;width:100%;">
                           <div class="alignment" align="center" style="line-height:10px">
@@ -993,21 +889,21 @@ export const heroSection = () => {
                         </td>
                       </tr>
                     </table>
-                    <table class="heading_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="heading_block block-2" width="100%" border="0" cellpadding="0"  style="">
                       <tr>
                         <td class="pad" style="padding-bottom:5px;padding-left:15px;padding-right:15px;padding-top:35px;text-align:center;width:100%;">
                           <h1 style="margin: 0; color: #005e26; direction: ltr; font-family: 'Nunito', Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 18px; font-weight: normal; letter-spacing: 1px; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 21.599999999999998px;">'TIS THE SEASON</h1>
                         </td>
                       </tr>
                     </table>
-                    <table class="heading_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="heading_block block-3" width="100%" border="0" cellpadding="0"  style="">
                       <tr>
                         <td class="pad" style="padding-bottom:10px;padding-left:15px;padding-right:15px;text-align:center;width:100%;">
                           <h1 style="margin: 0; color: #b21420; direction: ltr; font-family: 'Nunito', Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 34px; font-weight: normal; letter-spacing: 1px; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 40.8px;">UGLY SWEATERS</h1>
                         </td>
                       </tr>
                     </table>
-                    <table class="button_block block-4" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="button_block block-4" width="100%" border="0" cellpadding="10"  style="">
                       <tr>
                         <td class="pad">
                           <div class="alignment" align="center">
@@ -1035,15 +931,15 @@ export const heroSection = () => {
 };
 export const productSection = () => {
   return `
-    <table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <table class="row row-6" align="center" width="100%" border="0" cellpadding="0"  style="">
       <tbody>
         <tr>
           <td>
-            <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f3f3f3; color: #000000; width: 630px; margin: 0 auto;" width="630">
+            <table class="row-content stack" align="center" border="0" cellpadding="0"  style=" background-color: #f3f3f3; color: #000000; width: 630px; margin: 0 auto;" width="630">
               <tbody>
                 <tr>
-                  <td class="column column-1" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                    <table class="image_block block-1" width="100%" border="0" cellpadding="20" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                  <td class="column column-1" width="33.333333333333336%" style=" font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                    <table class="image_block block-1" width="100%" border="0" cellpadding="20"  style="">
                       <tr>
                         <td class="pad">
                           <div class="alignment" align="center" style="line-height:10px">
@@ -1052,7 +948,7 @@ export const productSection = () => {
                         </td>
                       </tr>
                     </table>
-                    <table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                    <table class="paragraph_block block-2" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
                       <tr>
                         <td class="pad" style="padding-left:15px;padding-right:15px;padding-top:10px;">
                           <div style="color:#393d47;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:15px;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:18px;">
@@ -1061,7 +957,7 @@ export const productSection = () => {
                         </td>
                       </tr>
                     </table>
-                    <table class="paragraph_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                    <table class="paragraph_block block-3" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
                       <tr>
                         <td class="pad" style="padding-bottom:10px;padding-left:15px;padding-right:15px;padding-top:3px;">
                           <div style="color:#393d47;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:15px;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:18px;">
@@ -1070,7 +966,7 @@ export const productSection = () => {
                         </td>
                       </tr>
                     </table>
-                    <table class="button_block block-4" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="button_block block-4" width="100%" border="0" cellpadding="10"  style="">
                       <tr>
                         <td class="pad">
                           <div class="alignment" align="center">
@@ -1107,19 +1003,19 @@ export const footer = () => {
   ${globalStyles}
 </head>
 <body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-  <table class="row row-15" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+  <table class="row row-15" align="center" width="100%" border="0" cellpadding="0"  style="">
       <tbody>
         <tr>
           <td>
-            <table class="row-content" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f3f3f3; color: #000000; width: 630px; margin: 0 auto;" width="630">
+            <table class="row-content" align="center" border="0" cellpadding="0"  style=" background-color: #f3f3f3; color: #000000; width: 630px; margin: 0 auto;" width="630">
               <tbody>
                 <tr>
-                  <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 15px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                    <table class="divider_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                  <td class="column column-1" width="100%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 15px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                    <table class="divider_block block-1" width="100%" border="0" cellpadding="0"  style="">
                       <tr>
                         <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-top:10px;">
                           <div class="alignment" align="right">
-                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                            <table border="0" cellpadding="0"  width="100%" style="">
                               <tr>
                                 <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #666666;"><span style="word-break: break-word;">&#8202;</span></td>
                               </tr>
@@ -1128,7 +1024,7 @@ export const footer = () => {
                         </td>
                       </tr>
                     </table>
-                    <table class="image_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="image_block block-2" width="100%" border="0" cellpadding="0"  style="">
                       <tr>
                         <td class="pad" style="padding-bottom:10px;padding-left:15px;padding-right:15px;padding-top:10px;width:100%;">
                           <div class="alignment" align="center" style="line-height:10px">
@@ -1137,11 +1033,11 @@ export const footer = () => {
                         </td>
                       </tr>
                     </table>
-                    <table class="social_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="social_block block-3" width="100%" border="0" cellpadding="0"  style="">
                       <tr>
                         <td class="pad" style="padding-bottom:5px;padding-left:20px;padding-right:20px;padding-top:10px;text-align:center;">
                           <div class="alignment" align="center">
-                            <table class="social-table" width="126px" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;">
+                            <table class="social-table" width="126px" border="0" cellpadding="0"  style=" display: inline-block;">
                               <tr>
                                 <td style="padding:0 5px 0 5px;"><a href="https://www.facebook.com" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-dark-gray/facebook@2x.png" width="32" height="auto" alt="Facebook" title="Facebook" style="display: block; height: auto; border: 0;"></a></td>
                                 <td style="padding:0 5px 0 5px;"><a href="https://www.twitter.com" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-dark-gray/twitter@2x.png" width="32" height="auto" alt="Twitter" title="Twitter" style="display: block; height: auto; border: 0;"></a></td>
@@ -1152,7 +1048,7 @@ export const footer = () => {
                         </td>
                       </tr>
                     </table>
-                    <table class="paragraph_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                    <table class="paragraph_block block-4" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
                       <tr>
                         <td class="pad" style="padding-bottom:5px;padding-left:10px;padding-right:10px;padding-top:15px;">
                           <div style="color:#666666;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:12px;line-height:120%;text-align:center;mso-line-height-alt:14.399999999999999px;">
@@ -1161,7 +1057,7 @@ export const footer = () => {
                         </td>
                       </tr>
                     </table>
-                    <table class="paragraph_block block-5" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                    <table class="paragraph_block block-5" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
                       <tr>
                         <td class="pad" style="padding-bottom:15px;padding-left:10px;padding-right:10px;padding-top:5px;">
                           <div style="color:#666666;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:12px;line-height:120%;text-align:center;mso-line-height-alt:14.399999999999999px;">
@@ -1273,112 +1169,80 @@ const globalCss = `
 `;
 
 export const templateCard1 = (data: any) => {
-  return `<!DOCTYPE html>
-<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+  return `
 <head>
-  <title></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-  ${globalCss}
+  <style>
+    @media only screen and (max-width: 700px) {
+      .container {
+        width: 100% !important;
+      }
+      .flex-container {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .image-container-card, .content-container {
+        max-width: 100% !important;
+        padding: 0 16px !important;
+        text-align: center !important;
+      }
+      .image-container-card {
+        margin-bottom: 16px;
+      }
+      .button {
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .content-container {
+        padding-left: 0 !important;
+      }
+    }
+  </style>
 </head>
-<body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-  <table class="row row-5" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 640px; margin: 0 auto;" width="640">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="image_block block-1" width="100%" border="0" cellpadding="16" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad">
-																<div class="alignment" align="center" style="line-height:10px">
-																	<div class="fullWidth" style="max-width: 181.333px;"><img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb1.jpg" style="display: block; height: auto; border: 0; width: 100%;" width="181.333" alt="I'm an image" title="I'm an image" height="auto"></div>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-												<td class="column column-2" width="66.66666666666667%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="divider_block block-1 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:7px;">
-																<div class="alignment" align="center">
-																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-																		<tr>
-																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;"><span style="word-break: break-word;">&#8202;</span></td>
-																		</tr>
-																	</table>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad" style="padding-left:16px;padding-right:32px;padding-top:3px;">
-																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:20px;line-height:120%;text-align:left;mso-line-height-alt:24px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #2b3940;"><strong>$475,000</strong></span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-left:16px;padding-right:32px;padding-top:3px;">
-																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #2b3940;"><strong><span style="word-break: break-word;"><span style="word-break: break-word;" class='name'>${data.name}</span></span></strong></span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="divider_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-left:16px;padding-right:32px;padding-top:5px;">
-																<div class="alignment" align="center">
-																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-																		<tr>
-																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #E9EBEB;"><span style="word-break: break-word;">&#8202;</span></td>
-																		</tr>
-																	</table>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-5" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-left:16px;padding-right:32px;padding-top:5px;">
-																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #7e8989;">5 Bedrooms, 2 Bathrooms, 1075 sq.f.</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="button_block block-6" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad" style="padding-bottom:20px;padding-left:16px;padding-right:32px;padding-top:7px;text-align:left;">
-																<div class="alignment" align="left"><!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:43px;width:141px;v-text-anchor:middle;" arcsize="7%" stroke="false" fillcolor="#f75c03">
-<w:anchorlock/>
-<v:textbox inset="0px,0px,0px,1px">
-<center dir="false" style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:14px">
-<![endif]-->
-																	<div class="button" style="background-color:#f75c03;border-bottom:0px solid transparent;border-left:0px solid transparent;border-radius:3px;border-right:0px solid transparent;border-top:0px solid transparent;color:#ffffff;display:inline-block;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;font-weight:undefined;mso-border-alt:none;padding-bottom:6px;padding-top:5px;text-align:center;text-decoration:none;width:auto;word-break:keep-all;"><span style="word-break: break-word; padding-left: 20px; padding-right: 20px; font-size: 14px; display: inline-block; letter-spacing: normal;"><span style="margin: 0; word-break: break-word;"><span style="word-break: break-word; line-height: 28px;" data-mce-style><strong>View Property</strong></span></span></span></div><!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-</body>
-</html>`;
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px">
+    <tr>
+      <td align="center">
+        <table class="container" width="640" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; margin: 0 auto; background-color: #ffffff; color: #000000; border-radius: 8px; overflow: hidden;">
+          <tr>
+            <td>
+              <div class="flex-container" style="display: flex; align-items: center; ">
+                <div class="image-container-card" style="flex: 1; max-width: 33.333%;">
+                  <div style="text-align: center;">
+                    <img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb1.jpg" style="display: block; height: auto; border: 0; width: 100%; max-width: 181.333px; border-radius: 8px;" alt="Apartment Image" title="Apartment Image">
+                  </div>
+                </div>
+                <div class="content-container" style="flex: 2; max-width: 66.666%; padding-left: 16px;display: flex; flex-direction: column; gap:12px">
+                  <div>
+                    <div style="color: #2b3940; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 20px; line-height: 120%;">
+                      <p style="margin: 0;"><strong>$475,000</strong></p>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="color: #2b3940; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 14px; line-height: 150%;">
+                      <p style="margin: 0;"><strong class="name">Apartament in Miami</strong></p>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="border-top: 1px solid #E9EBEB; width: 100%;"></div>
+                  </div>
+                  <div>
+                    <div style="color: #7e8989; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 14px; line-height: 150%;">
+                      <p style="margin: 0;">5 Bedrooms, 2 Bathrooms, 1075 sq.f.</p>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="#" class="button" style="background-color: #f75c03; border-radius: 3px; color: #ffffff; display: inline-block; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 14px; padding: 5px 20px; text-align: center; text-decoration: none;">
+                      <strong>View Property</strong>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+`;
 };
 export const textDescription = () => {
   return `<!DOCTYPE html>
@@ -1391,15 +1255,15 @@ export const textDescription = () => {
   ${globalCss}
 </head>
 <body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-  <table class="row row-4" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+  <table class="row row-4" align="center" width="100%" border="0" cellpadding="0"  style="">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 640px; margin: 0 auto;" width="640">
+									<table class="row-content stack" align="center" border="0" cellpadding="0"  style=" color: #000000; width: 640px; margin: 0 auto;" width="640">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-																			<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-1" width="100%" style=" font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+																			<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 							<div class="spacer_block block-1" style="height:60px;line-height:60px;font-size:1px;">&#8202;</div>
 														<tr>
 															<td class="pad" style="padding-bottom:15px;padding-left:30px;padding-right:30px;">
@@ -1409,7 +1273,7 @@ export const textDescription = () => {
 															</td>
 														</tr>
 													</table>
-													<table class="paragraph_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+													<table class="paragraph_block block-3" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:10px;padding-left:20px;padding-right:20px;padding-top:5px;">
 																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;text-align:center;mso-line-height-alt:21px;">
@@ -1430,62 +1294,78 @@ export const textDescription = () => {
 </body>
 </html>`;
 };
-export const imageText = () => {
-  return `<!DOCTYPE html>
-<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
-<head>
-  <title></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-  ${globalCss}
-</head>
-<body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-  <table class="row row-13" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #263339; background-image: url('https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/bg4.png'); background-position: top center; background-repeat: no-repeat;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 640px; margin: 0 auto;" width="640">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<div class="spacer_block block-1" style="height:65px;line-height:65px;font-size:1px;">&#8202;</div>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="word-break: break-word; color: #ffffff;"><strong>Manage your favorite properties</strong></span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="button_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad" style="padding-left:40px;padding-right:40px;padding-top:20px;text-align:center;">
-																<div class="alignment" align="center"><!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:52px;width:234px;v-text-anchor:middle;" arcsize="6%" stroke="false" fillcolor="#f75c03">
-<w:anchorlock/>
-<v:textbox inset="0px,0px,0px,0px">
-<center dir="false" style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:16px">
-<![endif]-->
-																	<div class="button" style="background-color:#f75c03;border-bottom:0px solid transparent;border-left:0px solid transparent;border-radius:3px;border-right:0px solid transparent;border-top:0px solid transparent;color:#ffffff;display:inline-block;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;font-weight:undefined;mso-border-alt:none;padding-bottom:10px;padding-top:10px;text-align:center;text-decoration:none;width:auto;word-break:keep-all;"><span style="word-break: break-word; padding-left: 28px; padding-right: 28px; font-size: 16px; display: inline-block; letter-spacing: normal;"><span style="margin: 0; word-break: break-word; line-height: 32px;"><strong>Discover more houses</strong></span></span></div><!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-																</div>
-															</td>
-														</tr>
-													</table>
-													<div class="spacer_block block-4" style="height:65px;line-height:65px;font-size:1px;">&#8202;</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-</body>
-</html>`;
-};
 
+export const imageText = () => {
+  return `
+<head>
+  <style>
+    .body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    }
+    .container-image-text {
+      max-width: 640px;
+      margin: 0 auto;
+      color: #ffffff;
+      font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .image-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+    .spacer {
+      height: 65px;
+    }
+    .title {
+      font-size: 30px;
+      line-height: 1.2;
+      color: #ffffff;
+      margin: 0;
+    }
+    .button {
+      background-color: #f75c03;
+      border-radius: 3px;
+      color: #ffffff;
+      display: inline-block;
+      font-size: 16px;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+  <div class="image-container">
+    <img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/bg4.png" alt="Background Image">
+    <div class="container-image-text">
+      <div class="content">
+        <div class="spacer"></div>
+        <h1 class="title">Manage your favorite properties</h1>
+        <a href="#" class="button">Discover more houses</a>
+        <div class="spacer"></div>
+      </div>
+    </div>
+  </div>
+`;
+};
 export const startNow = () => {
   return `<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -1497,15 +1377,15 @@ export const startNow = () => {
   ${globalCss}
 </head>
 <body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-  <table class="row row-19" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff;">
+  <table class="row row-19" align="center" width="100%" border="0" cellpadding="0"  style=" background-color: #ffffff;">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 640px; margin: 0 auto;" width="640">
+									<table class="row-content stack" align="center" border="0" cellpadding="0"  style=" color: #000000; width: 640px; margin: 0 auto;" width="640">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #f6f8f8; border-bottom: 10px solid #FFF; border-left: 10px solid #FFF; border-right: 10px solid #FFF; border-top: 10px solid #FFF; vertical-align: top;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-1" width="50%" style=" font-weight: 400; text-align: left; background-color: #f6f8f8; border-bottom: 10px solid #FFF; border-left: 10px solid #FFF; border-right: 10px solid #FFF; border-top: 10px solid #FFF; vertical-align: top;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:5px;padding-left:32px;padding-right:32px;padding-top:40px;">
 																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:24px;line-height:150%;text-align:left;mso-line-height-alt:36px;">
@@ -1514,7 +1394,7 @@ export const startNow = () => {
 															</td>
 														</tr>
 													</table>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:5px;padding-left:32px;padding-right:32px;padding-top:10px;">
 																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:180%;text-align:left;mso-line-height-alt:25.2px;">
@@ -1523,7 +1403,7 @@ export const startNow = () => {
 															</td>
 														</tr>
 													</table>
-													<table class="button_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+													<table class="button_block block-3" width="100%" border="0" cellpadding="0"  style="">
 														<tr>
 															<td class="pad" style="padding-bottom:40px;padding-left:32px;padding-right:32px;padding-top:20px;text-align:left;">
 																<div class="alignment" align="left"><!--[if mso]>
@@ -1538,8 +1418,8 @@ export const startNow = () => {
 														</tr>
 													</table>
 												</td>
-												<td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #f6f8f8; border-bottom: 10px solid #FFF; border-left: 10px solid #FFF; border-right: 10px solid #FFF; border-top: 10px solid #FFF; vertical-align: top;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-2" width="50%" style=" font-weight: 400; text-align: left; background-color: #f6f8f8; border-bottom: 10px solid #FFF; border-left: 10px solid #FFF; border-right: 10px solid #FFF; border-top: 10px solid #FFF; vertical-align: top;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:5px;padding-left:32px;padding-right:32px;padding-top:40px;">
 																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:24px;line-height:150%;text-align:left;mso-line-height-alt:36px;">
@@ -1548,7 +1428,7 @@ export const startNow = () => {
 															</td>
 														</tr>
 													</table>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:5px;padding-left:32px;padding-right:32px;padding-top:10px;">
 																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:180%;text-align:left;mso-line-height-alt:25.2px;">
@@ -1557,7 +1437,7 @@ export const startNow = () => {
 															</td>
 														</tr>
 													</table>
-													<table class="button_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+													<table class="button_block block-3" width="100%" border="0" cellpadding="0"  style="">
 														<tr>
 															<td class="pad" style="padding-bottom:40px;padding-left:32px;padding-right:32px;padding-top:20px;text-align:left;">
 																<div class="alignment" align="left"><!--[if mso]>
@@ -1607,15 +1487,15 @@ export const templateCredit = () => {
   ${globalCss}
 </head>
 <body class="body" style="background-color: #bdd6c4; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-  <table class="row row-20" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+  <table class="row row-20" align="center" width="100%" border="0" cellpadding="0"  style="">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content stack" align="center" border="0" cellpadding="0"  style=" background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-1" width="100%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:10px;padding-left:35px;padding-right:10px;padding-top:10px;">
 																<div style="color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:120%;text-align:left;mso-line-height-alt:20.4px;">
@@ -1632,15 +1512,15 @@ export const templateCredit = () => {
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-21" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-21" align="center" width="100%" border="0" cellpadding="0"  style="">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content" align="center" border="0" cellpadding="0"  style=" background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+												<td class="column column-1" width="25%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="image_block block-1" width="100%" border="0" cellpadding="0"  style="">
 														<tr>
 															<td class="pad" style="padding-top:5px;width:100%;">
 																<div class="alignment" align="center" style="line-height:10px">
@@ -1650,8 +1530,8 @@ export const templateCredit = () => {
 														</tr>
 													</table>
 												</td>
-												<td class="column column-2" width="75%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-2" width="75%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad">
 																<div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;">
@@ -1668,15 +1548,15 @@ export const templateCredit = () => {
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-22" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-22" align="center" width="100%" border="0" cellpadding="0"  style="">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content stack" align="center" border="0" cellpadding="0"  style=" background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-1" width="100%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:10px;padding-left:35px;padding-right:10px;padding-top:10px;">
 																<div style="color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:120%;text-align:left;mso-line-height-alt:20.4px;">
@@ -1693,15 +1573,15 @@ export const templateCredit = () => {
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-23" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-23" align="center" width="100%" border="0" cellpadding="0"  style="">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content" align="center" border="0" cellpadding="0"  style=" background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-1" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-left:35px;padding-right:10px;padding-top:10px;">
 																<div style="color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;">
@@ -1711,8 +1591,8 @@ export const templateCredit = () => {
 														</tr>
 													</table>
 												</td>
-												<td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-2" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-left:35px;padding-right:25px;padding-top:10px;">
 																<div style="color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;">
@@ -1729,15 +1609,15 @@ export const templateCredit = () => {
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-24" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-24" align="center" width="100%" border="0" cellpadding="0"  style="">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content" align="center" border="0" cellpadding="0"  style=" background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-1" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-left:35px;padding-right:10px;padding-top:10px;">
 																<div style="color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;">
@@ -1747,8 +1627,8 @@ export const templateCredit = () => {
 														</tr>
 													</table>
 												</td>
-												<td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-2" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-left:35px;padding-right:25px;padding-top:10px;">
 																<div style="color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;">
@@ -1765,15 +1645,15 @@ export const templateCredit = () => {
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-25" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-25" align="center" width="100%" border="0" cellpadding="0"  style="">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content" align="center" border="0" cellpadding="0"  style=" background-color: #ffffff; color: #000000; width: 550px; margin: 0 auto;" width="550">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-1" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-left:35px;padding-right:10px;padding-top:10px;">
 																<div style="color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;line-height:150%;text-align:left;mso-line-height-alt:24px;">
@@ -1783,8 +1663,8 @@ export const templateCredit = () => {
 														</tr>
 													</table>
 												</td>
-												<td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+												<td class="column column-2" width="50%" style=" font-weight: 400; text-align: left; padding-bottom: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="0"  style=" word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-left:35px;padding-right:25px;padding-top:10px;">
 																<div style="color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;line-height:150%;text-align:left;mso-line-height-alt:24px;">
@@ -1801,15 +1681,15 @@ export const templateCredit = () => {
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-26" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-26" align="center" width="100%" border="0" cellpadding="0"  style="">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 550px; margin: 0 auto;" width="550">
+									<table class="row-content stack" align="center" border="0" cellpadding="0"  style=" color: #000000; width: 550px; margin: 0 auto;" width="550">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+												<td class="column column-1" width="100%" style=" font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="image_block block-1" width="100%" border="0" cellpadding="0"  style="">
 														<tr>
 															<td class="pad" style="width:100%;">
 																<div class="alignment" align="center" style="line-height:10px">
@@ -1833,9 +1713,9 @@ const renderColumn = (props: any) => {
   const { imageUrl, price, name, description, details } = props;
 
   return `
-    <table class="column" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+    <table class="column" width="100%" border="0" cellpadding="0"  style=" width: 100%;">
       <tr>
-        <td  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #ffffff; border: 10px solid #F6F8F8; vertical-align: top;">
+        <td  style=" font-weight: 400; text-align: left; background-color: #ffffff; border: 10px solid #F6F8F8; vertical-align: top;">
           <div class="image-block" style="width: 100%;">
             <div class="pad" style="padding: 16px;">
               <img src="${imageUrl}" alt="Image" style="display: block; height: auto; border: 0; width: 100%;" width="268" height="auto">
@@ -1890,7 +1770,7 @@ export const layoutCard2 = (column1Props: any) => {
   const column2 = renderColumn(column1Props);
 
   return `
-    <div class="row" style="display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+    <div class="row layout2" style="display: flex; align-items: center; justify-content: center; margin: 0 auto; margin-bottom:20px" >
       ${column1}
       ${column2}
     </div>
@@ -1902,7 +1782,7 @@ export const layoutCard2 = (column1Props: any) => {
         }
       }
       @media only screen and (min-width: 700px) {
-        .row {
+        .row.layout2 {
           width: 60%; 
         }
       }

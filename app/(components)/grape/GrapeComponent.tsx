@@ -26,6 +26,7 @@ import {
   column1Props,
   templateFlight,
   templateCredit,
+  flightData,
 } from "@/app/(components)/grape/content";
 type Props = {
   isCreate?: boolean;
@@ -253,7 +254,7 @@ const GrapeComponent = ({ isCreate = false }: Props) => {
     });
     editor.BlockManager.add("templateFlight", {
       label: "templateFlight",
-      content: templateFlight(),
+      content: templateFlight(flightData),
       category: "Custom",
     });
     editor.BlockManager.add("templateCredit", {
