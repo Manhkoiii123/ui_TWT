@@ -42,24 +42,13 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
       container: "#editor",
       width: windowWidth > 1280 ? String((windowWidth - 300) * 0.9) : "100%",
       height: String(window.innerHeight * 0.8),
-      plugins: [grapesjsPresetWebpage],
-      pluginsOpts: {
-        grapesjsPresetWebpage: {
-          blocks: [],
-          undoManager: false,
-        },
-      },
+      plugins: isCreateTemplate
+        ? [grapesjsPresetWebpage, grapesjsBlocksBasic]
+        : [grapesjsPresetWebpage],
 
       storageManager: false,
     });
 
-    editor.BlockManager.getAll().forEach((block: any) => {
-      if (block) {
-        if (block.changed.category.id === "Basic") {
-          editor.BlockManager.remove(block.getId());
-        }
-      }
-    });
     const nameInput = document.getElementById("nameInput");
     if (nameInput) {
       nameInput.addEventListener("keydown", (event: KeyboardEvent) => {
@@ -98,11 +87,16 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         width: 33.33% !important;
         max-width: 33.33% !important;
       }
+      span[title="Open Blocks"] {
+            display: none !important;
+        }
+
+
       @media (max-width: 768px) {
         .gjs-cell {
           width: 100% !important; 
-          max-width: 100% !important; 
-        }
+          max-width: 100%   !important; 
+        } 
       }
     `);
     };
@@ -119,9 +113,6 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
     const getEditorHTMLAndCSS = () => {
       const html = editor.getHtml();
       const css = editor.getCss();
-      console.log("Editor HTML:", html);
-      console.log("Editor CSS:", css);
-
       const combinedContent = `
         <style>${css}</style>
         <div id="editor">
@@ -142,6 +133,16 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
     }
 
     if (!isCreateTemplate) {
+      editor.on("load", () => {
+        const panelManager = editor.Panels;
+        panelManager.removeButton("views", "open-blocks");
+        const blockPanel = document.querySelector(
+          ".gjs-blocks-cs"
+        ) as HTMLElement;
+        if (blockPanel) {
+          blockPanel.style.display = "none";
+        }
+      });
       editor.TraitManager.addType("live-input", {
         createInput({ trait }: any) {
           const el = document.createElement("input");
@@ -291,6 +292,19 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
     </div>`,
       });
     } else {
+      // editor.addComponents(`
+      //   <div style="padding: 20px; background: #f0f0f0;">
+      //     <h1>Hello, World!</h1>
+      //     <p>This is a custom component.</p>
+      //   </div>
+      // `);
+      editor.BlockManager.getAll().forEach((block: any) => {
+        if (block) {
+          if (block.changed.category.id === "Basic") {
+            editor.BlockManager.remove(block.getId());
+          }
+        }
+      });
       templateFakeAPI.forEach((item) => {
         editor.BlockManager.add(item.name, {
           label: item.label,
