@@ -13,14 +13,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.externals = config.externals.filter(
-        (external: any) => external !== "puppeteer"
-      );
-    }
-    return config;
-  },
 
   // webpack: (config) => {
   //   config.module.rules.push({

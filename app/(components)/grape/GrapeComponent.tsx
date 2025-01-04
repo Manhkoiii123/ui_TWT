@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
@@ -35,29 +36,51 @@ type Props = {
 };
 const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
   const [editor, setEditor] = useState<Editor | null>();
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [imageBlob, setImageBlob] = useState<Blob | null>(null);
+  function captureHtmlToBlob(htmlContent: string): Promise<Blob> {
+    return new Promise((resolve, reject) => {
+      const tempDiv = document.createElement("div");
+      tempDiv.style.overflow = "hidden";
+      tempDiv.style.width = "100%";
+      tempDiv.style.height = "100%";
+      tempDiv.innerHTML = htmlContent;
 
-  const handleRenderImage = async (htmlContent: string) => {
-    try {
-      const response = await fetch("/api/render-image", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ htmlContent }),
-      });
-      console.log("🚀 ~ handleRenderImage ~ response:", response);
+      document.body.appendChild(tempDiv);
 
-      if (!response.ok) {
-        throw new Error("Failed to render image");
-      }
+      html2canvas(tempDiv, {
+        scale: window.devicePixelRatio,
+        useCORS: true,
+        logging: true,
+      })
+        .then((canvas) => {
+          const originalWidth = canvas.width;
+          const originalHeight = canvas.height;
 
-      const blob = await response.blob();
-      setImageSrc(URL.createObjectURL(blob));
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+          const newWidth = 800;
+          const newHeight = (newWidth / originalWidth) * originalHeight;
+
+          const resizedCanvas = document.createElement("canvas");
+          resizedCanvas.width = newWidth;
+          resizedCanvas.height = newHeight;
+
+          const ctx = resizedCanvas.getContext("2d");
+          ctx?.drawImage(canvas, 0, 0, newWidth, newHeight);
+
+          resizedCanvas.toBlob((blob) => {
+            if (blob) {
+              resolve(blob);
+            } else {
+              reject(new Error("Failed to create blob"));
+            }
+          }, "image/png");
+
+          document.body.removeChild(tempDiv);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  }
 
   const windowWidth = useWindowWidth();
 
@@ -145,7 +168,13 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
 
     const handleExportEditorHTMLAndCSS = () => {
       const content = getEditorHTMLAndCSS();
-      handleRenderImage(content);
+      captureHtmlToBlob(content)
+        .then((blob) => {
+          setImageBlob(blob);
+        })
+        .catch((error) => {
+          console.error("Error capturing HTML:", error);
+        });
     };
 
     const exportButton = document.getElementById("exportEditorHtmlCssButton");
@@ -364,6 +393,12 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
         placeholder="Nhập tên người và nhấn Enter"
       />
+      {imageBlob && (
+        <div>
+          <p>Image preview:</p>
+          <img src={URL.createObjectURL(imageBlob)} alt="Captured Image" />
+        </div>
+      )}
     </div>
   );
 };
