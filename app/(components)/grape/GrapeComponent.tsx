@@ -52,7 +52,6 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
       }
 
       const blob = await response.blob();
-      console.log("🚀 ~ handleRenderImage ~ blob:", blob);
       setImageSrc(URL.createObjectURL(blob));
     } catch (error) {
       console.error("Error:", error);
@@ -364,15 +363,6 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
         placeholder="Nhập tên người và nhấn Enter"
       />
-      {imageSrc && (
-        <div style={{ marginTop: "20px" }}>
-          <img
-            src={imageSrc}
-            alt="Rendered Content"
-            style={{ maxWidth: "100%" }}
-          />
-        </div>
-      )}
     </div>
   );
 };
