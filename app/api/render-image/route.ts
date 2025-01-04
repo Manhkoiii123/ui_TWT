@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       ],
     });
     const page = await browser.newPage();
-
+    await page.goto("https://developer.chrome.com/");
     await page.setContent(htmlContent, { waitUntil: "networkidle2" });
 
     await page.evaluate(() => {
