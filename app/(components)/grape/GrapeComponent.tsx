@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+import html2canvas from "html2canvas";
 import { useEffect } from "react";
 import grapesjs, { Editor } from "grapesjs";
 import { useState } from "react";
@@ -29,11 +30,35 @@ import {
   flightData,
   templateFakeAPI,
 } from "@/app/(components)/grape/content";
+import { Content } from "vaul";
 type Props = {
   isCreateTemplate?: boolean;
 };
 const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
   const [editor, setEditor] = useState<Editor | null>();
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
+
+  const handleRenderImage = async (htmlContent: string) => {
+    try {
+      const response = await fetch("/api/render-image", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ htmlContent }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to render image");
+      }
+
+      const blob = await response.blob();
+      console.log("🚀 ~ handleRenderImage ~ blob:", blob);
+      setImageSrc(URL.createObjectURL(blob));
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   const windowWidth = useWindowWidth();
 
@@ -87,9 +112,6 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         width: 33.33% !important;
         max-width: 33.33% !important;
       }
-      span[title="Open Blocks"] {
-            display: none !important;
-        }
 
 
       @media (max-width: 768px) {
@@ -124,7 +146,9 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
 
     const handleExportEditorHTMLAndCSS = () => {
       const content = getEditorHTMLAndCSS();
-      console.log("Exported HTML & CSS:", content);
+      console.log("🚀 ~ handleExportEditorHTMLAndCSS ~ content:", content);
+      handleRenderImage(content);
+      // const content = document.querySelector("#editor")?.innerHTML;
     };
 
     const exportButton = document.getElementById("exportEditorHtmlCssButton");
@@ -343,6 +367,15 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
         placeholder="Nhập tên người và nhấn Enter"
       />
+      {imageSrc && (
+        <div style={{ marginTop: "20px" }}>
+          <img
+            src={imageSrc}
+            alt="Rendered Content"
+            style={{ maxWidth: "100%" }}
+          />
+        </div>
+      )}
     </div>
   );
 };
