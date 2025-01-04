@@ -30,48 +30,35 @@ import {
   flightData,
   templateFakeAPI,
 } from "@/app/(components)/grape/content";
+import { Content } from "vaul";
 type Props = {
   isCreateTemplate?: boolean;
 };
 const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
   const [editor, setEditor] = useState<Editor | null>();
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
 
-  function renderHtmlToImage(
-    htmlContent: string = "",
-    width: number = 1200,
-    height: number = 1200
-  ) {
-    return new Promise((resolve, reject) => {
-      const svg = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
-        <foreignObject width="100%" height="100%">
-          <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:16px; font-family: Arial, sans-serif; width: 100%; height: 100%; box-sizing: border-box;background:#ffffff">
-            ${htmlContent}
-          </div>
-        </foreignObject>
-      </svg>
-    `;
+  const handleRenderImage = async (htmlContent: string) => {
+    try {
+      const response = await fetch("/api/render-image", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ htmlContent }),
+      });
 
-      const img = new Image();
-      img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+      if (!response.ok) {
+        throw new Error("Failed to render image");
+      }
 
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
-        const ctx = canvas.getContext("2d")!;
-
-        ctx.drawImage(img, 0, 0);
-
-        const imgData = canvas.toDataURL("image/png");
-        resolve(imgData);
-      };
-
-      img.onerror = (error) => {
-        reject(error);
-      };
-    });
-  }
+      const blob = await response.blob();
+      console.log("🚀 ~ handleRenderImage ~ blob:", blob);
+      setImageSrc(URL.createObjectURL(blob));
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   const windowWidth = useWindowWidth();
 
@@ -160,19 +147,8 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
     const handleExportEditorHTMLAndCSS = () => {
       const content = getEditorHTMLAndCSS();
       console.log("🚀 ~ handleExportEditorHTMLAndCSS ~ content:", content);
+      handleRenderImage(content);
       // const content = document.querySelector("#editor")?.innerHTML;
-
-      renderHtmlToImage(content)
-        .then((imgData) => {
-          const link = document.createElement("a");
-          link.href = imgData as string;
-          link.download = "rendered-image.png";
-          link.click();
-        })
-        .catch((error) => {
-          console.error("Error rendering HTML to image:", error);
-        });
-      console.log("Exported HTML & CSS:", content);
     };
 
     const exportButton = document.getElementById("exportEditorHtmlCssButton");
@@ -391,6 +367,15 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
         placeholder="Nhập tên người và nhấn Enter"
       />
+      {imageSrc && (
+        <div style={{ marginTop: "20px" }}>
+          <img
+            src={imageSrc}
+            alt="Rendered Content"
+            style={{ maxWidth: "100%" }}
+          />
+        </div>
+      )}
     </div>
   );
 };
