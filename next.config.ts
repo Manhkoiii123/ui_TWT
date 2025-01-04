@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -12,6 +13,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals = config.externals.filter(
+        (external: any) => external !== "puppeteer"
+      );
+    }
+    return config;
+  },
+
   // webpack: (config) => {
   //   config.module.rules.push({
   //     test: /\.css$/,
