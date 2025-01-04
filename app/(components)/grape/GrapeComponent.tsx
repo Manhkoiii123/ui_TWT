@@ -30,7 +30,6 @@ import {
   flightData,
   templateFakeAPI,
 } from "@/app/(components)/grape/content";
-import { Content } from "vaul";
 type Props = {
   isCreateTemplate?: boolean;
 };
@@ -146,9 +145,7 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
 
     const handleExportEditorHTMLAndCSS = () => {
       const content = getEditorHTMLAndCSS();
-      console.log("🚀 ~ handleExportEditorHTMLAndCSS ~ content:", content);
       handleRenderImage(content);
-      // const content = document.querySelector("#editor")?.innerHTML;
     };
 
     const exportButton = document.getElementById("exportEditorHtmlCssButton");
