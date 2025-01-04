@@ -46,6 +46,7 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         },
         body: JSON.stringify({ htmlContent }),
       });
+      console.log("🚀 ~ handleRenderImage ~ response:", response);
 
       if (!response.ok) {
         throw new Error("Failed to render image");
