@@ -6,6 +6,7 @@ export async function POST(req: Request) {
 
     const browser = await puppeteer.launch({
       headless: true,
+      executablePath: puppeteer.executablePath(),
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
