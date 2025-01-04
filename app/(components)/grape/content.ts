@@ -16,6 +16,7 @@ const globalStyles = `
     body {
       margin: 0;
       padding: 0;
+       overflow: visible;
     }
     a[x-apple-data-detectors] {
       color: inherit !important;
@@ -1087,6 +1088,7 @@ const globalCss = `
 		body {
 			margin: 0;
 			padding: 0;
+       overflow: visible;
 		}
 
 		a[x-apple-data-detectors] {
@@ -1171,6 +1173,7 @@ const globalCss = `
 export const templateCard1 = (data: any) => {
   return `
 <head>
+${globalStyles}
   <style>
     @media only screen and (max-width: 700px) {
       .container {
@@ -1198,7 +1201,7 @@ export const templateCard1 = (data: any) => {
     }
   </style>
 </head>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px;">
     <tr>
       <td align="center">
         <table class="container" width="640" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; margin: 0 auto; background-color: #ffffff; color: #000000; border-radius: 8px; overflow: hidden;">
@@ -1304,6 +1307,7 @@ export const imageText = () => {
       padding: 0;
       -webkit-text-size-adjust: none;
       text-size-adjust: none;
+       overflow: visible;
     }
     .container-image-text {
       max-width: 640px;

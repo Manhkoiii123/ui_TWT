@@ -1,33 +1,39 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import puppeteer from "puppeteer";
 
-export async function POST(req: any) {
+export async function POST(req: Request) {
   try {
     const { htmlContent } = await req.json();
 
-    if (!htmlContent) {
-      return new Response(
-        JSON.stringify({ error: "HTML content is required" }),
-        {
-          status: 400,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-    }
     const browser = await puppeteer.launch({
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await browser.newPage();
+
     await page.setContent(htmlContent, { waitUntil: "networkidle2" });
-    await page.setViewport({ width: 1200, height: 800 });
-    const screenshot = await page.screenshot({ type: "png", fullPage: true });
+
+    await page.evaluate(() => {
+      const images = Array.from(document.images);
+      return Promise.all(
+        images.map((img) => {
+          if (img.complete) return Promise.resolve();
+          return new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        })
+      );
+    });
+
+    const contentHeight = await page.evaluate(() => document.body.scrollHeight);
+    await page.setViewport({ width: 1200, height: contentHeight });
+
+    const screenshot = await page.screenshot({ type: "png" });
+
     await browser.close();
+
     return new Response(screenshot, {
-      status: 200,
-      headers: {
-        "Content-Type": "image/png",
-      },
+      headers: { "Content-Type": "image/png" },
     });
   } catch (error) {
     console.error("Error rendering image:", error);
