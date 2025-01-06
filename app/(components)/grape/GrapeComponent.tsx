@@ -34,8 +34,13 @@ import {
 import { Button } from "@/components/ui/button";
 type Props = {
   isCreateTemplate?: boolean;
+  templateContent?: string;
 };
-const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
+const GrapeComponent = ({
+  isCreateTemplate = true,
+  templateContent,
+}: Props) => {
+  console.log("🚀 ~ templateContent:", templateContent);
   const [editor, setEditor] = useState<Editor | null>();
   const [imageBlob, setImageBlob] = useState<Blob | null>(null);
   function captureHtmlToBlob(htmlContent: string): Promise<Blob> {
@@ -350,6 +355,7 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
       //     <p>This is a custom component.</p>
       //   </div>
       // `);
+
       editor.BlockManager.getAll().forEach((block: any) => {
         if (block) {
           if (block.changed.category.id === "Basic") {
@@ -370,6 +376,23 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         });
       });
     }
+    if (templateContent) {
+      const decodedHtml = JSON.parse('"' + templateContent + '"');
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(decodedHtml, "text/html");
+      const styleTags = doc.querySelectorAll("style");
+      let styleContent = "";
+      styleTags.forEach((tag) => {
+        styleContent += tag.innerHTML;
+      });
+      editor.addComponents({
+        type: "html",
+        content: `
+                <style>${styleContent}</style>
+                ${doc.body.innerHTML}
+              `,
+      });
+    }
 
     setEditor(editor);
     return () => {
@@ -381,7 +404,7 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
         nameInput.removeEventListener("keydown", () => {});
       }
     };
-  }, [windowWidth]);
+  }, [windowWidth, templateContent, isCreateTemplate]);
 
   return (
     <div>
