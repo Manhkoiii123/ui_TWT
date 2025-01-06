@@ -40,7 +40,6 @@ const GrapeComponent = ({
   isCreateTemplate = true,
   templateContent,
 }: Props) => {
-  console.log("🚀 ~ templateContent:", templateContent);
   const [editor, setEditor] = useState<Editor | null>();
   const [imageBlob, setImageBlob] = useState<Blob | null>(null);
   function captureHtmlToBlob(htmlContent: string): Promise<Blob> {
@@ -349,13 +348,6 @@ const GrapeComponent = ({
     </div>`,
       });
     } else {
-      // editor.addComponents(`
-      //   <div style="padding: 20px; background: #f0f0f0;">
-      //     <h1>Hello, World!</h1>
-      //     <p>This is a custom component.</p>
-      //   </div>
-      // `);
-
       editor.BlockManager.getAll().forEach((block: any) => {
         if (block) {
           if (block.changed.category.id === "Basic") {
@@ -385,13 +377,14 @@ const GrapeComponent = ({
       styleTags.forEach((tag) => {
         styleContent += tag.innerHTML;
       });
-      editor.addComponents({
-        type: "html",
-        content: `
+      editor.DomComponents.addComponent(
+        `
                 <style>${styleContent}</style>
-                ${doc.body.innerHTML}
-              `,
-      });
+                <div id="editor">
+                  ${doc.body.innerHTML}
+                </div>
+              `
+      );
     }
 
     setEditor(editor);
