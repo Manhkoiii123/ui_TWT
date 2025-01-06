@@ -10,23 +10,38 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import LeftIcon from "@/icon/LeftIcon";
-import { useRouter } from "next/navigation";
-import React from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import GrapeComponent from "@/app/(components)/grape/GrapeComponent";
+import { useQueryGetTemplateById } from "@/api/templates/templatesApi";
 const formSchema = z.object({
   templateName: z.string().min(1, { message: "Please enter a title" }),
 });
 const CreateTemplateComponent = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const idEdit = searchParams.get("id");
+  const { data: dataTemplate } = useQueryGetTemplateById(
+    Number(idEdit),
+    Boolean(idEdit)
+  );
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       templateName: "",
     },
   });
+  const { setValue } = form;
+
+  useEffect(() => {
+    if (dataTemplate) {
+      setValue("templateName", dataTemplate.name);
+    }
+  }, [dataTemplate, setValue]);
+
   const {
     formState: { errors },
   } = form;
@@ -70,7 +85,7 @@ const CreateTemplateComponent = () => {
         </Form>
       </div>
       <div className="mt-4 ">
-        <GrapeComponent />
+        <GrapeComponent templateContent={dataTemplate?.content} />
       </div>
     </>
   );

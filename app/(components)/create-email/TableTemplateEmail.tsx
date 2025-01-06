@@ -25,11 +25,13 @@ import CustomSelect from "@/components/custom-select/CustomSelect";
 import { TTemplate } from "@/types/template";
 import { useEffect, useState } from "react";
 import { convertDate } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 type Props = {
   templates: TTemplate[] | undefined;
 };
 const TableTemplateEmail = ({ templates }: Props) => {
+  const router = useRouter();
   const [isOpenView, setIsOpenView] = useState(false);
   const [htmlContent, setHtmlContent] = useState("");
 
@@ -117,7 +119,9 @@ const TableTemplateEmail = ({ templates }: Props) => {
                             {
                               label: "Edit",
                               action: () => {
-                                console.log("edit template");
+                                router.push(
+                                  `/templates/edit?id=${row.original.id}`
+                                );
                               },
                             },
                             {
