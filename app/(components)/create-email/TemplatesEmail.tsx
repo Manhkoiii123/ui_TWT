@@ -12,14 +12,13 @@ const TemplatesEmail = () => {
     router.push("/templates/create");
   };
   const { data: templates } = useQueryGetTemplates();
-  console.log("🚀 ~ TemplatesEmail ~ templates:", templates);
   return (
     <div className="bg-white p-4 shadow-sm">
       <Button className="bg-primary mb-4" onClick={handleNavigate}>
         Create New <PlusIcon />
       </Button>
 
-      <TableTemplateEmail />
+      <TableTemplateEmail templates={templates} />
     </div>
   );
 };

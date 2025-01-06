@@ -19,12 +19,12 @@ const CustomSelect = ({
   };
   return (
     <div className="flex items-center">
-      <div className="rounded-s-full bg-gray-100 px-3 py-3 cursor-pointer border-r-2 border-gray-300">
+      <div className="rounded-s-full bg-gray-100 px-3 py-2 cursor-pointer border-r-2 border-gray200">
         {selectedOption}
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <div className="rounded-e-full bg-gray-100 px-3 py-3">
+          <div className="rounded-e-full bg-gray-100 px-3 py-2">
             <DownIcon />
           </div>
         </DropdownMenuTrigger>

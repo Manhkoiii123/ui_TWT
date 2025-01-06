@@ -14,47 +14,31 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import CustomSelect from "@/components/custom-select/CustomSelect";
-export type Payment = {
-  id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
-};
+import { TTemplate } from "@/types/template";
 
-const TableTemplateEmail = () => {
-  const columns: ColumnDef<Payment>[] = [
+type Props = {
+  templates: TTemplate[] | undefined;
+};
+const TableTemplateEmail = ({ templates }: Props) => {
+  const columns: ColumnDef<TTemplate>[] = [
     {
       id: "index",
       header: "No",
       cell: (info) => info.row.index + 1,
     },
     {
-      accessorKey: "status",
+      accessorKey: "label",
       header: "Title",
     },
     {
-      accessorKey: "email",
+      accessorKey: "created_at",
       header: "Created At",
     },
   ];
-  const data: Payment[] = [
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "489e1d42",
-      amount: 125,
-      status: "processing",
-      email: "example@gmail.com",
-    },
-    // ...
-  ];
+
   // call api
   const table = useReactTable({
-    data,
+    data: templates ?? [],
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
