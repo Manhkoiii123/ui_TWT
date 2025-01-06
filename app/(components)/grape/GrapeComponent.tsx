@@ -169,6 +169,7 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
 
     const handleExportEditorHTMLAndCSS = () => {
       const content = getEditorHTMLAndCSS();
+
       captureHtmlToBlob(content)
         .then((blob) => {
           setImageBlob(blob);
