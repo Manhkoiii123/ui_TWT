@@ -86,7 +86,16 @@ export const columns: ColumnDef<ColumnType>[] = [
     header: "Action",
     enableHiding: false,
     cell: ({}) => {
-      return <CustomSelect />;
+      return (
+        <CustomSelect
+          options={[
+            { label: "View Report", action: () => {} },
+            { label: "Unsubscribe", action: () => {} },
+            { label: "Edit", action: () => {} },
+            { label: "View History", action: () => {} },
+          ]}
+        />
+      );
     },
   },
 ];
