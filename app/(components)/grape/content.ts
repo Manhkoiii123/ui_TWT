@@ -1079,7 +1079,7 @@ export const footer = () => {
 </body>
 </html>`;
 };
-const globalCss = `
+export const globalCss = `
 <style>
 * {
 			box-sizing: border-box;
@@ -1718,7 +1718,7 @@ const renderColumn = (props: any) => {
   const { imageUrl, price, name, description, details } = props;
 
   return `
-    <table class="column" width="100%" border="0" cellpadding="0"  style=" width: 100%;">
+    <table class="column" width="100%" border="0" cellpadding="0"  style=" width: 100%;max-width:400px">
       <tr>
         <td  style=" font-weight: 400; text-align: left; background-color: #ffffff; border: 10px solid #F6F8F8; vertical-align: top;">
           <div class="image-block" style="width: 100%;">
@@ -1775,7 +1775,7 @@ export const layoutCard2 = (column1Props: any) => {
   const column2 = renderColumn(column1Props);
 
   return `
-    <div class="row layout2" style="display: flex; align-items: center; justify-content: center; margin: 0 auto; margin-bottom:20px" >
+    <div class="row layout2" style="display: flex; align-items: center; justify-content: center; margin: 0 auto; margin-bottom:20px " >
       ${column1}
       ${column2}
     </div>
@@ -1788,7 +1788,7 @@ export const layoutCard2 = (column1Props: any) => {
       }
       @media only screen and (min-width: 700px) {
         .row.layout2 {
-          width: 60%; 
+          width: 100%; 
         }
       }
     </style>

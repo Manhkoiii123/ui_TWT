@@ -170,8 +170,8 @@ const ViewTemplate = ({
   setIsOpen: (value: boolean) => void;
   htmlContent: string;
 }) => {
-  const [styles, setStyles] = useState("");
   const [doc, setDoc] = useState<Document>();
+  const [styles, setStyles] = useState("");
   useEffect(() => {
     const decodedHtml = JSON.parse('"' + htmlContent + '"');
     const parser = new DOMParser();
@@ -193,7 +193,7 @@ const ViewTemplate = ({
           <DialogTitle className="text-gray-800 font-medium text-[12px] leading-[1.6rem] border-b border-gray-200 pb-[10px]">
             Preview Template
           </DialogTitle>
-          <DialogDescription className="">
+          <DialogDescription>
             {doc?.body.innerHTML && (
               <>
                 <style>{styles}</style>
