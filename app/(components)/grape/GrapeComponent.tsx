@@ -31,6 +31,7 @@ import {
   flightData,
   templateFakeAPI,
 } from "@/app/(components)/grape/content";
+import { Button } from "@/components/ui/button";
 type Props = {
   isCreateTemplate?: boolean;
 };
@@ -87,7 +88,7 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
   useEffect(() => {
     const editor = grapesjs.init({
       container: "#editor",
-      width: windowWidth > 1280 ? String((windowWidth - 300) * 0.9) : "100%",
+      width: "100%",
       height: String(window.innerHeight * 0.8),
       plugins: isCreateTemplate
         ? [grapesjsPresetWebpage, grapesjsBlocksBasic]
@@ -383,22 +384,26 @@ const GrapeComponent = ({ isCreateTemplate = true }: Props) => {
 
   return (
     <div>
-      <div id="editor"></div>
+      <div id="editor" />
       {isCreateTemplate && (
-        <button id="exportEditorHtmlCssButton">Export HTML</button>
+        <Button id="exportEditorHtmlCssButton" className="mt-4 block ml-auto">
+          Export HTML
+        </Button>
       )}
-      <input
-        type="text"
-        id="nameInput"
-        className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
-        placeholder="Nhập tên người và nhấn Enter"
-      />
-      {imageBlob && (
+      {!isCreateTemplate && (
+        <input
+          type="text"
+          id="nameInput"
+          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
+          placeholder="Nhập tên người và nhấn Enter"
+        />
+      )}
+      {/* {imageBlob && (
         <div>
           <p>Image preview:</p>
           <img src={URL.createObjectURL(imageBlob)} alt="Captured Image" />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

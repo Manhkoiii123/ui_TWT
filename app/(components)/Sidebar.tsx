@@ -14,9 +14,7 @@ type TExpand = {
 const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
   const pathName = usePathname();
   const isActive = (link: string) => {
-    // return item.link
     return pathName === link || pathName.includes(link);
-    // : item.subMenu?.some((sub) => pathName.includes(sub.link!));
   };
   const [isOpen, setIsOpen] = useState<TExpand[]>(
     menuLink.map((item) => ({
@@ -49,7 +47,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
         <Link
           href={item.link!}
           onClick={closeMenu}
-          className="text-[#ffffffb3] hover:text-white font-medium leading-6 text-sm font-primary "
+          className=" hover:text-white font-medium leading-6 text-sm font-primary "
         >
           <div className="flex items-center gap-3 py-2">
             <div>{item.icon}</div>
@@ -95,7 +93,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
                 >
                   <div
                     className={`flex items-center gap-3 py-1 px-3 rounded-md ${
-                      isActive(subItem.link!) ? "bg-[#6C94E4]" : ""
+                      isActive(subItem.link!) ? "bg-primary text-white" : ""
                     }`}
                   >
                     <div className="w-3 h-3 border border-[#ffffffb3] rounded-full"></div>
@@ -110,7 +108,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
     }
   };
   return (
-    <div className="w-[280px] sticky top-0 h-screen bg-primary pt-4">
+    <div className="w-[280px] sticky top-0 h-screen bg-[#333D4A] pt-4">
       <div className="flex items-center justify-center mb-4 border-b border-gray-700 ">
         <Image
           src="https://newsletters.tkgplatform.com.au/assets/images/logo-twt-white.png"
@@ -125,7 +123,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
           <div
             key={item.id}
             className={`${
-              isActive(item.link) ? "bg-[#6C94E4]" : ""
+              isActive(item.link) ? "bg-primary text-white" : "text-[#ffffffb3]"
             } px-3 rounded-md `}
           >
             {displayItemMenu(item)}
