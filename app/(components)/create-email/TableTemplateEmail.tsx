@@ -4,6 +4,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogTitle,
 } from "@/components/ui/dialog";
 
 import {
@@ -23,6 +24,7 @@ import {
 import CustomSelect from "@/components/custom-select/CustomSelect";
 import { TTemplate } from "@/types/template";
 import { useEffect, useState } from "react";
+import { convertDate } from "@/lib/utils";
 
 type Props = {
   templates: TTemplate[] | undefined;
@@ -44,6 +46,10 @@ const TableTemplateEmail = ({ templates }: Props) => {
     {
       accessorKey: "created_at",
       header: "Created At",
+      cell: (info) => {
+        const date = convertDate(info.getValue() as string);
+        return date;
+      },
     },
   ];
 
@@ -184,6 +190,9 @@ const ViewTemplate = ({
     <Dialog open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
       <DialogContent className="max-h-[80vh] overflow-x-auto">
         <DialogHeader>
+          <DialogTitle className="text-gray-800 font-medium text-[12px] leading-[1.6rem] border-b border-gray-200 pb-[10px]">
+            Preview Template
+          </DialogTitle>
           <DialogDescription className="">
             {doc?.body.innerHTML && (
               <>
