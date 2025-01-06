@@ -34,8 +34,8 @@ const CreateTemplateComponent = () => {
       templateName: "",
     },
   });
-  const { setValue } = form;
-
+  const { setValue, watch } = form;
+  const watchTemplateName = watch("templateName");
   useEffect(() => {
     if (dataTemplate) {
       setValue("templateName", dataTemplate.name);
@@ -85,7 +85,10 @@ const CreateTemplateComponent = () => {
         </Form>
       </div>
       <div className="mt-4 ">
-        <GrapeComponent templateContent={dataTemplate?.content} />
+        <GrapeComponent
+          templateName={watchTemplateName}
+          templateContent={dataTemplate?.content}
+        />
       </div>
     </>
   );
