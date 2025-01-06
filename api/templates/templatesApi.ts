@@ -1,6 +1,6 @@
 import apiClient from "@/api/apiClient";
 import { TTemplate } from "@/types/template";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 export const templatesApi = {
   getTemplates: async (): Promise<TTemplate[]> => {
@@ -9,6 +9,10 @@ export const templatesApi = {
   },
   getTemplateById: async (id: number): Promise<TTemplate> => {
     const res = await apiClient.get(`/templates/${id}`);
+    return res.data;
+  },
+  createTemplate: async (data: FormData): Promise<TTemplate> => {
+    const res = await apiClient.post("/templates", data);
     return res.data;
   },
 };
@@ -23,5 +27,10 @@ export const useQueryGetTemplateById = (id: number, enabled: boolean) => {
     queryKey: ["templates", id],
     queryFn: () => templatesApi.getTemplateById(id),
     enabled,
+  });
+};
+export const useMutationCreateTemplate = () => {
+  return useMutation({
+    mutationFn: (data: FormData) => templatesApi.createTemplate(data),
   });
 };

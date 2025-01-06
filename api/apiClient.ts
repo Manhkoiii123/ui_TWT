@@ -6,9 +6,9 @@ const baseURLApp = process.env.NEXT_PUBLIC_API;
 
 const apiClient = axios.create({
   baseURL: baseURLApp,
-  headers: {
-    "content-type": "application/json",
-  },
+  // headers: {
+  //   "content-type": "application/json",
+  // },
 
   paramsSerializer: (params) => {
     return qs.stringify(params);

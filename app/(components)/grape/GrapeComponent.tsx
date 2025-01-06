@@ -32,22 +32,29 @@ import {
   templateFakeAPI,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
+import { useMutationCreateTemplate } from "@/api/templates/templatesApi";
+import { TTemplateCreate } from "@/types/template";
 type Props = {
   isCreateTemplate?: boolean;
   templateContent?: string;
+  templateName?: string;
 };
 const GrapeComponent = ({
   isCreateTemplate = true,
   templateContent,
+  templateName,
 }: Props) => {
   const [editor, setEditor] = useState<Editor | null>();
   const [imageBlob, setImageBlob] = useState<Blob | null>(null);
+  const [contentCreateOrEdit, setContentCreateOrEdit] = useState(
+    templateContent || ""
+  );
   function captureHtmlToBlob(htmlContent: string): Promise<Blob> {
     return new Promise((resolve, reject) => {
       const tempDiv = document.createElement("div");
       tempDiv.style.overflow = "hidden";
-      tempDiv.style.width = "100%";
-      tempDiv.style.height = "100%";
+      tempDiv.style.width = "800px";
+      tempDiv.style.height = "800px";
       tempDiv.innerHTML = htmlContent;
 
       document.body.appendChild(tempDiv);
@@ -88,6 +95,7 @@ const GrapeComponent = ({
   }
 
   const windowWidth = useWindowWidth();
+  const { mutate: mutateCreateTemplate } = useMutationCreateTemplate();
 
   useEffect(() => {
     const editor = grapesjs.init({
@@ -173,6 +181,7 @@ const GrapeComponent = ({
 
     const handleExportEditorHTMLAndCSS = () => {
       const content = getEditorHTMLAndCSS();
+      setContentCreateOrEdit(content);
 
       captureHtmlToBlob(content)
         .then((blob) => {
@@ -390,21 +399,46 @@ const GrapeComponent = ({
     setEditor(editor);
     return () => {
       editor.destroy();
-      document
-        .getElementById("exportEditorHtmlCssButton")
-        ?.removeEventListener("click", handleExportEditorHTMLAndCSS);
+      // document
+      //   .getElementById("exportEditorHtmlCssButton")
+      //   ?.removeEventListener("click", handleExportEditorHTMLAndCSS);
       if (nameInput) {
         nameInput.removeEventListener("keydown", () => {});
       }
     };
   }, [windowWidth, templateContent, isCreateTemplate]);
 
+  const handleCreateOrEditTemplate = async () => {
+    const blob = await captureHtmlToBlob(contentCreateOrEdit);
+    const formData = new FormData();
+    formData.append("name", templateName as string);
+    formData.append("label", templateName as string);
+    formData.append("category", "Custom");
+    formData.append(
+      "content",
+      JSON.stringify(contentCreateOrEdit).slice(1, -1)
+    );
+    formData.append("thumbnail", blob as Blob, "thumbnail.png");
+    for (const [key, value] of formData.entries()) {
+      console.log(key, value);
+    }
+    // if (templateContent) {
+    //   console.log("edit");
+    // } else {
+    mutateCreateTemplate(formData);
+    //   console.log("create");
+    // }
+  };
   return (
     <div>
       <div id="editor" />
       {isCreateTemplate && (
-        <Button id="exportEditorHtmlCssButton" className="mt-4 block ml-auto">
-          Export HTML
+        <Button
+          id="exportEditorHtmlCssButton"
+          className="mt-4 block ml-auto"
+          onClick={handleCreateOrEditTemplate}
+        >
+          {templateContent ? "Edit" : "Create"}
         </Button>
       )}
       {!isCreateTemplate && (
