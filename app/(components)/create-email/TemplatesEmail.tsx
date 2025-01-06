@@ -1,4 +1,5 @@
 "use client";
+import { useQueryGetTemplates } from "@/api/templates/templatesApi";
 import TableTemplateEmail from "@/app/(components)/create-email/TableTemplateEmail";
 import { Button } from "@/components/ui/button";
 import PlusIcon from "@/icon/PlusIcon";
@@ -10,6 +11,8 @@ const TemplatesEmail = () => {
   const handleNavigate = () => {
     router.push("/templates/create");
   };
+  const { data: templates } = useQueryGetTemplates();
+  console.log("🚀 ~ TemplatesEmail ~ templates:", templates);
   return (
     <div className="bg-white p-4 shadow-sm">
       <Button className="bg-primary mb-4" onClick={handleNavigate}>
