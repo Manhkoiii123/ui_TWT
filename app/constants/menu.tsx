@@ -58,8 +58,8 @@ export const menuLink = [
     subMenu: [
       {
         id: 1,
-        name: "All Campaign",
-        link: "/all-campains",
+        name: "Templates",
+        link: "/templates",
       },
       {
         id: 2,

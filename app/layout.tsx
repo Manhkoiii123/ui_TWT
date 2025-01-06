@@ -35,7 +35,7 @@ export default function RootLayout({
             </div>
             <main className="flex-1 ">
               <Header />
-              <div className="pt-[48px] px-8">{children}</div>
+              <div className="pt-[48px] px-8 ">{children}</div>
             </main>
           </div>
         </TanstackWrapper>
