@@ -1,5 +1,13 @@
 "use client";
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
@@ -15,11 +23,16 @@ import {
 } from "@/components/ui/table";
 import CustomSelect from "@/components/custom-select/CustomSelect";
 import { TTemplate } from "@/types/template";
+import { useEffect, useState } from "react";
+import { convertDate } from "@/lib/utils";
 
 type Props = {
   templates: TTemplate[] | undefined;
 };
 const TableTemplateEmail = ({ templates }: Props) => {
+  const [isOpenView, setIsOpenView] = useState(false);
+  const [htmlContent, setHtmlContent] = useState("");
+
   const columns: ColumnDef<TTemplate>[] = [
     {
       id: "index",
@@ -33,6 +46,10 @@ const TableTemplateEmail = ({ templates }: Props) => {
     {
       accessorKey: "created_at",
       header: "Created At",
+      cell: (info) => {
+        const date = convertDate(info.getValue() as string);
+        return date;
+      },
     },
   ];
 
@@ -87,7 +104,35 @@ const TableTemplateEmail = ({ templates }: Props) => {
                     <TableCell className="w-[25%]">
                       <div className="flex items-center justify-center">
                         <CustomSelect
-                          options={["View", "Edit", "Delete", "View History"]}
+                          options={[
+                            {
+                              label: "View",
+                              action: () => {
+                                setIsOpenView(true);
+                                setHtmlContent(row.original.content);
+
+                                console.log("view template");
+                              },
+                            },
+                            {
+                              label: "Edit",
+                              action: () => {
+                                console.log("edit template");
+                              },
+                            },
+                            {
+                              label: "Delete",
+                              action: () => {
+                                console.log("delete template");
+                              },
+                            },
+                            {
+                              label: "View History",
+                              action: () => {
+                                console.log("view history template");
+                              },
+                            },
+                          ]}
                         />
                       </div>
                     </TableCell>
@@ -104,8 +149,64 @@ const TableTemplateEmail = ({ templates }: Props) => {
           )}
         </TableBody>
       </Table>
+      {isOpenView && (
+        <ViewTemplate
+          isOpen={isOpenView}
+          setIsOpen={setIsOpenView}
+          htmlContent={htmlContent}
+        />
+      )}
     </div>
   );
 };
 
 export default TableTemplateEmail;
+const ViewTemplate = ({
+  isOpen,
+  htmlContent,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+  htmlContent: string;
+}) => {
+  const [styles, setStyles] = useState("");
+  const [doc, setDoc] = useState<Document>();
+  useEffect(() => {
+    const decodedHtml = JSON.parse('"' + htmlContent + '"');
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(decodedHtml, "text/html");
+    setDoc(doc);
+
+    const styleTags = doc.querySelectorAll("style");
+    let styleContent = "";
+    styleTags.forEach((tag) => {
+      styleContent += tag.innerHTML;
+    });
+
+    setStyles(styleContent);
+  }, [htmlContent]);
+  return (
+    <Dialog open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
+      <DialogContent className="max-h-[80vh] overflow-x-auto">
+        <DialogHeader>
+          <DialogTitle className="text-gray-800 font-medium text-[12px] leading-[1.6rem] border-b border-gray-200 pb-[10px]">
+            Preview Template
+          </DialogTitle>
+          <DialogDescription className="">
+            {doc?.body.innerHTML && (
+              <>
+                <style>{styles}</style>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: doc.body.innerHTML,
+                  }}
+                />
+              </>
+            )}
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  );
+};
