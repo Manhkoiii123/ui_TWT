@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-export const convertDate = (dateString: any) => {
+export const convertDate = (dateString: string) => {
   const date = new Date(dateString);
 
   const day = date.getDate().toString().padStart(2, "0");
