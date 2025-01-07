@@ -33,7 +33,7 @@ const CreateTemplateComponent = () => {
       templateName: "",
     },
   });
-  const { setValue, watch } = form;
+  const { setValue, watch, trigger } = form;
   const watchTemplateName = watch("templateName");
   useEffect(() => {
     if (dataTemplate) {
@@ -53,10 +53,6 @@ const CreateTemplateComponent = () => {
   };
   return (
     <>
-      <Button variant={"outline"} onClick={handleBackList}>
-        <LeftIcon />
-        Back To List
-      </Button>
       {isLoadingTemplate && (
         <div className="flex justify-center items-center w-[100%] h-[calc(100vh-200px)]">
           <Loading />
@@ -64,6 +60,10 @@ const CreateTemplateComponent = () => {
       )}
       {!isLoadingTemplate && (
         <>
+          <Button variant={"outline"} onClick={handleBackList}>
+            <LeftIcon />
+            Back To List
+          </Button>
           <div className="mt-4">
             <Form {...form}>
               <form
@@ -95,6 +95,7 @@ const CreateTemplateComponent = () => {
           </div>
           <div className="mt-4 ">
             <GrapeComponent
+              trigger={trigger}
               templateName={watchTemplateName}
               templateContent={dataTemplate?.content}
               idEdit={idEdit}
