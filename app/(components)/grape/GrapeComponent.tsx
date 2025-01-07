@@ -8,7 +8,6 @@ import grapesjs, { Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
-import useWindowWidth from "@/hooks/useWindowSize";
 import { testRequest } from "@/api/test";
 import {
   apiData,
@@ -43,12 +42,14 @@ type Props = {
   templateContent?: string;
   templateName?: string;
   idEdit?: string | null;
+  trigger?: any;
 };
 const GrapeComponent = ({
   isCreateTemplate = true,
   templateContent,
   templateName,
   idEdit,
+  trigger,
 }: Props) => {
   const router = useRouter();
   const { toast } = useToast();
@@ -56,6 +57,7 @@ const GrapeComponent = ({
   const [contentCreateOrEdit, setContentCreateOrEdit] = useState(
     templateContent || ""
   );
+  console.log("🚀 ~ contentCreateOrEdit:", contentCreateOrEdit);
   function captureHtmlToBlob(htmlContent: string): Promise<Blob> {
     return new Promise((resolve, reject) => {
       const tempDiv = document.createElement("div");
@@ -101,7 +103,6 @@ const GrapeComponent = ({
     });
   }
 
-  const windowWidth = useWindowWidth();
   const { mutate: mutateCreateTemplate, isPending: isPendingCreateTemplate } =
     useMutationCreateTemplate();
   const { mutate: mutateEditTemplate, isPending: isPendingEditTemplate } =
@@ -388,46 +389,51 @@ const GrapeComponent = ({
         nameInput.removeEventListener("keydown", () => {});
       }
     };
-  }, [windowWidth, templateContent, isCreateTemplate]);
+  }, [templateContent, isCreateTemplate]);
 
   const handleCreateOrEditTemplate = async () => {
-    const blob = await captureHtmlToBlob(contentCreateOrEdit);
-    const formData = new FormData();
-    formData.append("name", templateName as string);
-    formData.append("label", templateName as string);
-    formData.append("category", "Custom");
-    formData.append(
-      "content",
-      JSON.stringify(contentCreateOrEdit).slice(1, -1)
-    );
-    formData.append("thumbnail", blob as Blob, "thumbnail.png");
-    for (const [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-    if (templateContent) {
-      mutateEditTemplate(
-        {
-          id: Number(idEdit),
-          data: formData,
-        },
-        {
-          onSuccess: () => {
-            toast({
-              title: "Edit template successfully",
-            });
-            router.push("/templates");
-          },
-        }
-      );
-    } else {
-      mutateCreateTemplate(formData, {
-        onSuccess: () => {
-          toast({
-            title: "Create template successfully",
+    if (trigger) {
+      const isValid = await trigger();
+      if (!isValid) {
+        return;
+      } else {
+        const blob = await captureHtmlToBlob(contentCreateOrEdit);
+        const formData = new FormData();
+        formData.append("name", templateName as string);
+        formData.append("label", templateName as string);
+        formData.append("category", "Custom");
+        formData.append(
+          "content",
+          JSON.stringify(contentCreateOrEdit).slice(1, -1)
+        );
+        formData.append("thumbnail", blob as Blob, "thumbnail.png");
+
+        if (templateContent) {
+          mutateEditTemplate(
+            {
+              id: Number(idEdit),
+              data: formData,
+            },
+            {
+              onSuccess: () => {
+                toast({
+                  title: "Edit template successfully",
+                });
+                router.push("/templates");
+              },
+            }
+          );
+        } else {
+          mutateCreateTemplate(formData, {
+            onSuccess: () => {
+              toast({
+                title: "Create template successfully",
+              });
+              router.push("/templates");
+            },
           });
-          router.push("/templates");
-        },
-      });
+        }
+      }
     }
   };
   return (
