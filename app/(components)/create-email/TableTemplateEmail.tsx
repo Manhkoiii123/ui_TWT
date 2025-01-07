@@ -26,14 +26,19 @@ import { TTemplate } from "@/types/template";
 import { useEffect, useState } from "react";
 import { convertDate } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-
+import Swal from "sweetalert2";
+import { useMutationDeleteTemplate } from "@/api/templates/templatesApi";
+import { useQueryClient } from "@tanstack/react-query";
 type Props = {
   templates: TTemplate[] | undefined;
 };
 const TableTemplateEmail = ({ templates }: Props) => {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const [isOpenView, setIsOpenView] = useState(false);
+
   const [htmlContent, setHtmlContent] = useState("");
+  const { mutate: mutateDeleteTemplate } = useMutationDeleteTemplate();
 
   const columns: ColumnDef<TTemplate>[] = [
     {
@@ -61,6 +66,31 @@ const TableTemplateEmail = ({ templates }: Props) => {
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
+  const handleClickDelete = async (id: number, callback: () => void) => {
+    Swal.fire({
+      title: "Delete this? You can't revert this.",
+      icon: "error",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        mutateDeleteTemplate(id, {
+          onSuccess: () => {
+            queryClient.invalidateQueries({
+              queryKey: ["templates"],
+            });
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            callback();
+          },
+          onError: () => {
+            Swal.fire("Error!", "Something went wrong.", "error");
+          },
+        });
+      }
+    });
+  };
 
   return (
     <div>
@@ -112,8 +142,6 @@ const TableTemplateEmail = ({ templates }: Props) => {
                               action: () => {
                                 setIsOpenView(true);
                                 setHtmlContent(row.original.content);
-
-                                console.log("view template");
                               },
                             },
                             {
@@ -126,9 +154,8 @@ const TableTemplateEmail = ({ templates }: Props) => {
                             },
                             {
                               label: "Delete",
-                              action: () => {
-                                console.log("delete template");
-                              },
+                              action: (callback: () => void) =>
+                                handleClickDelete(row.original.id, callback),
                             },
                             {
                               label: "View History",

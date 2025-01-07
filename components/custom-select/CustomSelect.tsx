@@ -13,10 +13,10 @@ type TOption = {
 };
 const CustomSelect = ({ options }: { options: TOption[] }) => {
   const [selectedOption, setSelectedOption] = useState(options[0].label);
-
+  const handleCallBack = () => setSelectedOption(options[0].label);
   const handleOptionSelect = (option: TOption) => {
-    option.action();
     setSelectedOption(option.label);
+    option.action(handleCallBack);
   };
   return (
     <div className="flex items-center">
