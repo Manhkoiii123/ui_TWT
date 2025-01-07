@@ -1,11 +1,14 @@
 import apiClient from "@/api/apiClient";
-import { TTemplate } from "@/types/template";
+import { TemplateResponse, TTemplate } from "@/types/template";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { AxiosResponse } from "axios";
 
 export const templatesApi = {
-  getTemplates: async (): Promise<TTemplate[]> => {
-    const res = await apiClient.get("/templates");
-    return res.data;
+  getTemplates: async (data: { page: number }): Promise<TemplateResponse> => {
+    const res: TemplateResponse = await apiClient.get("/templates", {
+      params: data,
+    });
+    return res;
   },
   getTemplateById: async (id: number): Promise<TTemplate> => {
     const res = await apiClient.get(`/templates/${id}`);
@@ -24,10 +27,10 @@ export const templatesApi = {
     return res;
   },
 };
-export const useQueryGetTemplates = () => {
+export const useQueryGetTemplates = (data: { page: number }) => {
   return useQuery({
-    queryKey: ["templates"],
-    queryFn: () => templatesApi.getTemplates(),
+    queryKey: ["templates", data.page],
+    queryFn: () => templatesApi.getTemplates(data),
   });
 };
 export const useQueryGetTemplateById = (id: number, enabled: boolean) => {

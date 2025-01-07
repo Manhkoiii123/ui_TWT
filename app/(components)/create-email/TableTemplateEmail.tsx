@@ -25,7 +25,7 @@ import CustomSelect from "@/components/custom-select/CustomSelect";
 import { TTemplate } from "@/types/template";
 import { useEffect, useState } from "react";
 import { convertDate } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Swal from "sweetalert2";
 import { useMutationDeleteTemplate } from "@/api/templates/templatesApi";
 import { useQueryClient } from "@tanstack/react-query";
@@ -36,6 +36,7 @@ type Props = {
 };
 const TableTemplateEmail = ({ templates, isLoading }: Props) => {
   const router = useRouter();
+  const currentPage = Number(useSearchParams().get("page")) || 1;
   const queryClient = useQueryClient();
   const [isOpenView, setIsOpenView] = useState(false);
 
@@ -46,7 +47,7 @@ const TableTemplateEmail = ({ templates, isLoading }: Props) => {
     {
       id: "index",
       header: "No",
-      cell: (info) => info.row.index + 1,
+      cell: (info) => (currentPage - 1) * 10 + info.row.index + 1,
     },
     {
       accessorKey: "label",
@@ -195,6 +196,7 @@ const TableTemplateEmail = ({ templates, isLoading }: Props) => {
               )}
             </TableBody>
           </Table>
+
           {isOpenView && (
             <ViewTemplate
               isOpen={isOpenView}
