@@ -15,6 +15,14 @@ export const templatesApi = {
     const res = await apiClient.post("/templates", data);
     return res.data;
   },
+  deleteTemplate: async (id: number) => {
+    const res = await apiClient.delete(`/templates/${id}`);
+    return res;
+  },
+  editTemplate: async (id: number, data: FormData) => {
+    const res = await apiClient.put(`/templates/${id}`, data);
+    return res;
+  },
 };
 export const useQueryGetTemplates = () => {
   return useQuery({
@@ -32,5 +40,16 @@ export const useQueryGetTemplateById = (id: number, enabled: boolean) => {
 export const useMutationCreateTemplate = () => {
   return useMutation({
     mutationFn: (data: FormData) => templatesApi.createTemplate(data),
+  });
+};
+export const useMutationDeleteTemplate = () => {
+  return useMutation({
+    mutationFn: (id: number) => templatesApi.deleteTemplate(id),
+  });
+};
+export const useMutationEditTemplate = () => {
+  return useMutation({
+    mutationFn: (data: { id: number; data: FormData }) =>
+      templatesApi.editTemplate(data.id, data.data),
   });
 };

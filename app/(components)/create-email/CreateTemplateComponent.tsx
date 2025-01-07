@@ -88,6 +88,7 @@ const CreateTemplateComponent = () => {
         <GrapeComponent
           templateName={watchTemplateName}
           templateContent={dataTemplate?.content}
+          idEdit={idEdit}
         />
       </div>
     </>

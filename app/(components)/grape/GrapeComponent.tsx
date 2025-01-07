@@ -29,23 +29,30 @@ import {
   templateFlight,
   templateCredit,
   flightData,
-  templateFakeAPI,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
-import { useMutationCreateTemplate } from "@/api/templates/templatesApi";
-import { TTemplateCreate } from "@/types/template";
+import {
+  useMutationCreateTemplate,
+  useMutationEditTemplate,
+} from "@/api/templates/templatesApi";
+import { useRouter } from "next/navigation";
+import { useToast } from "@/hooks/use-toast";
+import Loading from "@/components/Loading";
 type Props = {
   isCreateTemplate?: boolean;
   templateContent?: string;
   templateName?: string;
+  idEdit?: string | null;
 };
 const GrapeComponent = ({
   isCreateTemplate = true,
   templateContent,
   templateName,
+  idEdit,
 }: Props) => {
+  const router = useRouter();
+  const { toast } = useToast();
   const [editor, setEditor] = useState<Editor | null>();
-  const [imageBlob, setImageBlob] = useState<Blob | null>(null);
   const [contentCreateOrEdit, setContentCreateOrEdit] = useState(
     templateContent || ""
   );
@@ -53,8 +60,8 @@ const GrapeComponent = ({
     return new Promise((resolve, reject) => {
       const tempDiv = document.createElement("div");
       tempDiv.style.overflow = "hidden";
-      tempDiv.style.width = "800px";
-      tempDiv.style.height = "800px";
+      tempDiv.style.width = "500px";
+      tempDiv.style.height = "500px";
       tempDiv.innerHTML = htmlContent;
 
       document.body.appendChild(tempDiv);
@@ -95,7 +102,10 @@ const GrapeComponent = ({
   }
 
   const windowWidth = useWindowWidth();
-  const { mutate: mutateCreateTemplate } = useMutationCreateTemplate();
+  const { mutate: mutateCreateTemplate, isPending: isPendingCreateTemplate } =
+    useMutationCreateTemplate();
+  const { mutate: mutateEditTemplate, isPending: isPendingEditTemplate } =
+    useMutationEditTemplate();
 
   useEffect(() => {
     const editor = grapesjs.init({
@@ -182,14 +192,6 @@ const GrapeComponent = ({
     const handleExportEditorHTMLAndCSS = () => {
       const content = getEditorHTMLAndCSS();
       setContentCreateOrEdit(content);
-
-      captureHtmlToBlob(content)
-        .then((blob) => {
-          setImageBlob(blob);
-        })
-        .catch((error) => {
-          console.error("Error capturing HTML:", error);
-        });
     };
 
     const exportButton = document.getElementById("exportEditorHtmlCssButton");
@@ -356,26 +358,6 @@ const GrapeComponent = ({
       </svg>
     </div>`,
       });
-    } else {
-      editor.BlockManager.getAll().forEach((block: any) => {
-        if (block) {
-          if (block.changed.category.id === "Basic") {
-            editor.BlockManager.remove(block.getId());
-          }
-        }
-      });
-      templateFakeAPI.forEach((item) => {
-        editor.BlockManager.add(item.name, {
-          label: item.label,
-          content: item.content,
-          category: item.category,
-          media: `<div style="display:flex; align-items:center; justify-content:center  ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 24 24" fill="#B9A5A6">
-        <path d="M2 5h20v14H2V5zm2 2v6h16V7H4zm16 8H4v2h16v-2z" fill="#B9A5A6"/>
-      </svg>
-    </div>`,
-        });
-      });
     }
     if (templateContent) {
       const decodedHtml = JSON.parse('"' + templateContent + '"');
@@ -399,9 +381,9 @@ const GrapeComponent = ({
     setEditor(editor);
     return () => {
       editor.destroy();
-      // document
-      //   .getElementById("exportEditorHtmlCssButton")
-      //   ?.removeEventListener("click", handleExportEditorHTMLAndCSS);
+      document
+        .getElementById("exportEditorHtmlCssButton")
+        ?.removeEventListener("click", handleExportEditorHTMLAndCSS);
       if (nameInput) {
         nameInput.removeEventListener("keydown", () => {});
       }
@@ -422,23 +404,49 @@ const GrapeComponent = ({
     for (const [key, value] of formData.entries()) {
       console.log(key, value);
     }
-    // if (templateContent) {
-    //   console.log("edit");
-    // } else {
-    mutateCreateTemplate(formData);
-    //   console.log("create");
-    // }
+    if (templateContent) {
+      mutateEditTemplate(
+        {
+          id: Number(idEdit),
+          data: formData,
+        },
+        {
+          onSuccess: () => {
+            toast({
+              title: "Edit template successfully",
+            });
+            router.push("/templates");
+          },
+        }
+      );
+    } else {
+      mutateCreateTemplate(formData, {
+        onSuccess: () => {
+          toast({
+            title: "Create template successfully",
+          });
+          router.push("/templates");
+        },
+      });
+    }
   };
   return (
     <div>
       <div id="editor" />
       {isCreateTemplate && (
         <Button
+          disabled={isPendingCreateTemplate}
           id="exportEditorHtmlCssButton"
           className="mt-4 block ml-auto"
           onClick={handleCreateOrEditTemplate}
         >
-          {templateContent ? "Edit" : "Create"}
+          {isPendingCreateTemplate || isPendingEditTemplate ? (
+            <Loading />
+          ) : templateContent ? (
+            "Edit"
+          ) : (
+            "Create"
+          )}
         </Button>
       )}
       {!isCreateTemplate && (
