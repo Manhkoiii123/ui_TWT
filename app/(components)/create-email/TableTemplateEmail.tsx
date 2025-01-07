@@ -29,10 +29,12 @@ import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import { useMutationDeleteTemplate } from "@/api/templates/templatesApi";
 import { useQueryClient } from "@tanstack/react-query";
+import Loading from "@/components/Loading";
 type Props = {
   templates: TTemplate[] | undefined;
+  isLoading: boolean;
 };
-const TableTemplateEmail = ({ templates }: Props) => {
+const TableTemplateEmail = ({ templates, isLoading }: Props) => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const [isOpenView, setIsOpenView] = useState(false);
@@ -93,101 +95,116 @@ const TableTemplateEmail = ({ templates }: Props) => {
   };
 
   return (
-    <div>
-      <Table>
-        <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <>
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  </>
-                );
-              })}
-              <TableHead className="text-center w-[25%]">Action</TableHead>
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            <>
-              {table.getRowModel().rows.map((row) => (
-                <>
-                  <TableRow
-                    key={row.id}
-                    data-state={row.getIsSelected() && "selected"}
-                  >
-                    {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
-                      </TableCell>
-                    ))}
-                    <TableCell className="w-[25%]">
-                      <div className="flex items-center justify-center">
-                        <CustomSelect
-                          options={[
-                            {
-                              label: "View",
-                              action: () => {
-                                setIsOpenView(true);
-                                setHtmlContent(row.original.content);
-                              },
-                            },
-                            {
-                              label: "Edit",
-                              action: () => {
-                                router.push(
-                                  `/templates/edit?id=${row.original.id}`
-                                );
-                              },
-                            },
-                            {
-                              label: "Delete",
-                              action: (callback: () => void) =>
-                                handleClickDelete(row.original.id, callback),
-                            },
-                            {
-                              label: "View History",
-                              action: () => {
-                                console.log("view history template");
-                              },
-                            },
-                          ]}
-                        />
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                </>
-              ))}
-            </>
-          ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-      {isOpenView && (
-        <ViewTemplate
-          isOpen={isOpenView}
-          setIsOpen={setIsOpenView}
-          htmlContent={htmlContent}
-        />
+    <>
+      {isLoading && (
+        <div className="flex justify-center items-center w-[100%] h-[calc(100vh-200px)]">
+          <Loading />
+        </div>
       )}
-    </div>
+      {!isLoading && (
+        <div>
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <>
+                        <TableHead key={header.id}>
+                          {header.isPlaceholder
+                            ? null
+                            : flexRender(
+                                header.column.columnDef.header,
+                                header.getContext()
+                              )}
+                        </TableHead>
+                      </>
+                    );
+                  })}
+                  <TableHead className="text-center w-[25%]">Action</TableHead>
+                </TableRow>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                <>
+                  {table.getRowModel().rows.map((row) => (
+                    <>
+                      <TableRow
+                        key={row.id}
+                        data-state={row.getIsSelected() && "selected"}
+                      >
+                        {row.getVisibleCells().map((cell) => (
+                          <TableCell key={cell.id}>
+                            {flexRender(
+                              cell.column.columnDef.cell,
+                              cell.getContext()
+                            )}
+                          </TableCell>
+                        ))}
+                        <TableCell className="w-[25%]">
+                          <div className="flex items-center justify-center">
+                            <CustomSelect
+                              options={[
+                                {
+                                  label: "View",
+                                  action: () => {
+                                    setIsOpenView(true);
+                                    setHtmlContent(row.original.content);
+                                  },
+                                },
+                                {
+                                  label: "Edit",
+                                  action: () => {
+                                    router.push(
+                                      `/templates/edit?id=${row.original.id}`
+                                    );
+                                  },
+                                },
+                                {
+                                  label: "Delete",
+                                  action: (callback: () => void) =>
+                                    handleClickDelete(
+                                      row.original.id,
+                                      callback
+                                    ),
+                                },
+                                {
+                                  label: "View History",
+                                  action: () => {
+                                    console.log("view history template");
+                                  },
+                                },
+                              ]}
+                            />
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    </>
+                  ))}
+                </>
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-center"
+                  >
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+          {isOpenView && (
+            <ViewTemplate
+              isOpen={isOpenView}
+              setIsOpen={setIsOpenView}
+              htmlContent={htmlContent}
+            />
+          )}
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import AudienceType from "@/app/(components)/audience/AudienceType";
 import CustomDrawer from "@/app/(components)/CustomDrawer";
+import Loading from "@/components/Loading";
 import MenuIcon from "@/icon/MenuIcon";
 import type { Metadata } from "next";
 import { Suspense } from "react";
@@ -17,7 +18,13 @@ export default function RootLayout({
   return (
     <>
       <div className="flex flex-col xl:flex-row gap-9">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div className="h-screen">
+              <Loading />
+            </div>
+          }
+        >
           <div className="xl:block hidden">
             <AudienceType />
           </div>
