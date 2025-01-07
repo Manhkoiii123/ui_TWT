@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import GrapeComponent from "@/app/(components)/grape/GrapeComponent";
 import { useQueryGetTemplateById } from "@/api/templates/templatesApi";
+import Loading from "@/components/Loading";
 const formSchema = z.object({
   templateName: z.string().min(1, { message: "Please enter a title" }),
 });
@@ -24,10 +25,8 @@ const CreateTemplateComponent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const idEdit = searchParams.get("id");
-  const { data: dataTemplate } = useQueryGetTemplateById(
-    Number(idEdit),
-    Boolean(idEdit)
-  );
+  const { data: dataTemplate, isLoading: isLoadingTemplate } =
+    useQueryGetTemplateById(Number(idEdit), Boolean(idEdit));
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -58,39 +57,51 @@ const CreateTemplateComponent = () => {
         <LeftIcon />
         Back To List
       </Button>
-      <div className="mt-4">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <FormField
-              control={form.control}
-              name="templateName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      placeholder="Title"
-                      className={`${
-                        errors.templateName?.message &&
-                        "border-red-500 focus-visible:ring-0"
-                      } h-12`}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormDescription></FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
+      {isLoadingTemplate && (
+        <div className="flex justify-center items-center w-[100%] h-[calc(100vh-200px)]">
+          <Loading />
+        </div>
+      )}
+      {!isLoadingTemplate && (
+        <>
+          <div className="mt-4">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8"
+              >
+                <FormField
+                  control={form.control}
+                  name="templateName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          placeholder="Title"
+                          className={`${
+                            errors.templateName?.message &&
+                            "border-red-500 focus-visible:ring-0"
+                          } h-12`}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription></FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </form>
+            </Form>
+          </div>
+          <div className="mt-4 ">
+            <GrapeComponent
+              templateName={watchTemplateName}
+              templateContent={dataTemplate?.content}
+              idEdit={idEdit}
             />
-          </form>
-        </Form>
-      </div>
-      <div className="mt-4 ">
-        <GrapeComponent
-          templateName={watchTemplateName}
-          templateContent={dataTemplate?.content}
-          idEdit={idEdit}
-        />
-      </div>
+          </div>
+        </>
+      )}
     </>
   );
 };
