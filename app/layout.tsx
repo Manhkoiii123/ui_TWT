@@ -29,11 +29,11 @@ export default function RootLayout({
       </head>
       <body className={` antialiased ${beVietnam.className}  `}>
         <TanstackWrapper>
-          <div className="flex w-[100vw] max-xl:h-screen bg-gray-100">
+          <div className="flex w-[100vw] min-xl:h-screen h-full bg-gray-100 ">
             <div className="max-xl:hidden">
               <Sidebar />
             </div>
-            <main className="flex-1 ">
+            <main className="flex-1 pb-4">
               <Header />
               <div className="pt-[48px] px-8 ">{children}</div>
               <Toaster />
