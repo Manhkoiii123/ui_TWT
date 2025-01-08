@@ -115,7 +115,8 @@ const GrapeComponent = ({
   const { mutate: mutateEditTemplate, isPending: isPendingEditTemplate } =
     useMutationEditTemplate();
 
-  const { mutate: mutateUploadImage } = useMutationUploadImage();
+  const { mutate: mutateUploadImage, isPending: isPendingUploadImage } =
+    useMutationUploadImage();
   const { mutate: mutateRemoveImage } = useMutationRemoveImage();
 
   useEffect(() => {
@@ -129,7 +130,7 @@ const GrapeComponent = ({
 
       storageManager: false,
       assetManager: {
-        upload: "/api/upload",
+        upload: isPendingUploadImage ? false : "/api/upload",
         uploadName: "file",
         assets: [],
         uploadFile: function (e: Event) {
@@ -149,6 +150,7 @@ const GrapeComponent = ({
                     type: "image",
                     height: 300,
                     width: 400,
+                    name: files[0].name,
                   },
                 ]);
               },
@@ -160,18 +162,30 @@ const GrapeComponent = ({
         },
       },
     });
+    let removedAsset: any = null;
+    let removedAssetIndex: number | null = null;
     editor.on("asset:remove", (asset) => {
       const imageUrl = asset.get("src");
 
+      removedAsset = asset;
+      removedAssetIndex = editor.AssetManager.getAll().indexOf(asset);
       mutateRemoveImage(imageUrl, {
         onSuccess: () => {
-          console.log("Image deleted successfully:", imageUrl);
+          editor.AssetManager.remove(asset);
         },
         onError: (error) => {
-          console.error("Delete image error:", error);
+          if (removedAsset && removedAssetIndex !== null) {
+            editor.AssetManager.add(removedAsset);
+          }
+          toast({
+            variant: "destructive",
+            title: "Error",
+            description: "Delete image failed",
+          });
         },
       });
     });
+
     const nameInput = document.getElementById("nameInput");
     if (nameInput) {
       nameInput.addEventListener("keydown", (event: KeyboardEvent) => {

@@ -8,8 +8,8 @@ export const uploadApi = {
     const res: UploadImage = await apiClient.post("/upload-file", body);
     return res;
   },
-  removeImage: async (filePath: string) => {
-    const res = await apiClient.delete("remove-file", { data: { filePath } });
+  removeImage: async (file_path: string) => {
+    const res = await apiClient.delete("remove-file", { data: { file_path } });
     return res;
   },
 };
@@ -20,6 +20,6 @@ export const useMutationUploadImage = () => {
 };
 export const useMutationRemoveImage = () => {
   return useMutation({
-    mutationFn: (filePath: string) => uploadApi.removeImage(filePath),
+    mutationFn: (file_path: string) => uploadApi.removeImage(file_path),
   });
 };
