@@ -99,6 +99,7 @@ const CreateTemplateComponent = () => {
               templateName={watchTemplateName}
               templateContent={dataTemplate?.content}
               idEdit={idEdit}
+              imageUrl={dataTemplate?.thumbnail}
             />
           </div>
         </>

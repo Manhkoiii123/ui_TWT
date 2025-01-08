@@ -1,7 +1,13 @@
 import apiClient from "@/api/apiClient";
 import { TemplateResponse, TTemplate } from "@/types/template";
 import { useMutation, useQuery } from "@tanstack/react-query";
-
+type TCreateEditTemplate = {
+  name: string;
+  label: string;
+  content: string;
+  category: string;
+  thumbnail?: string;
+};
 export const templatesApi = {
   getTemplates: async (data: { page: number }): Promise<TemplateResponse> => {
     const res: TemplateResponse = await apiClient.get("/templates", {
@@ -13,7 +19,7 @@ export const templatesApi = {
     const res = await apiClient.get(`/templates/${id}`);
     return res.data;
   },
-  createTemplate: async (data: FormData): Promise<TTemplate> => {
+  createTemplate: async (data: TCreateEditTemplate): Promise<TTemplate> => {
     const res = await apiClient.post("/templates", data);
     return res.data;
   },
@@ -21,7 +27,7 @@ export const templatesApi = {
     const res = await apiClient.delete(`/templates/${id}`);
     return res;
   },
-  editTemplate: async (id: number, data: FormData) => {
+  editTemplate: async (id: number, data: TCreateEditTemplate) => {
     const res = await apiClient.put(`/templates/${id}`, data);
     return res;
   },
@@ -41,7 +47,8 @@ export const useQueryGetTemplateById = (id: number, enabled: boolean) => {
 };
 export const useMutationCreateTemplate = () => {
   return useMutation({
-    mutationFn: (data: FormData) => templatesApi.createTemplate(data),
+    mutationFn: (data: TCreateEditTemplate) =>
+      templatesApi.createTemplate(data),
   });
 };
 export const useMutationDeleteTemplate = () => {
@@ -51,7 +58,7 @@ export const useMutationDeleteTemplate = () => {
 };
 export const useMutationEditTemplate = () => {
   return useMutation({
-    mutationFn: (data: { id: number; data: FormData }) =>
+    mutationFn: (data: { id: number; data: TCreateEditTemplate }) =>
       templatesApi.editTemplate(data.id, data.data),
   });
 };
