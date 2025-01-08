@@ -57,7 +57,6 @@ const GrapeComponent = ({
   const [contentCreateOrEdit, setContentCreateOrEdit] = useState(
     templateContent || ""
   );
-  console.log("🚀 ~ contentCreateOrEdit:", contentCreateOrEdit);
   function captureHtmlToBlob(htmlContent: string): Promise<Blob> {
     return new Promise((resolve, reject) => {
       const tempDiv = document.createElement("div");
@@ -463,12 +462,6 @@ const GrapeComponent = ({
           placeholder="Nhập tên người và nhấn Enter"
         />
       )}
-      {/* {imageBlob && (
-        <div>
-          <p>Image preview:</p>
-          <img src={URL.createObjectURL(imageBlob)} alt="Captured Image" />
-        </div>
-      )} */}
     </div>
   );
 };

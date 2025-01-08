@@ -1,7 +1,6 @@
 import apiClient from "@/api/apiClient";
 import { TemplateResponse, TTemplate } from "@/types/template";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { AxiosResponse } from "axios";
 
 export const templatesApi = {
   getTemplates: async (data: { page: number }): Promise<TemplateResponse> => {
