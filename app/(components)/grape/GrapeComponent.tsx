@@ -301,6 +301,11 @@ const GrapeComponent = ({
         label: "templateCard1",
         content: templateCard1(cardContentTemplate),
         category: "Custom",
+        media: `
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <img src="/images/layout_template_1.jpg" alt="Card Content" style="width: 80px; height: 40px;object-fit:cover" />
+    </div>
+  `,
       });
 
       editor.BlockManager.add("layoutCard2", {
