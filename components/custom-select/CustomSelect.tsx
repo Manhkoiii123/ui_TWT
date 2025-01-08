@@ -27,7 +27,7 @@ const CustomSelect = ({ options }: { options: TOption[] }) => {
             (option) => option.label === selectedOption
           );
           if (option) {
-            option.action();
+            option.action(handleCallBack);
           }
         }}
       >
