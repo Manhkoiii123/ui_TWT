@@ -5,12 +5,13 @@ import Pagination from "@/components/custom-pagination/Pagination";
 import Loading from "@/components/Loading";
 import { Button } from "@/components/ui/button";
 import PlusIcon from "@/icon/PlusIcon";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { Suspense, useState } from "react";
 
 const TemplatesEmail = () => {
   const router = useRouter();
-  const [page, setPage] = useState(1);
+  const currentPage = Number(useSearchParams().get("page")) || 1;
+  const [page, setPage] = useState(currentPage);
   const handleNavigate = () => {
     router.push("/templates/create");
   };
