@@ -37,7 +37,10 @@ import {
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import Loading from "@/components/Loading";
-import { useMutationUploadImage } from "@/api/upload/uploadApi";
+import {
+  useMutationRemoveImage,
+  useMutationUploadImage,
+} from "@/api/upload/uploadApi";
 type Props = {
   isCreateTemplate?: boolean;
   templateContent?: string;
@@ -113,6 +116,7 @@ const GrapeComponent = ({
     useMutationEditTemplate();
 
   const { mutate: mutateUploadImage } = useMutationUploadImage();
+  const { mutate: mutateRemoveImage } = useMutationRemoveImage();
 
   useEffect(() => {
     const editor = grapesjs.init({
@@ -124,8 +128,50 @@ const GrapeComponent = ({
         : [grapesjsPresetWebpage],
 
       storageManager: false,
-    });
+      assetManager: {
+        upload: "/api/upload",
+        uploadName: "file",
+        assets: [],
+        uploadFile: function (e: Event) {
+          const files = (e as DragEvent).dataTransfer
+            ? (e as DragEvent).dataTransfer?.files
+            : (e.target as HTMLInputElement).files;
 
+          if (files && files.length > 0) {
+            const formData = new FormData();
+            formData.append("file", files[0]);
+
+            mutateUploadImage(formData, {
+              onSuccess: (data) => {
+                editor.AssetManager.add([
+                  {
+                    src: data.url,
+                    type: "image",
+                    height: 300,
+                    width: 400,
+                  },
+                ]);
+              },
+              onError: (error) => {
+                console.error("Upload error:", error);
+              },
+            });
+          }
+        },
+      },
+    });
+    editor.on("asset:remove", (asset) => {
+      const imageUrl = asset.get("src");
+
+      mutateRemoveImage(imageUrl, {
+        onSuccess: () => {
+          console.log("Image deleted successfully:", imageUrl);
+        },
+        onError: (error) => {
+          console.error("Delete image error:", error);
+        },
+      });
+    });
     const nameInput = document.getElementById("nameInput");
     if (nameInput) {
       nameInput.addEventListener("keydown", (event: KeyboardEvent) => {
