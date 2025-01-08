@@ -37,12 +37,14 @@ import {
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import Loading from "@/components/Loading";
+import { useMutationUploadImage } from "@/api/upload/uploadApi";
 type Props = {
   isCreateTemplate?: boolean;
   templateContent?: string;
   templateName?: string;
   idEdit?: string | null;
   trigger?: any;
+  imageUrl?: string;
 };
 const GrapeComponent = ({
   isCreateTemplate = true,
@@ -50,6 +52,7 @@ const GrapeComponent = ({
   templateName,
   idEdit,
   trigger,
+  imageUrl,
 }: Props) => {
   const router = useRouter();
   const { toast } = useToast();
@@ -57,6 +60,8 @@ const GrapeComponent = ({
   const [contentCreateOrEdit, setContentCreateOrEdit] = useState(
     templateContent || ""
   );
+
+  const [isChangeContent, setIsChangeContent] = useState(false);
   function captureHtmlToBlob(htmlContent: string): Promise<Blob> {
     return new Promise((resolve, reject) => {
       const tempDiv = document.createElement("div");
@@ -106,6 +111,8 @@ const GrapeComponent = ({
     useMutationCreateTemplate();
   const { mutate: mutateEditTemplate, isPending: isPendingEditTemplate } =
     useMutationEditTemplate();
+
+  const { mutate: mutateUploadImage } = useMutationUploadImage();
 
   useEffect(() => {
     const editor = grapesjs.init({
@@ -381,6 +388,27 @@ const GrapeComponent = ({
                 </div>
               `
       );
+      let previousHtml = editor.getHtml();
+
+      editor.on("component:update", () => {
+        handleContentChange();
+      });
+
+      editor.on("component:add", () => {
+        handleContentChange();
+      });
+
+      editor.on("component:remove", () => {
+        handleContentChange();
+      });
+
+      function handleContentChange() {
+        const currentHtml = editor!.getHtml();
+        if (currentHtml !== previousHtml) {
+          setIsChangeContent(true);
+          previousHtml = currentHtml;
+        }
+      }
     }
 
     setEditor(editor);
@@ -403,37 +431,82 @@ const GrapeComponent = ({
       } else {
         const blob = await captureHtmlToBlob(contentCreateOrEdit);
         const formData = new FormData();
-        formData.append("name", templateName as string);
-        formData.append("label", templateName as string);
-        formData.append("category", "Custom");
+
         formData.append(
-          "content",
-          JSON.stringify(contentCreateOrEdit).slice(1, -1)
+          "file",
+          blob as Blob,
+          `thumbnail.${blob.type.split("/")[1]}`
         );
-        formData.append("thumbnail", blob as Blob, "thumbnail.png");
 
         if (templateContent) {
-          mutateEditTemplate(
-            {
-              id: Number(idEdit),
-              data: formData,
-            },
-            {
-              onSuccess: () => {
-                toast({
-                  title: "Edit template successfully",
-                });
-                router.push("/templates");
+          if (isChangeContent) {
+            mutateUploadImage(formData, {
+              onSuccess: (data) => {
+                // setNewImageUrl(data.url);
+                const payload = {
+                  name: templateName as string,
+                  label: templateName as string,
+                  content: JSON.stringify(contentCreateOrEdit).slice(1, -1),
+                  category: "Custom",
+                  thumbnail: data.url,
+                };
+                mutateEditTemplate(
+                  {
+                    id: Number(idEdit),
+                    data: payload,
+                  },
+                  {
+                    onSuccess: () => {
+                      toast({
+                        title: "Edit template successfully",
+                      });
+                      router.push("/templates");
+                    },
+                  }
+                );
               },
-            }
-          );
+            });
+          } else {
+            const payload = {
+              name: templateName as string,
+              label: templateName as string,
+              content: JSON.stringify(contentCreateOrEdit).slice(1, -1),
+              category: "Custom",
+              thumbnail: imageUrl,
+            };
+            mutateEditTemplate(
+              {
+                id: Number(idEdit),
+                data: payload,
+              },
+              {
+                onSuccess: () => {
+                  toast({
+                    title: "Edit template successfully",
+                  });
+                  router.push("/templates");
+                },
+              }
+            );
+          }
         } else {
-          mutateCreateTemplate(formData, {
-            onSuccess: () => {
-              toast({
-                title: "Create template successfully",
+          mutateUploadImage(formData, {
+            onSuccess: (data) => {
+              const payload = {
+                name: templateName as string,
+                label: templateName as string,
+                content: JSON.stringify(contentCreateOrEdit).slice(1, -1),
+                category: "Custom",
+                thumbnail: data.url,
+              };
+              mutateCreateTemplate(payload, {
+                onSuccess: () => {
+                  toast({
+                    title: "Create template successfully",
+                  });
+                  router.push("/templates");
+                },
               });
-              router.push("/templates");
             },
           });
         }
