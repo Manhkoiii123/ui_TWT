@@ -1210,7 +1210,7 @@ ${globalStyles}
               <div class="flex-container" style="display: flex; align-items: center; ">
                 <div class="image-container-card" style="flex: 1; max-width: 33.333%;">
                   <div style="text-align: center;height:100%">
-                    <img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb1.jpg" style="display: block; min-height:212px;height: 100%; border: 0; width: 100%; border-radius: 8px;object-fit: ;" alt="Apartment Image" title="Apartment Image">
+                    <img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb1.jpg" style="display: block; min-height:212px;height: 100%; border: 0; width: 100%; border-radius: 8px;object-fit: cover;" alt="Apartment Image" title="Apartment Image">
                   </div>
                 </div>
                 <div class="content-container" style="flex: 2; max-width: 66.666%; padding-left: 16px;display: flex; flex-direction: column; gap:12px">

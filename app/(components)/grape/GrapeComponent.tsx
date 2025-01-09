@@ -550,9 +550,9 @@ const GrapeComponent = ({
       <div id="editor" />
       {isCreateTemplate && (
         <Button
-          disabled={isPendingCreateTemplate}
+          disabled={isPendingCreateTemplate || isPendingUploadImage}
           id="exportEditorHtmlCssButton"
-          className="mt-4 block ml-auto"
+          className="mt-4 block ml-auto w-[120px]"
           onClick={handleCreateOrEditTemplate}
         >
           {isPendingCreateTemplate || isPendingEditTemplate ? (
