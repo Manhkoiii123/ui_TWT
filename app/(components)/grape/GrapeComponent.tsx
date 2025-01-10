@@ -173,6 +173,21 @@ const GrapeComponent = ({
         },
       });
 
+      const am = editor.AssetManager;
+      am.open({
+        types: ["image"],
+
+        select(asset, complete) {
+          const selected = editor.getSelected();
+
+          if (selected && selected.is("image")) {
+            selected.addAttributes({ src: asset.getSrc() });
+            if (complete) {
+              am.close();
+            }
+          }
+        },
+      });
       let removedAsset: any = null;
       let removedAssetIndex: number | null = null;
       editor.on("asset:remove", (asset) => {
@@ -353,7 +368,6 @@ const GrapeComponent = ({
       }
 
       if (isCreateTemplate) {
-        
         editor.BlockManager.add("header", {
           label: "header",
           content: header(),
