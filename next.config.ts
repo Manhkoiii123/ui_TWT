@@ -11,6 +11,21 @@ const nextConfig: NextConfig = {
         pathname: "/**",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "twt-agent-portal.s3.ap-southeast-2.amazonaws.com",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
+      {
+        protocol: "https",
+        hostname:
+          "microservice-master-crm-public.s3.ap-southeast-2.amazonaws.com",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
     ],
   },
 

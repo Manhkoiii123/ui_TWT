@@ -2094,3 +2094,386 @@ export const contentShowcase = () => {
 </table>
 `;
 };
+export const header = () => {
+  return `<table
+  class="row row-7 container"
+  align="center"
+  width="100%"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+  role="presentation"
+  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+>
+  <tbody>
+    <tr>
+      <td>
+        <table
+          class="row-content stack"
+          align="center"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          role="presentation"
+          style="
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            background-color: #ffffff;
+            color: #000000;
+            width: 640px;
+            margin: 0 auto;
+          "
+          width="640"
+        >
+          <tbody>
+            <tr>
+              <td
+                class="column column-1"
+                width="100%"
+                style="
+                  mso-table-lspace: 0pt;
+                  mso-table-rspace: 0pt;
+                  font-weight: 400;
+                  text-align: left;
+                  vertical-align: top;
+                  border-top: 0px;
+                  border-right: 0px;
+                  border-bottom: 0px;
+                  border-left: 0px;
+                "
+              >
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="center"
+                        style="line-height: 10px"
+                      >
+                        <div class="fullWidth" style="max-width: 270px">
+                          <img
+                            src="https://twt-agent-portal.s3.ap-southeast-2.amazonaws.com/development/image-library/Logo/tweet-world-travel-logo-1695885641.png"
+                            style="
+                              display: block;
+                              height: auto;
+                              border: 0;
+                              width: 100%;
+                            "
+                            width="270"
+                            alt="I'm an image"
+                            title="I'm an image"
+                            height="auto"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="center"
+                        style="line-height: 10px"
+                      >
+                        <div class="fullWidth" style="max-width: 600px">
+                          <img
+                            src="https://microservice-master-crm-public.s3.ap-southeast-2.amazonaws.com/newsletter/2023-04-27/img_none.png"
+                            style="
+                              display: block;
+                              height: auto;
+                              border: 0;
+                              width: 100%;
+                            "
+                            width="600"
+                            alt="I'm an image"
+                            title="I'm an image"
+                            height="auto"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="left"
+                        style="line-height: 10px"
+                      >
+                        <div
+                          class="fullWidth"
+                          style="
+                            font-family: Arial, sans-serif;
+                            font-size: 15px;
+                            font-weight: 400;
+                            line-height: 24px;
+                            text-align: left;
+                            color: #222222;
+                          "
+                        >
+                          <span>
+                            Dear [_title_name_],
+                            <br />Ctrl+Shift+V / Command+Shift+V to paste text
+                            from another place to this place without changing
+                            style. This is a new Text block. Change the text.
+                            This is a new Text block. Change the text.</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+};
+export const footer = () => {
+  return `
+  <table
+  class="row row-7 container"
+  align="center"
+  width="100%"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+  role="presentation"
+  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+>
+  <tbody>
+    <tr>
+      <td>
+        <table
+          class="row-content stack"
+          align="center"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          role="presentation"
+          style="
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            background-color: #ffffff;
+            color: #000000;
+            width: 640px;
+            margin: 0 auto;
+          "
+          width="640"
+        >
+          <tbody>
+            <tr>
+              <td
+                class="column column-1"
+                width="100%"
+                style="
+                  mso-table-lspace: 0pt;
+                  mso-table-rspace: 0pt;
+                  text-align: left;
+                  vertical-align: top;
+                  border-top: 0px;
+                  border-right: 0px;
+                  border-bottom: 0px;
+                  border-left: 0px;
+                  font-family: Arial, sans-serif;
+                  font-size: 15px;
+                  font-weight: 400;
+                  line-height: 1.7;
+                  text-align: left;
+                  color: #000000;
+                "
+              >
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="center"
+                        style="line-height: 10px"
+                      >
+                        <div class="fullWidth">
+                          <span
+                            >Tweet World Travel:
+                            <i
+                              >554 Magill Road, Magill SA 5072,
+                              Australia&nbsp;</i
+                            ></span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="center"
+                        style="line-height: 10px"
+                      >
+                        <div style="text-align: center">
+                          ACN: <i>1234 2657 910</i> | Website:
+                          <font color="#4a90e2"
+                            ><a
+                              href="https://tweetworldtravel.com/"
+                              target="_blank"
+                              style="text-decoration: underline"
+                              tabindex="-1"
+                              >w</a
+                            ><a
+                              href="https://tweetworldtravel.com/"
+                              target="_blank"
+                              style="text-decoration: underline"
+                              tabindex="-1"
+                              >ww.tweetworldtravel.com</a
+                            ></font
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="center"
+                        style="line-height: 10px"
+                      >
+                        <div style="text-align: center">
+                          <a
+                            href="https://newsletters.tweetworldtravel.com/unsubscribe?c=%5B_campaign_id_%5D&amp;a=%5B_unsubscribe_slug_%5D"
+                            target="_blank"
+                            style="text-decoration: underline"
+                            tabindex="-1"
+                            ><font color="#4a90e2">Unsubscribe</font></a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+};
+
+export const divider = () => {
+  return `<table
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+  role="presentation"
+  style="vertical-align: top"
+  width="100%"
+>
+  <tbody>
+    <tr>
+      <td
+        align="center"
+        style="
+          font-size: 0px;
+          padding: 10px 0px 10px 0px;
+          word-break: break-word;
+        "
+      >
+        <p
+          style="
+            border-top: solid 1px #c9cccf;
+            font-size: 1px;
+            margin: 0px auto;
+            width: 100%;
+          "
+        ></p>
+
+        <!--[if mso | IE
+          ]><table
+            align="center"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              border-top: solid 1px #c9cccf;
+              font-size: 1px;
+              margin: 0px auto;
+              width: 660px;
+            "
+            role="presentation"
+            width="660px"
+          >
+            <tr>
+              <td style="height: 0; line-height: 0">&nbsp;</td>
+            </tr>
+          </table><!
+        [endif]-->
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+};

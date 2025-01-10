@@ -21,6 +21,9 @@ import {
   contactUs,
   blog,
   contentShowcase,
+  header,
+  footer,
+  divider,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -350,6 +353,22 @@ const GrapeComponent = ({
       }
 
       if (isCreateTemplate) {
+        
+        editor.BlockManager.add("header", {
+          label: "header",
+          content: header(),
+          category: "Custom",
+        });
+        editor.BlockManager.add("footer", {
+          label: "footer",
+          content: footer(),
+          category: "Custom",
+        });
+        editor.BlockManager.add("divider", {
+          label: "divider",
+          content: divider(),
+          category: "Custom",
+        });
         editor.BlockManager.add("layoutCard2", {
           label: "layoutCard2",
           content: layoutCard2(column1Props),
