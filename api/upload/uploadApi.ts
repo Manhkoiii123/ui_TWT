@@ -1,5 +1,5 @@
 import apiClient from "@/api/apiClient";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 type UploadImage = {
   url: string;
 };
@@ -9,7 +9,11 @@ export const uploadApi = {
     return res;
   },
   removeImage: async (file_path: string) => {
-    const res = await apiClient.delete("remove-file", { data: { file_path } });
+    const res = await apiClient.post("remove-file", { file_path });
+    return res;
+  },
+  getImages: async () => {
+    const res: string[] = await apiClient.get("/getListViaAwsS3");
     return res;
   },
 };
@@ -21,5 +25,12 @@ export const useMutationUploadImage = () => {
 export const useMutationRemoveImage = () => {
   return useMutation({
     mutationFn: (file_path: string) => uploadApi.removeImage(file_path),
+  });
+};
+export const useQueryGetImages = (enabled: boolean) => {
+  return useQuery({
+    queryKey: ["images"],
+    queryFn: () => uploadApi.getImages(),
+    enabled,
   });
 };
