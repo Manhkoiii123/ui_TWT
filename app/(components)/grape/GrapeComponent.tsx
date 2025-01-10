@@ -223,7 +223,7 @@ const GrapeComponent = ({
       const findParentTable = (comp: any) => {
         const compClass = comp.getClasses();
         if (!comp) return null;
-        if (compClass.includes("container")) return comp;
+        if (compClass.includes("wrapper_content")) return comp;
         return findParentTable(comp.parent());
       };
 

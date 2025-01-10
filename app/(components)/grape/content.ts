@@ -369,8 +369,8 @@ const renderColumn = (props: any) => {
   const { imageUrl, price, name, description, details } = props;
 
   return `<td
-    class="column column-1 container"
-    width="50%"
+  width="50%"
+    class="column column-1 wrapper_content"
     style="
       mso-table-lspace: 0pt;
       mso-table-rspace: 0pt;
@@ -791,7 +791,7 @@ export const layoutCard2 = (column1Props: any) => {
 
 export const horizontalProduct = (data: any) => {
   return `<table
-  class="row row-7 container"
+  class="row row-7 wrapper_content"
   align="center"
   width="100%"
   border="0"
@@ -1208,7 +1208,7 @@ export const dataUserProfile = {
 };
 const userProfileHost = (data: any) => {
   return `
-    <table class="container" width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-top:16px;">
+    <table class="wrapper_content" width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-top:16px;">
       <tr>
         <td>
           <table width="100%" border="0" cellpadding="0" cellspacing="0" >
@@ -1287,10 +1287,10 @@ export const userProfile = (data: any) => {
   const column2 = userProfileHost(data);
 
   return `
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 20px;" class="container">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 20px;" class="wrapper_content">
       <tr>
         <td align="center">
-          <table class="container responsive-table" width="640" cellpadding="0" cellspacing="0" style="max-width: 640px; margin: 0 auto; background-color: #ffffff; color: #000000; border-radius: 8px; overflow: hidden; padding: 16px;">
+          <table class="wrapper_content responsive-table" width="640" cellpadding="0" cellspacing="0" style="max-width: 640px; margin: 0 auto; background-color: #ffffff; color: #000000; border-radius: 8px; overflow: hidden; padding: 16px;">
             <tr>
               <td width="50%" valign="top" class="responsive-td">
                 <table width="100%" cellpadding="0" cellspacing="0">
@@ -1386,7 +1386,7 @@ export const productItemOneColumn = (data: any) => {
 };
 export const contactUs = () => {
   return `<table
-  class="row row-7 container"
+  class="row row-7 wrapper_content"
   align="center"
   width="100%"
   border="0"
@@ -1620,7 +1620,7 @@ export const contactUs = () => {
 };
 export const blog = () => {
   return `<table
-  class="row row-7 container"
+  class="row row-7 wrapper_content"
   align="center"
   width="100%"
   border="0"
@@ -1893,7 +1893,7 @@ export const blog = () => {
 };
 export const contentShowcase = () => {
   return `<table
-  class="row row-7 container"
+  class="row row-7 wrapper_content"
   align="center"
   width="100%"
   border="0"
