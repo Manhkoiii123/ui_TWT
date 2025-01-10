@@ -1,7 +1,7 @@
 import GrapeComponent from "@/app/(components)/grape/GrapeComponent";
 
 function GrapePage() {
-  return <GrapeComponent />;
+  return <GrapeComponent isCreateTemplate={false} />;
 }
 
 export default GrapePage;
