@@ -17,8 +17,8 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
 }) => {
   const [crop, setCrop] = useState<Crop>({
     unit: "%",
-    width: 30,
-    height: (30 * 9) / 16,
+    width: 100,
+    height: 100,
     x: 0,
     y: 0,
   });
