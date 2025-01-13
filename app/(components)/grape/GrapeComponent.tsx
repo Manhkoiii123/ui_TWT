@@ -4,7 +4,7 @@
 "use client";
 import html2canvas from "html2canvas";
 import { useEffect } from "react";
-import grapesjs, { Editor } from "grapesjs";
+import grapesjs, { Component, Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
@@ -66,7 +66,9 @@ const GrapeComponent = ({
   );
   const [enableImages, setEnableImages] = useState(false);
   const { data: images } = useQueryGetImages(enableImages);
-
+  const [selectedComponent, setSelectedComponent] = useState<Component | null>(
+    null
+  );
   console.log("🚀 ~ contentCreateOrEdit:", JSON.stringify(contentCreateOrEdit));
 
   const [isChangeContent, setIsChangeContent] = useState(false);
@@ -127,10 +129,14 @@ const GrapeComponent = ({
   const handleCropComplete = (croppedImage: File) => {
     const formData = new FormData();
     formData.append("file", croppedImage);
-
+    const selectedComponent = editor?.getSelected();
     mutateUploadImage(formData, {
       onSuccess: (data) => {
         queryClient.invalidateQueries({ queryKey: ["images"] });
+        if (selectedComponent) {
+          selectedComponent.set("src", data.url);
+          editor?.AssetManager?.close();
+        }
         editor?.AssetManager.add([
           {
             src: data.url,
@@ -492,9 +498,14 @@ const GrapeComponent = ({
   }, [templateContent, isCreateTemplate]);
   useEffect(() => {
     if (editor && images) {
-      const formattedAssets = images.map(
-        (item) => `${process.env.NEXT_PUBLIC_IMAGE_URL}${item}`
-      );
+      const formattedAssets = images.map((item) => {
+        return {
+          src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item}`,
+          type: "image",
+          height: 300,
+          width: 400,
+        };
+      });
       editor.AssetManager.add(formattedAssets);
     }
   }, [images]);

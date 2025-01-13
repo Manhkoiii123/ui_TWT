@@ -35,6 +35,23 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
     image: HTMLImageElement,
     crop: Crop
   ): Promise<File> => {
+    if (
+      crop.width === 100 &&
+      crop.height === 100 &&
+      crop.x === 0 &&
+      crop.y === 0
+    ) {
+      return new Promise((resolve) => {
+        fetch(image.src)
+          .then((response) => response.blob())
+          .then((blob) => {
+            const file = new File([blob], "original-image.png", {
+              type: "image/png",
+            });
+            resolve(file);
+          });
+      });
+    }
     const canvas = document.createElement("canvas");
     const scaleX = image.naturalWidth / image.width;
     const scaleY = image.naturalHeight / image.height;
@@ -71,11 +88,7 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
   return (
     <div className="fixed inset-0 bg-black/80 z-[1000]">
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-5 flex flex-col items-center gap-2.5">
-        <ReactCrop
-          crop={crop}
-          onChange={(newCrop) => setCrop(newCrop)}
-          aspect={16 / 9}
-        >
+        <ReactCrop crop={crop} onChange={(newCrop) => setCrop(newCrop)}>
           <Image
             src={src}
             alt="Crop me"
@@ -85,8 +98,8 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
           />
         </ReactCrop>
         <div className="flex gap-2">
-          <Button onClick={handleCropComplete}>Cắt ảnh</Button>
-          <Button onClick={onClose}>Đóng</Button>
+          <Button onClick={handleCropComplete}>Crop Image</Button>
+          <Button onClick={onClose}>Close</Button>
         </div>
       </div>
     </div>
