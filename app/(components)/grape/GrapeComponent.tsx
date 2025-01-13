@@ -540,7 +540,7 @@ const GrapeComponent = ({
       const newHeader = editor.DomComponents.getWrapper()
         ?.components()
         .add(templateHeader, { at: 0 });
-// 
+      // const newHeader = editor.DomComponents.getWrapper().components().add(templateHeader);  => chèn vào cuối cho footer
       (currentHeaderRef as any).current = newHeader;
     }
   }, [editor, templateHeader]);
