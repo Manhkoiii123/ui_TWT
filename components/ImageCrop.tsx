@@ -12,12 +12,14 @@ interface ImageCropModalProps {
   src: string;
   onCropComplete: (croppedImage: ICroppedImageReturn) => void;
   onClose: () => void;
+  loading: boolean;
 }
 
 const ImageCropModal: React.FC<ImageCropModalProps> = ({
   src,
   onCropComplete,
   onClose,
+  loading,
 }) => {
   const [crop, setCrop] = useState<Crop>({
     unit: "%",
@@ -118,7 +120,9 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
           />
         </ReactCrop>
         <div className="flex gap-2">
-          <Button onClick={handleCropComplete}>Crop Image</Button>
+          <Button disabled={loading} onClick={handleCropComplete}>
+            Crop Image
+          </Button>
           <Button onClick={onClose}>Close</Button>
         </div>
       </div>
