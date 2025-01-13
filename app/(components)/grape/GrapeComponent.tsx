@@ -623,6 +623,7 @@ const GrapeComponent = ({
       <div id="editor" />
       {imageSrc && (
         <ImageCropModal
+          loading={isPendingUploadImage}
           src={imageSrc}
           onCropComplete={handleCropComplete}
           onClose={() => setImageSrc(null)}

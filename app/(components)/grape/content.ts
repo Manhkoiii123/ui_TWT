@@ -2633,6 +2633,11 @@ export const divider = () => {
 
 export const fakeTemplateHeader = [
   {
+    id: 0,
+    content: "<div></d>",
+    name: "No Header",
+  },
+  {
     id: 1,
     content: header(),
     name: "header1",
