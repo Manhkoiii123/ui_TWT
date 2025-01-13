@@ -174,20 +174,7 @@ const GrapeComponent = ({
       });
 
       const am = editor.AssetManager;
-      am.open({
-        types: ["image"],
 
-        select(asset, complete) {
-          const selected = editor.getSelected();
-
-          if (selected && selected.is("image")) {
-            selected.addAttributes({ src: asset.getSrc() });
-            if (complete) {
-              am.close();
-            }
-          }
-        },
-      });
       let removedAsset: any = null;
       let removedAssetIndex: number | null = null;
       editor.on("asset:remove", (asset) => {
@@ -211,6 +198,22 @@ const GrapeComponent = ({
           },
         });
       });
+      if (am.isOpen()) {
+        am.open({
+          types: ["image"],
+
+          select(asset, complete) {
+            const selected = editor.getSelected();
+
+            if (selected && selected.is("image")) {
+              selected.addAttributes({ src: asset.getSrc() });
+              if (complete) {
+                am.close();
+              }
+            }
+          },
+        });
+      }
       editor.on("asset:open", () => {
         setEnableImages(true);
       });
@@ -253,6 +256,7 @@ const GrapeComponent = ({
         width: 33.33% !important;
         max-width: 33.33% !important;
       }
+     
 
 
       @media (max-width: 768px) {

@@ -76,3 +76,7 @@ body {
 .gjs-cell {
   height: auto !important;
 }
+
+.gjs-am-assets-cont {
+  overflow: auto !important;
+}
