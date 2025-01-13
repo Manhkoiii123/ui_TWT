@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "react-image-crop/dist/ReactCrop.css";
 import { Be_Vietnam_Pro } from "next/font/google";
 import Sidebar from "@/app/(components)/Sidebar";
 import Header from "@/app/(components)/Header";

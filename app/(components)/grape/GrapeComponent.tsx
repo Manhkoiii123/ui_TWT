@@ -39,6 +39,7 @@ import {
   useQueryGetImages,
 } from "@/api/upload/uploadApi";
 import { useQueryClient } from "@tanstack/react-query";
+import ImageCropModal from "@/components/ImageCrop";
 type Props = {
   isCreateTemplate?: boolean;
   templateContent?: string;
@@ -57,6 +58,8 @@ const GrapeComponent = ({
 }: Props) => {
   const router = useRouter();
   const { toast } = useToast();
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [fileToUpload, setFileToUpload] = useState<File | null>(null);
   const [editor, setEditor] = useState<Editor | null>();
   const [contentCreateOrEdit, setContentCreateOrEdit] = useState(
     templateContent || ""
@@ -121,6 +124,30 @@ const GrapeComponent = ({
     useMutationUploadImage();
   const { mutate: mutateRemoveImage } = useMutationRemoveImage();
 
+  const handleCropComplete = (croppedImage: File) => {
+    const formData = new FormData();
+    formData.append("file", croppedImage);
+
+    mutateUploadImage(formData, {
+      onSuccess: (data) => {
+        queryClient.invalidateQueries({ queryKey: ["images"] });
+        editor?.AssetManager.add([
+          {
+            src: data.url,
+            type: "image",
+            height: 300,
+            width: 400,
+            name: fileToUpload?.name || "cropped-image.png",
+          },
+        ]);
+        setImageSrc(null);
+      },
+      onError: (error) => {
+        console.error("Upload error:", error);
+      },
+    });
+  };
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const editor = grapesjs.init({
@@ -146,28 +173,13 @@ const GrapeComponent = ({
               : (e.target as HTMLInputElement).files;
 
             if (files && files.length > 0) {
-              const formData = new FormData();
-              formData.append("file", files[0]);
-
-              mutateUploadImage(formData, {
-                onSuccess: (data) => {
-                  queryClient.invalidateQueries({
-                    queryKey: ["images"],
-                  });
-                  editor.AssetManager.add([
-                    {
-                      src: data.url,
-                      type: "image",
-                      height: 300,
-                      width: 400,
-                      name: files[0].name,
-                    },
-                  ]);
-                },
-                onError: (error) => {
-                  console.error("Upload error:", error);
-                },
-              });
+              const file = files[0];
+              const reader = new FileReader();
+              reader.onload = () => {
+                setImageSrc(reader.result as string);
+                setFileToUpload(file);
+              };
+              reader.readAsDataURL(file);
             }
           },
         },
@@ -558,6 +570,13 @@ const GrapeComponent = ({
   return (
     <div>
       <div id="editor" />
+      {imageSrc && (
+        <ImageCropModal
+          src={imageSrc}
+          onCropComplete={handleCropComplete}
+          onClose={() => setImageSrc(null)}
+        />
+      )}
 
       {isCreateTemplate && (
         <Button
