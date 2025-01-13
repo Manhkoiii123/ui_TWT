@@ -280,34 +280,32 @@ const GrapeComponent = ({
         return findParentTable(comp.parent());
       };
 
-      const addCustomCSS = () => {
-        editor.CssComposer.getAll().add(`
-      .gjs-cell {
-        height: auto !important;
-        flex-shrink: 0 !important; 
-        width: 33.33% !important;
-        max-width: 33.33% !important;
-      }
-     
+      //   const addCustomCSS = () => {
+      //     editor.CssComposer.getAll().add(`
+      //   .gjs-cell {
+      //     height: auto !important;
+      //     flex-shrink: 0 !important;
+      //     width: 33.33% !important;
+      //     max-width: 33.33% !important;
+      //   }
 
+      //   @media (max-width: 768px) {
+      //     .gjs-cell {
+      //       width: 100% !important;
+      //       max-width: 100%   !important;
+      //     }
+      //   }
+      // `);
+      //   };
 
-      @media (max-width: 768px) {
-        .gjs-cell {
-          width: 100% !important; 
-          max-width: 100%   !important; 
-        } 
-      }
-    `);
-      };
+      //   addCustomCSS();
 
-      addCustomCSS();
-
-      editor.on("load", addCustomCSS);
-      editor.on(
-        "component:add component:update component:drag:stop",
-        addCustomCSS
-      );
-      editor.on("device:change", addCustomCSS);
+      //   editor.on("load", addCustomCSS);
+      //   editor.on(
+      //     "component:add component:update component:drag:stop",
+      //     addCustomCSS
+      //   );
+      //   editor.on("device:change", addCustomCSS);
 
       const getEditorHTMLAndCSS = () => {
         const html = editor.getHtml();
@@ -538,9 +536,11 @@ const GrapeComponent = ({
         currentHeaderRef.current.remove();
         currentHeaderRef.current = null;
       }
-
-      const newHeader = editor.DomComponents.addComponent(templateHeader);
-
+      // chèn vào đầu cho header
+      const newHeader = editor.DomComponents.getWrapper()
+        ?.components()
+        .add(templateHeader, { at: 0 });
+// 
       (currentHeaderRef as any).current = newHeader;
     }
   }, [editor, templateHeader]);
