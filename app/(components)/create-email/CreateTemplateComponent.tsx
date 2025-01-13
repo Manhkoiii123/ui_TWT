@@ -35,7 +35,6 @@ const CreateTemplateComponent = () => {
   const searchParams = useSearchParams();
   const idEdit = searchParams.get("id");
   const [templateHeader, setTemplateHeader] = useState<string>("");
-  console.log("🚀 ~ CreateTemplateComponent ~ templateHeader:", templateHeader);
   const { data: dataTemplate, isLoading: isLoadingTemplate } =
     useQueryGetTemplateById(Number(idEdit), Boolean(idEdit));
   const form = useForm<z.infer<typeof formSchema>>({

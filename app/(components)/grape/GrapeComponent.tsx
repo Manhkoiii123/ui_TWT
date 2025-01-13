@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
@@ -40,7 +39,7 @@ import {
   useQueryGetImages,
 } from "@/api/upload/uploadApi";
 import { useQueryClient } from "@tanstack/react-query";
-import ImageCropModal from "@/components/ImageCrop";
+import ImageCropModal, { ICroppedImageReturn } from "@/components/ImageCrop";
 type Props = {
   isCreateTemplate?: boolean;
   templateContent?: string;
@@ -70,6 +69,7 @@ const GrapeComponent = ({
   const [enableImages, setEnableImages] = useState(false);
   const { data: images } = useQueryGetImages(enableImages);
   const currentHeaderRef = useRef<Component | null>(null);
+  const [fileNameWithExtension, setFileNameWithExtension] = useState("");
   console.log("🚀 ~ contentCreateOrEdit:", JSON.stringify(contentCreateOrEdit));
 
   const [isChangeContent, setIsChangeContent] = useState(false);
@@ -127,24 +127,34 @@ const GrapeComponent = ({
     useMutationUploadImage();
   const { mutate: mutateRemoveImage } = useMutationRemoveImage();
 
-  const handleCropComplete = (croppedImage: File) => {
+  const handleCropComplete = (croppedImage: ICroppedImageReturn) => {
     const formData = new FormData();
-    formData.append("file", croppedImage);
+    const [name, extension] = fileNameWithExtension.split(".");
+    formData.append("file", croppedImage.file);
+    formData.append("name", name);
+    formData.append("extension", extension);
+    formData.append("type", "image");
+    formData.append("width", String(croppedImage.width));
+    formData.append("height", String(croppedImage.height));
     const selectedComponent = editor?.getSelected();
     mutateUploadImage(formData, {
       onSuccess: (data) => {
         queryClient.invalidateQueries({ queryKey: ["images"] });
         if (selectedComponent) {
-          selectedComponent.set("src", data.url);
+          selectedComponent.set(
+            "src",
+            `${process.env.NEXT_PUBLIC_IMAGE_URL}${data.path}`
+          );
           editor?.AssetManager?.close();
         }
         editor?.AssetManager.add([
           {
-            src: data.url,
+            src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${data.path}`,
             type: "image",
-            height: 300,
-            width: 400,
-            name: fileToUpload?.name || "cropped-image.png",
+            height: data.height,
+            width: data.width,
+            name: data.name,
+            id: data.id,
           },
         ]);
         setImageSrc(null);
@@ -171,7 +181,7 @@ const GrapeComponent = ({
           uploadName: "file",
           assets: images
             ? images.map(
-                (item: string) => `${process.env.NEXT_PUBLIC_IMAGE_URL}${item}`
+                (item) => `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`
               )
             : [],
           uploadFile: function (e: Event) {
@@ -181,6 +191,7 @@ const GrapeComponent = ({
 
             if (files && files.length > 0) {
               const file = files[0];
+              setFileNameWithExtension(file.name);
               const reader = new FileReader();
               reader.onload = () => {
                 setImageSrc(reader.result as string);
@@ -197,8 +208,7 @@ const GrapeComponent = ({
       let removedAsset: any = null;
       let removedAssetIndex: number | null = null;
       editor.on("asset:remove", (asset) => {
-        const imageUrl = asset.get("src");
-
+        const imageUrl = asset.get("id");
         removedAsset = asset;
         removedAssetIndex = editor.AssetManager.getAll().indexOf(asset);
         mutateRemoveImage(imageUrl, {
@@ -235,6 +245,9 @@ const GrapeComponent = ({
       }
       editor.on("asset:open", () => {
         setEnableImages(true);
+      });
+      editor.on("asset:close", () => {
+        setEnableImages(false);
       });
 
       const nameInput = document.getElementById("nameInput");
@@ -445,9 +458,6 @@ const GrapeComponent = ({
           category: "Custom",
         });
       }
-      // if (templateHeader) {
-      //   editor.DomComponents.addComponent(templateHeader);
-      // }
       if (templateContent) {
         const decodedHtml = JSON.parse('"' + templateContent + '"');
         const parser = new DOMParser();
@@ -457,26 +467,33 @@ const GrapeComponent = ({
         styleTags.forEach((tag) => {
           styleContent += tag.innerHTML;
         });
-        editor.DomComponents.addComponent(
-          `
-                <style>${styleContent}</style>
-                <div id="editor">
-                  ${doc.body.innerHTML}
-                </div>
-              `
-        );
+
+        const addComponentPromise = new Promise<void>((resolve) => {
+          editor.DomComponents.addComponent(
+            `
+              <style>${styleContent}</style>
+              <div id="editor">
+                ${doc.body.innerHTML}
+              </div>
+            `
+          );
+
+          resolve();
+        });
         let previousHtml = editor.getHtml();
 
-        editor.on("component:update", () => {
-          handleContentChange();
-        });
+        addComponentPromise.then(() => {
+          editor.on("component:update", () => {
+            handleContentChange();
+          });
 
-        editor.on("component:add", () => {
-          handleContentChange();
-        });
+          editor.on("component:add", () => {
+            handleContentChange();
+          });
 
-        editor.on("component:remove", () => {
-          handleContentChange();
+          editor.on("component:remove", () => {
+            handleContentChange();
+          });
         });
 
         function handleContentChange() {
@@ -504,10 +521,12 @@ const GrapeComponent = ({
     if (editor && images) {
       const formattedAssets = images.map((item) => {
         return {
-          src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item}`,
+          src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
           type: "image",
-          height: 300,
-          width: 400,
+          height: item.width,
+          width: item.height,
+          id: item.id,
+          name: item.name,
         };
       });
       editor.AssetManager.add(formattedAssets);
@@ -538,6 +557,11 @@ const GrapeComponent = ({
         result.blob as Blob,
         `thumbnail.${result.blob.type.split("/")[1]}`
       );
+      formData.append("name", "template");
+      formData.append("type", "image");
+      formData.append("extension", result.blob.type.split("/")[1]);
+      formData.append("width", String(result.width));
+      formData.append("height", String(result.height));
 
       const payload = {
         name: templateName as string,
@@ -575,7 +599,7 @@ const GrapeComponent = ({
             queryClient.invalidateQueries({
               queryKey: ["images"],
             });
-            processTemplate(data.url);
+            processTemplate(`${process.env.NEXT_PUBLIC_IMAGE_URL}${data.path}`);
           },
         });
       } else if (templateContent) {
@@ -587,7 +611,7 @@ const GrapeComponent = ({
             queryClient.invalidateQueries({
               queryKey: ["images"],
             });
-            processTemplate(data.url);
+            processTemplate(`${process.env.NEXT_PUBLIC_IMAGE_URL}${data.path}`);
           },
         });
       }

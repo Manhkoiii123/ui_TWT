@@ -1,20 +1,41 @@
 import apiClient from "@/api/apiClient";
 import { useMutation, useQuery } from "@tanstack/react-query";
 type UploadImage = {
-  url: string;
+  created_at: string;
+  extension: string;
+  height: string;
+  id: 6;
+  name: string;
+  path: string;
+  type: string;
+  updated_at: string;
+  width: string;
+};
+type TImageRes = {
+  id: number;
+  type: string;
+  path: string;
+  width: number;
+  name: string;
+  height: number;
+  created_at: string;
+  updated_at: string;
+};
+type UploadImageResponse = {
+  file: UploadImage;
 };
 export const uploadApi = {
   uploadImage: async (body: FormData) => {
-    const res: UploadImage = await apiClient.post("/upload-file", body);
-    return res;
+    const res: UploadImageResponse = await apiClient.post("/upload-file", body);
+    return res.file;
   },
-  removeImage: async (file_path: string) => {
-    const res = await apiClient.post("remove-file", { file_path });
+  removeImage: async (id: number) => {
+    const res = await apiClient.delete(`remove-file/${id}`);
     return res;
   },
   getImages: async () => {
-    const res: string[] = await apiClient.get("/getListViaAwsS3");
-    return res;
+    const res = await apiClient.get("/get-list-image");
+    return res.data as TImageRes[];
   },
 };
 export const useMutationUploadImage = () => {
@@ -24,7 +45,7 @@ export const useMutationUploadImage = () => {
 };
 export const useMutationRemoveImage = () => {
   return useMutation({
-    mutationFn: (file_path: string) => uploadApi.removeImage(file_path),
+    mutationFn: (id: number) => uploadApi.removeImage(id),
   });
 };
 export const useQueryGetImages = (enabled: boolean) => {
