@@ -2261,6 +2261,159 @@ export const header = () => {
 </table>
 `;
 };
+export const header2 = () => {
+  return `<table
+  class="row row-7 container"
+  align="center"
+  width="100%"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+  role="presentation"
+  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+>
+  <tbody>
+    <tr>
+      <td>
+        <table
+          class="row-content stack"
+          align="center"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          role="presentation"
+          style="
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            background-color: #ffffff;
+            color: #000000;
+            width: 640px;
+            margin: 0 auto;
+          "
+          width="640"
+        >
+          <tbody>
+            <tr>
+              <td
+                class="column column-1"
+                width="100%"
+                style="
+                  mso-table-lspace: 0pt;
+                  mso-table-rspace: 0pt;
+                  font-weight: 400;
+                  text-align: left;
+                  vertical-align: top;
+                  border-top: 0px;
+                  border-right: 0px;
+                  border-bottom: 0px;
+                  border-left: 0px;
+                "
+              >
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="center"
+                        style="line-height: 10px"
+                      >
+                        <div class="fullWidth" style="max-width: 270px">
+                          <img
+                            src="https://twt-agent-portal.s3.ap-southeast-2.amazonaws.com/development/image-library/Logo/tweet-world-travel-logo-1695885641.png"
+                            style="
+                              display: block;
+                              height: auto;
+                              border: 0;
+                              width: 100%;
+                            "
+                            width="270"
+                            alt="I'm an image"
+                            title="I'm an image"
+                            height="auto"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="center"
+                        style="line-height: 10px"
+                      >
+                        
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <table
+                  class="image_block block-1"
+                  width="100%"
+                  border="0"
+                  cellpadding="16"
+                  cellspacing="0"
+                  role="presentation"
+                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                >
+                  <tr>
+                    <td class="pad">
+                      <div
+                        class="alignment"
+                        align="left"
+                        style="line-height: 10px"
+                      >
+                        <div
+                          class="fullWidth"
+                          style="
+                            font-family: Arial, sans-serif;
+                            font-size: 15px;
+                            font-weight: 400;
+                            line-height: 24px;
+                            text-align: left;
+                            color: #222222;
+                          "
+                        >
+                          <span>
+                            Dear [_title_name_],
+                            <br />Ctrl+Shift+V / Command+Shift+V to paste text
+                            from another place to this place without changing
+                            style. This is a new Text block. Change the text.
+                            This is a new Text block. Change the text.</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+};
 export const footer = () => {
   return `
   <table
@@ -2477,3 +2630,16 @@ export const divider = () => {
 </table>
 `;
 };
+
+export const fakeTemplateHeader = [
+  {
+    id: 1,
+    content: header(),
+    name: "header1",
+  },
+  {
+    id: 2,
+    content: header2(),
+    name: "header2",
+  },
+];

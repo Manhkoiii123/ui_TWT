@@ -9,15 +9,24 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import LeftIcon from "@/icon/LeftIcon";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import GrapeComponent from "@/app/(components)/grape/GrapeComponent";
 import { useQueryGetTemplateById } from "@/api/templates/templatesApi";
 import Loading from "@/components/Loading";
+import { fakeTemplateHeader } from "@/app/(components)/grape/content";
 const formSchema = z.object({
   templateName: z.string().min(1, { message: "Please enter a title" }),
 });
@@ -25,6 +34,8 @@ const CreateTemplateComponent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const idEdit = searchParams.get("id");
+  const [templateHeader, setTemplateHeader] = useState<string>("");
+  console.log("🚀 ~ CreateTemplateComponent ~ templateHeader:", templateHeader);
   const { data: dataTemplate, isLoading: isLoadingTemplate } =
     useQueryGetTemplateById(Number(idEdit), Boolean(idEdit));
   const form = useForm<z.infer<typeof formSchema>>({
@@ -50,6 +61,13 @@ const CreateTemplateComponent = () => {
   }
   const handleBackList = () => {
     router.push("/templates");
+  };
+
+  const handleValueChange = (value: string) => {
+    const selectedItem = fakeTemplateHeader.find((item) => item.name === value);
+    if (selectedItem) {
+      setTemplateHeader(selectedItem.content);
+    }
   };
   return (
     <>
@@ -93,6 +111,20 @@ const CreateTemplateComponent = () => {
               </form>
             </Form>
           </div>
+          <Select onValueChange={handleValueChange}>
+            <SelectTrigger className="w-[50%]">
+              <SelectValue placeholder="Select template header" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                {fakeTemplateHeader.map((item) => (
+                  <SelectItem key={item.id} value={item.name}>
+                    {item.name}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
           <div className="mt-4 ">
             <GrapeComponent
               trigger={trigger}
@@ -100,6 +132,7 @@ const CreateTemplateComponent = () => {
               templateContent={dataTemplate?.content}
               idEdit={idEdit}
               imageUrl={dataTemplate?.thumbnail}
+              templateHeader={templateHeader}
             />
           </div>
         </>

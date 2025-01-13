@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import html2canvas from "html2canvas";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import grapesjs, { Component, Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
@@ -24,6 +24,7 @@ import {
   header,
   footer,
   divider,
+  fakeTemplateHeader,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -47,6 +48,7 @@ type Props = {
   idEdit?: string | null;
   trigger?: any;
   imageUrl?: string;
+  templateHeader?: string;
 };
 const GrapeComponent = ({
   isCreateTemplate = true,
@@ -55,6 +57,7 @@ const GrapeComponent = ({
   idEdit,
   trigger,
   imageUrl,
+  templateHeader,
 }: Props) => {
   const router = useRouter();
   const { toast } = useToast();
@@ -66,44 +69,41 @@ const GrapeComponent = ({
   );
   const [enableImages, setEnableImages] = useState(false);
   const { data: images } = useQueryGetImages(enableImages);
-  const [selectedComponent, setSelectedComponent] = useState<Component | null>(
-    null
-  );
+  const currentHeaderRef = useRef<Component | null>(null);
   console.log("🚀 ~ contentCreateOrEdit:", JSON.stringify(contentCreateOrEdit));
 
   const [isChangeContent, setIsChangeContent] = useState(false);
-  function captureHtmlToBlob(htmlContent: string): Promise<Blob> {
+  function captureHtmlToBlob(
+    htmlContent: string
+  ): Promise<{ width: number; height: number; blob: Blob }> {
     return new Promise((resolve, reject) => {
       const tempDiv = document.createElement("div");
       tempDiv.style.overflow = "hidden";
-      tempDiv.style.width = "500px";
-      tempDiv.style.height = "500px";
+      tempDiv.style.position = "absolute";
+      tempDiv.style.top = "-9999px";
+      tempDiv.style.left = "-9999px";
       tempDiv.innerHTML = htmlContent;
 
       document.body.appendChild(tempDiv);
 
+      const contentWidth = tempDiv.offsetWidth;
+      const contentHeight = tempDiv.offsetHeight;
+
       html2canvas(tempDiv, {
+        width: contentWidth,
+        height: contentHeight,
         scale: window.devicePixelRatio,
         useCORS: true,
         logging: true,
       })
         .then((canvas) => {
-          const originalWidth = canvas.width;
-          const originalHeight = canvas.height;
-
-          const newWidth = 800;
-          const newHeight = (newWidth / originalWidth) * originalHeight;
-
-          const resizedCanvas = document.createElement("canvas");
-          resizedCanvas.width = newWidth;
-          resizedCanvas.height = newHeight;
-
-          const ctx = resizedCanvas.getContext("2d");
-          ctx?.drawImage(canvas, 0, 0, newWidth, newHeight);
-
-          resizedCanvas.toBlob((blob) => {
+          canvas.toBlob((blob) => {
             if (blob) {
-              resolve(blob);
+              resolve({
+                width: contentWidth,
+                height: contentHeight,
+                blob: blob,
+              });
             } else {
               reject(new Error("Failed to create blob"));
             }
@@ -112,6 +112,7 @@ const GrapeComponent = ({
           document.body.removeChild(tempDiv);
         })
         .catch((error) => {
+          document.body.removeChild(tempDiv);
           reject(error);
         });
     });
@@ -444,6 +445,9 @@ const GrapeComponent = ({
           category: "Custom",
         });
       }
+      // if (templateHeader) {
+      //   editor.DomComponents.addComponent(templateHeader);
+      // }
       if (templateContent) {
         const decodedHtml = JSON.parse('"' + templateContent + '"');
         const parser = new DOMParser();
@@ -509,18 +513,30 @@ const GrapeComponent = ({
       editor.AssetManager.add(formattedAssets);
     }
   }, [images]);
+  useEffect(() => {
+    if (editor && templateHeader) {
+      if (currentHeaderRef.current) {
+        currentHeaderRef.current.remove();
+        currentHeaderRef.current = null;
+      }
+
+      const newHeader = editor.DomComponents.addComponent(templateHeader);
+
+      (currentHeaderRef as any).current = newHeader;
+    }
+  }, [editor, templateHeader]);
 
   const handleCreateOrEditTemplate = async () => {
     if (trigger) {
       const isValid = await trigger();
       if (!isValid) return;
 
-      const blob = await captureHtmlToBlob(contentCreateOrEdit);
+      const result = await captureHtmlToBlob(contentCreateOrEdit);
       const formData = new FormData();
       formData.append(
         "file",
-        blob as Blob,
-        `thumbnail.${blob.type.split("/")[1]}`
+        result.blob as Blob,
+        `thumbnail.${result.blob.type.split("/")[1]}`
       );
 
       const payload = {
