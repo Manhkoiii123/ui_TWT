@@ -3,10 +3,14 @@ import Image from "next/image";
 import React, { useState } from "react";
 import ReactCrop, { Crop } from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
-
+export interface ICroppedImageReturn {
+  file: File;
+  width: number;
+  height: number;
+}
 interface ImageCropModalProps {
   src: string;
-  onCropComplete: (croppedImage: File) => void;
+  onCropComplete: (croppedImage: ICroppedImageReturn) => void;
   onClose: () => void;
 }
 
@@ -34,54 +38,70 @@ const ImageCropModal: React.FC<ImageCropModalProps> = ({
   const getCroppedImg = (
     image: HTMLImageElement,
     crop: Crop
-  ): Promise<File> => {
-    if (
-      crop.width === 100 &&
-      crop.height === 100 &&
-      crop.x === 0 &&
-      crop.y === 0
-    ) {
-      return new Promise((resolve) => {
+  ): Promise<{
+    file: File;
+    width: number;
+    height: number;
+  }> => {
+    return new Promise((resolve, reject) => {
+      if (
+        crop.width === 100 &&
+        crop.height === 100 &&
+        crop.x === 0 &&
+        crop.y === 0
+      ) {
         fetch(image.src)
           .then((response) => response.blob())
           .then((blob) => {
-            const file = new File([blob], "original-image.png", {
-              type: "image/png",
+            const file = new File([blob], `original-image.png`, {
+              type: `image/png`,
             });
-            resolve(file);
-          });
-      });
-    }
-    const canvas = document.createElement("canvas");
-    const scaleX = image.naturalWidth / image.width;
-    const scaleY = image.naturalHeight / image.height;
-    canvas.width = crop.width!;
-    canvas.height = crop.height!;
-    const ctx = canvas.getContext("2d");
 
-    if (ctx) {
-      ctx.drawImage(
-        image,
-        crop.x! * scaleX,
-        crop.y! * scaleY,
-        crop.width! * scaleX,
-        crop.height! * scaleY,
-        0,
-        0,
-        crop.width!,
-        crop.height!
-      );
-    }
+            resolve({
+              file,
+              width: image.naturalWidth,
+              height: image.naturalHeight,
+            });
+          })
+          .catch((error) => reject(error));
+      } else {
+        const canvas = document.createElement("canvas");
+        const scaleX = image.naturalWidth / image.width;
+        const scaleY = image.naturalHeight / image.height;
+        canvas.width = crop.width!;
+        canvas.height = crop.height!;
+        const ctx = canvas.getContext("2d");
 
-    return new Promise((resolve) => {
-      canvas.toBlob((blob) => {
-        if (blob) {
-          const file = new File([blob], "cropped-image.png", {
-            type: "image/png",
-          });
-          resolve(file);
+        if (ctx) {
+          ctx.drawImage(
+            image,
+            crop.x! * scaleX,
+            crop.y! * scaleY,
+            crop.width! * scaleX,
+            crop.height! * scaleY,
+            0,
+            0,
+            crop.width!,
+            crop.height!
+          );
         }
-      }, "image/png");
+
+        canvas.toBlob((blob) => {
+          if (blob) {
+            const file = new File([blob], `cropped-image.png`, {
+              type: `image/png`,
+            });
+
+            resolve({
+              file,
+              width: crop.width!,
+              height: crop.height!,
+            });
+          } else {
+            reject(new Error("Failed to create blob from canvas"));
+          }
+        }, `image/png`);
+      }
     });
   };
 
