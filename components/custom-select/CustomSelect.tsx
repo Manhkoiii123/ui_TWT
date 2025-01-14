@@ -45,11 +45,11 @@ const CustomSelect = ({ options }: { options: TOption[] }) => {
           {options.map((option) => (
             <DropdownMenuItem
               key={option.label}
-              onClick={() => handleOptionSelect(option)}
-              className={`cursor-pointer hover:bg-blue-100 ${
+              onClick={() => !option.disable && handleOptionSelect(option)}
+              className={`  ${
                 option.disable
-                  ? "text-gray-400 cursor-default hover:bg-white"
-                  : ""
+                  ? "text-gray-400 cursor-default "
+                  : "hover:bg-blue-100 cursor-pointer"
               }`}
             >
               {option.label}
