@@ -95,7 +95,7 @@ export default function Pagination({
     <div className={`flex flex-wrap items-center justify-end ${className}`}>
       {isShow && (
         <div className="text-sm text-gray-600">
-          {startItem} - {endItem}
+          {startItem} - {endItem} of {totalItems}
         </div>
       )}
       {page === 1 ? (
