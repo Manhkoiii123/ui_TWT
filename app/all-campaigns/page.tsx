@@ -3,7 +3,7 @@ import React from "react";
 
 const CampaignPage = () => {
   return (
-    <div className="w-full  bg-white p-2 rounded-lg">
+    <div className="w-full  bg-white p-2 rounded-2xl">
       <CampaignPageClient />
     </div>
   );

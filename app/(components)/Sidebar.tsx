@@ -1,5 +1,5 @@
 "use client";
-import { menuLink, TMenuLink } from "@/app/constants/menu";
+import { menuLink, TMenuLink } from "@/constants/menu";
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
@@ -14,7 +14,11 @@ type TExpand = {
 const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
   const pathName = usePathname();
   const isActive = (link: string) => {
-    return pathName === link || (link.includes(pathName) && pathName !== "/");
+    return (
+      pathName === link ||
+      (link.includes(pathName) && pathName !== "/") ||
+      pathName.startsWith(link)
+    );
   };
   const [isOpen, setIsOpen] = useState<TExpand[]>(
     menuLink.map((item) => ({

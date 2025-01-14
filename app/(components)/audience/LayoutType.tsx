@@ -12,6 +12,7 @@ export type TLayoutType = {
 
 const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
   const pathname = usePathname();
+  console.log("🚀 ~ LayoutType ~ pathname:", pathname);
   const searchParams = useSearchParams();
   const website = searchParams.get("website");
   const type = searchParams.get("type");
@@ -31,9 +32,10 @@ const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
   const [visibleItems, setVisibleItems] = useState<TLayoutType[]>([]);
 
   const handleNavigate = (slug: string, queryString: string) => {
+    const route = pathname.split("/")[1];
     const newSearchParams = new URLSearchParams(searchParams.toString());
     newSearchParams.set(queryString, slug);
-    router.push(`?${newSearchParams.toString()}`);
+    router.push(`/${route}?${newSearchParams.toString()}`);
   };
 
   useEffect(() => {

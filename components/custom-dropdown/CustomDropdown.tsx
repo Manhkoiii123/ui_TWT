@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Last Updated");
+  const [selectedOption, setSelectedOption] = useState("Newest");
 
   const options = ["Newest", "Last Updated", "Date Launch"];
 

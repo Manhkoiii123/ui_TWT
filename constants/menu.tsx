@@ -34,7 +34,7 @@ export const menuLink = [
       {
         id: 1,
         name: "All Campaign",
-        link: "/all-campaigns?type=all",
+        link: "/all-campaigns",
       },
       {
         id: 2,
