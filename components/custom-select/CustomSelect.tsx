@@ -10,6 +10,7 @@ import React, { useState } from "react";
 type TOption = {
   label: string;
   action: any;
+  disable?: boolean;
 };
 const CustomSelect = ({ options }: { options: TOption[] }) => {
   const [selectedOption, setSelectedOption] = useState(options[0].label);
@@ -21,7 +22,7 @@ const CustomSelect = ({ options }: { options: TOption[] }) => {
   return (
     <div className="flex items-center">
       <div
-        className="rounded-s-full bg-gray-100 px-3 py-2 cursor-pointer border-r-2 border-gray200"
+        className="rounded-s-full bg-gray-100 px-3 py-2 cursor-pointer border-r-2 border-gray200 text-[14px]"
         onClick={() => {
           const option = options.find(
             (option) => option.label === selectedOption
@@ -35,17 +36,21 @@ const CustomSelect = ({ options }: { options: TOption[] }) => {
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <div className="rounded-e-full bg-gray-100 px-3 py-2">
+          <div className="rounded-e-full bg-gray-100 px-3 py-2 cursor-pointer">
             <DownIcon />
           </div>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent className="w-56">
+        <DropdownMenuContent className="w-56 ">
           {options.map((option) => (
             <DropdownMenuItem
               key={option.label}
               onClick={() => handleOptionSelect(option)}
-              className="cursor-pointer"
+              className={`cursor-pointer hover:bg-blue-100 ${
+                option.disable
+                  ? "text-gray-400 cursor-default hover:bg-white"
+                  : ""
+              }`}
             >
               {option.label}
             </DropdownMenuItem>

@@ -46,6 +46,7 @@ const TemplatesEmail = () => {
           currentPage={page}
           pageSize={Math.ceil((templates?.meta?.total ?? 0) / 10)}
           handleChangePage={handleChangePage}
+          className="mt-6"
         />
       </div>
     </div>
