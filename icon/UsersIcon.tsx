@@ -3,7 +3,7 @@ import React from "react";
 const UsersIcon = ({
   width = 20,
   height = 20,
-  fill = "gray",
+  fill = "none",
   stroke = "currentColor",
 }: {
   width?: number;

@@ -5,13 +5,21 @@ interface Props {
   currentPage: number;
   pageSize: number;
   handleChangePage: (pageNumber: number) => void;
+  isShow?: boolean;
+  totalItems?: number;
+  className?: string;
 }
 export default function Pagination({
   currentPage,
   pageSize,
   handleChangePage,
+  totalItems,
+  isShow = false,
+  className = "",
 }: Props) {
   const page = Number(currentPage);
+  const startItem = (page - 1) * pageSize + 1;
+  const endItem = Math.min(page * pageSize, totalItems || 0);
   const range = 2;
   const renderPagination = () => {
     let dotAfter = false;
@@ -84,7 +92,12 @@ export default function Pagination({
       });
   };
   return (
-    <div className="flex flex-wrap justify-end mt-6">
+    <div className={`flex flex-wrap items-center justify-end ${className}`}>
+      {isShow && (
+        <div className="text-sm text-gray-600">
+          {startItem} - {endItem}
+        </div>
+      )}
       {page === 1 ? (
         <span className="flex items-center justify-center px-3 py-1 mx-2   cursor-not-allowed">
           <ChevronLeft stroke="gray" width={28} height={28} />
@@ -98,7 +111,7 @@ export default function Pagination({
         </div>
       )}
 
-      {renderPagination()}
+      {!isShow && renderPagination()}
       {page === pageSize ? (
         <span className="flex items-center justify-center px-3 py-1 mx-2   cursor-not-allowed">
           <ChevronRight stroke="gray" width={28} height={28} />

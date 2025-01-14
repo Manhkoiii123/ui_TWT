@@ -1,72 +1,43 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Skeleton } from "@/components/ui/skeleton";
-import UsersIcon from "@/icon/UsersIcon";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { JSX, useEffect, useMemo, useState } from "react";
-type TAudienceType = {
+import React, { JSX, useEffect, useState } from "react";
+export type TLayoutType = {
   label: string;
   link: string;
   icon?: JSX.Element;
+  queryString: string;
 };
-const AudienceType = () => {
+
+const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const website = searchParams.get("website");
+  const type = searchParams.get("type");
   const router = useRouter();
 
   const loading = false;
   const isActive = (link: string) => {
     if (website !== null) {
       return website === link;
+    } else if (type !== null) {
+      return type === link;
     } else {
       return pathname === link;
     }
   };
-  // call api tại đây
-  const dummyData = useMemo(() => {
-    return [
-      {
-        label: "All Audience",
-        link: "",
-        icon: (
-          <UsersIcon
-            fill={pathname === "/audience" ? "#0A8FDC" : "gray"}
-            stroke={pathname === "/audience" ? "#0A8FDC" : "gray"}
-          />
-        ),
-      },
-      {
-        label: "VIC Agency",
-        link: "vic",
-      },
-      {
-        label: "VIC Agency",
-        link: "/audience/all-audiences2",
-      },
-      {
-        label: "VIC Agency",
-        link: "/audience/all-audiences2",
-      },
-      {
-        label: "VIC Agency",
-        link: "/audience/all-audiences2",
-      },
-    ];
-  }, []);
 
-  const [visibleItems, setVisibleItems] = useState<TAudienceType[]>([]);
+  const [visibleItems, setVisibleItems] = useState<TLayoutType[]>([]);
 
-  const handleNavigate = (slug: string) => {
-    const query = {
-      website: slug,
-    };
-    const url = `${pathname}?${new URLSearchParams(query).toString()}`;
-
-    router.push(url);
+  const handleNavigate = (slug: string, queryString: string) => {
+    const newSearchParams = new URLSearchParams(searchParams.toString());
+    newSearchParams.set(queryString, slug);
+    router.push(`?${newSearchParams.toString()}`);
   };
 
   useEffect(() => {
-    dummyData.forEach((item, index) => {
+    dummyData.forEach((item: any, index: number) => {
       setTimeout(() => {
         setVisibleItems((prev) => [...prev, item]);
       }, index * 300);
@@ -88,14 +59,14 @@ const AudienceType = () => {
             </>
           ) : (
             <>
-              {dummyData.map((item, index) => (
+              {dummyData.map((item: any, index: number) => (
                 <div
-                  onClick={() => handleNavigate(item.link)}
+                  onClick={() => handleNavigate(item.link, item.queryString)}
                   key={index}
-                  className={`px-6 cursor-pointer py-[7px] ${
+                  className={`px-6 cursor-pointer py-[7px] hover:bg-[#E6F4FB] hover:rounded-e-full group ${
                     isActive(item.link)
-                      ? "bg-[#E6F4FB] rounded-e-full"
-                      : "text-[#111827]"
+                      ? "bg-[#E6F4FB] rounded-e-full text-[#0A8FDC]"
+                      : "text-[#111827] hover:text-[#0A8FDC]"
                   }`}
                   style={{
                     opacity: visibleItems.includes(item) ? 1 : 0,
@@ -114,17 +85,16 @@ const AudienceType = () => {
                           className={`w-4 h-4 border-2  rounded-full ${
                             isActive(item.link)
                               ? " border-[#0A8FDC]"
-                              : "border-gray-500"
+                              : "border-gray-500 group-hover:border-[#0A8FDC]"
                           }`}
                         ></div>
                       )}
                     </div>
-                    {/*  */}
                     <span
                       className={` text-[14px]  leading-6 ${
                         isActive(item.link)
                           ? "text-[#0A8FDC] font-semibold"
-                          : " text-[#111827] font-normal"
+                          : "  font-normal hover:text-[#0A8FDC]"
                       }`}
                     >
                       {item.label}
@@ -140,4 +110,4 @@ const AudienceType = () => {
   );
 };
 
-export default AudienceType;
+export default LayoutType;

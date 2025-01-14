@@ -10,7 +10,9 @@ const TemplatePage = () => {
         </div>
       }
     >
-      <TemplatesEmail />
+      <div className="pt-[48px]">
+        <TemplatesEmail />
+      </div>
     </Suspense>
   );
 };

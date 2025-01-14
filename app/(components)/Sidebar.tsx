@@ -14,7 +14,7 @@ type TExpand = {
 const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
   const pathName = usePathname();
   const isActive = (link: string) => {
-    return pathName === link || pathName.includes(link);
+    return pathName === link || (link.includes(pathName) && pathName !== "/");
   };
   const [isOpen, setIsOpen] = useState<TExpand[]>(
     menuLink.map((item) => ({
