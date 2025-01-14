@@ -1,8 +1,10 @@
 import ButtonCreate from "@/app/(components)/all-campains/ButtonCreate";
 import TabsView from "@/app/(components)/all-campains/TabsView";
 import LeftLayout from "@/app/(components)/common/LeftLayout";
+import Loading from "@/components/Loading";
 import { MailCheck, MailOpen, Mails, SendHorizontal } from "lucide-react";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -42,7 +44,9 @@ export default function RootLayout({
   ];
   return (
     <>
-      <TabsView />
+      <Suspense fallback={<Loading />}>
+        <TabsView />
+      </Suspense>
       <ButtonCreate />
       <div className="flex flex-col xl:flex-row gap-9 ml-4">
         <LeftLayout dummyData={dummyData} />
