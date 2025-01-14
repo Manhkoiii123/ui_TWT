@@ -5,6 +5,7 @@ import Dropdown from "@/components/custom-dropdown/CustomDropdown";
 import Pagination from "@/components/custom-pagination/Pagination";
 import { Separator } from "@/components/ui/separator";
 import CampainItem from "@/app/(components)/all-campains/CampainItem";
+import CustomMultipleSelect from "@/components/custom-select/CustomMultipleSelect";
 const CampaignPageClient = () => {
   return (
     <>
@@ -63,6 +64,7 @@ const CampaignPageClient = () => {
       <CampainItem />
       <CampainItem />
       <CampainItem />
+      <CustomMultipleSelect />
     </>
   );
 };
