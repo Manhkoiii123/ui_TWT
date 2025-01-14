@@ -3,7 +3,7 @@
 "use client";
 import html2canvas from "html2canvas";
 import { useEffect, useRef } from "react";
-import grapesjs, { Component, Editor } from "grapesjs";
+import grapesjs, { Asset, Component, Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
@@ -66,8 +66,8 @@ const GrapeComponent = ({
   const [contentCreateOrEdit, setContentCreateOrEdit] = useState(
     templateContent || ""
   );
-  const [enableImages, setEnableImages] = useState(false);
-  const { data: images } = useQueryGetImages(enableImages);
+  const { images, fetchNextPage, isFetchingNextPage, hasNextPage } =
+    useQueryGetImages();
   const currentHeaderRef = useRef<Component | null>(null);
   const [fileNameWithExtension, setFileNameWithExtension] = useState("");
   console.log("🚀 ~ contentCreateOrEdit:", JSON.stringify(contentCreateOrEdit));
@@ -179,11 +179,13 @@ const GrapeComponent = ({
         assetManager: {
           upload: isPendingUploadImage ? false : "/api/upload",
           uploadName: "file",
-          assets: images
-            ? images.map(
-                (item) => `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`
-              )
-            : [],
+          // assets: images
+          //   ? images
+          //       .reverse()
+          //       .map(
+          //         (item) => `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`
+          //       )
+          //   : [],
           uploadFile: function (e: Event) {
             const files = (e as DragEvent).dataTransfer
               ? (e as DragEvent).dataTransfer?.files
@@ -243,12 +245,6 @@ const GrapeComponent = ({
           },
         });
       }
-      editor.on("asset:open", () => {
-        setEnableImages(true);
-      });
-      editor.on("asset:close", () => {
-        setEnableImages(false);
-      });
 
       const nameInput = document.getElementById("nameInput");
       if (nameInput) {
@@ -279,33 +275,6 @@ const GrapeComponent = ({
         if (compClass.includes("wrapper_content")) return comp;
         return findParentTable(comp.parent());
       };
-
-      //   const addCustomCSS = () => {
-      //     editor.CssComposer.getAll().add(`
-      //   .gjs-cell {
-      //     height: auto !important;
-      //     flex-shrink: 0 !important;
-      //     width: 33.33% !important;
-      //     max-width: 33.33% !important;
-      //   }
-
-      //   @media (max-width: 768px) {
-      //     .gjs-cell {
-      //       width: 100% !important;
-      //       max-width: 100%   !important;
-      //     }
-      //   }
-      // `);
-      //   };
-
-      //   addCustomCSS();
-
-      //   editor.on("load", addCustomCSS);
-      //   editor.on(
-      //     "component:add component:update component:drag:stop",
-      //     addCustomCSS
-      //   );
-      //   editor.on("device:change", addCustomCSS);
 
       const getEditorHTMLAndCSS = () => {
         const html = editor.getHtml();
@@ -515,21 +484,62 @@ const GrapeComponent = ({
       };
     }
   }, [templateContent, isCreateTemplate]);
+
+  useEffect(() => {
+    if (editor && images && images.length > 0) {
+      const formattedAssets = images.map((item) => ({
+        src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
+        type: "image",
+        height: item.width,
+        width: item.height,
+        id: item.id,
+        name: item.name,
+      }));
+      // const currentAssets = editor.AssetManager.getAll();
+      // const updatedAssets = [...currentAssets, ...formattedAssets];
+      // editor.AssetManager.render(updatedAssets);
+      editor.AssetManager.render(formattedAssets as any);
+    }
+  }, [editor, images]);
   useEffect(() => {
     if (editor && images) {
-      const formattedAssets = images.map((item) => {
-        return {
-          src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
-          type: "image",
-          height: item.width,
-          width: item.height,
-          id: item.id,
-          name: item.name,
-        };
-      });
-      editor.AssetManager.add(formattedAssets);
+      const handleAssetOpen = () => {
+        const assetManagerContainer = document.querySelector(".gjs-am-assets");
+        if (assetManagerContainer) {
+          let isFetching = false;
+          const handleScroll = () => {
+            const { scrollTop, scrollHeight, clientHeight } =
+              assetManagerContainer;
+
+            const isAtBottom = scrollTop + clientHeight >= scrollHeight;
+
+            if (
+              isAtBottom &&
+              hasNextPage &&
+              !isFetchingNextPage &&
+              !isFetching
+            ) {
+              isFetching = true;
+              fetchNextPage().finally(() => {
+                isFetching = false;
+              });
+            }
+          };
+          assetManagerContainer.addEventListener("scroll", handleScroll);
+          return () => {
+            assetManagerContainer.removeEventListener("scroll", handleScroll);
+          };
+        }
+      };
+
+      editor.on("asset:open", handleAssetOpen);
+
+      return () => {
+        editor.off("asset:open", handleAssetOpen);
+      };
     }
-  }, [images]);
+  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
+
   useEffect(() => {
     if (editor && templateHeader) {
       if (currentHeaderRef.current) {
