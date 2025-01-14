@@ -78,5 +78,8 @@ body {
 }
 
 .gjs-am-assets-cont {
+  /* overflow: auto !important; */
+}
+.gjs-am-assets {
   overflow: auto !important;
 }
