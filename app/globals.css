@@ -84,3 +84,9 @@ body {
 .gjs-am-assets {
   overflow: auto !important;
 }
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}

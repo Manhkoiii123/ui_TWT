@@ -4,7 +4,7 @@ import React from "react";
 import Dropdown from "@/components/custom-dropdown/CustomDropdown";
 import Pagination from "@/components/custom-pagination/Pagination";
 import { Separator } from "@/components/ui/separator";
-import CampainItem from "@/app/(components)/all-campains/CampainItem";
+import CampainItem from "@/app/(components)/all-campaigns/CampainItem";
 const CampaignPageClient = () => {
   return (
     <>

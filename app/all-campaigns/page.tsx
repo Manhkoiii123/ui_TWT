@@ -1,4 +1,4 @@
-import CampaignPageClient from "@/app/(components)/all-campains/CampaignPageClient";
+import CampaignPageClient from "@/app/(components)/all-campaigns/CampaignPageClient";
 import React from "react";
 
 const CampaignPage = () => {

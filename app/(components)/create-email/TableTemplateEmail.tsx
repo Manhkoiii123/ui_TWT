@@ -33,8 +33,13 @@ import Loading from "@/components/Loading";
 type Props = {
   templates: TTemplate[] | undefined;
   isLoading: boolean;
+  isPreview?: boolean;
 };
-const TableTemplateEmail = ({ templates, isLoading }: Props) => {
+const TableTemplateEmail = ({
+  templates,
+  isLoading,
+  isPreview = false,
+}: Props) => {
   const router = useRouter();
   const currentPage = Number(useSearchParams().get("page")) || 1;
   const queryClient = useQueryClient();
@@ -145,39 +150,61 @@ const TableTemplateEmail = ({ templates, isLoading }: Props) => {
                         ))}
                         <TableCell className="w-[25%]">
                           <div className="flex items-center justify-center">
-                            <CustomSelect
-                              options={[
-                                {
-                                  label: "View",
-                                  action: () => {
+                            {isPreview ? (
+                              <div className="flex items-center justify-center  gap-8">
+                                <span
+                                  className="text-bluePrimary cursor-pointer"
+                                  onClick={() => {
                                     setIsOpenView(true);
                                     setHtmlContent(row.original.content);
+                                  }}
+                                >
+                                  Preview
+                                </span>
+                                <div className="flex items-center">
+                                  <input
+                                    id={String(row.original.id)}
+                                    type="radio"
+                                    name="default-radio"
+                                    className="aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                                  />
+                                </div>
+                              </div>
+                            ) : (
+                              <CustomSelect
+                                options={[
+                                  {
+                                    label: "View",
+                                    action: () => {
+                                      setIsOpenView(true);
+                                      setHtmlContent(row.original.content);
+                                    },
                                   },
-                                },
-                                {
-                                  label: "Edit",
-                                  action: () => {
-                                    router.push(
-                                      `/templates/edit?id=${row.original.id}`
-                                    );
+                                  {
+                                    label: "Edit",
+                                    action: () => {
+                                      router.push(
+                                        `/templates/edit?id=${row.original.id}`
+                                      );
+                                    },
                                   },
-                                },
-                                {
-                                  label: "Delete",
-                                  action: (callback: () => void) =>
-                                    handleClickDelete(
-                                      row.original.id,
-                                      callback
-                                    ),
-                                },
-                                {
-                                  label: "View History",
-                                  action: () => {
-                                    console.log("view history template");
+                                  {
+                                    label: "Delete",
+                                    action: (callback: () => void) =>
+                                      handleClickDelete(
+                                        row.original.id,
+                                        callback
+                                      ),
                                   },
-                                },
-                              ]}
-                            />
+                                  {
+                                    label: "View History",
+                                    action: () => {
+                                      console.log("view history template");
+                                    },
+                                  },
+                                ]}
+                              />
+                            )}
                           </div>
                         </TableCell>
                       </TableRow>

@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 
 const EditTemplatePage = () => {
   return (
-    <div className="bg-white p-4 shadow-sm">
+    <div className=" pt-[48px] shadow-sm">
       <Suspense
         fallback={
           <div className="h-screen">
@@ -12,7 +12,9 @@ const EditTemplatePage = () => {
           </div>
         }
       >
-        <CreateTemplateComponent />
+        <div className=" p-4 bg-white">
+          <CreateTemplateComponent />
+        </div>
       </Suspense>
     </div>
   );
