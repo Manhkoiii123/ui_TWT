@@ -9,11 +9,11 @@ const StepTwo = ({ handleBack }: Props) => {
   return (
     <div>
       <GrapeComponent isCreateTemplate={false} />
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-4">
         <Button onClick={handleBack} variant={"outline"}>
           Previous
         </Button>
-        <Button onClick={handleBack}>Save Campain</Button>
+        <Button>Save Campain</Button>
       </div>
     </div>
   );

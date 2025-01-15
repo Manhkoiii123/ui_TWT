@@ -11,19 +11,15 @@ import {
   createCampaignState,
   useCreateCampaignZustand,
 } from "@/zustands/createCampaignZustand";
-import { ViewTemplate } from "@/app/(components)/create-email/TableTemplateEmail";
+import PreviewCampaign from "@/app/(components)/all-campaigns/create/PreviewCampaign";
 type Props = {
   handleCloseModel: () => void;
 };
 const ModalActionTemplate = ({ handleCloseModel }: Props) => {
   const [selectedValue, setSelectedValue] = useState("");
-  const [isOpenPreview, setIsOpenPreview] = useState(false);
   const [stepCreate, setStepCreate] = useState(1);
   const { data: templates, isLoading } = useQueryGetTemplates({ page: 1 });
 
-  const handleOpenPreview = (value: boolean) => {
-    setIsOpenPreview(value);
-  };
   const handleValueChange = (value: string) => {
     setSelectedValue(value);
   };
@@ -41,6 +37,9 @@ const ModalActionTemplate = ({ handleCloseModel }: Props) => {
     setStepCreate((prev) => prev - 1);
     removeTemplateCampaign();
   };
+  const handleBackStepTwo = () => {
+    setStepCreate(2);
+  };
   return (
     <div>
       <SheetContent className="p-4 w-[90%]">
@@ -49,10 +48,7 @@ const ModalActionTemplate = ({ handleCloseModel }: Props) => {
             <div className="flex justify-between mb-2">
               Action Template
               <div className="flex gap-8 items-center">
-                <Button
-                  variant="default"
-                  onClick={() => setIsOpenPreview(true)}
-                >
+                <Button variant="default" onClick={() => setStepCreate(3)}>
                   Preview
                 </Button>{" "}
                 <CircleX
@@ -73,13 +69,14 @@ const ModalActionTemplate = ({ handleCloseModel }: Props) => {
             />
           )}
           {stepCreate === 2 && <StepTwo handleBack={handleBack} />}
+          {stepCreate === 3 && (
+            <PreviewCampaign
+              handleBack={handleBackStepTwo}
+              htmlContent={templateCampaign}
+            />
+          )}
         </SheetHeader>
       </SheetContent>
-      <ViewTemplate
-        isOpen={isOpenPreview}
-        setIsOpen={handleOpenPreview}
-        htmlContent={templateCampaign}
-      />
     </div>
   );
 };
