@@ -657,12 +657,14 @@ const GrapeComponent = ({
         </Button>
       )}
       {!isCreateTemplate && (
-        <input
-          type="text"
-          id="nameInput"
-          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
-          placeholder="Nhập tên người và nhấn Enter"
-        />
+        <div className="flex items-center justify-end">
+          <input
+            type="text"
+            id="nameInput"
+            className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none my-4 w-[600px]"
+            placeholder="Nhập tên người và nhấn Enter"
+          />
+        </div>
       )}
     </div>
   );
