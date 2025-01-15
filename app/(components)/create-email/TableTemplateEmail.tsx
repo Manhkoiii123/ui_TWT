@@ -30,6 +30,10 @@ import Swal from "sweetalert2";
 import { useMutationDeleteTemplate } from "@/api/templates/templatesApi";
 import { useQueryClient } from "@tanstack/react-query";
 import Loading from "@/components/Loading";
+import {
+  createCampaignState,
+  useCreateCampaignZustand,
+} from "@/zustands/createCampaignZustand";
 type Props = {
   templates: TTemplate[] | undefined;
   isLoading: boolean;
@@ -45,6 +49,9 @@ const TableTemplateEmail = ({
   const queryClient = useQueryClient();
   const [isOpenView, setIsOpenView] = useState(false);
 
+  const setTemplateCampaign = useCreateCampaignZustand(
+    (state: createCampaignState) => state.setTemplateCampaign
+  );
   const [htmlContent, setHtmlContent] = useState("");
   const { mutate: mutateDeleteTemplate } = useMutationDeleteTemplate();
 
@@ -163,6 +170,10 @@ const TableTemplateEmail = ({
                                 </span>
                                 <div className="flex items-center">
                                   <input
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setTemplateCampaign(row.original.content);
+                                    }}
                                     id={String(row.original.id)}
                                     type="radio"
                                     name="default-radio"
@@ -238,7 +249,7 @@ const TableTemplateEmail = ({
 };
 
 export default TableTemplateEmail;
-const ViewTemplate = ({
+export const ViewTemplate = ({
   isOpen,
   htmlContent,
   setIsOpen,

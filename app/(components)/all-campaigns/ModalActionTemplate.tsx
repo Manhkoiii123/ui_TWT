@@ -7,19 +7,39 @@ import { useState } from "react";
 import { useQueryGetTemplates } from "@/api/templates/templatesApi";
 import StepOne from "@/app/(components)/all-campaigns/create/StepOne";
 import StepTwo from "@/app/(components)/all-campaigns/create/StepTwo";
-const ModalActionTemplate = () => {
+import {
+  createCampaignState,
+  useCreateCampaignZustand,
+} from "@/zustands/createCampaignZustand";
+import { ViewTemplate } from "@/app/(components)/create-email/TableTemplateEmail";
+type Props = {
+  handleCloseModel: () => void;
+};
+const ModalActionTemplate = ({ handleCloseModel }: Props) => {
   const [selectedValue, setSelectedValue] = useState("");
+  const [isOpenPreview, setIsOpenPreview] = useState(false);
   const [stepCreate, setStepCreate] = useState(1);
   const { data: templates, isLoading } = useQueryGetTemplates({ page: 1 });
+
+  const handleOpenPreview = (value: boolean) => {
+    setIsOpenPreview(value);
+  };
   const handleValueChange = (value: string) => {
     setSelectedValue(value);
   };
 
+  const removeTemplateCampaign = useCreateCampaignZustand(
+    (state: createCampaignState) => state.removeTemplateCampaign
+  );
+  const templateCampaign = useCreateCampaignZustand(
+    (state: createCampaignState) => state.templateCampaign
+  );
   const handleNext = () => {
     setStepCreate((prev) => prev + 1);
   };
   const handleBack = () => {
     setStepCreate((prev) => prev - 1);
+    removeTemplateCampaign();
   };
   return (
     <div>
@@ -29,8 +49,16 @@ const ModalActionTemplate = () => {
             <div className="flex justify-between mb-2">
               Action Template
               <div className="flex gap-8 items-center">
-                <Button variant="default">Preview</Button>{" "}
-                <CircleX className="cursor-pointer text-[#ccc]" />
+                <Button
+                  variant="default"
+                  onClick={() => setIsOpenPreview(true)}
+                >
+                  Preview
+                </Button>{" "}
+                <CircleX
+                  className="cursor-pointer text-[#ccc]"
+                  onClick={() => handleCloseModel()}
+                />
               </div>
             </div>
             <Separator />
@@ -47,6 +75,11 @@ const ModalActionTemplate = () => {
           {stepCreate === 2 && <StepTwo handleBack={handleBack} />}
         </SheetHeader>
       </SheetContent>
+      <ViewTemplate
+        isOpen={isOpenPreview}
+        setIsOpen={handleOpenPreview}
+        htmlContent={templateCampaign}
+      />
     </div>
   );
 };

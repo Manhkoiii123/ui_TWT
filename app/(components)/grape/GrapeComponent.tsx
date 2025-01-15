@@ -40,6 +40,10 @@ import {
 } from "@/api/upload/uploadApi";
 import { useQueryClient } from "@tanstack/react-query";
 import ImageCropModal, { ICroppedImageReturn } from "@/components/ImageCrop";
+import {
+  createCampaignState,
+  useCreateCampaignZustand,
+} from "@/zustands/createCampaignZustand";
 type Props = {
   isCreateTemplate?: boolean;
   templateContent?: string;
@@ -58,6 +62,9 @@ const GrapeComponent = ({
   imageUrl,
   templateHeader,
 }: Props) => {
+  const templateCampaign = useCreateCampaignZustand(
+    (state: createCampaignState) => state.templateCampaign
+  );
   const router = useRouter();
   const { toast } = useToast();
   const [imageSrc, setImageSrc] = useState<string | null>(null);
@@ -427,6 +434,52 @@ const GrapeComponent = ({
       }
       if (templateContent) {
         const decodedHtml = JSON.parse('"' + templateContent + '"');
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(decodedHtml, "text/html");
+        const styleTags = doc.querySelectorAll("style");
+        let styleContent = "";
+        styleTags.forEach((tag) => {
+          styleContent += tag.innerHTML;
+        });
+
+        const addComponentPromise = new Promise<void>((resolve) => {
+          editor.DomComponents.addComponent(
+            `
+              <style>${styleContent}</style>
+              <div id="editor">
+                ${doc.body.innerHTML}
+              </div>
+            `
+          );
+
+          resolve();
+        });
+        let previousHtml = editor.getHtml();
+
+        addComponentPromise.then(() => {
+          editor.on("component:update", () => {
+            handleContentChange();
+          });
+
+          editor.on("component:add", () => {
+            handleContentChange();
+          });
+
+          editor.on("component:remove", () => {
+            handleContentChange();
+          });
+        });
+
+        function handleContentChange() {
+          const currentHtml = editor!.getHtml();
+          if (currentHtml !== previousHtml) {
+            setIsChangeContent(true);
+            previousHtml = currentHtml;
+          }
+        }
+      }
+      if (templateCampaign) {
+        const decodedHtml = JSON.parse('"' + templateCampaign + '"');
         const parser = new DOMParser();
         const doc = parser.parseFromString(decodedHtml, "text/html");
         const styleTags = doc.querySelectorAll("style");

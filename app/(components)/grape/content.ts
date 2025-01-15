@@ -61,6 +61,7 @@ export const content = (data: any) => {
       cellspacing="0"
       role="presentation"
       style="max-width: 37.5em"
+      class="wrapper_content"
     >
       <tbody>
         <tr style="width: 100%">
