@@ -199,12 +199,16 @@ const CreateCampainComponent = () => {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="e.g Spring Savings"
                       className="relative bg-gray-50 border border-gray-300 text-gray-900 overflow-hidden text-sm rounded-lg outline-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       type="datetime-local"
                       value={
                         field.value
-                          ? field.value.toISOString().slice(0, 16)
+                          ? new Date(
+                              field.value.getTime() -
+                                field.value.getTimezoneOffset() * 60000
+                            )
+                              .toISOString()
+                              .slice(0, 16)
                           : ""
                       }
                       onChange={(e) => {
