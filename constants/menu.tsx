@@ -63,8 +63,8 @@ export const menuLink = [
       },
       {
         id: 2,
-        name: "Campaign Manager",
-        link: "/campaign-manager",
+        name: "Email Settings",
+        link: "/email-settings",
       },
     ],
   },
