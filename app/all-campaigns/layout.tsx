@@ -1,5 +1,5 @@
-import ButtonCreate from "@/app/(components)/all-campains/ButtonCreate";
-import TabsView from "@/app/(components)/all-campains/TabsView";
+import ButtonCreate from "@/app/(components)/all-campaigns/ButtonCreate";
+import TabsView from "@/app/(components)/all-campaigns/TabsView";
 import LeftLayout from "@/app/(components)/common/LeftLayout";
 import Loading from "@/components/Loading";
 import { MailCheck, MailOpen, Mails, SendHorizontal } from "lucide-react";

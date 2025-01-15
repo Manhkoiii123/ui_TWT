@@ -5,8 +5,8 @@ import { SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { CircleX } from "lucide-react";
 import { useState } from "react";
 import { useQueryGetTemplates } from "@/api/templates/templatesApi";
-import StepOne from "@/app/(components)/all-campains/create/StepOne";
-import StepTwo from "@/app/(components)/all-campains/create/StepTwo";
+import StepOne from "@/app/(components)/all-campaigns/create/StepOne";
+import StepTwo from "@/app/(components)/all-campaigns/create/StepTwo";
 const ModalActionTemplate = () => {
   const [selectedValue, setSelectedValue] = useState("");
   const [stepCreate, setStepCreate] = useState(1);

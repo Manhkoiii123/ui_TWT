@@ -22,7 +22,7 @@ import {
 import { Input } from "@/components/ui/input";
 import CustomMultipleSelect from "@/components/custom-select/CustomMultipleSelect";
 import { Button } from "@/components/ui/button";
-import ModalActionTemplate from "@/app/(components)/all-campains/ModalActionTemplate";
+import ModalActionTemplate from "@/app/(components)/all-campaigns/ModalActionTemplate";
 const formSchema = z.object({
   campaignName: z.string().min(1).max(50),
   audience: z

@@ -1,5 +1,4 @@
-import CreateCampainComponent from "@/app/(components)/all-campains/CreateCampainComponent";
-import React from "react";
+import CreateCampainComponent from "@/app/(components)/all-campaigns/CreateCampainComponent";
 
 const CreatePage = () => {
   return (
