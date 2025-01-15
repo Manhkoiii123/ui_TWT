@@ -26,7 +26,10 @@ import { useForm } from "react-hook-form";
 import GrapeComponent from "@/app/(components)/grape/GrapeComponent";
 import { useQueryGetTemplateById } from "@/api/templates/templatesApi";
 import Loading from "@/components/Loading";
-import { fakeTemplateHeader } from "@/app/(components)/grape/content";
+import {
+  fakeTemplateFooter,
+  fakeTemplateHeader,
+} from "@/app/(components)/grape/content";
 const formSchema = z.object({
   templateName: z.string().min(1, { message: "Please enter a title" }),
 });
@@ -35,6 +38,7 @@ const CreateTemplateComponent = () => {
   const searchParams = useSearchParams();
   const idEdit = searchParams.get("id");
   const [templateHeader, setTemplateHeader] = useState<string>("");
+  const [templateFooter, setTemplateFooter] = useState<string>("");
   const { data: dataTemplate, isLoading: isLoadingTemplate } =
     useQueryGetTemplateById(Number(idEdit), Boolean(idEdit));
   const form = useForm<z.infer<typeof formSchema>>({
@@ -62,10 +66,16 @@ const CreateTemplateComponent = () => {
     router.push("/templates");
   };
 
-  const handleValueChange = (value: string) => {
+  const handleValueChangeHeader = (value: string) => {
     const selectedItem = fakeTemplateHeader.find((item) => item.name === value);
     if (selectedItem) {
       setTemplateHeader(selectedItem.content);
+    }
+  };
+  const handleValueChangeFooter = (value: string) => {
+    const selectedItem = fakeTemplateFooter.find((item) => item.name === value);
+    if (selectedItem) {
+      setTemplateFooter(selectedItem.content);
     }
   };
   return (
@@ -110,20 +120,36 @@ const CreateTemplateComponent = () => {
               </form>
             </Form>
           </div>
-          <Select onValueChange={handleValueChange}>
-            <SelectTrigger className="w-[50%]">
-              <SelectValue placeholder="Select template header" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {fakeTemplateHeader.map((item) => (
-                  <SelectItem key={item.id} value={item.name}>
-                    {item.name}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <div className="flex gap-4">
+            <Select onValueChange={handleValueChangeHeader}>
+              <SelectTrigger className="w-[50%]">
+                <SelectValue placeholder="Select template header" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  {fakeTemplateHeader.map((item) => (
+                    <SelectItem key={item.id} value={item.name}>
+                      {item.name}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            <Select onValueChange={handleValueChangeFooter}>
+              <SelectTrigger className="w-[50%]">
+                <SelectValue placeholder="Select template footer" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  {fakeTemplateFooter.map((item) => (
+                    <SelectItem key={item.id} value={item.name}>
+                      {item.name}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
           <div className="mt-4 ">
             <GrapeComponent
               trigger={trigger}
@@ -132,6 +158,7 @@ const CreateTemplateComponent = () => {
               idEdit={idEdit}
               imageUrl={dataTemplate?.thumbnail}
               templateHeader={templateHeader}
+              templateFooter={templateFooter}
             />
           </div>
         </>

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import html2canvas from "html2canvas";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import grapesjs, { Asset, Component, Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
@@ -24,6 +24,7 @@ import {
   footer,
   divider,
   fakeTemplateHeader,
+  footerGeneral,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -52,6 +53,7 @@ type Props = {
   trigger?: any;
   imageUrl?: string;
   templateHeader?: string;
+  templateFooter?: string;
 };
 const GrapeComponent = ({
   isCreateTemplate = true,
@@ -61,6 +63,7 @@ const GrapeComponent = ({
   trigger,
   imageUrl,
   templateHeader,
+  templateFooter,
 }: Props) => {
   const templateCampaign = useCreateCampaignZustand(
     (state: createCampaignState) => state.templateCampaign
@@ -76,6 +79,7 @@ const GrapeComponent = ({
   const { images, fetchNextPage, isFetchingNextPage, hasNextPage } =
     useQueryGetImages();
   const currentHeaderRef = useRef<Component | null>(null);
+  const currentFooterRef = useRef<Component | null>(null);
   const [fileNameWithExtension, setFileNameWithExtension] = useState("");
   console.log("🚀 ~ contentCreateOrEdit:", JSON.stringify(contentCreateOrEdit));
 
@@ -431,6 +435,11 @@ const GrapeComponent = ({
           content: contentShowcase(),
           category: "Custom",
         });
+        editor.BlockManager.add("footerGeneral", {
+          label: "footerGeneral",
+          content: footerGeneral(),
+          category: "Custom",
+        });
       }
       if (templateContent) {
         const decodedHtml = JSON.parse('"' + templateContent + '"');
@@ -538,20 +547,42 @@ const GrapeComponent = ({
     }
   }, [templateContent, isCreateTemplate]);
 
+  // useEffect(() => {
+  //   console.log("chay day");
+  //   if (editor && images && images.length > 0) {
+  //     const formattedAssets = images.map((item) => ({
+  //       src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
+  //       type: "image",
+  //       height: item.width,
+  //       width: item.height,
+  //       id: item.id,
+  //       name: item.name,
+  //     }));
+  //     editor.AssetManager.render(formattedAssets as any);
+  //   }
+  // }, [images]);
+
   useEffect(() => {
-    if (editor && images && images.length > 0) {
-      const formattedAssets = images.map((item) => ({
-        src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
-        type: "image",
-        height: item.width,
-        width: item.height,
-        id: item.id,
-        name: item.name,
-      }));
-      // const currentAssets = editor.AssetManager.getAll();
-      // const updatedAssets = [...currentAssets, ...formattedAssets];
-      // editor.AssetManager.render(updatedAssets);
-      editor.AssetManager.render(formattedAssets as any);
+    if (editor) {
+      const handleLoad = () => {
+        if (images && images.length > 0) {
+          const formattedAssets = images.map((item) => ({
+            src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
+            type: "image",
+            height: item.width,
+            width: item.height,
+            id: item.id,
+            name: item.name,
+          }));
+          editor.AssetManager.render(formattedAssets as any);
+        }
+      };
+
+      editor.on("load", handleLoad);
+
+      return () => {
+        editor.off("load", handleLoad);
+      };
     }
   }, [editor, images]);
   useEffect(() => {
@@ -599,14 +630,25 @@ const GrapeComponent = ({
         currentHeaderRef.current.remove();
         currentHeaderRef.current = null;
       }
-      // chèn vào đầu cho header
       const newHeader = editor.DomComponents.getWrapper()
         ?.components()
         .add(templateHeader, { at: 0 });
-      // const newHeader = editor.DomComponents.getWrapper().components().add(templateHeader);  => chèn vào cuối cho footer
       (currentHeaderRef as any).current = newHeader;
     }
   }, [editor, templateHeader]);
+  useEffect(() => {
+    if (editor && templateFooter) {
+      if (currentFooterRef.current) {
+        currentFooterRef.current.remove();
+        currentFooterRef.current = null;
+      }
+
+      const newFooter = editor.DomComponents.getWrapper()
+        ?.components()
+        .add(templateFooter);
+      (currentFooterRef as any).current = newFooter;
+    }
+  }, [editor, templateFooter]);
 
   const handleCreateOrEditTemplate = async () => {
     if (trigger) {
@@ -709,7 +751,7 @@ const GrapeComponent = ({
           )}
         </Button>
       )}
-      {!isCreateTemplate && (
+      {/* {!isCreateTemplate && (
         <div className="flex items-center justify-end">
           <input
             type="text"
@@ -718,7 +760,7 @@ const GrapeComponent = ({
             placeholder="Nhập tên người và nhấn Enter"
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 };
