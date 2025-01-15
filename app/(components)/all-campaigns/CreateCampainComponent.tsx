@@ -45,6 +45,9 @@ const formSchema = z.object({
 
 const CreateCampainComponent = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const handleCloseModel = () => {
+    setIsSheetOpen(false);
+  };
 
   const optionsAudience = [
     { id: 1, label: "QLD Agency" },
@@ -218,7 +221,9 @@ const CreateCampainComponent = () => {
             <div className="flex justify-end">
               <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                 <Button type="submit">Next Step</Button>
-                {isSheetOpen && <ModalActionTemplate />}
+                {isSheetOpen && (
+                  <ModalActionTemplate handleCloseModel={handleCloseModel} />
+                )}
               </Sheet>
             </div>
           </form>
