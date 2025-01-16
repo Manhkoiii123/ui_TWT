@@ -78,9 +78,7 @@ body {
   height: auto !important;
 }
 
-.gjs-am-assets-cont {
-  /* overflow: auto !important; */
-}
+
 .gjs-am-assets {
   overflow: auto !important;
 }
@@ -92,5 +90,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 input[type="text"]:focus ~ .input-text,
 input[type="text"]:not(:placeholder-shown) ~ .input-text{
-  @apply text-blue-500 transform -translate-y-5 -translate-x-2 scale-75;
+  color: #3b82f6 !important; 
+  top: -50% !important;  
+  transform: translateY(-70%) scale(0.8) !important;
+}
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  appearance: none; 
+}
+
+.custom-select span {
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-select span.focused {
+  transform: translateY(-1rem) scale(0.75);
+  color: #3b82f6; 
 }

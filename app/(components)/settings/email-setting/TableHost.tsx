@@ -25,10 +25,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import CustomInput from "@/components/CustomInput";
+import { FieldValues, useForm } from "react-hook-form";
+import CustomSelectAnimation from "@/components/custom-select/CustomSelectAnimation";
 const TableHost = () => {
   const columns: ColumnDef<MailerConfig>[] = [
     {
@@ -222,6 +222,31 @@ const TableHost = () => {
 export default TableHost;
 
 export const ModalCreateNewHostConfig = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FieldValues>({
+    defaultValues: {
+      host: "",
+      port: "",
+      username: "",
+      password: "",
+      encryption: "",
+      address: "",
+      name: "",
+    },
+  });
+  const smtpOptions = [{ value: "STMP", label: "SMTP" }];
+  const encryptionOptions = [
+    { value: "TLS", label: "TLS" },
+    { value: "SSL", label: "SSL" },
+  ];
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+    reset();
+  };
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -229,30 +254,103 @@ export const ModalCreateNewHostConfig = () => {
           New Host Config
         </Button>
       </DialogTrigger>
-      <DialogContent className="">
+      <DialogContent className="max-w-[900px]">
         <DialogHeader>
           <DialogTitle>
             <span>New Host Config</span>
             <Separator className="my-4" />
           </DialogTitle>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <CustomInput />
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="grid grid-cols-2 gap-4"
+        >
+          <CustomSelectAnimation
+            register={register}
+            name="mailer"
+            placeholder="Select SMTP Server"
+            options={smtpOptions}
+            errors={errors}
+            rules={{ required: "SMTP Server is required" }}
+            disabled
+            defaultValue="STMP"
+          />
+          <div>
+            <CustomInput
+              register={register}
+              name="host"
+              placeholder="Host*"
+              errors={errors}
+              rules={{ required: "Host is required" }}
+            />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
+          <div>
+            <CustomInput
+              register={register}
+              name="port"
+              placeholder="Port*"
+              errors={errors}
+              rules={{
+                required: "Post is required",
+              }}
+            />
           </div>
-        </div>
-        <DialogFooter>
-          <Button type="submit">Save changes</Button>
-        </DialogFooter>
+          <div>
+            <CustomInput
+              register={register}
+              name="username"
+              placeholder="Username*"
+              errors={errors}
+              rules={{
+                required: "Username is required",
+              }}
+            />
+          </div>
+          <div>
+            <CustomInput
+              register={register}
+              name="password"
+              placeholder="Password"
+              errors={errors}
+              type="password"
+            />
+          </div>
+          <div>
+            <CustomSelectAnimation
+              register={register}
+              name="encryption"
+              placeholder="Encrytion"
+              options={encryptionOptions}
+              errors={errors}
+              rules={{ required: "Please choose encrytion" }}
+            />
+          </div>
+          <div>
+            <CustomInput
+              register={register}
+              name="address"
+              placeholder="Address*"
+              errors={errors}
+              rules={{
+                required: "Address is required",
+              }}
+            />
+          </div>
+          <div>
+            <CustomInput
+              register={register}
+              name="name"
+              placeholder="Name*"
+              errors={errors}
+              rules={{
+                required: "Name is required",
+              }}
+            />
+          </div>
+          <DialogFooter>
+            <Button type="submit">Save changes</Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
   );
