@@ -42,7 +42,6 @@ const CustomMultipleSelect = ({
 
   const addOption = (option: { id: number; label: string }) => {
     const newSelectOptions = [...selectedOptions, option];
-    console.log("🚀 ~ addOption ~ newSelectOptions:", newSelectOptions);
     handleSelect(newSelectOptions);
     setSearchQuery("");
   };

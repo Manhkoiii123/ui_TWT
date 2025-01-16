@@ -12,7 +12,6 @@ export type TLayoutType = {
 
 const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
   const pathname = usePathname();
-  console.log("🚀 ~ LayoutType ~ pathname:", pathname);
   const searchParams = useSearchParams();
   const website = searchParams.get("website");
   const type = searchParams.get("type");
