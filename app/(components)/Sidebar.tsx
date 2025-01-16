@@ -13,11 +13,11 @@ type TExpand = {
 };
 const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
   const pathName = usePathname();
-  const isActive = (link: string) => {
+  const isActive = (link: string, isSub: boolean) => {
     return (
       pathName === link ||
-      (link.includes(pathName) && pathName !== "/") ||
-      pathName.startsWith(link)
+      (link.includes(pathName) && pathName !== "/" && !isSub) ||
+      (pathName.startsWith(`${link}`) && isSub)
     );
   };
   const [isOpen, setIsOpen] = useState<TExpand[]>(
@@ -29,7 +29,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
 
   useEffect(() => {
     const defaultOpen = menuLink.find((item) =>
-      item.subMenu?.some((sub) => isActive(sub.link!))
+      item.subMenu?.some((sub) => isActive(sub.link!, true))
     );
     setIsOpen(
       menuLink.map((item) => ({
@@ -97,7 +97,9 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
                 >
                   <div
                     className={`flex items-center gap-3 py-1 px-3 rounded-md ${
-                      isActive(subItem.link!) ? "bg-primary text-white" : ""
+                      isActive(subItem.link!, true)
+                        ? "bg-primary text-white"
+                        : ""
                     }`}
                   >
                     <div className="w-3 h-3 border border-[#ffffffb3] rounded-full"></div>
@@ -127,7 +129,9 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
           <div
             key={item.id}
             className={`${
-              isActive(item.link) ? "bg-primary text-white" : "text-[#ffffffb3]"
+              isActive(item.link, false)
+                ? "bg-primary text-white"
+                : "text-[#ffffffb3]"
             } px-3 rounded-md `}
           >
             {displayItemMenu(item)}

@@ -58,11 +58,16 @@ export const menuLink = [
     subMenu: [
       {
         id: 1,
+        name: "Audience Manager",
+        link: "/audience-manager",
+      },
+      {
+        id: 2,
         name: "Templates",
         link: "/templates",
       },
       {
-        id: 2,
+        id: 3,
         name: "Email Settings",
         link: "/email-settings",
       },

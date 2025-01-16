@@ -1,8 +1,8 @@
-import EmailSettingClient from "@/app/(components)/settings/email-setting/EmailSettingClient";
+import AudienceManagerClient from "@/app/(components)/audience-manager/AudienceManagerClient";
 import Loading from "@/components/Loading";
 import React, { Suspense } from "react";
 
-const EmailSettings = () => {
+const AudienceManagerPage = () => {
   return (
     <div className=" pt-[48px] shadow-sm">
       <Suspense
@@ -13,11 +13,11 @@ const EmailSettings = () => {
         }
       >
         <div className=" p-6 bg-white rounded-2xl">
-          <EmailSettingClient />
+          <AudienceManagerClient />
         </div>
       </Suspense>
     </div>
   );
 };
 
-export default EmailSettings;
+export default AudienceManagerPage;
