@@ -8,7 +8,7 @@ const CampainItem = () => {
       <div className="flex gap-5 mt-3 p-3">
         <div className="flex-[2.5]   ">
           <div className="flex flex-col justify-between  gap-4">
-            <h4 className="text-[17px] leading-[1.235] text-[#0a8fdc] font-medium">
+            <h4 className="text-[17px] leading-[1.235] text-[#0a8fdc] font-medium line-clamp-2">
               NEWS: Tweet World Travel Becomes a Virtuoso Preferred Supplier
             </h4>
             <span className="text-[13.5px] font-normal leading-[1.5] text-[#111827]">

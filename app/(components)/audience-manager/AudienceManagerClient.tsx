@@ -368,7 +368,7 @@ const AudienceManagerClient = () => {
                                 label: "View History",
                                 action: () => {
                                   setIsOpenLog(true);
-                                  setSelectedAudience(row.original.logs);
+                                  setSelectedAudience(row.original);
                                 },
                               },
                             ]}

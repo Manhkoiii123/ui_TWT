@@ -12,7 +12,7 @@ const EmailSettings = () => {
           </div>
         }
       >
-        <div className=" p-6 bg-white rounded-2xl">
+        <div className=" p-6 bg-white rounded-2xl ">
           <EmailSettingClient />
         </div>
       </Suspense>

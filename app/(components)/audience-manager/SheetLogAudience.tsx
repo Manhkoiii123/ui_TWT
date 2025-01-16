@@ -7,6 +7,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { convertDate } from "@/lib/utils";
+import { CircleX } from "lucide-react";
 
 type Props = {
   isOpen: boolean;
@@ -16,15 +17,21 @@ type Props = {
 const SheetLogAudience = ({ isOpen, setIsOpen, data }: Props) => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent className="p-8">
+      <SheetContent className="p-8 ">
         <SheetHeader>
           <SheetTitle>
-            History of New Zealand Agency
+            <div className="flex items-center justify-between">
+              History of {data?.title}
+              <CircleX
+                onClick={() => setIsOpen(false)}
+                className="cursor-pointer"
+              />
+            </div>
             <Separator className="my-4" />
           </SheetTitle>
         </SheetHeader>
         <div className="pl-10 flex">
-          {data?.map((item: any, index: number) => (
+          {data?.logs?.map((item: any, index: number) => (
             <LogItem key={index} item={item} />
           ))}
         </div>
@@ -75,7 +82,7 @@ const LogItem = ({ item }: any) => {
           <div className="w-[1px] h-full border border-gray-300" />
         </div>
       </div>
-      <div className="flex-[5]">
+      <div className="xl:flex-[5] flex-[2]">
         <div className="flex flex-col gap-2">
           {changesArray.map((item: any, index: number) => (
             <div className="flex flex-col gap-2" key={index}>
