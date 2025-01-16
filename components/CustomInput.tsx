@@ -10,6 +10,7 @@ interface CustomInputProps {
   placeholder?: string;
   type?: string;
   rules?: any;
+  defaultValue?: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -17,15 +18,17 @@ const CustomInput: React.FC<CustomInputProps> = ({
   name,
   errors,
   type,
+  defaultValue,
   ...rest
 }) => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [hasValue, setHasValue] = useState(false);
+  const [isFocused, setIsFocused] = useState(defaultValue ? true : false);
+  const [hasValue, setHasValue] = useState(defaultValue ? true : false);
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <label className="relative cursor-pointer">
       <input
+        autoFocus={false}
         type={
           type === "password" ? (!showPassword ? "password" : "text") : type
         }

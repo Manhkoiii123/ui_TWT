@@ -23,8 +23,8 @@ const CustomSelectAnimation: React.FC<CustomSelectAnimationProps> = ({
   defaultValue,
   ...rest
 }) => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [hasValue, setHasValue] = useState(false);
+  const [isFocused, setIsFocused] = useState(defaultValue ? true : false);
+  const [hasValue, setHasValue] = useState(defaultValue ? true : false);
 
   useEffect(() => {
     if (disabled && defaultValue) {
