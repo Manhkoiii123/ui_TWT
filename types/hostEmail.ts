@@ -1,3 +1,5 @@
+import { PaginationLinks, PaginationMeta } from "@/types/template";
+
 export type MailerConfig = {
   id: number;
   mailer: string;
@@ -20,3 +22,24 @@ export type MailerConfig = {
     last_name: string;
   };
 };
+export type TEmailSetting = {
+  id: number;
+  mailer: string;
+  host: string;
+  port: string;
+  username: string;
+  password: string;
+  encryption: string;
+  address: string;
+  name: string;
+  region: string;
+  created_by: number;
+  last_update_by: number;
+  created_at: string;
+  updated_at: string;
+};
+export interface TEmailSettingResponse {
+  data: TEmailSetting[];
+  links: PaginationLinks;
+  meta: PaginationMeta;
+}
