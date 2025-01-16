@@ -43,7 +43,7 @@ export default function RootLayout({
   ];
   return (
     <>
-      <div className="flex flex-col xl:flex-row gap-9">
+      <div className="flex flex-col xl:flex-row gap-9 pt-[48px]">
         <LeftLayout dummyData={dummyData} />
         {children}
       </div>
