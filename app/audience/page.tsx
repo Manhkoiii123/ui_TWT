@@ -1,4 +1,4 @@
-import AudienceMain from "@/app/(components)/audience/AudienceMain";
+import AudienceClient from "@/app/(components)/audience/audienceMain/AudienceClient";
 import Loading from "@/components/Loading";
 import React, { Suspense } from "react";
 
@@ -12,7 +12,7 @@ const page = () => {
           </div>
         }
       >
-        <AudienceMain />
+        <AudienceClient />
       </Suspense>
     </div>
   );

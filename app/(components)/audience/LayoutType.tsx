@@ -2,7 +2,7 @@
 "use client";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { JSX, useEffect, useState } from "react";
+import React, { JSX } from "react";
 export type TLayoutType = {
   label: string;
   link: string;
@@ -10,14 +10,19 @@ export type TLayoutType = {
   queryString: string;
 };
 
-const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
+const LayoutType = ({
+  audiencesData,
+  isLoading,
+}: {
+  audiencesData: TLayoutType[] | undefined;
+  isLoading: boolean;
+}) => {
+  const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const website = searchParams.get("website");
   const type = searchParams.get("type");
-  const router = useRouter();
 
-  const loading = false;
   const isActive = (link: string) => {
     if (website !== null) {
       return website === link;
@@ -28,8 +33,6 @@ const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
     }
   };
 
-  const [visibleItems, setVisibleItems] = useState<TLayoutType[]>([]);
-
   const handleNavigate = (slug: string, queryString: string) => {
     const route = pathname.split("/")[1];
     const newSearchParams = new URLSearchParams(searchParams.toString());
@@ -37,18 +40,11 @@ const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
     router.push(`/${route}?${newSearchParams.toString()}`);
   };
 
-  useEffect(() => {
-    dummyData.forEach((item: any, index: number) => {
-      setTimeout(() => {
-        setVisibleItems((prev) => [...prev, item]);
-      }, index * 300);
-    });
-  }, [dummyData]);
   return (
     <>
       <div className="bg-white py-4 pr-4 rounded-2xl w-[300px] shadow-md xl:h-fit h-full">
         <div className="flex flex-col gap-1">
-          {loading ? (
+          {isLoading ? (
             <>
               {Array(4)
                 .fill(0)
@@ -60,7 +56,7 @@ const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
             </>
           ) : (
             <>
-              {dummyData.map((item: any, index: number) => (
+              {(audiencesData || []).map((item: any, index: number) => (
                 <div
                   onClick={() => handleNavigate(item.link, item.queryString)}
                   key={index}
@@ -69,13 +65,6 @@ const LayoutType = ({ dummyData }: { dummyData: TLayoutType[] }) => {
                       ? "bg-[#E6F4FB] rounded-e-full text-[#0A8FDC]"
                       : "text-[#111827] hover:text-[#0A8FDC]"
                   }`}
-                  style={{
-                    opacity: visibleItems.includes(item) ? 1 : 0,
-                    transform: visibleItems.includes(item)
-                      ? "translate(0, 0)"
-                      : "translate(-30px, -20px)",
-                    transition: "opacity 0.5s, transform 0.5s",
-                  }}
                 >
                   <div className="flex items-center gap-2">
                     <div className="w-[22px]">

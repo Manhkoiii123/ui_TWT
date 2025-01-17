@@ -10,162 +10,18 @@ import {
 } from "@/components/ui/sheet";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EyeIcon from "@/icon/EyeIcon";
-import { useMemo, useState } from "react";
-
-export function AudienceAllAdience() {
+import { TAudienceViaTKG } from "@/types/audience";
+import { useState } from "react";
+type Props = {
+  data: TAudienceViaTKG[] | undefined;
+};
+export function AudienceAllAdience({ data }: Props) {
   const [isSubscribe, setIsSubscribe] = useState("subscribers");
   console.log("🚀 ~ AudienceAllAdience ~ isSubscribe:", isSubscribe);
   const handleSelectSub = (value: string) => {
     setIsSubscribe(value);
   };
-  const dummyDataa = useMemo(() => {
-    return [
-      {
-        id: 24755,
-        first_name: "Vivian",
-        last_name: "Ta",
-        name: "Vivian Ta",
-        sub_website: "tweetwholesalesb2b",
-        email: "vivian@tweetworldtravel.com",
-        phone: "",
-        sub_status: "Subscribe",
-        unsub_reason: null,
-        schema_data: null,
-        source: "Agent Portal",
-        form: null,
-        created_at: "2024-12-13T11:31:31.000000Z",
-        updated_at: "2024-12-23T11:31:33.000000Z",
-        ip: "127.0.0.1",
-        ip_type: "ipv4",
-        continent_code: null,
-        continent_name: null,
-        country_code: null,
-        country_name: null,
-        region_code: null,
-        region_name: null,
-        city: null,
-        zip: null,
-        latitude: "0",
-        longitude: "0",
-        device: "Unit Test",
-        time_zone: null,
-        browser: "Unit Test",
-        platform: "Unit Test",
-        deleted_at: null,
-        campaign_id: null,
-        unsubscribe_at: null,
-        logs: [],
-      },
-      {
-        id: 24754,
-        first_name: "Reservation",
-        last_name: "Tweet Cruises",
-        name: "Reservation Tweet Cruises",
-        sub_website: "tweetwholesalesb2b",
-        email: "contact@tweetworldtravel.com",
-        phone: "111111111111111111",
-        sub_status: "Subscribe",
-        unsub_reason: null,
-        schema_data: null,
-        source: "Agent Portal",
-        form: null,
-        created_at: "2024-11-20T11:30:52.000000Z",
-        updated_at: "2024-12-23T11:30:49.000000Z",
-        ip: "127.0.0.1",
-        ip_type: "ipv4",
-        continent_code: null,
-        continent_name: null,
-        country_code: null,
-        country_name: null,
-        region_code: null,
-        region_name: null,
-        city: null,
-        zip: null,
-        latitude: "0",
-        longitude: "0",
-        device: "Unit Test",
-        time_zone: null,
-        browser: "Unit Test",
-        platform: "Unit Test",
-        deleted_at: null,
-        campaign_id: null,
-        unsubscribe_at: null,
-        logs: [],
-      },
-      {
-        id: 24753,
-        first_name: "Natasha",
-        last_name: "Jones",
-        name: "NatashaJones",
-        sub_website: "tweetretailsb2c",
-        email: "natasha@mondotravel.co.nz",
-        phone: "",
-        sub_status: "Subscribe",
-        unsub_reason: null,
-        schema_data: null,
-        source: "Agent Portal",
-        form: null,
-        created_at: "2024-11-15T11:32:55.000000Z",
-        updated_at: "2024-12-23T11:32:52.000000Z",
-        ip: "127.0.0.1",
-        ip_type: "ipv4",
-        continent_code: null,
-        continent_name: null,
-        country_code: null,
-        country_name: null,
-        region_code: null,
-        region_name: null,
-        city: null,
-        zip: null,
-        latitude: "0",
-        longitude: "0",
-        device: "Unit Test",
-        time_zone: null,
-        browser: "Unit Test",
-        platform: "Unit Test",
-        deleted_at: null,
-        campaign_id: null,
-        unsubscribe_at: null,
-        logs: [],
-      },
-      {
-        id: 24752,
-        first_name: "Tayla",
-        last_name: "Donovan",
-        name: "TaylaDonovan",
-        sub_website: "tweetretailsb2c",
-        email: "tayla@zt.com.au",
-        phone: "",
-        sub_status: "Subscribe",
-        unsub_reason: null,
-        schema_data: null,
-        source: "Agent Portal",
-        form: null,
-        created_at: "2024-11-15T11:32:55.000000Z",
-        updated_at: "2024-12-23T11:32:52.000000Z",
-        ip: "127.0.0.1",
-        ip_type: "ipv4",
-        continent_code: null,
-        continent_name: null,
-        country_code: null,
-        country_name: null,
-        region_code: null,
-        region_name: null,
-        city: null,
-        zip: null,
-        latitude: "0",
-        longitude: "0",
-        device: "Unit Test",
-        time_zone: null,
-        browser: "Unit Test",
-        platform: "Unit Test",
-        deleted_at: null,
-        campaign_id: null,
-        unsubscribe_at: null,
-        logs: [],
-      },
-    ];
-  }, []);
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -202,7 +58,7 @@ export function AudienceAllAdience() {
             <Separator className="mb-4" />
           </Tabs>
         </SheetHeader>
-        <TableAudience columns={columns} data={dummyDataa} />
+        <TableAudience columns={columns} data={data} />
       </SheetContent>
     </Sheet>
   );
