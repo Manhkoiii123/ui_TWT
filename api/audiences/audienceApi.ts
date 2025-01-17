@@ -1,7 +1,7 @@
 import apiClient from "@/api/apiClient";
-import { TAudienceResponse } from "@/types/audience";
+import { TAudienceResponse, TAudienceViaTKGResponse } from "@/types/audience";
 import { useMutation, useQuery } from "@tanstack/react-query";
-
+import qs from "qs";
 export type TCreateAudience = {
   title: string;
   type: string[];
@@ -26,6 +26,21 @@ export const audienceApi = {
   },
   delete: async (id: number) => {
     const res = await apiClient.delete(`/audiences/${id}`);
+    return res;
+  },
+  listViaTKG: async (data: {
+    pageNumber?: number;
+    pageSize?: number;
+    type: string[];
+  }): Promise<TAudienceViaTKGResponse> => {
+    const queryString = qs.stringify(data, {
+      arrayFormat: "brackets",
+      encodeValuesOnly: true,
+    });
+    const res: TAudienceViaTKGResponse = await apiClient.get(
+      `/list-audience-via-tkg?pageSize=10&pageNumber=1&type[]=Tour%20Operator&type[]=Passenger`
+    );
+    // const res = await apiClient.get(`/list-audience-via-tkg?${queryString}`);
     return res;
   },
 };
@@ -54,5 +69,24 @@ export const useMutationEditAudience = () => {
 export const useMutationDeleteAudience = () => {
   return useMutation({
     mutationFn: (id: number) => audienceApi.delete(id),
+  });
+};
+export const useQueryGetAudiencesViaTKG = (
+  data: {
+    pageNumber?: number;
+    pageSize?: number;
+    type: string[];
+  },
+  enabled?: boolean
+) => {
+  return useQuery({
+    queryKey: ["list-audience-via-tkg", data.type],
+    queryFn: () =>
+      audienceApi.listViaTKG({
+        pageNumber: data.pageNumber || 1,
+        pageSize: data.pageSize || 10,
+        type: data.type,
+      }),
+    enabled: enabled,
   });
 };

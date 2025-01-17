@@ -22,7 +22,7 @@ apiClient.interceptors.request.use(
 
     if (!isNoAuthRoute) {
       //   const accessToken = cookies.get("access_token");
-      const accessToken = "1|xX3TjXC3bCcDKeeixY4IBzfnuFAHXemD1M1yv2gN2f2ccab4";
+      const accessToken = "3|frn4keyGfWZLtNGf6iA67o7Z9pLIyZDyFkyc5cN5ccd69072";
       if (accessToken && config.headers) {
         config.headers["Authorization"] = "Bearer " + accessToken;
       }

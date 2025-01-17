@@ -27,22 +27,19 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-}
-
-export function TableAudience<TData, TValue>({
-  columns,
-  data,
-}: DataTableProps<TData, TValue>) {
+import { TAudienceViaTKG } from "@/types/audience";
+import CustomSelect from "@/components/custom-select/CustomSelect";
+type Props = {
+  columns: ColumnDef<TAudienceViaTKG>[];
+  data: TAudienceViaTKG[] | undefined;
+};
+export function TableAudience({ columns, data }: Props) {
   const table = useReactTable({
-    data,
+    data: data || [],
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-  const [selectedRows, setSelectedRows] = useState<TData[]>([]);
+  const [selectedRows, setSelectedRows] = useState<TAudienceViaTKG[]>([]);
 
   useEffect(() => {
     const selectedData = table
@@ -165,6 +162,7 @@ export function TableAudience<TData, TValue>({
                     </TableHead>
                   );
                 })}
+                <TableHead className="text-center w-[25%]">Action</TableHead>
               </TableRow>
             ))}
           </TableHeader>
@@ -183,6 +181,30 @@ export function TableAudience<TData, TValue>({
                       )}
                     </TableCell>
                   ))}
+                  <TableCell className="w-[25%]">
+                    <div className="flex items-center justify-center">
+                      <CustomSelect
+                        options={[
+                          {
+                            label: "View",
+                            action: () => {},
+                          },
+                          {
+                            label: "Edit",
+                            action: () => {},
+                          },
+                          {
+                            label: "Delete",
+                            action: () => {},
+                          },
+                          {
+                            label: "View History",
+                            action: () => {},
+                          },
+                        ]}
+                      />
+                    </div>
+                  </TableCell>
                 </TableRow>
               ))
             ) : (

@@ -49,7 +49,7 @@ export default function RootLayout({
       </Suspense>
       <ButtonCreate />
       <div className="flex flex-col xl:flex-row gap-9 ml-4 pb-8">
-        <LeftLayout dummyData={dummyData} />
+        <LeftLayout audiencesData={dummyData} isLoading={false} />
         {children}
       </div>
     </>

@@ -22,3 +22,17 @@ export interface TAudienceResponse {
   links: PaginationLinks;
   meta: PaginationMeta;
 }
+export interface TAudienceViaTKG {
+  name: string;
+  email: string;
+  isSubscribeNewsletter: boolean;
+  phone: string;
+  createdAt: string;
+  source: string;
+}
+export interface TAudienceViaTKGResponse {
+  data: TAudienceViaTKG[];
+  page: number;
+  total: number;
+  totalPage: number;
+}

@@ -3,9 +3,12 @@ import ModalUploadAudience from "@/app/(components)/audience/ModalUploadAudience
 import { Separator } from "@/components/ui/separator";
 import FolderIcon from "@/icon/FolderIcon";
 import UsersIcon from "@/icon/UsersIcon";
+import { TAudienceViaTKG } from "@/types/audience";
 import React from "react";
-
-const ManageAudience = () => {
+type Props = {
+  data: TAudienceViaTKG[] | undefined;
+};
+const ManageAudience = ({ data }: Props) => {
   return (
     <div className=" w-[100%] h-auto bg-white p-6 rounded-xl flex flex-col gap-3">
       <div className="flex items-start gap-2">
@@ -36,7 +39,7 @@ const ManageAudience = () => {
         of these are subscribers.
       </p>
       <div className="flex flex-col gap-2 mt-4">
-        <AudienceAllAdience />
+        <AudienceAllAdience data={data} />
         <Separator className="mt-2" />
 
         <ModalUploadAudience />

@@ -7,7 +7,13 @@ import Loading from "@/components/Loading";
 import MenuIcon from "@/icon/MenuIcon";
 import React, { Suspense } from "react";
 
-const LeftLayout = ({ dummyData }: { dummyData: TLayoutType[] }) => {
+const LeftLayout = ({
+  audiencesData,
+  isLoading,
+}: {
+  audiencesData: TLayoutType[] | undefined;
+  isLoading: boolean;
+}) => {
   return (
     <Suspense
       fallback={
@@ -17,7 +23,7 @@ const LeftLayout = ({ dummyData }: { dummyData: TLayoutType[] }) => {
       }
     >
       <div className="xl:block hidden">
-        <LayoutType dummyData={dummyData} />
+        <LayoutType isLoading={isLoading} audiencesData={audiencesData} />
       </div>
       <div className=" max-xl:flex items-start xl:hidden">
         <CustomDrawer
@@ -30,7 +36,7 @@ const LeftLayout = ({ dummyData }: { dummyData: TLayoutType[] }) => {
           }
           text="Message"
         >
-          <LayoutType dummyData={dummyData} />
+          <LayoutType isLoading={isLoading} audiencesData={audiencesData} />
         </CustomDrawer>
       </div>
     </Suspense>

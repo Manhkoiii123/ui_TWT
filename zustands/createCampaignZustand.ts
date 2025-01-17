@@ -12,6 +12,6 @@ export const useCreateCampaignZustand = create<createCampaignState>((set) => ({
   idTemplate: null,
   setTemplateCampaign: (value: string) => set({ templateCampaign: value }),
   removeTemplateCampaign: () => set({ templateCampaign: "" }),
-  removeIdTemplate: () => set({ idTemplate: 0 }),
+  removeIdTemplate: () => set({ idTemplate: null }),
   setIdTemplate: (value: number) => set({ idTemplate: value }),
 }));
