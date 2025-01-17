@@ -14,19 +14,31 @@ import {
 import PreviewCampaign from "@/app/(components)/all-campaigns/create/PreviewCampaign";
 type Props = {
   handleCloseModel: () => void;
+  selectedValue: string;
+  handleValueChange: (value: string) => void;
+  selectAutomation: string;
+  handleSelectAutomation: (value: string) => void;
+  dataCreate: {
+    campaignName: string;
+    audience: {
+      id: number;
+      label: string;
+    }[];
+    hostEmail: string;
+    releaseDate: Date;
+  } | null;
 };
-const ModalActionTemplate = ({ handleCloseModel }: Props) => {
-  const [selectedValue, setSelectedValue] = useState("");
+const ModalActionTemplate = ({
+  handleCloseModel,
+  handleSelectAutomation,
+  handleValueChange,
+  selectAutomation,
+  selectedValue,
+  dataCreate,
+}: Props) => {
   const [stepCreate, setStepCreate] = useState(1);
   const { data: templates, isLoading } = useQueryGetTemplates({ page: 1 });
 
-  const handleValueChange = (value: string) => {
-    setSelectedValue(value);
-  };
-
-  const removeTemplateCampaign = useCreateCampaignZustand(
-    (state: createCampaignState) => state.removeTemplateCampaign
-  );
   const templateCampaign = useCreateCampaignZustand(
     (state: createCampaignState) => state.templateCampaign
   );
@@ -35,7 +47,6 @@ const ModalActionTemplate = ({ handleCloseModel }: Props) => {
   };
   const handleBack = () => {
     setStepCreate((prev) => prev - 1);
-    removeTemplateCampaign();
   };
   const handleBackStepTwo = () => {
     setStepCreate(2);
@@ -50,7 +61,7 @@ const ModalActionTemplate = ({ handleCloseModel }: Props) => {
               <div className="flex gap-8 items-center">
                 <Button variant="default" onClick={() => setStepCreate(3)}>
                   Preview
-                </Button>{" "}
+                </Button>
                 <CircleX
                   className="cursor-pointer text-[#ccc]"
                   onClick={() => handleCloseModel()}
@@ -66,9 +77,18 @@ const ModalActionTemplate = ({ handleCloseModel }: Props) => {
               templates={templates}
               isLoading={isLoading}
               handleNext={handleNext}
+              selectAutomation={selectAutomation}
+              handleSelectAutomation={handleSelectAutomation}
             />
           )}
-          {stepCreate === 2 && <StepTwo handleBack={handleBack} />}
+          {stepCreate === 2 && (
+            <StepTwo
+              handleBack={handleBack}
+              dataCreate={dataCreate}
+              is_manual={selectedValue === "manual"}
+              group={selectAutomation}
+            />
+          )}
           {stepCreate === 3 && (
             <PreviewCampaign
               handleBack={handleBackStepTwo}

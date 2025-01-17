@@ -52,6 +52,12 @@ const TableTemplateEmail = ({
   const setTemplateCampaign = useCreateCampaignZustand(
     (state: createCampaignState) => state.setTemplateCampaign
   );
+  const setIdTemplate = useCreateCampaignZustand(
+    (state: createCampaignState) => state.setIdTemplate
+  );
+  const idTemplate = useCreateCampaignZustand(
+    (state: createCampaignState) => state.idTemplate
+  );
   const [htmlContent, setHtmlContent] = useState("");
   const { mutate: mutateDeleteTemplate } = useMutationDeleteTemplate();
 
@@ -173,9 +179,13 @@ const TableTemplateEmail = ({
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       setTemplateCampaign(row.original.content);
+                                      setIdTemplate(row.original.id);
                                     }}
                                     id={String(row.original.id)}
                                     type="radio"
+                                    defaultChecked={
+                                      idTemplate === row.original.id
+                                    }
                                     name="default-radio"
                                     className="aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                                   />

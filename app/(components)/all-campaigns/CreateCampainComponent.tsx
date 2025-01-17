@@ -23,6 +23,9 @@ import { Input } from "@/components/ui/input";
 import CustomMultipleSelect from "@/components/custom-select/CustomMultipleSelect";
 import { Button } from "@/components/ui/button";
 import ModalActionTemplate from "@/app/(components)/all-campaigns/ModalActionTemplate";
+import { useQueryGetAudiences } from "@/api/audiences/audienceApi";
+import { useQueryGetEmailSetting } from "@/api/emailSetting/emailSettingApi";
+
 const formSchema = z.object({
   campaignName: z.string().min(1).max(50),
   audience: z
@@ -44,23 +47,40 @@ const formSchema = z.object({
 });
 
 const CreateCampainComponent = () => {
+  const [dataCreate, setDataCreate] = useState<z.infer<
+    typeof formSchema
+  > | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("");
+  const [selectAutomation, setSelectAutomation] = useState("");
+  const handleSelectAutomation = (value: string) => {
+    setSelectAutomation(value);
+  };
+  const handleValueChange = (value: string) => {
+    setSelectedValue(value);
+  };
+
   const handleCloseModel = () => {
     setIsSheetOpen(false);
   };
 
-  const optionsAudience = [
-    { id: 1, label: "QLD Agency" },
-    { id: 2, label: "NSW Agency" },
-    { id: 3, label: "WA Agency" },
-    { id: 4, label: "New Zealand Agency" },
-    { id: 5, label: "VIC Agency" },
-    { id: 6, label: "TAS Agency" },
-    { id: 7, label: "SA Agency" },
-    { id: 8, label: "All B2B Agency" },
-    { id: 9, label: "All B2B Supplier" },
-    { id: 10, label: "All B2C Client" },
-  ];
+  const { data: audiences } = useQueryGetAudiences({
+    page: 1,
+    per_page: 99999,
+  });
+  const { data: emailSetting } = useQueryGetEmailSetting({
+    page: 1,
+    per_page: 99999,
+  });
+  const optionsAudience = audiences?.data.map((audience) => ({
+    id: audience.id,
+    label: audience.title,
+  }));
+  const optionsEmailSetting = emailSetting?.data.map((email) => ({
+    id: email.id,
+    label: email.host,
+  }));
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -68,8 +88,8 @@ const CreateCampainComponent = () => {
     },
   });
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
     if (Object.keys(form.formState.errors).length === 0) {
+      setDataCreate(values);
       setIsSheetOpen(true);
     }
   }
@@ -122,7 +142,7 @@ const CreateCampainComponent = () => {
                     render={({ field }) => (
                       <CustomMultipleSelect
                         placeholder="Choose audience"
-                        allOptions={optionsAudience}
+                        allOptions={optionsAudience || []}
                         value={field.value}
                         onChange={field.onChange}
                       />
@@ -166,13 +186,11 @@ const CreateCampainComponent = () => {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="m@example.com">
-                        m@example.com
-                      </SelectItem>
-                      <SelectItem value="m@google.com">m@google.com</SelectItem>
-                      <SelectItem value="m@support.com">
-                        m@support.com
-                      </SelectItem>
+                      {optionsEmailSetting?.map((email) => (
+                        <SelectItem key={email.id} value={String(email.id)}>
+                          {email.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -226,7 +244,14 @@ const CreateCampainComponent = () => {
               <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                 <Button type="submit">Next Step</Button>
                 {isSheetOpen && (
-                  <ModalActionTemplate handleCloseModel={handleCloseModel} />
+                  <ModalActionTemplate
+                    dataCreate={dataCreate}
+                    handleCloseModel={handleCloseModel}
+                    selectedValue={selectedValue}
+                    handleValueChange={handleValueChange}
+                    selectAutomation={selectAutomation}
+                    handleSelectAutomation={handleSelectAutomation}
+                  />
                 )}
               </Sheet>
             </div>
