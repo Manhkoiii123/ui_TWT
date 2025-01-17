@@ -683,79 +683,66 @@ const renderColumn = (props: any) => {
         </table>
         
     <table
-          class="button_block block-8"
-          width="100%"
-          border="0"
-          cellpadding="0"
-          cellspacing="0"
-          role="presentation"
-          style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
-        >
-          <tr>
-            <td
-              class="pad"
-              style="
-                padding-bottom: 32px;
-                padding-left: 24px;
-                padding-right: 24px;
-                padding-top: 20px;
-                text-align: left;
-              "
-            >
-              <div class="alignment" align="left">
-                <!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:43px;width:117px;v-text-anchor:middle;" arcsize="7%" stroke="false" fillcolor="#f75c03">
-<w:anchorlock/>
-<v:textbox inset="0px,0px,0px,1px">
-<center dir="false" style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:14px">
-<![endif]-->
-                <div
-                  class="button"
-                  style="
-                    background-color: #f75c03;
-                    border-bottom: 0px solid transparent;
-                    border-left: 0px solid transparent;
-                    border-radius: 3px;
-                    border-right: 0px solid transparent;
-                    border-top: 0px solid transparent;
-                    color: #ffffff;
-                    display: inline-block;
-                    font-family: Montserrat, Trebuchet MS, Lucida Grande,
-                      Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-                    font-size: 14px;
-                    font-weight: undefined;
-                    mso-border-alt: none;
-                    padding-bottom: 06px;
-                    padding-top: 5px;
-                    text-align: center;
-                    text-decoration: none;
-                    width: auto;
-                    word-break: keep-all;
-                  "
-                >
-                  <span
-                    style="
-                      word-break: break-word;
-                      padding-left: 20px;
-                      padding-right: 20px;
-                      font-size: 14px;
-                      display: inline-block;
-                      letter-spacing: normal;
-                    "
-                    ><span style="margin: 0; word-break: break-word"
-                      ><span
-                        style="word-break: break-word; line-height: 28px"
-                        data-mce-style
-                        ><strong>Contact Us</strong></span
-                      ></span
-                    ></span
-                  >
-                </div>
-                <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-              </div>
-            </td>
-          </tr>
-        </table>
+                        class="button_block block-8"
+                        width="100%"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                        role="presentation"
+                        style="
+                          mso-table-lspace: 0pt;
+                          mso-table-rspace: 0pt;
+                          width: 100%;
+                        "
+                      >
+                        <tr>
+                          <td
+                            class="pad"
+                            style="
+                              padding-bottom: 32px;
+                              padding-left: 24px;
+                              padding-right: 24px;
+                              padding-top: 20px;
+                              text-align: center;
+                            "
+                          >
+                            <div class="alignment" align="center">
+                              <!--[if mso]>
+                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:43px;width:117px;v-text-anchor:middle;" arcsize="7%" stroke="false" fillcolor="#f75c03">
+                    <w:anchorlock/>
+                    <v:textbox inset="0px,0px,0px,0px">
+                        <center style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:14px;">
+                <![endif]-->
+                              <a
+                                href="#"
+                                style="
+                                  background-color: #f75c03;
+                                  border-radius: 3px;
+                                  color: #ffffff;
+                                  display: inline-block;
+                                  font-family: Montserrat, Trebuchet MS,
+                                    Lucida Grande, Lucida Sans Unicode,
+                                    Lucida Sans, Tahoma, sans-serif;
+                                  font-size: 14px;
+                                  font-weight: bold;
+                                  line-height: 28px;
+                                  padding: 10px 20px;
+                                  text-align: center;
+                                  text-decoration: none;
+                                  width: auto;
+                                "
+                              >
+                                <strong>Contact us</strong>
+                              </a>
+                              <!--[if mso]>
+                        </center>
+                    </v:textbox>
+                </v:roundrect>
+                <![endif]-->
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
                 
   </td>`;
 };
@@ -791,7 +778,8 @@ export const layoutCard2 = (column1Props: any) => {
 };
 
 export const horizontalProduct = (data: any) => {
-  return `<table
+  return `
+<table
   class="row row-7 wrapper_content"
   align="center"
   width="100%"
@@ -1119,7 +1107,11 @@ export const horizontalProduct = (data: any) => {
                         cellpadding="0"
                         cellspacing="0"
                         role="presentation"
-                        style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+                        style="
+                          mso-table-lspace: 0pt;
+                          mso-table-rspace: 0pt;
+                          width: 100%;
+                        "
                       >
                         <tr>
                           <td
@@ -1129,64 +1121,42 @@ export const horizontalProduct = (data: any) => {
                               padding-left: 24px;
                               padding-right: 24px;
                               padding-top: 20px;
-                              text-align: left;
+                              text-align: center;
                             "
                           >
-                            <div class="alignment" align="left">
+                            <div class="alignment" align="center">
                               <!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:43px;width:117px;v-text-anchor:middle;" arcsize="7%" stroke="false" fillcolor="#f75c03">
-<w:anchorlock/>
-<v:textbox inset="0px,0px,0px,1px">
-<center dir="false" style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:14px">
-<![endif]-->
-                              <div
-                                class="button"
+                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:43px;width:117px;v-text-anchor:middle;" arcsize="7%" stroke="false" fillcolor="#f75c03">
+                    <w:anchorlock/>
+                    <v:textbox inset="0px,0px,0px,0px">
+                        <center style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:14px;">
+                <![endif]-->
+                              <a
+                                href="#"
                                 style="
                                   background-color: #f75c03;
-                                  border-bottom: 0px solid transparent;
-                                  border-left: 0px solid transparent;
                                   border-radius: 3px;
-                                  border-right: 0px solid transparent;
-                                  border-top: 0px solid transparent;
                                   color: #ffffff;
                                   display: inline-block;
                                   font-family: Montserrat, Trebuchet MS,
                                     Lucida Grande, Lucida Sans Unicode,
                                     Lucida Sans, Tahoma, sans-serif;
                                   font-size: 14px;
-                                  font-weight: undefined;
-                                  mso-border-alt: none;
-                                  padding-bottom: 06px;
-                                  padding-top: 5px;
+                                  font-weight: bold;
+                                  line-height: 28px;
+                                  padding: 10px 20px;
                                   text-align: center;
                                   text-decoration: none;
                                   width: auto;
-                                  word-break: keep-all;
                                 "
                               >
-                                <span
-                                  style="
-                                    word-break: break-word;
-                                    padding-left: 20px;
-                                    padding-right: 20px;
-                                    font-size: 14px;
-                                    display: inline-block;
-                                    letter-spacing: normal;
-                                  "
-                                  ><span
-                                    style="margin: 0; word-break: break-word"
-                                    ><span
-                                      style="
-                                        word-break: break-word;
-                                        line-height: 28px;
-                                      "
-                                      data-mce-style
-                                      ><strong>Book now</strong></span
-                                    ></span
-                                  ></span
-                                >
-                              </div>
-                              <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                                <strong>Book now</strong>
+                              </a>
+                              <!--[if mso]>
+                        </center>
+                    </v:textbox>
+                </v:roundrect>
+                <![endif]-->
                             </div>
                           </td>
                         </tr>
@@ -1204,6 +1174,420 @@ export const horizontalProduct = (data: any) => {
 </table>
 `;
 };
+// export const horizontalProduct = (data: any) => {
+//   return `<table
+//   class="row row-7 wrapper_content"
+//   align="center"
+//   width="100%"
+//   border="0"
+//   cellpadding="0"
+//   cellspacing="0"
+//   role="presentation"
+//   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+// >
+//   <tbody>
+//     <tr>
+//       <td>
+//         <table
+//           class="row-content stack"
+//           align="center"
+//           border="0"
+//           cellpadding="0"
+//           cellspacing="0"
+//           role="presentation"
+//           style="
+//             mso-table-lspace: 0pt;
+//             mso-table-rspace: 0pt;
+//             background-color: #ffffff;
+//             color: #000000;
+//             width: 640px;
+//             margin: 0 auto;
+//           "
+//           width="640"
+//         >
+//           <tbody>
+//             <tr>
+//               <td
+//                 class="column column-1"
+//                 width="45%"
+//                 style="
+//                   mso-table-lspace: 0pt;
+//                   mso-table-rspace: 0pt;
+//                   font-weight: 400;
+//                   text-align: left;
+//                   vertical-align: top;
+//                   border-top: 0px;
+//                   border-right: 0px;
+//                   border-bottom: 0px;
+//                   border-left: 0px;
+//                 "
+//               >
+//                 <table
+//                   class="image_block block-1"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="16"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+//                 >
+//                   <tr>
+//                     <td class="pad">
+//                       <div
+//                         class="alignment"
+//                         align="center"
+//                         style="line-height: 10px"
+//                       >
+//                         <div class="fullWidth" style="max-width: 270px">
+//                           <img
+//                             src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb2.jpg"
+//                             style="
+//                               display: block;
+//                               height: 160px;
+//                               border: 0;
+//                               width: 100%;
+//                             "
+//                             width="270"
+//                             alt="I'm an image"
+//                             title="I'm an image"
+//                             height="160"
+//                           />
+//                         </div>
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 </table>
+//               </td>
+//               <td
+//                 class="column column-2"
+//                 width="55%"
+//                 style="
+//                   mso-table-lspace: 0pt;
+//                   mso-table-rspace: 0pt;
+//                   font-weight: 400;
+//                   text-align: left;
+//                   padding-bottom: 5px;
+//                   padding-top: 5px;
+//                   border-top: 0px;
+//                   border-right: 0px;
+//                   border-bottom: 0px;
+//                   border-left: 0px;
+//                 "
+//               >
+//                 <table
+//                   class="paragraph_block block-4"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="0"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="
+//                     mso-table-lspace: 0pt;
+//                     mso-table-rspace: 0pt;
+//                     word-break: break-word;
+//                   "
+//                 >
+//                   <tbody>
+//                     <tr>
+//                       <td
+//                         class="pad"
+//                         style="
+//                           padding-bottom: 15px;
+//                           padding-left: 24px;
+//                           padding-right: 24px;
+//                         "
+//                       >
+//                         <div
+//                           style="
+//                             color: #555555;
+//                             font-family: Montserrat, Trebuchet MS, Lucida Grande,
+//                               Lucida Sans Unicode, Lucida Sans, Tahoma,
+//                               sans-serif;
+//                             font-size: 16px;
+//                             line-height: 180%;
+//                             text-align: left;
+//                             mso-line-height-alt: 28.8px;
+//                           "
+//                         >
+//                           <p style="margin: 0; word-break: break-word">
+//                             <span style="word-break: break-word; color: #2b3940"
+//                               ><strong class="name">${data.name}</strong></span
+//                             >
+//                           </p>
+//                         </div>
+//                       </td>
+//                     </tr>
+//                   </tbody>
+//                 </table>
+//                 <table
+//                   class="paragraph_block block-3"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="0"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="
+//                     mso-table-lspace: 0pt;
+//                     mso-table-rspace: 0pt;
+//                     word-break: break-word;
+//                   "
+//                 >
+//                   <tr>
+//                     <td
+//                       class="pad"
+//                       style="
+//                         padding-bottom: 5px;
+//                         padding-left: 24px;
+//                         padding-right: 24px;
+//                       "
+//                     >
+//                       <div
+//                         style="
+//                           color: #555555;
+//                           font-family: Montserrat, Trebuchet MS, Lucida Grande,
+//                             Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+//                           font-size: 14px;
+//                           line-height: 180%;
+//                           text-align: left;
+//                           mso-line-height-alt: 25.2px;
+//                         "
+//                       >
+//                         <p style="margin: 0; word-break: break-word">
+//                           <b
+//                             style="
+//                               word-break: break-word;
+//                               color: rgb(0, 0, 0);
+//                               text-align: left;
+//                               font-family: Arial, sans-serif;
+//                             "
+//                             >Tripcode</b
+//                           >
+//                           <span
+//                             style="
+//                               color: rgb(0, 0, 0);
+//                               text-align: left;
+//                               line-height: 24px;
+//                               font-weight: 400;
+//                               font-size: 15px;
+//                               font-family: Arial, sans-serif;
+//                             "
+//                           >
+//                             : TRIP_CODE
+//                           </span>
+//                         </p>
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 </table>
+//                 <table
+//                   class="paragraph_block block-3"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="0"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="
+//                     mso-table-lspace: 0pt;
+//                     mso-table-rspace: 0pt;
+//                     word-break: break-word;
+//                   "
+//                 >
+//                   <tr>
+//                     <td
+//                       class="pad"
+//                       style="
+//                         padding-bottom: 5px;
+//                         padding-left: 24px;
+//                         padding-right: 24px;
+//                       "
+//                     >
+//                       <div
+//                         style="
+//                           color: #555555;
+//                           font-family: Montserrat, Trebuchet MS, Lucida Grande,
+//                             Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+//                           font-size: 14px;
+//                           line-height: 180%;
+//                           text-align: left;
+//                           mso-line-height-alt: 25.2px;
+//                         "
+//                       >
+//                         <p style="margin: 0; word-break: break-word">
+//                           <b
+//                             style="
+//                               word-break: break-word;
+//                               color: rgb(0, 0, 0);
+//                               text-align: left;
+//                               font-family: Arial, sans-serif;
+//                             "
+//                             >Duration</b
+//                           >
+//                           <span
+//                             style="
+//                               color: rgb(0, 0, 0);
+//                               text-align: left;
+//                               line-height: 24px;
+//                               font-weight: 400;
+//                               font-size: 15px;
+//                               font-family: Arial, sans-serif;
+//                             "
+//                           >
+//                             : 8 days
+//                           </span>
+//                         </p>
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 </table>
+//                 <table
+//                   class="paragraph_block block-3"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="0"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="
+//                     mso-table-lspace: 0pt;
+//                     mso-table-rspace: 0pt;
+//                     word-break: break-word;
+//                   "
+//                 >
+//                   <tr>
+//                     <td
+//                       class="pad"
+//                       style="
+//                         padding-bottom: 5px;
+//                         padding-left: 24px;
+//                         padding-right: 24px;
+//                         padding-top: 10px;
+//                       "
+//                     >
+//                       <table
+//                         role="presentation"
+//                         width="100%"
+//                         border="0"
+//                         cellspacing="0"
+//                         cellpadding="0"
+//                         style="margin-top: 10px"
+//                       >
+//                         <tr>
+//                           <td
+//                             align="left"
+//                             style="
+//                               font-family: Arial, sans-serif;
+//                               font-size: 15px;
+//                               color: #333333;
+//                             "
+//                           >
+//                             From:
+//                             <span
+//                               style="
+//                                 text-decoration: line-through;
+//                                 color: #e74c3c;
+//                               "
+//                               >$4,425</span
+//                             >
+//                             <span style="color: #000000; font-weight: 400"
+//                               >$4,022
+//                               <span style="color: #000000; font-weight: bold"
+//                                 >AUD</span
+//                               ></span
+//                             >
+//                           </td>
+//                         </tr>
+//                       </table>
+//                       <table
+//                         class="button_block block-8"
+//                         width="100%"
+//                         border="0"
+//                         cellpadding="0"
+//                         cellspacing="0"
+//                         role="presentation"
+//                         style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+//                       >
+//                         <tr>
+//                           <td
+//                             class="pad"
+//                             style="
+//                               padding-bottom: 32px;
+//                               padding-left: 24px;
+//                               padding-right: 24px;
+//                               padding-top: 20px;
+//                               text-align: left;
+//                             "
+//                           >
+//                             <div class="alignment" align="left">
+//                               <!--[if mso]>
+// <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:43px;width:117px;v-text-anchor:middle;" arcsize="7%" stroke="false" fillcolor="#f75c03">
+// <w:anchorlock/>
+// <v:textbox inset="0px,0px,0px,1px">
+// <center dir="false" style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:14px">
+// <![endif]-->
+//                               <div
+//                                 class="button"
+//                                 style="
+//                                   background-color: #f75c03;
+//                                   border-bottom: 0px solid transparent;
+//                                   border-left: 0px solid transparent;
+//                                   border-radius: 3px;
+//                                   border-right: 0px solid transparent;
+//                                   border-top: 0px solid transparent;
+//                                   color: #ffffff;
+//                                   display: inline-block;
+//                                   font-family: Montserrat, Trebuchet MS,
+//                                     Lucida Grande, Lucida Sans Unicode,
+//                                     Lucida Sans, Tahoma, sans-serif;
+//                                   font-size: 14px;
+//                                   font-weight: undefined;
+//                                   mso-border-alt: none;
+//                                   padding-bottom: 06px;
+//                                   padding-top: 5px;
+//                                   text-align: center;
+//                                   text-decoration: none;
+//                                   width: auto;
+//                                   word-break: keep-all;
+//                                 "
+//                               >
+//                                 <span
+//                                   style="
+//                                     word-break: break-word;
+//                                     padding-left: 20px;
+//                                     padding-right: 20px;
+//                                     font-size: 14px;
+//                                     display: inline-block;
+//                                     letter-spacing: normal;
+//                                   "
+//                                   ><span
+//                                     style="margin: 0; word-break: break-word"
+//                                     ><span
+//                                       style="
+//                                         word-break: break-word;
+//                                         line-height: 28px;
+//                                       "
+//                                       data-mce-style
+//                                       ><strong>Book now</strong></span
+//                                     ></span
+//                                   ></span
+//                                 >
+//                               </div>
+//                               <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+//                             </div>
+//                           </td>
+//                         </tr>
+//                       </table>
+//                     </td>
+//                   </tr>
+//                 </table>
+//               </td>
+//             </tr>
+//           </tbody>
+//         </table>
+//       </td>
+//     </tr>
+//   </tbody>
+// </table>
+// `;
+// };
 export const dataUserProfile = {
   name: "manh",
 };
@@ -2576,6 +2960,129 @@ export const footer = () => {
 </table>
 `;
 };
+export const footerContact = () => {
+  return `
+<body style="margin: 0; padding: 0; background-color: #f4f4f4">
+  <table
+    role="presentation"
+    border="0"
+    cellpadding="0"
+    cellspacing="0"
+    width="100%"
+    style="width: 100%"
+  >
+    <tr>
+      <td align="center" style="padding: 20px">
+        <table
+          role="presentation"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          width="600"
+          style="background-color: #ffffff; width: 800px"
+        >
+          <tr>
+            <td
+              width="33%"
+              align="center"
+              style="padding: 20px; font-family: Arial, sans-serif"
+            >
+              <img
+                width="50"
+                height="50"
+                src="https://th.bing.com/th/id/OIP.kj8oKsEJDwncYmjegBy6QwHaHa?rs=1&pid=ImgDetMain"
+                alt="Email Icon"
+                style="
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  margin: 0 auto;
+                "
+              />
+              <p
+                style="
+                  font-size: 16px;
+                  color: #333;
+                  font-weight: bold;
+                  margin: 10px 0 5px 0;
+                "
+              >
+                EMAIL US
+              </p>
+              <p style="font-size: 14px; color: #666; margin: 0">
+                contact@tweetworldtravel.com.au
+              </p>
+            </td>
+            <td
+              width="33%"
+              align="center"
+              style="padding: 20px; font-family: Arial, sans-serif"
+            >
+              <img
+                width="50"
+                height="50"
+                src="https://th.bing.com/th/id/R.923f282ac1090f09dc6268de801cba43?rik=NQTj4kPbHLGRRQ&pid=ImgRaw&r=0"
+                alt="Phone Icon"
+                style="
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  margin: 0 auto;
+                "
+              />
+              <p
+                style="
+                  font-size: 16px;
+                  color: #333;
+                  font-weight: bold;
+                  margin: 10px 0 5px 0;
+                "
+              >
+                CALL US
+              </p>
+              <p style="font-size: 14px; color: #666; margin: 0">
+                1300 739 652
+              </p>
+            </td>
+            <td
+              width="33%"
+              align="center"
+              style="padding: 20px; font-family: Arial, sans-serif"
+            >
+              <img
+                width="50"
+                height="50"
+                src="https://th.bing.com/th/id/OIP.o_BbMgBi4M4tl8hkgPb7DwHaHa?rs=1&pid=ImgDetMain"
+                alt="Book Online Icon"
+                style="
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  margin: 0 auto;
+                "
+              />
+              <p
+                style="
+                  font-size: 16px;
+                  color: #333;
+                  font-weight: bold;
+                  margin: 10px 0 5px 0;
+                "
+              >
+                BOOK ONLINE
+              </p>
+              <p style="font-size: 14px; color: #666; margin: 0">
+                agentportal.tweetworldtravel.com
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+`;
+};
 
 export const divider = () => {
   return `<table
@@ -2633,3915 +3140,169 @@ export const divider = () => {
 };
 
 export const footerGeneral = () => {
-  return `<div>
-  <title></title>
-  <!--[if !mso]><!-->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!--<![endif]-->
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style type="text/css">
-    #outlook a {
-      padding: 0;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-    }
-    table,
-    td {
-      border-collapse: collapse;
-      mso-table-lspace: 0pt;
-      mso-table-rspace: 0pt;
-    }
-    img {
-      border: 0;
-      height: auto;
-      line-height: 100%;
-      outline: none;
-      text-decoration: none;
-      -ms-interpolation-mode: bicubic;
-    }
-    p {
-      display: block;
-      margin: 13px 0;
-    }
-  </style>
-  <!--[if mso]>
-    <noscript>
-      <xml>
-        <o:OfficeDocumentSettings>
-          <o:AllowPNG />
-          <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-      </xml>
-    </noscript>
-  <![endif]-->
-  <!--[if lte mso 11]>
-    <style type="text/css">
-      .mj-outlook-group-fix {
-        width: 100% !important;
-      }
-    </style>
-  <![endif]-->
-
-  <style type="text/css">
-    @media only screen and (min-width: 480px) {
-      .mj-column-per-33 {
-        width: 33% !important;
-        max-width: 33%;
-      }
-      .mj-column-per-30 {
-        width: 30% !important;
-        max-width: 30%;
-      }
-      .mj-column-per-36 {
-        width: 36% !important;
-        max-width: 36%;
-      }
-      .mj-column-per-33-333333333333336 {
-        width: 33.333333333333336% !important;
-        max-width: 33.333333333333336%;
-      }
-      .mj-column-per-20 {
-        width: 20% !important;
-        max-width: 20%;
-      }
-      .mj-column-per-100 {
-        width: 100% !important;
-        max-width: 100%;
-      }
-      .mj-column-per-50 {
-        width: 50% !important;
-        max-width: 50%;
-      }
-      .mj-column-per-45 {
-        width: 45% !important;
-        max-width: 45%;
-      }
-      .mj-column-per-25 {
-        width: 25% !important;
-        max-width: 25%;
-      }
-      .mj-column-per-75 {
-        width: 75% !important;
-        max-width: 75%;
-      }
-      .mj-column-per-35 {
-        width: 35% !important;
-        max-width: 35%;
-      }
-      .mj-column-per-3 {
-        width: 3% !important;
-        max-width: 3%;
-      }
-    }
-  </style>
-  <style media="screen and (min-width:480px)">
-    .moz-text-html .mj-column-per-33 {
-      width: 33% !important;
-      max-width: 33%;
-    }
-    .moz-text-html .mj-column-per-30 {
-      width: 30% !important;
-      max-width: 30%;
-    }
-    .moz-text-html .mj-column-per-36 {
-      width: 36% !important;
-      max-width: 36%;
-    }
-    .moz-text-html .mj-column-per-33-333333333333336 {
-      width: 33.333333333333336% !important;
-      max-width: 33.333333333333336%;
-    }
-    .moz-text-html .mj-column-per-20 {
-      width: 20% !important;
-      max-width: 20%;
-    }
-    .moz-text-html .mj-column-per-100 {
-      width: 100% !important;
-      max-width: 100%;
-    }
-    .moz-text-html .mj-column-per-50 {
-      width: 50% !important;
-      max-width: 50%;
-    }
-    .moz-text-html .mj-column-per-45 {
-      width: 45% !important;
-      max-width: 45%;
-    }
-    .moz-text-html .mj-column-per-25 {
-      width: 25% !important;
-      max-width: 25%;
-    }
-    .moz-text-html .mj-column-per-75 {
-      width: 75% !important;
-      max-width: 75%;
-    }
-    .moz-text-html .mj-column-per-35 {
-      width: 35% !important;
-      max-width: 35%;
-    }
-    .moz-text-html .mj-column-per-3 {
-      width: 3% !important;
-      max-width: 3%;
-    }
-  </style>
-
-  <style type="text/css">
-    @media only screen and (max-width: 479px) {
-      table.mj-full-width-mobile {
-        width: 100% !important;
-      }
-      td.mj-full-width-mobile {
-        width: auto !important;
-      }
-    }
-  </style>
-  <style type="text/css"></style>
-
-  <div style="background-color: #ffffff">
-    <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-    <div style="margin: 0px auto; max-width: 660px">
-      <table
-        align="center"
-        border="0"
-        cellpadding="0"
-        cellspacing="0"
-        role="presentation"
-        style="width: 100%"
-      >
-        <tbody>
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Template</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%;">
+    <tr>
+      <td align="center" style="padding: 20px;">
+        <!-- Content -->
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="background-color: #ffffff; width: 600px;">
+          <!-- Header -->
           <tr>
-            <td
-              style="
-                border: none;
-                direction: ltr;
-                font-size: 0px;
-                padding: 10px 0 10px 0;
-                text-align: center;
-              "
-            >
-              <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" width="660px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-              <div
-                style="
-                  background: #ffffff;
-                  background-color: #ffffff;
-                  margin: 0px auto;
-                  max-width: 660px;
-                "
-              >
-                <table
-                  align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    background: #ffffff;
-                    background-color: #ffffff;
-                    width: 100%;
-                  "
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          direction: ltr;
-                          font-size: 0px;
-                          padding: 0px 0px 0px 0px;
-                          text-align: center;
-                        "
-                      >
-                        <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:217.8px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-33 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td style="vertical-align: top; padding: 2px">
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 0px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <table
-                                            border="0"
-                                            cellpadding="0"
-                                            cellspacing="0"
-                                            role="presentation"
-                                            style="
-                                              border-collapse: collapse;
-                                              border-spacing: 0px;
-                                            "
-                                          >
-                                            <tbody>
-                                              <tr>
-                                                <td style="width: 120px">
-                                                  <img
-                                                    src="https://twt-agent-portal.s3.ap-southeast-2.amazonaws.com/development/newsletter/2023-09-26/email_us.png"
-                                                    style="
-                                                      border: 0;
-                                                      display: block;
-                                                      outline: none;
-                                                      text-decoration: none;
-                                                      height: 75px;
-                                                      width: 100%;
-                                                      font-size: 13px;
-                                                    "
-                                                    width="120"
-                                                    height="75"
-                                                  />
-                                                </td>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.title1"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 10px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: bold;
-                                              line-height: 24px;
-                                              text-align: center;
-                                              text-transform: uppercase;
-                                              color: #000000;
-                                            "
-                                          >
-                                            Email Us
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.subtitle1"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 10px 5px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: 400;
-                                              line-height: 24px;
-                                              text-align: center;
-                                              text-decoration: italic;
-                                              color: #000000;
-                                            "
-                                          >
-                                            contact@tweetworldtravel.com
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:198px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-30 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td style="vertical-align: top; padding: 2px">
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 0px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <table
-                                            border="0"
-                                            cellpadding="0"
-                                            cellspacing="0"
-                                            role="presentation"
-                                            style="
-                                              border-collapse: collapse;
-                                              border-spacing: 0px;
-                                            "
-                                          >
-                                            <tbody>
-                                              <tr>
-                                                <td style="width: 120px">
-                                                  <img
-                                                    src="https://twt-agent-portal.s3.ap-southeast-2.amazonaws.com/development/newsletter/2023-09-26/phone.png"
-                                                    style="
-                                                      border: 0;
-                                                      display: block;
-                                                      outline: none;
-                                                      text-decoration: none;
-                                                      height: 75px;
-                                                      width: 100%;
-                                                      font-size: 13px;
-                                                    "
-                                                    width="120"
-                                                    height="75"
-                                                  />
-                                                </td>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.title2"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 10px 5px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: bold;
-                                              line-height: 24px;
-                                              text-align: center;
-                                              text-transform: uppercase;
-                                              color: #000000;
-                                            "
-                                          >
-                                            Call Us
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.subtitle2"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 10px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: 400;
-                                              line-height: 24px;
-                                              text-align: center;
-                                              text-decoration: italic;
-                                              color: #000000;
-                                            "
-                                          >
-                                            <font size="2"
-                                              ><b>1300 739 652</b></font
-                                            >
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:237.6px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-36 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td style="vertical-align: top; padding: 2px">
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 0px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <table
-                                            border="0"
-                                            cellpadding="0"
-                                            cellspacing="0"
-                                            role="presentation"
-                                            style="
-                                              border-collapse: collapse;
-                                              border-spacing: 0px;
-                                            "
-                                          >
-                                            <tbody>
-                                              <tr>
-                                                <td style="width: 120px">
-                                                  <img
-                                                    src="https://twt-agent-portal.s3.ap-southeast-2.amazonaws.com/development/newsletter/2023-09-26/shop.png"
-                                                    style="
-                                                      border: 0;
-                                                      display: block;
-                                                      outline: none;
-                                                      text-decoration: none;
-                                                      height: 75px;
-                                                      width: 100%;
-                                                      font-size: 13px;
-                                                    "
-                                                    width="120"
-                                                    height="75"
-                                                  />
-                                                </td>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.title3"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 10px 5px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: bold;
-                                              line-height: 24px;
-                                              text-align: center;
-                                              text-transform: uppercase;
-                                              color: #000000;
-                                            "
-                                          >
-                                            Book online
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.subtitle3"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 10px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: 400;
-                                              line-height: 24px;
-                                              text-align: center;
-                                              text-decoration: italic;
-                                              color: #000000;
-                                            "
-                                          >
-                                            <a
-                                              href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                              target="_blank"
-                                              style="
-                                                color: inherit;
-                                                text-decoration: underline;
-                                              "
-                                              >www.tweetworldtravel.com</a
-                                            >
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td></tr></table><![endif]-->
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+            <td align="center" style="padding: 20px;">
+              <h1 style="font-family: Arial, sans-serif; font-size: 24px; color: #333; margin: 0;">Our Destinations</h1>
             </td>
           </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-    <div style="margin: 0px auto; max-width: 660px">
-      <table
-        align="center"
-        border="0"
-        cellpadding="0"
-        cellspacing="0"
-        role="presentation"
-        style="width: 100%"
-      >
-        <tbody>
+          <!-- Destinations -->
           <tr>
-            <td
-              style="
-                border: none;
-                direction: ltr;
-                font-size: 0px;
-                padding: 20px 0 20px 0;
-                text-align: center;
-              "
-            >
-              <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" width="660px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-              <div
-                style="
-                  background: #ffffff;
-                  background-color: #ffffff;
-                  margin: 0px auto;
-                  max-width: 660px;
-                "
-              >
-                <table
-                  align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    background: #ffffff;
-                    background-color: #ffffff;
-                    width: 100%;
-                  "
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          direction: ltr;
-                          font-size: 0px;
-                          padding: 0px 0px 0px 0px;
-                          text-align: center;
-                        "
-                      >
-                        <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:220px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    border: none;
-                                    vertical-align: top;
-                                    padding: 0;
-                                  "
-                                >
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 25px 10px 10px 10px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <p
-                                            style="
-                                              border-top: solid 3px #08263d;
-                                              font-size: 1px;
-                                              margin: 0px auto;
-                                              width: 100%;
-                                            "
-                                          ></p>
-
-                                          <!--[if mso | IE
-                                            ]><table
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              style="
-                                                border-top: solid 3px #08263d;
-                                                font-size: 1px;
-                                                margin: 0px auto;
-                                                width: 200px;
-                                              "
-                                              role="presentation"
-                                              width="200px"
-                                            >
-                                              <tr>
-                                                <td
-                                                  style="
-                                                    height: 0;
-                                                    line-height: 0;
-                                                  "
-                                                >
-                                                  &nbsp;
-                                                </td>
-                                              </tr>
-                                            </table><!
-                                          [endif]-->
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:220px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td style="vertical-align: top; padding: 0">
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.title"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 15px 0;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 20px;
-                                              font-weight: 600;
-                                              line-height: 24px;
-                                              text-align: center;
-                                              color: #08263d;
-                                            "
-                                          >
-                                            Our Destinations
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td><td class="" style="vertical-align:end;width:220px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: end;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    border: none;
-                                    vertical-align: end;
-                                    padding: 0;
-                                  "
-                                >
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 25px 10px 10px 0;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <p
-                                            style="
-                                              border-top: solid 3px #08263d;
-                                              font-size: 1px;
-                                              margin: 0px auto;
-                                              width: 100%;
-                                            "
-                                          ></p>
-
-                                          <!--[if mso | IE
-                                            ]><table
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              style="
-                                                border-top: solid 3px #08263d;
-                                                font-size: 1px;
-                                                margin: 0px auto;
-                                                width: 210px;
-                                              "
-                                              role="presentation"
-                                              width="210px"
-                                            >
-                                              <tr>
-                                                <td
-                                                  style="
-                                                    height: 0;
-                                                    line-height: 0;
-                                                  "
-                                                >
-                                                  &nbsp;
-                                                </td>
-                                              </tr>
-                                            </table><!
-                                          [endif]-->
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td></tr></table><![endif]-->
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="660px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-              <div
-                style="
-                  background: #ffffff;
-                  background-color: #ffffff;
-                  margin: 0px auto;
-                  max-width: 660px;
-                "
-              >
-                <table
-                  align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    background: #ffffff;
-                    background-color: #ffffff;
-                    width: 100%;
-                  "
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          direction: ltr;
-                          font-size: 0px;
-                          padding: 0px;
-                          text-align: center;
-                        "
-                      >
-                        <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:132px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-20 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    border: none;
-                                    vertical-align: top;
-                                    padding: 0;
-                                  "
-                                >
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="left"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.subtitle1"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 7px 6px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: bold;
-                                              line-height: 24px;
-                                              text-align: left;
-                                              color: #08263d;
-                                            "
-                                          >
-                                            Africa
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          style="
-                                            font-size: 0px;
-                                            padding: 0 3px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:132px;" width="132" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                                          <div
-                                            style="
-                                              margin: 0px auto;
-                                              max-width: 132px;
-                                            "
-                                          >
-                                            <table
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              role="presentation"
-                                              style="width: 100%"
-                                            >
-                                              <tbody>
-                                                <tr>
-                                                  <td
-                                                    style="
-                                                      direction: ltr;
-                                                      font-size: 0px;
-                                                      padding: 0 3px;
-                                                      text-align: center;
-                                                    "
-                                                  >
-                                                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:126px;" ><![endif]-->
-
-                                                    <div
-                                                      class="mj-column-per-100 mj-outlook-group-fix"
-                                                      style="
-                                                        font-size: 0px;
-                                                        text-align: left;
-                                                        direction: ltr;
-                                                        display: inline-block;
-                                                        vertical-align: top;
-                                                        width: 100%;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              style="
-                                                                vertical-align: top;
-                                                                padding: 0;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style=""
-                                                                width="100%"
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.content1"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: 400;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #08263d;
-                                                                        "
-                                                                      >
-                                                                        <div>
-                                                                          <div>
-                                                                            Southern
-                                                                            Africa
-                                                                          </div>
-                                                                          <div>
-                                                                            Egypt
-                                                                          </div>
-                                                                          <div>
-                                                                            Morocco
-                                                                          </div>
-                                                                        </div>
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.see_all1"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: bold;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #1778b9;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                                                          target="_blank"
-                                                                          style="
-                                                                            color: inherit;
-                                                                            text-decoration: underline;
-                                                                          "
-                                                                          >see
-                                                                          all</a
-                                                                        >
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </div>
-
-                                                    <!--[if mso | IE]></td></tr></table><![endif]-->
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </div>
-
-                                          <!--[if mso | IE]></td></tr></table><![endif]-->
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:132px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-20 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    border: none;
-                                    vertical-align: top;
-                                    padding: 0;
-                                  "
-                                >
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="left"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.subtitle2"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 7px 6px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: bold;
-                                              line-height: 24px;
-                                              text-align: left;
-                                              color: #08263d;
-                                            "
-                                          >
-                                            Asia
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          style="
-                                            font-size: 0px;
-                                            padding: 0 3px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:132px;" width="132" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                                          <div
-                                            style="
-                                              margin: 0px auto;
-                                              max-width: 132px;
-                                            "
-                                          >
-                                            <table
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              role="presentation"
-                                              style="width: 100%"
-                                            >
-                                              <tbody>
-                                                <tr>
-                                                  <td
-                                                    style="
-                                                      direction: ltr;
-                                                      font-size: 0px;
-                                                      padding: 0 3px;
-                                                      text-align: center;
-                                                    "
-                                                  >
-                                                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:126px;" ><![endif]-->
-
-                                                    <div
-                                                      class="mj-column-per-100 mj-outlook-group-fix"
-                                                      style="
-                                                        font-size: 0px;
-                                                        text-align: left;
-                                                        direction: ltr;
-                                                        display: inline-block;
-                                                        vertical-align: top;
-                                                        width: 100%;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              style="
-                                                                vertical-align: top;
-                                                                padding: 0;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style=""
-                                                                width="100%"
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.content2"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: 400;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #08263d;
-                                                                        "
-                                                                      >
-                                                                        <div>
-                                                                          <div>
-                                                                            Japan
-                                                                          </div>
-                                                                          <div>
-                                                                            South
-                                                                            Korea
-                                                                          </div>
-                                                                          <div>
-                                                                            Vietnam
-                                                                          </div>
-                                                                          <div>
-                                                                            China
-                                                                          </div>
-                                                                          <div>
-                                                                            Thailand
-                                                                          </div>
-                                                                        </div>
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.see_all2"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: bold;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #1778b9;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                                                          target="_blank"
-                                                                          style="
-                                                                            color: inherit;
-                                                                            text-decoration: underline;
-                                                                          "
-                                                                          >see
-                                                                          all</a
-                                                                        >
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </div>
-
-                                                    <!--[if mso | IE]></td></tr></table><![endif]-->
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </div>
-
-                                          <!--[if mso | IE]></td></tr></table><![endif]-->
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:132px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-20 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    border: none;
-                                    vertical-align: top;
-                                    padding: 0;
-                                  "
-                                >
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="left"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.subtitle3"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 7px 6px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: bold;
-                                              line-height: 24px;
-                                              text-align: left;
-                                              color: #08263d;
-                                            "
-                                          >
-                                            Oceania
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          style="
-                                            font-size: 0px;
-                                            padding: 0 3px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:132px;" width="132" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                                          <div
-                                            style="
-                                              margin: 0px auto;
-                                              max-width: 132px;
-                                            "
-                                          >
-                                            <table
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              role="presentation"
-                                              style="width: 100%"
-                                            >
-                                              <tbody>
-                                                <tr>
-                                                  <td
-                                                    style="
-                                                      direction: ltr;
-                                                      font-size: 0px;
-                                                      padding: 0 3px;
-                                                      text-align: center;
-                                                    "
-                                                  >
-                                                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:126px;" ><![endif]-->
-
-                                                    <div
-                                                      class="mj-column-per-100 mj-outlook-group-fix"
-                                                      style="
-                                                        font-size: 0px;
-                                                        text-align: left;
-                                                        direction: ltr;
-                                                        display: inline-block;
-                                                        vertical-align: top;
-                                                        width: 100%;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              style="
-                                                                vertical-align: top;
-                                                                padding: 0;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style=""
-                                                                width="100%"
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.content3"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: 400;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #08263d;
-                                                                        "
-                                                                      >
-                                                                        <div>
-                                                                          <div>
-                                                                            Australia
-                                                                          </div>
-                                                                          <div>
-                                                                            French
-                                                                            Polynesia
-                                                                          </div>
-                                                                          <div>
-                                                                            Fiji
-                                                                          </div>
-                                                                        </div>
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.see_all3"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: bold;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #1778b9;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                                                          target="_blank"
-                                                                          style="
-                                                                            color: inherit;
-                                                                            text-decoration: underline;
-                                                                          "
-                                                                          >see
-                                                                          all</a
-                                                                        >
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </div>
-
-                                                    <!--[if mso | IE]></td></tr></table><![endif]-->
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </div>
-
-                                          <!--[if mso | IE]></td></tr></table><![endif]-->
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:132px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-20 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    border: none;
-                                    vertical-align: top;
-                                    padding: 0;
-                                  "
-                                >
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="left"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.subtitle4"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 7px 6px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: bold;
-                                              line-height: 24px;
-                                              text-align: left;
-                                              color: #08263d;
-                                            "
-                                          >
-                                            Europe
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          style="
-                                            font-size: 0px;
-                                            padding: 0 3px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:132px;" width="132" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                                          <div
-                                            style="
-                                              margin: 0px auto;
-                                              max-width: 132px;
-                                            "
-                                          >
-                                            <table
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              role="presentation"
-                                              style="width: 100%"
-                                            >
-                                              <tbody>
-                                                <tr>
-                                                  <td
-                                                    style="
-                                                      direction: ltr;
-                                                      font-size: 0px;
-                                                      padding: 0 3px;
-                                                      text-align: center;
-                                                    "
-                                                  >
-                                                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:126px;" ><![endif]-->
-
-                                                    <div
-                                                      class="mj-column-per-100 mj-outlook-group-fix"
-                                                      style="
-                                                        font-size: 0px;
-                                                        text-align: left;
-                                                        direction: ltr;
-                                                        display: inline-block;
-                                                        vertical-align: top;
-                                                        width: 100%;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              style="
-                                                                vertical-align: top;
-                                                                padding: 0;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style=""
-                                                                width="100%"
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.content4"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: 400;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #08263d;
-                                                                        "
-                                                                      >
-                                                                        <div>
-                                                                          <div>
-                                                                            France
-                                                                          </div>
-                                                                          <div>
-                                                                            Germany
-                                                                          </div>
-                                                                          <div>
-                                                                            Spain
-                                                                          </div>
-                                                                          <div>
-                                                                            Italy
-                                                                          </div>
-                                                                          <div>
-                                                                            Switzerland
-                                                                          </div>
-                                                                        </div>
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.see_all4"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: bold;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #1778b9;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                                                          target="_blank"
-                                                                          style="
-                                                                            color: inherit;
-                                                                            text-decoration: underline;
-                                                                          "
-                                                                          >see
-                                                                          all</a
-                                                                        >
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </div>
-
-                                                    <!--[if mso | IE]></td></tr></table><![endif]-->
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </div>
-
-                                          <!--[if mso | IE]></td></tr></table><![endif]-->
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:132px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-20 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    border: none;
-                                    vertical-align: top;
-                                    padding: 0;
-                                  "
-                                >
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="left"
-                                          class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.subtitle5"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 7px 6px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <div
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 12px;
-                                              font-weight: bold;
-                                              line-height: 24px;
-                                              text-align: left;
-                                              color: #08263d;
-                                            "
-                                          >
-                                            Latin America
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td
-                                          style="
-                                            font-size: 0px;
-                                            padding: 0 3px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:132px;" width="132" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                                          <div
-                                            style="
-                                              margin: 0px auto;
-                                              max-width: 132px;
-                                            "
-                                          >
-                                            <table
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              role="presentation"
-                                              style="width: 100%"
-                                            >
-                                              <tbody>
-                                                <tr>
-                                                  <td
-                                                    style="
-                                                      direction: ltr;
-                                                      font-size: 0px;
-                                                      padding: 0 3px;
-                                                      text-align: center;
-                                                    "
-                                                  >
-                                                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:126px;" ><![endif]-->
-
-                                                    <div
-                                                      class="mj-column-per-100 mj-outlook-group-fix"
-                                                      style="
-                                                        font-size: 0px;
-                                                        text-align: left;
-                                                        direction: ltr;
-                                                        display: inline-block;
-                                                        vertical-align: top;
-                                                        width: 100%;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              style="
-                                                                vertical-align: top;
-                                                                padding: 0;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style=""
-                                                                width="100%"
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.content5"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: 400;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #08263d;
-                                                                        "
-                                                                      >
-                                                                        <div>
-                                                                          <div>
-                                                                            Peru
-                                                                          </div>
-                                                                        </div>
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-
-                                                                  <tr>
-                                                                    <td
-                                                                      align="left"
-                                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.see_all5"
-                                                                      style="
-                                                                        font-size: 0px;
-                                                                        padding: 3px
-                                                                          0;
-                                                                        word-break: break-word;
-                                                                      "
-                                                                    >
-                                                                      <div
-                                                                        style="
-                                                                          font-family: Arial,
-                                                                            sans-serif;
-                                                                          font-size: 12px;
-                                                                          font-weight: bold;
-                                                                          line-height: 24px;
-                                                                          text-align: left;
-                                                                          color: #1778b9;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                                                          target="_blank"
-                                                                          style="
-                                                                            color: inherit;
-                                                                            text-decoration: underline;
-                                                                          "
-                                                                          >see
-                                                                          all</a
-                                                                        >
-                                                                      </div>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </div>
-
-                                                    <!--[if mso | IE]></td></tr></table><![endif]-->
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </div>
-
-                                          <!--[if mso | IE]></td></tr></table><![endif]-->
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td></tr></table><![endif]-->
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="660px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-              <div
-                style="
-                  background: #ffffff;
-                  background-color: #ffffff;
-                  margin: 0px auto;
-                  max-width: 660px;
-                "
-              >
-                <table
-                  align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    background: #ffffff;
-                    background-color: #ffffff;
-                    width: 100%;
-                  "
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          direction: ltr;
-                          font-size: 0px;
-                          padding: 0px;
-                          text-align: center;
-                        "
-                      >
-                        <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:330px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-50 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td style="vertical-align: top; padding: 0">
-                                  <table
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    role="presentation"
-                                    style=""
-                                    width="100%"
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          style="
-                                            font-size: 0px;
-                                            padding: 25px 10px 10px 10px;
-                                            word-break: break-word;
-                                          "
-                                        >
-                                          <p
-                                            style="
-                                              border-top: solid 1px #cccccc;
-                                              font-size: 1px;
-                                              margin: 0px auto;
-                                              width: 100%;
-                                            "
-                                          ></p>
-
-                                          <!--[if mso | IE
-                                            ]><table
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              style="
-                                                border-top: solid 1px #cccccc;
-                                                font-size: 1px;
-                                                margin: 0px auto;
-                                                width: 310px;
-                                              "
-                                              role="presentation"
-                                              width="310px"
-                                            >
-                                              <tr>
-                                                <td
-                                                  style="
-                                                    height: 0;
-                                                    line-height: 0;
-                                                  "
-                                                >
-                                                  &nbsp;
-                                                </td>
-                                              </tr>
-                                            </table><!
-                                          [endif]-->
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td></tr></table><![endif]-->
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="660px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-              <div
-                style="
-                  background: #ffffff;
-                  background-color: #ffffff;
-                  margin: 0px auto;
-                  max-width: 660px;
-                "
-              >
-                <table
-                  align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    background: #ffffff;
-                    background-color: #ffffff;
-                    width: 100%;
-                  "
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          direction: ltr;
-                          font-size: 0px;
-                          padding: 0px;
-                          text-align: center;
-                        "
-                      >
-                        <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:297px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-45 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            style="vertical-align: top"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    font-size: 0px;
-                                    padding: 20px 0;
-                                    word-break: break-word;
-                                  "
-                                >
-                                  <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:297px;" width="297" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                                  <div
-                                    style="margin: 0px auto; max-width: 297px"
-                                  >
-                                    <table
-                                      align="center"
-                                      border="0"
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                      role="presentation"
-                                      style="width: 100%"
-                                    >
-                                      <tbody>
-                                        <tr>
-                                          <td
-                                            style="
-                                              direction: ltr;
-                                              font-size: 0px;
-                                              padding: 20px 0;
-                                              text-align: center;
-                                            "
-                                          >
-                                            <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:74.25px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-25 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 0;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style="
-                                                                  border-collapse: collapse;
-                                                                  border-spacing: 0px;
-                                                                "
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      style="
-                                                                        width: 35px;
-                                                                      "
-                                                                    >
-                                                                      <a
-                                                                        href="https://twitter.com/TWorldTravel"
-                                                                        target="_blank"
-                                                                      >
-                                                                        <img
-                                                                          src="https://cdn.tools.unlayer.com/social/icons/circle/twitter.png"
-                                                                          style="
-                                                                            border: 0;
-                                                                            display: block;
-                                                                            outline: none;
-                                                                            text-decoration: none;
-                                                                            height: 35px;
-                                                                            width: 100%;
-                                                                            font-size: 13px;
-                                                                          "
-                                                                          width="35"
-                                                                          height="35"
-                                                                        />
-                                                                      </a>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:74.25px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-25 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 0;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style="
-                                                                  border-collapse: collapse;
-                                                                  border-spacing: 0px;
-                                                                "
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      style="
-                                                                        width: 35px;
-                                                                      "
-                                                                    >
-                                                                      <a
-                                                                        href="https://www.facebook.com/Tweetworldtravel12/"
-                                                                        target="_blank"
-                                                                      >
-                                                                        <img
-                                                                          src="https://cdn.tools.unlayer.com/social/icons/circle/facebook.png"
-                                                                          style="
-                                                                            border: 0;
-                                                                            display: block;
-                                                                            outline: none;
-                                                                            text-decoration: none;
-                                                                            height: 35px;
-                                                                            width: 100%;
-                                                                            font-size: 13px;
-                                                                          "
-                                                                          width="35"
-                                                                          height="35"
-                                                                        />
-                                                                      </a>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:74.25px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-25 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 0;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style="
-                                                                  border-collapse: collapse;
-                                                                  border-spacing: 0px;
-                                                                "
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      style="
-                                                                        width: 35px;
-                                                                      "
-                                                                    >
-                                                                      <a
-                                                                        href="https://www.linkedin.com/company/tweet-world-travel-group/posts/?feedView=all&amp;viewAsMember=true"
-                                                                        target="_blank"
-                                                                      >
-                                                                        <img
-                                                                          src="https://cdn.tools.unlayer.com/social/icons/circle/linkedin.png"
-                                                                          style="
-                                                                            border: 0;
-                                                                            display: block;
-                                                                            outline: none;
-                                                                            text-decoration: none;
-                                                                            height: 35px;
-                                                                            width: 100%;
-                                                                            font-size: 13px;
-                                                                          "
-                                                                          width="35"
-                                                                          height="35"
-                                                                        />
-                                                                      </a>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:74.25px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-25 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 0;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <table
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                                role="presentation"
-                                                                style="
-                                                                  border-collapse: collapse;
-                                                                  border-spacing: 0px;
-                                                                "
-                                                              >
-                                                                <tbody>
-                                                                  <tr>
-                                                                    <td
-                                                                      style="
-                                                                        width: 35px;
-                                                                      "
-                                                                    >
-                                                                      <a
-                                                                        href="https://www.youtube.com/channel/UCgw2O05QRJb3DEiVDS7RwSg/featured"
-                                                                        target="_blank"
-                                                                      >
-                                                                        <img
-                                                                          src="https://cdn.tools.unlayer.com/social/icons/circle/youtube.png"
-                                                                          style="
-                                                                            border: 0;
-                                                                            display: block;
-                                                                            outline: none;
-                                                                            text-decoration: none;
-                                                                            height: 35px;
-                                                                            width: 100%;
-                                                                            font-size: 13px;
-                                                                          "
-                                                                          width="35"
-                                                                          height="35"
-                                                                        />
-                                                                      </a>
-                                                                    </td>
-                                                                  </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td></tr></table><![endif]-->
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </div>
-
-                                  <!--[if mso | IE]></td></tr></table><![endif]-->
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td></tr></table><![endif]-->
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="660px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-              <div
-                style="
-                  background: #ffffff;
-                  background-color: #ffffff;
-                  margin: 0px auto;
-                  max-width: 660px;
-                "
-              >
-                <table
-                  align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    background: #ffffff;
-                    background-color: #ffffff;
-                    width: 100%;
-                  "
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          direction: ltr;
-                          font-size: 0px;
-                          padding: 0px 0 10px 0;
-                          text-align: center;
-                        "
-                      >
-                        <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                        <div style="margin: 0px auto; max-width: 660px">
-                          <table
-                            align="center"
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            style="width: 100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    direction: ltr;
-                                    font-size: 0px;
-                                    padding: 0;
-                                    text-align: center;
-                                  "
-                                >
-                                  <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:660px;" ><![endif]-->
-
-                                  <div
-                                    class="mj-column-per-100 mj-outlook-group-fix"
-                                    style="
-                                      font-size: 0px;
-                                      text-align: left;
-                                      direction: ltr;
-                                      display: inline-block;
-                                      vertical-align: top;
-                                      width: 100%;
-                                    "
-                                  >
-                                    <table
-                                      border="0"
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                      role="presentation"
-                                      width="100%"
-                                    >
-                                      <tbody>
-                                        <tr>
-                                          <td
-                                            style="
-                                              border: none;
-                                              vertical-align: top;
-                                              padding: 0;
-                                            "
-                                          >
-                                            <table
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              role="presentation"
-                                              style=""
-                                              width="100%"
-                                            >
-                                              <tbody>
-                                                <tr>
-                                                  <td
-                                                    align="center"
-                                                    class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.street"
-                                                    style="
-                                                      font-size: 0px;
-                                                      padding: 3px 0;
-                                                      word-break: break-word;
-                                                    "
-                                                  >
-                                                    <div
-                                                      style="
-                                                        font-family: Arial,
-                                                          sans-serif;
-                                                        font-size: 12px;
-                                                        font-weight: 400;
-                                                        line-height: 24px;
-                                                        text-align: center;
-                                                        color: #08263d;
-                                                      "
-                                                    >
-                                                      Tweet World Travel | 554
-                                                      Magill Road, Magill SA
-                                                      5072, Australia
-                                                    </div>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </div>
-
-                                  <!--[if mso | IE]></td></tr></table><![endif]-->
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td></tr></table></td><td class="" style="" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                        <div style="margin: 0px auto; max-width: 660px">
-                          <table
-                            align="center"
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            style="width: 100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    direction: ltr;
-                                    font-size: 0px;
-                                    padding: 0;
-                                    text-align: center;
-                                  "
-                                >
-                                  <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:660px;" ><![endif]-->
-
-                                  <div
-                                    class="mj-column-per-100 mj-outlook-group-fix"
-                                    style="
-                                      font-size: 0px;
-                                      text-align: left;
-                                      direction: ltr;
-                                      display: inline-block;
-                                      vertical-align: top;
-                                      width: 100%;
-                                    "
-                                  >
-                                    <table
-                                      border="0"
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                      role="presentation"
-                                      width="100%"
-                                    >
-                                      <tbody>
-                                        <tr>
-                                          <td
-                                            style="
-                                              border: none;
-                                              vertical-align: top;
-                                              padding: 0;
-                                            "
-                                          >
-                                            <table
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              role="presentation"
-                                              style=""
-                                              width="100%"
-                                            >
-                                              <tbody>
-                                                <tr>
-                                                  <td
-                                                    align="center"
-                                                    class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.phoneAndLink"
-                                                    style="
-                                                      font-size: 0px;
-                                                      padding: 3px 0;
-                                                      word-break: break-word;
-                                                    "
-                                                  >
-                                                    <div
-                                                      style="
-                                                        font-family: Arial,
-                                                          sans-serif;
-                                                        font-size: 12px;
-                                                        font-weight: 400;
-                                                        line-height: 24px;
-                                                        text-align: center;
-                                                        color: #08263d;
-                                                      "
-                                                    >
-                                                      ABN: 24 653 476 316 |
-                                                      Website:
-                                                      <a
-                                                        href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                                        target="_blank"
-                                                        style="
-                                                          color: inherit;
-                                                          text-decoration: underline;
-                                                        "
-                                                        tabindex="-1"
-                                                        >www.tweetworldtravel.com</a
-                                                      >
-                                                    </div>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </div>
-
-                                  <!--[if mso | IE]></td></tr></table><![endif]-->
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!--[if mso | IE]></td></tr></table></td></tr><tr><td class="" width="660px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-              <div
-                style="
-                  background: #ffffff;
-                  background-color: #ffffff;
-                  margin: 0px auto;
-                  max-width: 660px;
-                "
-              >
-                <table
-                  align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    background: #ffffff;
-                    background-color: #ffffff;
-                    width: 100%;
-                  "
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          direction: ltr;
-                          font-size: 0px;
-                          padding: 0px 0 10px 0;
-                          text-align: center;
-                        "
-                      >
-                        <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:495px;" ><![endif]-->
-
-                        <div
-                          class="mj-column-per-75 mj-outlook-group-fix"
-                          style="
-                            font-size: 0px;
-                            text-align: left;
-                            direction: ltr;
-                            display: inline-block;
-                            vertical-align: top;
-                            width: 100%;
-                          "
-                        >
-                          <table
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            role="presentation"
-                            style="vertical-align: top"
-                            width="100%"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    font-size: 0px;
-                                    padding: 0px;
-                                    word-break: break-word;
-                                  "
-                                >
-                                  <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:495px;" width="495" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-                                  <div
-                                    style="
-                                      background: #ffffff;
-                                      background-color: #ffffff;
-                                      margin: 0px auto;
-                                      max-width: 495px;
-                                    "
-                                  >
-                                    <table
-                                      align="center"
-                                      border="0"
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                      role="presentation"
-                                      style="
-                                        background: #ffffff;
-                                        background-color: #ffffff;
-                                        width: 100%;
-                                      "
-                                    >
-                                      <tbody>
-                                        <tr>
-                                          <td
-                                            style="
-                                              direction: ltr;
-                                              font-size: 0px;
-                                              padding: 0px;
-                                              text-align: center;
-                                            "
-                                          >
-                                            <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:173.25px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-35 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.term"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 3px 0;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <div
-                                                                style="
-                                                                  font-family: Arial,
-                                                                    sans-serif;
-                                                                  font-size: 12px;
-                                                                  font-weight: 400;
-                                                                  line-height: 24px;
-                                                                  text-align: center;
-                                                                  color: #08263d;
-                                                                "
-                                                              >
-                                                                *<a
-                                                                  href="https://tweetworldtravel.com/booking-terms-conditions\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                                                  target="_blank"
-                                                                  style="
-                                                                    color: inherit;
-                                                                    text-decoration: underline;
-                                                                  "
-                                                                  >Terms and
-                                                                  Conditions</a
-                                                                >
-                                                              </div>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:14.85px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-3 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 0 3px;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <div
-                                                                style="
-                                                                  font-family: Arial,
-                                                                    sans-serif;
-                                                                  font-size: 12px;
-                                                                  font-weight: 400;
-                                                                  line-height: 24px;
-                                                                  text-align: center;
-                                                                  color: #08263d;
-                                                                "
-                                                              >
-                                                                |
-                                                              </div>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:99px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-20 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 3px 0;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <div
-                                                                style="
-                                                                  font-family: Arial,
-                                                                    sans-serif;
-                                                                  font-size: 12px;
-                                                                  font-weight: 400;
-                                                                  line-height: 24px;
-                                                                  text-align: center;
-                                                                  color: #08263d;
-                                                                "
-                                                              >
-                                                                <a
-                                                                  style="
-                                                                    text-decoration: none;
-                                                                    color: #000;
-                                                                  "
-                                                                  href="https://newsletters.tweetworldtravel.com/unsubscribe?c=[_campaign_id_]&amp;a=[_unsubscribe_slug_]"
-                                                                  >Unsubscribe</a
-                                                                >
-                                                              </div>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:14.85px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-3 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 0 3px;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <div
-                                                                style="
-                                                                  font-family: Arial,
-                                                                    sans-serif;
-                                                                  font-size: 12px;
-                                                                  font-weight: 400;
-                                                                  line-height: 24px;
-                                                                  text-align: center;
-                                                                  color: #08263d;
-                                                                "
-                                                              >
-                                                                |
-                                                              </div>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:99px;" ><![endif]-->
-
-                                            <div
-                                              class="mj-column-per-20 mj-outlook-group-fix"
-                                              style="
-                                                font-size: 0px;
-                                                text-align: left;
-                                                direction: ltr;
-                                                display: inline-block;
-                                                vertical-align: top;
-                                                width: 100%;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      style="
-                                                        vertical-align: top;
-                                                        padding: 0;
-                                                      "
-                                                    >
-                                                      <table
-                                                        border="0"
-                                                        cellpadding="0"
-                                                        cellspacing="0"
-                                                        role="presentation"
-                                                        style=""
-                                                        width="100%"
-                                                      >
-                                                        <tbody>
-                                                          <tr>
-                                                            <td
-                                                              align="center"
-                                                              class="node-contenteditable-type-text node-contenteditable-idx-content.children.[1].data.value.account"
-                                                              style="
-                                                                font-size: 0px;
-                                                                padding: 3px 0;
-                                                                word-break: break-word;
-                                                              "
-                                                            >
-                                                              <div
-                                                                style="
-                                                                  font-family: Arial,
-                                                                    sans-serif;
-                                                                  font-size: 12px;
-                                                                  font-weight: 400;
-                                                                  line-height: 24px;
-                                                                  text-align: center;
-                                                                  color: #08263d;
-                                                                "
-                                                              >
-                                                                <a
-                                                                  href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]&amp;b=[_extend_link_]"
-                                                                  target="_blank"
-                                                                  style="
-                                                                    color: inherit;
-                                                                    text-decoration: underline;
-                                                                  "
-                                                                  >My Account</a
-                                                                >
-                                                              </div>
-                                                            </td>
-                                                          </tr>
-                                                        </tbody>
-                                                      </table>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </div>
-
-                                            <!--[if mso | IE]></td></tr></table><![endif]-->
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </div>
-
-                                  <!--[if mso | IE]></td></tr></table><![endif]-->
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <!--[if mso | IE]></td></tr></table><![endif]-->
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+            <td>
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%;">
+                <tr>
+                  <!-- Africa -->
+                  <td width="20%" align="center" style="padding: 10px; font-family: Arial, sans-serif;">
+                    <p style="font-size: 16px; color: #333; font-weight: bold; margin: 0;">Africa</p>
+                    <p style="font-size: 14px; color: #666; margin: 5px 0;">Luxury Holidays</p>
+                    <a href="#" style="font-size: 14px; color: #1778b9; text-decoration: none;">see all</a>
+                  </td>
+                  <!-- Asia -->
+                  <td width="20%" align="center" style="padding: 10px; font-family: Arial, sans-serif;">
+                    <p style="font-size: 16px; color: #333; font-weight: bold; margin: 0;">Asia</p>
+                    <p style="font-size: 14px; color: #666; margin: 5px 0;">Vietnam</p>
+                    <a href="#" style="font-size: 14px; color: #1778b9; text-decoration: none;">see all</a>
+                  </td>
+                  <!-- Australia/Oceania -->
+                  <td width="20%" align="center" style="padding: 10px; font-family: Arial, sans-serif;">
+                    <p style="font-size: 16px; color: #333; font-weight: bold; margin: 0;">Australia/Oceania</p>
+                    <p style="font-size: 14px; color: #666; margin: 5px 0;">Australia</p>
+                    <a href="#" style="font-size: 14px; color: #1778b9; text-decoration: none;">see all</a>
+                  </td>
+                  <!-- Europe -->
+                  <td width="20%" align="center" style="padding: 10px; font-family: Arial, sans-serif;">
+                    <p style="font-size: 16px; color: #333; font-weight: bold; margin: 0;">Europe</p>
+                    <p style="font-size: 14px; color: #666; margin: 5px 0;">England</p>
+                    <a href="#" style="font-size: 14px; color: #1778b9; text-decoration: none;">see all</a>
+                  </td>
+                  <!-- North America -->
+                  <td width="20%" align="center" style="padding: 10px; font-family: Arial, sans-serif;">
+                    <p style="font-size: 16px; color: #333; font-weight: bold; margin: 0;">North America</p>
+                    <p style="font-size: 14px; color: #666; margin: 5px 0;">Canada</p>
+                    <a href="#" style="font-size: 14px; color: #1778b9; text-decoration: none;">see all</a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-
-    <div style="margin: 0px auto; max-width: 660px">
-      <table
-        align="center"
-        border="0"
-        cellpadding="0"
-        cellspacing="0"
-        role="presentation"
-        style="width: 100%"
-      >
-        <tbody>
+          <!-- Footer -->
           <tr>
-            <td
-              style="
-                direction: ltr;
-                font-size: 0px;
-                padding: 0px;
-                text-align: left;
-              "
-            >
-              <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:660px;" ><![endif]-->
-
-              <div
-                class="mj-column-per-100 mj-outlook-group-fix"
-                style="
-                  font-size: 0px;
-                  text-align: left;
-                  direction: ltr;
-                  display: inline-block;
-                  vertical-align: top;
-                  width: 100%;
-                "
-              >
-                <table
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="vertical-align: top"
-                  width="100%"
-                >
-                  <tbody>
-                    <tr>
-                      <td
-                        align="center"
-                        style="
-                          font-size: 0px;
-                          padding: 0px 0px 0px 0px;
-                          word-break: break-word;
-                        "
-                      >
-                        <table
-                          border="0"
-                          cellpadding="0"
-                          cellspacing="0"
-                          role="presentation"
-                          style="border-collapse: collapse; border-spacing: 0px"
-                        >
-                          <tbody>
-                            <tr>
-                              <td style="width: 660px">
-                                <img
-                                  src="[_image_checkread_]"
-                                  style="
-                                    border: 0;
-                                    display: block;
-                                    outline: none;
-                                    text-decoration: none;
-                                    height: 0px;
-                                    width: 100%;
-                                    font-size: 13px;
-                                  "
-                                  width="660"
-                                  height="0"
-                                />
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!--[if mso | IE]></td></tr></table><![endif]-->
+            <td align="center" style="padding: 20px; font-family: Arial, sans-serif;">
+              <p style="font-size: 12px; color: #333; margin: 5px 0;">
+                Tweet World Travel Group: 554 Magill Road, Magill SA 5072, Australia
+              </p>
+              <p style="font-size: 12px; color: #333; margin: 5px 0;">
+                ACN: 1234 2657 910 | Website: <a href="https://www.tweetworldtravel.com" style="color: #1778b9; text-decoration: none;">www.tweetworldtravel.com</a>
+              </p>
+              <p style="font-size: 12px; color: #333; margin: 5px 0;">
+                *<a href="#" style="color: #1778b9; text-decoration: none;">Terms and Conditions</a> | 
+                <a href="#" style="color: #1778b9; text-decoration: none;">Unsubscribe</a> | 
+                <a href="#" style="color: #1778b9; text-decoration: none;">My Account</a>
+              </p>
             </td>
           </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!--[if mso | IE]></td></tr></table><![endif]-->
-  </div>
-</div>
-`;
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
 };
 export const headerGeneral = () => {
-  return `<div>
+  return `<body style="margin: 0; padding: 0; background-color: #f4f4f4">
+  <table
+    role="presentation"
+    border="0"
+    cellpadding="0"
+    cellspacing="0"
+    width="100%"
+    style="width: 100%"
+  >
+    <tr>
+      <td align="center" style="padding: 20px">
+        <!-- Content -->
+        <table
+          role="presentation"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          width="600"
+          style="background-color: #ffffff; width: 600px"
+        >
+          <!-- Row 2: Logo and TWEET WORLD TRAVEL -->
+          <tr>
+            <td align="center" style="padding: 20px">
+              <table
+                role="presentation"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+                width="100%"
+              >
+                <tr>
+                  <td align="center" style="padding: 10px">
+                    <img
+                     width="150"
+                      height="50"
+                      src="https://twt-agent-portal.s3.ap-southeast-2.amazonaws.com/development/newsletter/2023-09-26/logo.png"
+                      alt="Tweet World Travel Logo"
+                      style="display: block; width: 150px; height: 50px"
 
-  
-    <div>
-
-  
-    <title></title>
-    <!--[if !mso]><!-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--<![endif]-->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style type="text/css">
-      #outlook a { padding:0; }
-      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }
-      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }
-      img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }
-      p { display:block;margin:13px 0; }
-    </style>
-    <!--[if mso]>
-    <noscript>
-    <xml>
-    <o:OfficeDocumentSettings>
-      <o:AllowPNG/>
-      <o:PixelsPerInch>96</o:PixelsPerInch>
-    </o:OfficeDocumentSettings>
-    </xml>
-    </noscript>
-    <![endif]-->
-    <!--[if lte mso 11]>
-    <style type="text/css">
-      .mj-outlook-group-fix { width:100% !important; }
-    </style>
-    <![endif]-->
-    
-    
-    <style type="text/css">
-      @media only screen and (min-width:480px) {
-        .mj-column-per-40 { width:40% !important; max-width: 40%; }
-.mj-column-per-20 { width:20% !important; max-width: 20%; }
-.mj-column-per-50 { width:50% !important; max-width: 50%; }
-.mj-column-per-100 { width:100% !important; max-width: 100%; }
-      }
-    </style>
-    <style media="screen and (min-width:480px)">
-      .moz-text-html .mj-column-per-40 { width:40% !important; max-width: 40%; }
-.moz-text-html .mj-column-per-20 { width:20% !important; max-width: 20%; }
-.moz-text-html .mj-column-per-50 { width:50% !important; max-width: 50%; }
-.moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%; }
-    </style>
-    
-  
-    <style type="text/css">
-    
-    
-
-    @media only screen and (max-width:479px) {
-      table.mj-full-width-mobile { width: 100% !important; }
-      td.mj-full-width-mobile { width: auto !important; }
-    }
-  
-    </style>
-    <style type="text/css">
-    
-    </style>
-    
-  
-  
-    
-    
-      <div style="background-color:#ffffff;">
-        
-      
-      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-    
-      
-      <div style="background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:660px;">
-        
-        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">
-          <tbody>
-            <tr>
-              <td style="border:none;direction:ltr;font-size:0px;padding:0px 0px 0px 0px;text-align:center;">
-                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" width="660px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" bgcolor="#f8f8f8" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-    
-      
-      <div style="background:#f8f8f8;background-color:#f8f8f8;margin:0px auto;max-width:660px;">
-        
-        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#f8f8f8;background-color:#f8f8f8;width:100%;">
-          <tbody>
-            <tr>
-              <td style="direction:ltr;font-size:0px;padding:0;text-align:center;">
-                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:264px;" ><![endif]-->
-            
-      <div class="mj-column-per-40 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-        
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-        <tbody>
-          <tr>
-            <td style="border:none;vertical-align:top;padding:0;">
-              
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
-        <tbody>
-          
-              <tr>
-                <td align="center" style="font-size:0px;padding:15px 0;word-break:break-word;">
-                  
-      <div style="font-family:Arial, sans-serif;font-size:13px;font-weight:600;line-height:24px;text-align:center;color:#3778ce;"><a style="text-decoration:none" href="https://newsletters.tweetworldtravel.com/view?c=[_view_slug_]&amp;a=[_audience_id_]"></a><a style="text-decoration:none" href="https://newsletters.tweetworldtravel.com/view?c=[_view_slug_]&amp;a=[_audience_id_]" tabindex="-1">View in your browser</a></div>
-    
-                </td>
-              </tr>
-            
-        </tbody>
-      </table>
-    
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    align="center"
+                    style="padding: 10px; font-family: Arial, sans-serif"
+                  >
+                    <h1
+                      style="
+                        font-size: 24px;
+                        color: #333;
+                        font-weight: bold;
+                        margin: 0;
+                      "
+                    >
+                      TWEET WORLD TRAVEL
+                    </h1>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
-        </tbody>
-      </table>
-    
-      </div>
-    
-          <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:132px;" ><![endif]-->
-            
-      <div class="mj-column-per-20 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-        
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-        <tbody>
+          <!-- Row 3: Visit our website -->
           <tr>
-            <td style="border:none;vertical-align:top;padding:0;">
-              
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
-        <tbody>
-          
-              <tr>
-                <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                  
-      <div style="font-family:Arial, sans-serif;font-size:13px;font-weight:400;line-height:1.7;text-align:left;color:#ffffff;"></div>
-    
-                </td>
-              </tr>
-            
-        </tbody>
-      </table>
-    
+            <td
+              align="center"
+              style="padding: 10px; font-family: Arial, sans-serif"
+            >
+              <a
+                href="#"
+                style="font-size: 16px; color: #1778b9; text-decoration: none"
+                >Visit our website</a
+              >
             </td>
           </tr>
-        </tbody>
-      </table>
-    
-      </div>
-    
-          <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:264px;" ><![endif]-->
-            
-      <div class="mj-column-per-40 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-        
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-        <tbody>
-          <tr>
-            <td style="border:none;vertical-align:top;padding:0;">
-              
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
-        <tbody>
-          
-              <tr>
-                <td align="center" class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.visitWebsite" style="font-size:0px;padding:15px 0;word-break:break-word;">
-                  
-      <div style="font-family:Arial, sans-serif;font-size:13px;font-weight:600;line-height:24px;text-align:center;color:#000000;"><a href="https://tweetworldtravel.com/\?a=[_audience_id_]&amp;c=[_campaign_id_]" target="_blank" style="color: inherit; text-decoration: underline;">Visit our website</a></div>
-    
-                </td>
-              </tr>
-            
-        </tbody>
-      </table>
-    
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    
-      </div>
-    
-          <!--[if mso | IE]></td></tr></table><![endif]-->
-              </td>
-            </tr>
-          </tbody>
         </table>
-        
-      </div>
-    
-      
-      <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        
-      </div>
-    
-      
-      <!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-    
-      
-      <div style="margin:0px auto;max-width:660px;">
-        
-        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
-          <tbody>
-            <tr>
-              <td style="border:none;direction:ltr;font-size:0px;padding:20px 0px 20px 0px;text-align:center;">
-                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:330px;" ><![endif]-->
-            
-      <div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-        
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-        <tbody>
-          
-              <tr>
-                <td align="left" style="font-size:0px;padding:0px 30px;word-break:break-word;">
-                  
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
-        <tbody>
-          <tr>
-            <td style="width:190px;">
-              
-      <img src="https://twt-agent-portal.s3.ap-southeast-2.amazonaws.com/development/image-library/Logo/tweet-world-travel-logo-1695885641.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="190" height="auto">
-    
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    
-                </td>
-              </tr>
-            
-        </tbody>
-      </table>
-    
-      </div>
-    
-          <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:330px;" ><![endif]-->
-            
-      <div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-        
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-        <tbody>
-          
-              <tr>
-                <td align="left" style="font-size:0px;padding:10px 55px 10px 25px;word-break:break-word;">
-                  
-      <div style="font-family:Arial, sans-serif;font-size:13px;font-weight:400;line-height:1.7;text-align:left;color:#000000;"><div style="text-align: right;"><span style="word-spacing: normal;"><b><font size="5" color="#4a90e2">1300 739 652</font></b></span></div></div>
-    
-                </td>
-              </tr>
-            
-        </tbody>
-      </table>
-    
-      </div>
-    
-          <!--[if mso | IE]></td></tr></table><![endif]-->
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        
-      </div>
-    
-      
-      <!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:660px;" width="660" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-    
-      
-      
-    
-      
-      <!--[if mso | IE]></td></tr></table><![endif]-->
-    
-    
-      </div>
-    
-  
-</div>
-  
-</div>`;
+      </td>
+    </tr>
+  </table>
+</body>
+`;
 };
 export const productHeader = () => {
   return `<div>
@@ -7534,6 +4295,96 @@ export const productHeader = () => {
 </div>
 `;
 };
+export const menuHeader = () => {
+  return `<body style="margin: 0; padding: 0; background-color: #f4f4f4">
+  <table
+    role="presentation"
+    border="0"
+    cellpadding="0"
+    cellspacing="0"
+    width="100%"
+    style="width: 100%"
+  >
+    <tr>
+      <td align="center" style="padding: 20px">
+        <table
+          role="presentation"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          width="600"
+          style="background-color: #ffffff; width: 600px"
+        >
+          <tr></tr>
+
+          <tr>
+            <td
+              align="center"
+              style="padding: 20px; font-family: Arial, sans-serif"
+            >
+              <table
+                role="presentation"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+                width="100%"
+              >
+                <tr>
+                  <td align="center" style="padding: 10px">
+                    <a
+                      href="#"
+                      style="
+                        font-size: 14px;
+                        color: #1778b9;
+                        text-decoration: none;
+                      "
+                      >Tours</a
+                    >
+                  </td>
+                  <td align="center" style="padding: 10px">
+                    <a
+                      href="#"
+                      style="
+                        font-size: 14px;
+                        color: #1778b9;
+                        text-decoration: none;
+                      "
+                      >Cruises</a
+                    >
+                  </td>
+                  <td align="center" style="padding: 10px">
+                    <a
+                      href="#"
+                      style="
+                        font-size: 14px;
+                        color: #1778b9;
+                        text-decoration: none;
+                      "
+                      >Brochures</a
+                    >
+                  </td>
+                  <td align="center" style="padding: 10px">
+                    <a
+                      href="#"
+                      style="
+                        font-size: 14px;
+                        color: #1778b9;
+                        text-decoration: none;
+                      "
+                      >FAQs</a
+                    >
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+`;
+};
 export const fakeTemplateHeader = [
   {
     id: 0,
@@ -7560,6 +4411,11 @@ export const fakeTemplateHeader = [
     content: productHeader(),
     name: "productHeader",
   },
+  {
+    id: 5,
+    content: menuHeader(),
+    name: "menuHeader",
+  },
 ];
 export const fakeTemplateFooter = [
   {
@@ -7576,5 +4432,10 @@ export const fakeTemplateFooter = [
     id: 2,
     content: footerGeneral(),
     name: "footerGeneral",
+  },
+  {
+    id: 3,
+    content: footerContact(),
+    name: "footerContact",
   },
 ];

@@ -487,7 +487,7 @@ const GrapeComponent = ({
           }
         }
       }
-      if (templateCampaign) {
+      if (templateCampaign && !isCreateTemplate) {
         const decodedHtml = JSON.parse('"' + templateCampaign + '"');
         const parser = new DOMParser();
         const doc = parser.parseFromString(decodedHtml, "text/html");
@@ -546,21 +546,6 @@ const GrapeComponent = ({
       };
     }
   }, [templateContent, isCreateTemplate]);
-
-  // useEffect(() => {
-  //   console.log("chay day");
-  //   if (editor && images && images.length > 0) {
-  //     const formattedAssets = images.map((item) => ({
-  //       src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
-  //       type: "image",
-  //       height: item.width,
-  //       width: item.height,
-  //       id: item.id,
-  //       name: item.name,
-  //     }));
-  //     editor.AssetManager.render(formattedAssets as any);
-  //   }
-  // }, [images]);
 
   useEffect(() => {
     if (editor) {
@@ -639,8 +624,11 @@ const GrapeComponent = ({
   useEffect(() => {
     if (editor && templateFooter) {
       if (currentFooterRef.current) {
-        currentFooterRef.current.remove();
-        currentFooterRef.current = null;
+        const wrapper = editor.DomComponents.getWrapper();
+        if (wrapper) {
+          const components = wrapper.components();
+          components.remove(currentFooterRef.current);
+        }
       }
 
       const newFooter = editor.DomComponents.getWrapper()
