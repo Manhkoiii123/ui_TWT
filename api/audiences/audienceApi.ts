@@ -1,7 +1,7 @@
 import apiClient from "@/api/apiClient";
 import { TAudienceResponse, TAudienceViaTKGResponse } from "@/types/audience";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import qs from "qs";
+// import qs from "qs";
 export type TCreateAudience = {
   title: string;
   type: string[];
@@ -32,15 +32,18 @@ export const audienceApi = {
     pageNumber?: number;
     pageSize?: number;
     type: string[];
+    isSubscribeNewsletter?: boolean;
   }): Promise<TAudienceViaTKGResponse> => {
-    const queryString = qs.stringify(data, {
-      arrayFormat: "brackets",
-      encodeValuesOnly: true,
-    });
+    // const queryString = qs.stringify(data, {
+    //   arrayFormat: "brackets",
+    //   encodeValuesOnly: true,
+    // });
     const res: TAudienceViaTKGResponse = await apiClient.get(
-      `/list-audience-via-tkg?pageSize=10&pageNumber=1&type[]=Tour%20Operator&type[]=Passenger`
+      `/list-audience-via-tkg?pageSize=${data.pageSize}&pageNumber=${data.pageNumber}&type[]=Passenger&hasEmail=true&isSubscribeNewsletter=${data.isSubscribeNewsletter}`
     );
-    // const res = await apiClient.get(`/list-audience-via-tkg?${queryString}`);
+    // const res: TAudienceViaTKGResponse = await apiClient.get(
+    //   `/list-audience-via-tkg?${queryString}`
+    // );
     return res;
   },
 };
@@ -76,16 +79,24 @@ export const useQueryGetAudiencesViaTKG = (
     pageNumber?: number;
     pageSize?: number;
     type: string[];
+    isSubscribeNewsletter?: boolean;
   },
   enabled?: boolean
 ) => {
   return useQuery({
-    queryKey: ["list-audience-via-tkg", data.type],
+    queryKey: [
+      "list-audience-via-tkg",
+      data.type,
+      data.pageNumber,
+      data.pageSize,
+      data.isSubscribeNewsletter,
+    ],
     queryFn: () =>
       audienceApi.listViaTKG({
         pageNumber: data.pageNumber || 1,
         pageSize: data.pageSize || 10,
         type: data.type,
+        isSubscribeNewsletter: data.isSubscribeNewsletter,
       }),
     enabled: enabled,
   });
