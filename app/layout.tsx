@@ -35,7 +35,9 @@ export default function RootLayout({
             </div>
             <main className="flex-1 pb-4">
               <Header />
-              <div className=" px-8 bg-[#F4F7FE]">{children}</div>
+              <div className=" px-8 bg-[#F4F7FE] min-h-[calc(100vh-100px)]">
+                {children}
+              </div>
               <Toaster />
             </main>
           </div>
