@@ -42,7 +42,7 @@ const LayoutType = ({
 
   return (
     <>
-      <div className="bg-white py-4 pr-4 rounded-2xl w-[300px] shadow-md xl:h-fit h-full">
+      <div className="bg-white py-4 pr-4 rounded-2xl w-[250px] shadow-md xl:h-fit h-full">
         <div className="flex flex-col gap-1">
           {isLoading ? (
             <>

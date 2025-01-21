@@ -366,7 +366,7 @@ export const column1Props: ColumnProps = {
   details: "5 Bedrooms, 2 Bathrooms, 1075 sq.f.",
 };
 
-const renderColumn = (props: any) => {
+const renderColumn = (props: any, isOneColumn?: boolean) => {
   const { imageUrl, price, name, description, details } = props;
 
   return `<td
@@ -706,7 +706,9 @@ const renderColumn = (props: any) => {
                               text-align: center;
                             "
                           >
-                            <div class="alignment" align="center">
+                             <div class="alignment" align="${
+                               !isOneColumn ? "center" : "left"
+                             }">
                               <!--[if mso]>
                 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:43px;width:117px;v-text-anchor:middle;" arcsize="7%" stroke="false" fillcolor="#f75c03">
                     <w:anchorlock/>
@@ -747,8 +749,8 @@ const renderColumn = (props: any) => {
   </td>`;
 };
 export const layoutCard2 = (column1Props: any) => {
-  const column1 = renderColumn(column1Props);
-  const column2 = renderColumn(column1Props);
+  const column1 = renderColumn(column1Props, false);
+  const column2 = renderColumn(column1Props, false);
 
   return `
   <table
@@ -1174,479 +1176,67 @@ export const horizontalProduct = (data: any) => {
 </table>
 `;
 };
-// export const horizontalProduct = (data: any) => {
-//   return `<table
-//   class="row row-7 wrapper_content"
-//   align="center"
-//   width="100%"
-//   border="0"
-//   cellpadding="0"
-//   cellspacing="0"
-//   role="presentation"
-//   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
-// >
-//   <tbody>
-//     <tr>
-//       <td>
-//         <table
-//           class="row-content stack"
-//           align="center"
-//           border="0"
-//           cellpadding="0"
-//           cellspacing="0"
-//           role="presentation"
-//           style="
-//             mso-table-lspace: 0pt;
-//             mso-table-rspace: 0pt;
-//             background-color: #ffffff;
-//             color: #000000;
-//             width: 640px;
-//             margin: 0 auto;
-//           "
-//           width="640"
-//         >
-//           <tbody>
-//             <tr>
-//               <td
-//                 class="column column-1"
-//                 width="45%"
-//                 style="
-//                   mso-table-lspace: 0pt;
-//                   mso-table-rspace: 0pt;
-//                   font-weight: 400;
-//                   text-align: left;
-//                   vertical-align: top;
-//                   border-top: 0px;
-//                   border-right: 0px;
-//                   border-bottom: 0px;
-//                   border-left: 0px;
-//                 "
-//               >
-//                 <table
-//                   class="image_block block-1"
-//                   width="100%"
-//                   border="0"
-//                   cellpadding="16"
-//                   cellspacing="0"
-//                   role="presentation"
-//                   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
-//                 >
-//                   <tr>
-//                     <td class="pad">
-//                       <div
-//                         class="alignment"
-//                         align="center"
-//                         style="line-height: 10px"
-//                       >
-//                         <div class="fullWidth" style="max-width: 270px">
-//                           <img
-//                             src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb2.jpg"
-//                             style="
-//                               display: block;
-//                               height: 160px;
-//                               border: 0;
-//                               width: 100%;
-//                             "
-//                             width="270"
-//                             alt="I'm an image"
-//                             title="I'm an image"
-//                             height="160"
-//                           />
-//                         </div>
-//                       </div>
-//                     </td>
-//                   </tr>
-//                 </table>
-//               </td>
-//               <td
-//                 class="column column-2"
-//                 width="55%"
-//                 style="
-//                   mso-table-lspace: 0pt;
-//                   mso-table-rspace: 0pt;
-//                   font-weight: 400;
-//                   text-align: left;
-//                   padding-bottom: 5px;
-//                   padding-top: 5px;
-//                   border-top: 0px;
-//                   border-right: 0px;
-//                   border-bottom: 0px;
-//                   border-left: 0px;
-//                 "
-//               >
-//                 <table
-//                   class="paragraph_block block-4"
-//                   width="100%"
-//                   border="0"
-//                   cellpadding="0"
-//                   cellspacing="0"
-//                   role="presentation"
-//                   style="
-//                     mso-table-lspace: 0pt;
-//                     mso-table-rspace: 0pt;
-//                     word-break: break-word;
-//                   "
-//                 >
-//                   <tbody>
-//                     <tr>
-//                       <td
-//                         class="pad"
-//                         style="
-//                           padding-bottom: 15px;
-//                           padding-left: 24px;
-//                           padding-right: 24px;
-//                         "
-//                       >
-//                         <div
-//                           style="
-//                             color: #555555;
-//                             font-family: Montserrat, Trebuchet MS, Lucida Grande,
-//                               Lucida Sans Unicode, Lucida Sans, Tahoma,
-//                               sans-serif;
-//                             font-size: 16px;
-//                             line-height: 180%;
-//                             text-align: left;
-//                             mso-line-height-alt: 28.8px;
-//                           "
-//                         >
-//                           <p style="margin: 0; word-break: break-word">
-//                             <span style="word-break: break-word; color: #2b3940"
-//                               ><strong class="name">${data.name}</strong></span
-//                             >
-//                           </p>
-//                         </div>
-//                       </td>
-//                     </tr>
-//                   </tbody>
-//                 </table>
-//                 <table
-//                   class="paragraph_block block-3"
-//                   width="100%"
-//                   border="0"
-//                   cellpadding="0"
-//                   cellspacing="0"
-//                   role="presentation"
-//                   style="
-//                     mso-table-lspace: 0pt;
-//                     mso-table-rspace: 0pt;
-//                     word-break: break-word;
-//                   "
-//                 >
-//                   <tr>
-//                     <td
-//                       class="pad"
-//                       style="
-//                         padding-bottom: 5px;
-//                         padding-left: 24px;
-//                         padding-right: 24px;
-//                       "
-//                     >
-//                       <div
-//                         style="
-//                           color: #555555;
-//                           font-family: Montserrat, Trebuchet MS, Lucida Grande,
-//                             Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-//                           font-size: 14px;
-//                           line-height: 180%;
-//                           text-align: left;
-//                           mso-line-height-alt: 25.2px;
-//                         "
-//                       >
-//                         <p style="margin: 0; word-break: break-word">
-//                           <b
-//                             style="
-//                               word-break: break-word;
-//                               color: rgb(0, 0, 0);
-//                               text-align: left;
-//                               font-family: Arial, sans-serif;
-//                             "
-//                             >Tripcode</b
-//                           >
-//                           <span
-//                             style="
-//                               color: rgb(0, 0, 0);
-//                               text-align: left;
-//                               line-height: 24px;
-//                               font-weight: 400;
-//                               font-size: 15px;
-//                               font-family: Arial, sans-serif;
-//                             "
-//                           >
-//                             : TRIP_CODE
-//                           </span>
-//                         </p>
-//                       </div>
-//                     </td>
-//                   </tr>
-//                 </table>
-//                 <table
-//                   class="paragraph_block block-3"
-//                   width="100%"
-//                   border="0"
-//                   cellpadding="0"
-//                   cellspacing="0"
-//                   role="presentation"
-//                   style="
-//                     mso-table-lspace: 0pt;
-//                     mso-table-rspace: 0pt;
-//                     word-break: break-word;
-//                   "
-//                 >
-//                   <tr>
-//                     <td
-//                       class="pad"
-//                       style="
-//                         padding-bottom: 5px;
-//                         padding-left: 24px;
-//                         padding-right: 24px;
-//                       "
-//                     >
-//                       <div
-//                         style="
-//                           color: #555555;
-//                           font-family: Montserrat, Trebuchet MS, Lucida Grande,
-//                             Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-//                           font-size: 14px;
-//                           line-height: 180%;
-//                           text-align: left;
-//                           mso-line-height-alt: 25.2px;
-//                         "
-//                       >
-//                         <p style="margin: 0; word-break: break-word">
-//                           <b
-//                             style="
-//                               word-break: break-word;
-//                               color: rgb(0, 0, 0);
-//                               text-align: left;
-//                               font-family: Arial, sans-serif;
-//                             "
-//                             >Duration</b
-//                           >
-//                           <span
-//                             style="
-//                               color: rgb(0, 0, 0);
-//                               text-align: left;
-//                               line-height: 24px;
-//                               font-weight: 400;
-//                               font-size: 15px;
-//                               font-family: Arial, sans-serif;
-//                             "
-//                           >
-//                             : 8 days
-//                           </span>
-//                         </p>
-//                       </div>
-//                     </td>
-//                   </tr>
-//                 </table>
-//                 <table
-//                   class="paragraph_block block-3"
-//                   width="100%"
-//                   border="0"
-//                   cellpadding="0"
-//                   cellspacing="0"
-//                   role="presentation"
-//                   style="
-//                     mso-table-lspace: 0pt;
-//                     mso-table-rspace: 0pt;
-//                     word-break: break-word;
-//                   "
-//                 >
-//                   <tr>
-//                     <td
-//                       class="pad"
-//                       style="
-//                         padding-bottom: 5px;
-//                         padding-left: 24px;
-//                         padding-right: 24px;
-//                         padding-top: 10px;
-//                       "
-//                     >
-//                       <table
-//                         role="presentation"
-//                         width="100%"
-//                         border="0"
-//                         cellspacing="0"
-//                         cellpadding="0"
-//                         style="margin-top: 10px"
-//                       >
-//                         <tr>
-//                           <td
-//                             align="left"
-//                             style="
-//                               font-family: Arial, sans-serif;
-//                               font-size: 15px;
-//                               color: #333333;
-//                             "
-//                           >
-//                             From:
-//                             <span
-//                               style="
-//                                 text-decoration: line-through;
-//                                 color: #e74c3c;
-//                               "
-//                               >$4,425</span
-//                             >
-//                             <span style="color: #000000; font-weight: 400"
-//                               >$4,022
-//                               <span style="color: #000000; font-weight: bold"
-//                                 >AUD</span
-//                               ></span
-//                             >
-//                           </td>
-//                         </tr>
-//                       </table>
-//                       <table
-//                         class="button_block block-8"
-//                         width="100%"
-//                         border="0"
-//                         cellpadding="0"
-//                         cellspacing="0"
-//                         role="presentation"
-//                         style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
-//                       >
-//                         <tr>
-//                           <td
-//                             class="pad"
-//                             style="
-//                               padding-bottom: 32px;
-//                               padding-left: 24px;
-//                               padding-right: 24px;
-//                               padding-top: 20px;
-//                               text-align: left;
-//                             "
-//                           >
-//                             <div class="alignment" align="left">
-//                               <!--[if mso]>
-// <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:43px;width:117px;v-text-anchor:middle;" arcsize="7%" stroke="false" fillcolor="#f75c03">
-// <w:anchorlock/>
-// <v:textbox inset="0px,0px,0px,1px">
-// <center dir="false" style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:14px">
-// <![endif]-->
-//                               <div
-//                                 class="button"
-//                                 style="
-//                                   background-color: #f75c03;
-//                                   border-bottom: 0px solid transparent;
-//                                   border-left: 0px solid transparent;
-//                                   border-radius: 3px;
-//                                   border-right: 0px solid transparent;
-//                                   border-top: 0px solid transparent;
-//                                   color: #ffffff;
-//                                   display: inline-block;
-//                                   font-family: Montserrat, Trebuchet MS,
-//                                     Lucida Grande, Lucida Sans Unicode,
-//                                     Lucida Sans, Tahoma, sans-serif;
-//                                   font-size: 14px;
-//                                   font-weight: undefined;
-//                                   mso-border-alt: none;
-//                                   padding-bottom: 06px;
-//                                   padding-top: 5px;
-//                                   text-align: center;
-//                                   text-decoration: none;
-//                                   width: auto;
-//                                   word-break: keep-all;
-//                                 "
-//                               >
-//                                 <span
-//                                   style="
-//                                     word-break: break-word;
-//                                     padding-left: 20px;
-//                                     padding-right: 20px;
-//                                     font-size: 14px;
-//                                     display: inline-block;
-//                                     letter-spacing: normal;
-//                                   "
-//                                   ><span
-//                                     style="margin: 0; word-break: break-word"
-//                                     ><span
-//                                       style="
-//                                         word-break: break-word;
-//                                         line-height: 28px;
-//                                       "
-//                                       data-mce-style
-//                                       ><strong>Book now</strong></span
-//                                     ></span
-//                                   ></span
-//                                 >
-//                               </div>
-//                               <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-//                             </div>
-//                           </td>
-//                         </tr>
-//                       </table>
-//                     </td>
-//                   </tr>
-//                 </table>
-//               </td>
-//             </tr>
-//           </tbody>
-//         </table>
-//       </td>
-//     </tr>
-//   </tbody>
-// </table>
-// `;
-// };
+
 export const dataUserProfile = {
   name: "manh",
 };
 const userProfileHost = (data: any) => {
   return `
-    <table class="wrapper_content" width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-top:16px;">
+    <table class="wrapper_content" width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-top: 16px;">
       <tr>
         <td>
-          <table width="100%" border="0" cellpadding="0" cellspacing="0" >
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
+              <!-- Hình ảnh -->
               <td width="80" valign="top" style="padding-right: 16px;">
                 <img
                   width="80"
                   height="80"
                   src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb1.jpg"
-                  style="
-                    display: block;
-                    border: 0;
-                    border-radius:100%;
-                  "
+                  style="display: block; border: 0; border-radius: 100%;"
                   alt="Apartment Image"
                   title="Apartment Image"
                 />
               </td>
+              <!-- Thông tin chi tiết -->
               <td valign="top">
                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <!-- Tên -->
                   <tr>
                     <td
                       style="
-                        color: rgb(0, 0, 0);
+                        color: #000000;
                         text-align: left;
                         line-height: 24px;
                         font-weight: 600;
                         font-size: 15px;
                         font-family: Arial, sans-serif;
                       "
-                      class="name"
                     >
                       ${data.name}
                     </td>
                   </tr>
+                  <!-- Chức danh -->
                   <tr>
                     <td
                       style="
-                        color: rgb(0, 0, 0);
+                        color: #000000;
                         text-align: left;
                         line-height: 24px;
-                        font-weight: 600;
+                        font-weight: 400;
                         font-size: 15px;
                         font-family: Arial, sans-serif;
+                        font-style: italic;
                       "
                     >
-                      <i style="font-weight: normal">Business Development Executive</i>
+                      Business Development Executive
                     </td>
                   </tr>
+                  <!-- Tên công ty -->
                   <tr>
                     <td
                       style="
-                        color: rgb(0, 0, 0);
+                        color: #000000;
                         text-align: left;
                         line-height: 24px;
                         font-weight: 600;
@@ -1666,26 +1256,27 @@ const userProfileHost = (data: any) => {
     </table>
   `;
 };
-
 export const userProfile = (data: any) => {
   const column1 = userProfileHost(data);
   const column2 = userProfileHost(data);
 
   return `
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 20px;" class="wrapper_content">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 20px; background-color: #ffffff;">
       <tr>
         <td align="center">
-          <table class="wrapper_content responsive-table" width="640" cellpadding="0" cellspacing="0" style="max-width: 640px; margin: 0 auto; background-color: #ffffff; color: #000000; border-radius: 8px; overflow: hidden; padding: 16px;">
+          <!-- Bảng chính -->
+          <table width="640" cellpadding="0" cellspacing="0" style="max-width: 640px; margin: 0 auto; background-color: #ffffff; color: #000000; border-radius: 8px; overflow: hidden;">
             <tr>
-              <td width="50%" valign="top" class="responsive-td">
+              <!-- Cột 1: EVENT INFO -->
+              <td width="50%" valign="top" style="padding: 16px;">
                 <table width="100%" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td style="color: rgb(255, 255, 255); text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; padding: 10px; background: rgb(41, 140, 183);">
+                    <td bgcolor="#298cb7" style="color: #ffffff; text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; padding: 10px;">
                       EVENT INFO
                     </td>
                   </tr>
                   <tr>
-                    <td style="color: rgb(0, 0, 0); text-align: left; line-height: 24px; font-weight: 400; font-size: 15px; font-family: Arial, sans-serif;">
+                    <td style="color: #000000; text-align: left; line-height: 24px; font-weight: 400; font-size: 15px; font-family: Arial, sans-serif;">
                       <table width="100%" cellpadding="0" cellspacing="0" style="padding: 20px 10px;">
                         <tr>
                           <td>
@@ -1710,10 +1301,11 @@ export const userProfile = (data: any) => {
                   </tr>
                 </table>
               </td>
-              <td width="50%" valign="top" class="responsive-td">
+              <!-- Cột 2: EVENT HOST -->
+              <td width="50%" valign="top" style="padding: 16px;">
                 <table width="100%" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td style="color: rgb(255, 255, 255); text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; padding: 10px; background: rgb(41, 140, 183);">
+                    <td bgcolor="#298cb7" style="color: #ffffff; text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; padding: 10px;">
                       EVENT HOST
                     </td>
                   </tr>
@@ -1740,33 +1332,186 @@ export const userProfile = (data: any) => {
         </td>
       </tr>
     </table>
+    <!-- Responsive CSS -->
     <style>
       @media only screen and (max-width: 700px) {
-        .responsive-table .responsive-td {
+        table.responsive-table,
+        table.responsive-table td,
+        table.responsive-table tr {
           display: block !important;
           width: 100% !important;
+          box-sizing: border-box;
+        }
+        table.responsive-table td {
+          padding: 16px !important;
         }
       }
     </style>
   `;
 };
+// const userProfileHost = (data: any) => {
+//   return `
+//     <table class="wrapper_content" width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-top:16px;">
+//       <tr>
+//         <td>
+//           <table width="100%" border="0" cellpadding="0" cellspacing="0" >
+//             <tr>
+//               <td width="80" valign="top" style="padding-right: 16px;">
+//                 <img
+//                   width="80"
+//                   height="80"
+//                   src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/1161/thumb1.jpg"
+//                   style="
+//                     display: block;
+//                     border: 0;
+//                     border-radius:100%;
+//                   "
+//                   alt="Apartment Image"
+//                   title="Apartment Image"
+//                 />
+//               </td>
+//               <td valign="top">
+//                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+//                   <tr>
+//                     <td
+//                       style="
+//                         color: rgb(0, 0, 0);
+//                         text-align: left;
+//                         line-height: 24px;
+//                         font-weight: 600;
+//                         font-size: 15px;
+//                         font-family: Arial, sans-serif;
+//                       "
+//                       class="name"
+//                     >
+//                       ${data.name}
+//                     </td>
+//                   </tr>
+//                   <tr>
+//                     <td
+//                       style="
+//                         color: rgb(0, 0, 0);
+//                         text-align: left;
+//                         line-height: 24px;
+//                         font-weight: 600;
+//                         font-size: 15px;
+//                         font-family: Arial, sans-serif;
+//                       "
+//                     >
+//                       <i style="font-weight: normal">Business Development Executive</i>
+//                     </td>
+//                   </tr>
+//                   <tr>
+//                     <td
+//                       style="
+//                         color: rgb(0, 0, 0);
+//                         text-align: left;
+//                         line-height: 24px;
+//                         font-weight: 600;
+//                         font-size: 15px;
+//                         font-family: Arial, sans-serif;
+//                       "
+//                     >
+//                       Company Name
+//                     </td>
+//                   </tr>
+//                 </table>
+//               </td>
+//             </tr>
+//           </table>
+//         </td>
+//       </tr>
+//     </table>
+//   `;
+// };
+
+// export const userProfile = (data: any) => {
+//   const column1 = userProfileHost(data);
+//   const column2 = userProfileHost(data);
+
+//   return `
+//     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 20px;" class="wrapper_content">
+//       <tr>
+//         <td align="center">
+//           <table class="wrapper_content responsive-table" width="640" cellpadding="0" cellspacing="0" style="max-width: 640px; margin: 0 auto; background-color: #ffffff; color: #000000; border-radius: 8px; overflow: hidden; padding: 16px;">
+//             <tr>
+//               <td width="50%" valign="top" class="responsive-td">
+//                 <table width="100%" cellpadding="0" cellspacing="0">
+//                   <tr>
+//                     <td style="color: rgb(255, 255, 255); text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; padding: 10px; background: rgb(41, 140, 183);">
+//                       EVENT INFO
+//                     </td>
+//                   </tr>
+//                   <tr>
+//                     <td style="color: rgb(0, 0, 0); text-align: left; line-height: 24px; font-weight: 400; font-size: 15px; font-family: Arial, sans-serif;">
+//                       <table width="100%" cellpadding="0" cellspacing="0" style="padding: 20px 10px;">
+//                         <tr>
+//                           <td>
+//                             <ul style="margin: 0; padding: 0; padding-left: 16px;">
+//                               <li style="margin-bottom: 40px;">
+//                                 <div>This is a new Text block.</div>
+//                                 <div>Change the text.</div>
+//                               </li>
+//                               <li style="margin-bottom: 40px;">
+//                                 <div>This is a new Text block.</div>
+//                                 <div>Change the text.</div>
+//                               </li>
+//                               <li style="margin-bottom: 40px;">
+//                                 <div>This is a new Text block.</div>
+//                                 <div>Change the text.</div>
+//                               </li>
+//                             </ul>
+//                           </td>
+//                         </tr>
+//                       </table>
+//                     </td>
+//                   </tr>
+//                 </table>
+//               </td>
+//               <td width="50%" valign="top" class="responsive-td">
+//                 <table width="100%" cellpadding="0" cellspacing="0">
+//                   <tr>
+//                     <td style="color: rgb(255, 255, 255); text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; padding: 10px; background: rgb(41, 140, 183);">
+//                       EVENT HOST
+//                     </td>
+//                   </tr>
+//                   <tr>
+//                     <td>
+//                       <table width="100%" cellpadding="0" cellspacing="0" style="padding-top: 16px;">
+//                         <tr>
+//                           <td>
+//                             ${column1}
+//                           </td>
+//                         </tr>
+//                         <tr>
+//                           <td>
+//                             ${column2}
+//                           </td>
+//                         </tr>
+//                       </table>
+//                     </td>
+//                   </tr>
+//                 </table>
+//               </td>
+//             </tr>
+//           </table>
+//         </td>
+//       </tr>
+//     </table>
+//     <style>
+//       @media only screen and (max-width: 700px) {
+//         .responsive-table .responsive-td {
+//           display: block !important;
+//           width: 100% !important;
+//         }
+//       }
+//     </style>
+//   `;
+// };
 export const productItemOneColumn = (data: any) => {
-  const column1 = renderColumn(data);
+  const column1 = renderColumn(data, true);
   return `
       ${column1}
-    <style>
-      @media only screen and (max-width: 700px) {
-        .row {
-          flex-direction: column; 
-          width: 100%; 
-        }
-      }
-      @media only screen and (min-width: 700px) {
-        .row.layout2 {
-          width: 100%; 
-        }
-      }
-    </style>
   `;
 };
 export const contactUs = () => {

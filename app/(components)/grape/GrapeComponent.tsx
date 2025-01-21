@@ -387,58 +387,58 @@ const GrapeComponent = ({
           content: layoutCard2(column1Props),
           category: "Custom",
           media: `<div>
-          <img style={ width:200px ;height:200px;object-fit:cover;} src="/images/2_column_product.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/2_column_product.jpg"/>
           </div>`,
         });
 
         editor.BlockManager.add("horizontalProduct", {
-          label: "horizontalProduct",
+          label: "Horizontal Product",
           content: horizontalProduct({
             name: "3 Days Siem Reap Package (Pre Or Post Mekong River Cruise)",
           }),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/layout_template_1.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/layout_template_1.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("userProfile", {
-          label: "userProfile",
+          label: "User Profile",
           content: userProfile(dataUserProfile),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/user_profile.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/user_profile.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("productItemOneColumn", {
-          label: "productItemOneColumn",
+          label: "Product Item One Column",
           content: productItemOneColumn(column1Props),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/one_product.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/one_product.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("contactUs", {
-          label: "contactUs",
+          label: "Contact Us",
           content: contactUs(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/contact_us.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/contact_us.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("blog", {
-          label: "blog",
+          label: "Blog",
           content: blog(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/blog.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/blog.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("contentShowcase", {
-          label: "contentShowcase",
+          label: "Content Showcase",
           content: contentShowcase(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/content_show_case.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
           </div>`,
         });
       }

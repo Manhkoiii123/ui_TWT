@@ -85,7 +85,7 @@ const AudienceClient = () => {
         pageSize: limit,
         isSubscribeNewsletter: isSubscribe === "subscribers",
       },
-      Boolean(typeToCallVIA)
+      Boolean(typeToCallVIA && isOpenSheetListAudience)
     );
 
   const columns: ColumnDef<TAudienceViaTKG>[] = [
@@ -122,8 +122,6 @@ const AudienceClient = () => {
       accessorKey: "type",
       header: "Type",
       cell: (info) => {
-        // const type = JSON.stringify("passenfer, driver, merchant");
-        // return JSON.parse(type).join(", ");
         return JSON.parse(info.getValue() as string).join(", ");
       },
     },
