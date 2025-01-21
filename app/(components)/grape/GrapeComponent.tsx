@@ -382,25 +382,13 @@ const GrapeComponent = ({
       }
 
       if (isCreateTemplate) {
-        editor.BlockManager.add("header", {
-          label: "header",
-          content: header(),
-          category: "Custom",
-        });
-        editor.BlockManager.add("footer", {
-          label: "footer",
-          content: footer(),
-          category: "Custom",
-        });
-        editor.BlockManager.add("divider", {
-          label: "divider",
-          content: divider(),
-          category: "Custom",
-        });
         editor.BlockManager.add("layoutCard2", {
-          label: "layoutCard2",
+          label: "2 column product",
           content: layoutCard2(column1Props),
           category: "Custom",
+          media: `<div>
+          <img style={ width:200px ;height:200px;object-fit:cover;} src="/images/2_column_product.jpg"/>
+          </div>`,
         });
 
         editor.BlockManager.add("horizontalProduct", {
@@ -409,36 +397,49 @@ const GrapeComponent = ({
             name: "3 Days Siem Reap Package (Pre Or Post Mekong River Cruise)",
           }),
           category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/layout_template_1.jpg"/>
+          </div>`,
         });
         editor.BlockManager.add("userProfile", {
           label: "userProfile",
           content: userProfile(dataUserProfile),
           category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/user_profile.jpg"/>
+          </div>`,
         });
         editor.BlockManager.add("productItemOneColumn", {
           label: "productItemOneColumn",
           content: productItemOneColumn(column1Props),
           category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/one_product.jpg"/>
+          </div>`,
         });
         editor.BlockManager.add("contactUs", {
           label: "contactUs",
           content: contactUs(),
           category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/contact_us.jpg"/>
+          </div>`,
         });
         editor.BlockManager.add("blog", {
           label: "blog",
           content: blog(),
           category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/blog.jpg"/>
+          </div>`,
         });
         editor.BlockManager.add("contentShowcase", {
           label: "contentShowcase",
           content: contentShowcase(),
           category: "Custom",
-        });
-        editor.BlockManager.add("footerGeneral", {
-          label: "footerGeneral",
-          content: footerGeneral(),
-          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:auto;object-fit:fill;" src="/images/content_show_case.jpg"/>
+          </div>`,
         });
       }
       if (templateContent) {
