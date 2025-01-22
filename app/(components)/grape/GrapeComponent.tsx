@@ -580,7 +580,7 @@ const GrapeComponent = ({
             id: item.id,
             name: item.name,
           }));
-          editor.AssetManager.render(formattedAssets as any);
+          editor.AssetManager.add(formattedAssets);
         }
       };
 
