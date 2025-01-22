@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+import juice from "juice";
 import html2canvas from "html2canvas";
 import { useEffect, useMemo, useRef } from "react";
 import grapesjs, { Asset, Component, Editor } from "grapesjs";
@@ -296,7 +297,8 @@ const GrapeComponent = ({
           ${html}
         </div>
       `;
-        return combinedContent;
+        const inlinedContent = juice(combinedContent);
+        return inlinedContent;
       };
 
       const handleExportEditorHTMLAndCSS = () => {
