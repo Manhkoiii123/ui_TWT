@@ -21,12 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.22.4/css/grapes.min.css"
-        />
-      </head>
       <body className={` antialiased ${beVietnam.className}  `}>
         <TanstackWrapper>
           <div className="flex w-[100vw] min-xl:h-screen h-full bg-gray-100 ">
