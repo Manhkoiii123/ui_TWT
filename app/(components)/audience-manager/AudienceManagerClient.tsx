@@ -66,10 +66,10 @@ const AudienceManagerClient = () => {
       accessorKey: "title",
       header: "Title",
     },
-    {
-      accessorKey: "description",
-      header: "Description",
-    },
+    // {
+    //   accessorKey: "description",
+    //   header: "Description",
+    // },
     {
       accessorKey: "created_by.name",
       header: "Created By",
