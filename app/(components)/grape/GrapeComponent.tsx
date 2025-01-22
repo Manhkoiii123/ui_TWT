@@ -82,7 +82,25 @@ const GrapeComponent = ({
   const currentHeaderRef = useRef<Component | null>(null);
   const currentFooterRef = useRef<Component | null>(null);
   const [fileNameWithExtension, setFileNameWithExtension] = useState("");
-  console.log("🚀 ~ contentCreateOrEdit:", JSON.stringify(contentCreateOrEdit));
+
+  // phần gửi email
+  // useEffect(() => {
+  //   const decodedHtml = JSON.parse(
+  //     '"' + JSON.stringify(contentCreateOrEdit).slice(1, -1) + '"'
+  //   );
+  //   const parser = new DOMParser();
+  //   const doc = parser.parseFromString(decodedHtml, "text/html");
+  //   const styleTags = doc.querySelectorAll("style");
+  //   let styleContent = "";
+  //   styleTags.forEach((tag) => {
+  //     styleContent += tag.innerHTML;
+  //   });
+  //   const template = `<style>${styleContent}</style>
+  //             <div id="editor">
+  //               ${doc.body.innerHTML}
+  //             </div>`;
+  //   console.log("🚀 ~ contentCreateOrEdit:", JSON.stringify(template));
+  // }, [contentCreateOrEdit]);
 
   const [isChangeContent, setIsChangeContent] = useState(false);
   function captureHtmlToBlob(
