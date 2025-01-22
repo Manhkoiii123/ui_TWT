@@ -50,7 +50,7 @@ const LayoutType = ({
                 .fill(0)
                 .map(() => (
                   <>
-                    <Skeleton className="h-[37px] w-[250px] rounded-e-full" />
+                    <Skeleton className="h-[37px] w-[230px] rounded-e-full" />
                   </>
                 ))}
             </>

@@ -421,7 +421,7 @@ const renderColumn = (props: any, isOneColumn?: boolean) => {
         word-break: break-word;
       "
     >
-      
+
     <table
       class="paragraph_block block-4"
       width="100%"
@@ -681,7 +681,7 @@ const renderColumn = (props: any, isOneColumn?: boolean) => {
             </td>
           </tr>
         </table>
-        
+
     <table
                         class="button_block block-8"
                         width="100%"
@@ -745,9 +745,10 @@ const renderColumn = (props: any, isOneColumn?: boolean) => {
                           </td>
                         </tr>
                       </table>
-                
+
   </td>`;
 };
+
 export const layoutCard2 = (column1Props: any) => {
   const column1 = renderColumn(column1Props, false);
   const column2 = renderColumn(column1Props, false);
@@ -1271,7 +1272,7 @@ export const userProfile = (data: any) => {
               <td width="50%" valign="top" style="padding: 16px;">
                 <table width="100%" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td bgcolor="#298cb7" style="color: #ffffff; text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; padding: 10px;">
+                    <td bgcolor="#298cb7" style="color: #ffffff; text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; width:300px;height:45px;">
                       EVENT INFO
                     </td>
                   </tr>
@@ -1281,15 +1282,15 @@ export const userProfile = (data: any) => {
                         <tr>
                           <td>
                             <ul style="margin: 0; padding: 0; padding-left: 16px;">
-                              <li style="margin-bottom: 40px;">
+                              <li style="margin-bottom: 0px;">
                                 <div>This is a new Text block.</div>
                                 <div>Change the text.</div>
                               </li>
-                              <li style="margin-bottom: 40px;">
+                              <li style="margin-bottom: 0px;">
                                 <div>This is a new Text block.</div>
                                 <div>Change the text.</div>
                               </li>
-                              <li style="margin-bottom: 40px;">
+                              <li style="margin-bottom: 0px;">
                                 <div>This is a new Text block.</div>
                                 <div>Change the text.</div>
                               </li>
@@ -1305,7 +1306,7 @@ export const userProfile = (data: any) => {
               <td width="50%" valign="top" style="padding: 16px;">
                 <table width="100%" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td bgcolor="#298cb7" style="color: #ffffff; text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; padding: 10px;">
+                    <td bgcolor="#298cb7" style="color: #ffffff; text-align: center; line-height: 24px; font-weight: 600; font-size: 15px; font-family: Arial, sans-serif; width:300px;height:45px;">
                       EVENT HOST
                     </td>
                   </tr>
