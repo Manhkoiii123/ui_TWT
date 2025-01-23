@@ -79,6 +79,7 @@ const ModalActionTemplate = ({
               handleNext={handleNext}
               selectAutomation={selectAutomation}
               handleSelectAutomation={handleSelectAutomation}
+              handleCloseModel={handleCloseModel}
             />
           )}
           {stepCreate === 2 && (

@@ -569,26 +569,19 @@ const GrapeComponent = ({
   }, [templateContent, isCreateTemplate]);
 
   useEffect(() => {
-    if (editor) {
-      const handleLoad = () => {
-        if (images && images.length > 0) {
-          const formattedAssets = images.map((item) => ({
-            src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
-            type: "image",
-            height: item.width,
-            width: item.height,
-            id: item.id,
-            name: item.name,
-          }));
-          editor.AssetManager.add(formattedAssets);
-        }
-      };
-
-      editor.on("load", handleLoad);
-
-      return () => {
-        editor.off("load", handleLoad);
-      };
+    if (editor && images && images.length > 0) {
+      const formattedAssets = images.map((item) => ({
+        src: `${process.env.NEXT_PUBLIC_IMAGE_URL}${item.path}`,
+        type: "image",
+        height: item.width,
+        width: item.height,
+        id: item.id,
+        name: item.name,
+      }));
+      const currentAssets = editor.AssetManager.getAll();
+      const updatedAssets = [...currentAssets, ...formattedAssets];
+      editor.AssetManager.add(updatedAssets);
+      // editor.AssetManager.render(formattedAssets as any);
     }
   }, [editor, images]);
   useEffect(() => {
