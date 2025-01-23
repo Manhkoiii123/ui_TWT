@@ -2884,7 +2884,2934 @@ export const divider = () => {
 </table>
 `;
 };
+export const footerBlock = () => {
+  return `<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <title></title>
 
+    <style type="text/css">
+      #outlook a {
+        padding: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        border-collapse: collapse;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+      p {
+        display: block;
+        margin: 13px 0;
+      }
+    </style>
+
+    <style type="text/css">
+      @media only screen and (min-width: 480px) {
+        .mj-column-per-33-333333333333336 {
+          width: 33.333333333333336% !important;
+          max-width: 33.333333333333336%;
+        }
+        .mj-column-per-20 {
+          width: 20% !important;
+          max-width: 20%;
+        }
+        .mj-column-per-100 {
+          width: 100% !important;
+          max-width: 100%;
+        }
+        .mj-column-per-50 {
+          width: 50% !important;
+          max-width: 50%;
+        }
+        .mj-column-per-45 {
+          width: 45% !important;
+          max-width: 45%;
+        }
+        .mj-column-per-25 {
+          width: 25% !important;
+          max-width: 25%;
+        }
+        .mj-column-per-75 {
+          width: 75% !important;
+          max-width: 75%;
+        }
+        .mj-column-per-35 {
+          width: 35% !important;
+          max-width: 35%;
+        }
+        .mj-column-per-3 {
+          width: 3% !important;
+          max-width: 3%;
+        }
+      }
+    </style>
+    <style media="screen and (min-width:480px)">
+      .moz-text-html .mj-column-per-33-333333333333336 {
+        width: 33.333333333333336% !important;
+        max-width: 33.333333333333336%;
+      }
+      .moz-text-html .mj-column-per-20 {
+        width: 20% !important;
+        max-width: 20%;
+      }
+      .moz-text-html .mj-column-per-100 {
+        width: 100% !important;
+        max-width: 100%;
+      }
+      .moz-text-html .mj-column-per-50 {
+        width: 50% !important;
+        max-width: 50%;
+      }
+      .moz-text-html .mj-column-per-45 {
+        width: 45% !important;
+        max-width: 45%;
+      }
+      .moz-text-html .mj-column-per-25 {
+        width: 25% !important;
+        max-width: 25%;
+      }
+      .moz-text-html .mj-column-per-75 {
+        width: 75% !important;
+        max-width: 75%;
+      }
+      .moz-text-html .mj-column-per-35 {
+        width: 35% !important;
+        max-width: 35%;
+      }
+      .moz-text-html .mj-column-per-3 {
+        width: 3% !important;
+        max-width: 3%;
+      }
+    </style>
+
+    <style type="text/css">
+      @media only screen and (max-width: 479px) {
+        table.mj-full-width-mobile {
+          width: 100% !important;
+        }
+        td.mj-full-width-mobile {
+          width: auto !important;
+        }
+      }
+    </style>
+    <style type="text/css"></style>
+  </head>
+  <body style="background-color: rgb(255, 255, 255); word-spacing: normal">
+    <div
+      class="email-block node-idx-content node-type-page"
+      role="tab"
+      tabindex="0"
+      style="background-color: rgb(255, 255, 255)"
+    >
+      <div
+        class="email-block node-idx-content.children.[0] node-type-footer_block"
+        role="tab"
+        tabindex="0"
+        style="max-width: 660px; margin: 0px auto"
+      >
+        <table
+          align="center"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          role="presentation"
+          style="width: 100%"
+        >
+          <tbody>
+            <tr>
+              <td
+                style="
+                  text-align: center;
+                  padding: 20px 0px;
+                  font-size: 0px;
+                  direction: ltr;
+                  border: none;
+                "
+              >
+                <div
+                  style="
+                    max-width: 660px;
+                    margin: 0px auto;
+                    background: rgb(255, 255, 255);
+                  "
+                >
+                  <table
+                    align="center"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    role="presentation"
+                    style="width: 100%; background: rgb(255, 255, 255)"
+                  >
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            text-align: center;
+                            padding: 0px;
+                            font-size: 0px;
+                            direction: ltr;
+                          "
+                        >
+                          <div
+                            class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding: 0px;
+                                      vertical-align: top;
+                                      border: none;
+                                    "
+                                  >
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 25px 10px 10px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <p
+                                              style="
+                                                width: 100%;
+                                                margin: 0px auto;
+                                                font-size: 1px;
+                                                border-top: 3px solid
+                                                  rgb(8, 38, 61);
+                                              "
+                                            ></p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div
+                            class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td style="padding: 0px; vertical-align: top">
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.title"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 15px 0px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              contenteditable="true"
+                                              data-content_editable-type="rich_text"
+                                              data-content_editable-idx="content.children.[0].data.value.title"
+                                              style="
+                                                color: rgb(8, 38, 61);
+                                                text-align: center;
+                                                line-height: 24px;
+                                                font-weight: 600;
+                                                font-size: 20px;
+                                                font-family: Arial, sans-serif;
+                                              "
+                                            >
+                                              Our Destinations
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div
+                            class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td style="padding: 0px; border: none">
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 25px 10px 10px 0px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <p
+                                              style="
+                                                width: 100%;
+                                                margin: 0px auto;
+                                                font-size: 1px;
+                                                border-top: 3px solid
+                                                  rgb(8, 38, 61);
+                                              "
+                                            ></p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  style="
+                    max-width: 660px;
+                    margin: 0px auto;
+                    background: rgb(255, 255, 255);
+                  "
+                >
+                  <table
+                    align="center"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    role="presentation"
+                    style="width: 100%; background: rgb(255, 255, 255)"
+                  >
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            text-align: center;
+                            padding: 0px;
+                            font-size: 0px;
+                            direction: ltr;
+                          "
+                        >
+                          <div
+                            class="mj-column-per-20 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding: 0px;
+                                      vertical-align: top;
+                                      border: none;
+                                    "
+                                  >
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="left"
+                                            class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.subtitle1"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 7px 6px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              contenteditable="true"
+                                              data-content_editable-type="rich_text"
+                                              data-content_editable-idx="content.children.[0].data.value.subtitle1"
+                                              style="
+                                                color: rgb(8, 38, 61);
+                                                text-align: left;
+                                                line-height: 24px;
+                                                font-weight: bold;
+                                                font-size: 14px;
+                                                font-family: Arial, sans-serif;
+                                              "
+                                            >
+                                              Africa
+                                            </div>
+                                          </td>
+                                        </tr>
+
+                                        <tr>
+                                          <td
+                                            style="
+                                              word-break: break-word;
+                                              padding: 0px 3px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                max-width: 132px;
+                                                margin: 0px auto;
+                                              "
+                                            >
+                                              <table
+                                                align="center"
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                                role="presentation"
+                                                style="width: 100%"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        text-align: center;
+                                                        padding: 0px 3px;
+                                                        font-size: 0px;
+                                                        direction: ltr;
+                                                      "
+                                                    >
+                                                      <div
+                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        style="
+                                                          width: 100%;
+                                                          vertical-align: top;
+                                                          display: inline-block;
+                                                          direction: ltr;
+                                                          text-align: left;
+                                                          font-size: 0px;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                style="
+                                                                  padding: 0px;
+                                                                  vertical-align: top;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  width="100%"
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.content1"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.content1"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              8,
+                                                                              38,
+                                                                              61
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: 400;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          <div>
+                                                                            Luxyry
+                                                                            Holidays
+                                                                          </div>
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.see_all1"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.see_all1"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              23,
+                                                                              120,
+                                                                              185
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: bold;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          see
+                                                                          all
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div
+                            class="mj-column-per-20 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding: 0px;
+                                      vertical-align: top;
+                                      border: none;
+                                    "
+                                  >
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="left"
+                                            class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.subtitle2"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 7px 6px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              contenteditable="true"
+                                              data-content_editable-type="rich_text"
+                                              data-content_editable-idx="content.children.[0].data.value.subtitle2"
+                                              style="
+                                                color: rgb(8, 38, 61);
+                                                text-align: left;
+                                                line-height: 24px;
+                                                font-weight: bold;
+                                                font-size: 14px;
+                                                font-family: Arial, sans-serif;
+                                              "
+                                            >
+                                              Asia
+                                            </div>
+                                          </td>
+                                        </tr>
+
+                                        <tr>
+                                          <td
+                                            style="
+                                              word-break: break-word;
+                                              padding: 0px 3px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                max-width: 132px;
+                                                margin: 0px auto;
+                                              "
+                                            >
+                                              <table
+                                                align="center"
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                                role="presentation"
+                                                style="width: 100%"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        text-align: center;
+                                                        padding: 0px 3px;
+                                                        font-size: 0px;
+                                                        direction: ltr;
+                                                      "
+                                                    >
+                                                      <div
+                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        style="
+                                                          width: 100%;
+                                                          vertical-align: top;
+                                                          display: inline-block;
+                                                          direction: ltr;
+                                                          text-align: left;
+                                                          font-size: 0px;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                style="
+                                                                  padding: 0px;
+                                                                  vertical-align: top;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  width="100%"
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.content2"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.content2"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              8,
+                                                                              38,
+                                                                              61
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: 400;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          <div>
+                                                                            Vietnam
+                                                                          </div>
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.see_all2"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.see_all2"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              23,
+                                                                              120,
+                                                                              185
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: bold;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          see
+                                                                          all
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div
+                            class="mj-column-per-20 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding: 0px;
+                                      vertical-align: top;
+                                      border: none;
+                                    "
+                                  >
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="left"
+                                            class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.subtitle3"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 7px 6px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              contenteditable="true"
+                                              data-content_editable-type="rich_text"
+                                              data-content_editable-idx="content.children.[0].data.value.subtitle3"
+                                              style="
+                                                color: rgb(8, 38, 61);
+                                                text-align: left;
+                                                line-height: 24px;
+                                                font-weight: bold;
+                                                font-size: 14px;
+                                                font-family: Arial, sans-serif;
+                                              "
+                                            >
+                                              Australia/Oceania
+                                            </div>
+                                          </td>
+                                        </tr>
+
+                                        <tr>
+                                          <td
+                                            style="
+                                              word-break: break-word;
+                                              padding: 0px 3px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                max-width: 132px;
+                                                margin: 0px auto;
+                                              "
+                                            >
+                                              <table
+                                                align="center"
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                                role="presentation"
+                                                style="width: 100%"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        text-align: center;
+                                                        padding: 0px 3px;
+                                                        font-size: 0px;
+                                                        direction: ltr;
+                                                      "
+                                                    >
+                                                      <div
+                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        style="
+                                                          width: 100%;
+                                                          vertical-align: top;
+                                                          display: inline-block;
+                                                          direction: ltr;
+                                                          text-align: left;
+                                                          font-size: 0px;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                style="
+                                                                  padding: 0px;
+                                                                  vertical-align: top;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  width="100%"
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.content3"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.content3"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              8,
+                                                                              38,
+                                                                              61
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: 400;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          <div>
+                                                                            Australia
+                                                                          </div>
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.see_all3"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.see_all3"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              23,
+                                                                              120,
+                                                                              185
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: bold;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          see
+                                                                          all
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div
+                            class="mj-column-per-20 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding: 0px;
+                                      vertical-align: top;
+                                      border: none;
+                                    "
+                                  >
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="left"
+                                            class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.subtitle4"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 7px 6px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              contenteditable="true"
+                                              data-content_editable-type="rich_text"
+                                              data-content_editable-idx="content.children.[0].data.value.subtitle4"
+                                              style="
+                                                color: rgb(8, 38, 61);
+                                                text-align: left;
+                                                line-height: 24px;
+                                                font-weight: bold;
+                                                font-size: 14px;
+                                                font-family: Arial, sans-serif;
+                                              "
+                                            >
+                                              Europe
+                                            </div>
+                                          </td>
+                                        </tr>
+
+                                        <tr>
+                                          <td
+                                            style="
+                                              word-break: break-word;
+                                              padding: 0px 3px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                max-width: 132px;
+                                                margin: 0px auto;
+                                              "
+                                            >
+                                              <table
+                                                align="center"
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                                role="presentation"
+                                                style="width: 100%"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        text-align: center;
+                                                        padding: 0px 3px;
+                                                        font-size: 0px;
+                                                        direction: ltr;
+                                                      "
+                                                    >
+                                                      <div
+                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        style="
+                                                          width: 100%;
+                                                          vertical-align: top;
+                                                          display: inline-block;
+                                                          direction: ltr;
+                                                          text-align: left;
+                                                          font-size: 0px;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                style="
+                                                                  padding: 0px;
+                                                                  vertical-align: top;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  width="100%"
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.content4"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.content4"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              8,
+                                                                              38,
+                                                                              61
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: 400;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          <div>
+                                                                            England
+                                                                          </div>
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.see_all4"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.see_all4"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              23,
+                                                                              120,
+                                                                              185
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: bold;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          see
+                                                                          all
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div
+                            class="mj-column-per-20 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding: 0px;
+                                      vertical-align: top;
+                                      border: none;
+                                    "
+                                  >
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="left"
+                                            class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.subtitle5"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 7px 6px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              contenteditable="true"
+                                              data-content_editable-type="rich_text"
+                                              data-content_editable-idx="content.children.[0].data.value.subtitle5"
+                                              style="
+                                                color: rgb(8, 38, 61);
+                                                text-align: left;
+                                                line-height: 24px;
+                                                font-weight: bold;
+                                                font-size: 14px;
+                                                font-family: Arial, sans-serif;
+                                              "
+                                            >
+                                              North America
+                                            </div>
+                                          </td>
+                                        </tr>
+
+                                        <tr>
+                                          <td
+                                            style="
+                                              word-break: break-word;
+                                              padding: 0px 3px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                max-width: 132px;
+                                                margin: 0px auto;
+                                              "
+                                            >
+                                              <table
+                                                align="center"
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                                role="presentation"
+                                                style="width: 100%"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        text-align: center;
+                                                        padding: 0px 3px;
+                                                        font-size: 0px;
+                                                        direction: ltr;
+                                                      "
+                                                    >
+                                                      <div
+                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        style="
+                                                          width: 100%;
+                                                          vertical-align: top;
+                                                          display: inline-block;
+                                                          direction: ltr;
+                                                          text-align: left;
+                                                          font-size: 0px;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                style="
+                                                                  padding: 0px;
+                                                                  vertical-align: top;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  width="100%"
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.content5"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.content5"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              8,
+                                                                              38,
+                                                                              61
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: 400;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          <div>
+                                                                            Canada
+                                                                          </div>
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                      <td
+                                                                        align="left"
+                                                                        class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.see_all5"
+                                                                        style="
+                                                                          word-break: break-word;
+                                                                          padding: 3px
+                                                                            0px;
+                                                                          font-size: 0px;
+                                                                        "
+                                                                      >
+                                                                        <div
+                                                                          contenteditable="true"
+                                                                          data-content_editable-type="rich_text"
+                                                                          data-content_editable-idx="content.children.[0].data.value.see_all5"
+                                                                          style="
+                                                                            color: rgb(
+                                                                              23,
+                                                                              120,
+                                                                              185
+                                                                            );
+                                                                            text-align: left;
+                                                                            line-height: 24px;
+                                                                            font-weight: bold;
+                                                                            font-size: 14px;
+                                                                            font-family: Arial,
+                                                                              sans-serif;
+                                                                          "
+                                                                        >
+                                                                          see
+                                                                          all
+                                                                        </div>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  style="
+                    max-width: 660px;
+                    margin: 0px auto;
+                    background: rgb(255, 255, 255);
+                  "
+                >
+                  <table
+                    align="center"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    role="presentation"
+                    style="width: 100%; background: rgb(255, 255, 255)"
+                  >
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            text-align: center;
+                            padding: 0px;
+                            font-size: 0px;
+                            direction: ltr;
+                          "
+                        >
+                          <div
+                            class="mj-column-per-50 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td style="padding: 0px; vertical-align: top">
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            style="
+                                              word-break: break-word;
+                                              padding: 25px 10px 10px;
+                                              font-size: 0px;
+                                            "
+                                          >
+                                            <p
+                                              style="
+                                                width: 100%;
+                                                margin: 0px auto;
+                                                font-size: 1px;
+                                                border-top: 1px solid
+                                                  rgb(204, 204, 204);
+                                              "
+                                            ></p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  style="
+                    max-width: 660px;
+                    margin: 0px auto;
+                    background: rgb(255, 255, 255);
+                  "
+                >
+                  <table
+                    align="center"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    role="presentation"
+                    style="width: 100%; background: rgb(255, 255, 255)"
+                  >
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            text-align: center;
+                            padding: 0px;
+                            font-size: 0px;
+                            direction: ltr;
+                          "
+                        >
+                          <div
+                            class="mj-column-per-45 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                              style="vertical-align: top"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      word-break: break-word;
+                                      padding: 20px 0px;
+                                      font-size: 0px;
+                                    "
+                                  >
+                                    <div
+                                      style="max-width: 297px; margin: 0px auto"
+                                    >
+                                      <table
+                                        align="center"
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        role="presentation"
+                                        style="width: 100%"
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              style="
+                                                text-align: center;
+                                                padding: 20px 0px;
+                                                font-size: 0px;
+                                                direction: ltr;
+                                              "
+                                            >
+                                              <div
+                                                class="mj-column-per-25 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 0px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  style="
+                                                                    border-spacing: 0px;
+                                                                    border-collapse: collapse;
+                                                                  "
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        style="
+                                                                          width: 35px;
+                                                                        "
+                                                                      >
+                                                                        <a
+                                                                          href="#"
+                                                                          target="_blank"
+                                                                          tabindex="-1"
+                                                                        >
+                                                                          <img
+                                                                            src="https://cdn.tools.unlayer.com/social/icons/circle/twitter.png"
+                                                                            width="35"
+                                                                            height="35"
+                                                                            style="
+                                                                              font-size: 13px;
+                                                                              width: 100%;
+                                                                              height: 35px;
+                                                                              text-decoration: none;
+                                                                              outline: none;
+                                                                              display: block;
+                                                                              border: 0px;
+                                                                            "
+                                                                          />
+                                                                        </a>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+
+                                              <div
+                                                class="mj-column-per-25 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 0px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  style="
+                                                                    border-spacing: 0px;
+                                                                    border-collapse: collapse;
+                                                                  "
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        style="
+                                                                          width: 35px;
+                                                                        "
+                                                                      >
+                                                                        <a
+                                                                          href="#"
+                                                                          target="_blank"
+                                                                          tabindex="-1"
+                                                                        >
+                                                                          <img
+                                                                            src="https://cdn.tools.unlayer.com/social/icons/circle/facebook.png"
+                                                                            width="35"
+                                                                            height="35"
+                                                                            style="
+                                                                              font-size: 13px;
+                                                                              width: 100%;
+                                                                              height: 35px;
+                                                                              text-decoration: none;
+                                                                              outline: none;
+                                                                              display: block;
+                                                                              border: 0px;
+                                                                            "
+                                                                          />
+                                                                        </a>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+
+                                              <div
+                                                class="mj-column-per-25 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 0px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  style="
+                                                                    border-spacing: 0px;
+                                                                    border-collapse: collapse;
+                                                                  "
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        style="
+                                                                          width: 35px;
+                                                                        "
+                                                                      >
+                                                                        <a
+                                                                          href="#"
+                                                                          target="_blank"
+                                                                          tabindex="-1"
+                                                                        >
+                                                                          <img
+                                                                            src="https://cdn.tools.unlayer.com/social/icons/circle/linkedin.png"
+                                                                            width="35"
+                                                                            height="35"
+                                                                            style="
+                                                                              font-size: 13px;
+                                                                              width: 100%;
+                                                                              height: 35px;
+                                                                              text-decoration: none;
+                                                                              outline: none;
+                                                                              display: block;
+                                                                              border: 0px;
+                                                                            "
+                                                                          />
+                                                                        </a>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+
+                                              <div
+                                                class="mj-column-per-25 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 0px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <table
+                                                                  border="0"
+                                                                  cellpadding="0"
+                                                                  cellspacing="0"
+                                                                  role="presentation"
+                                                                  style="
+                                                                    border-spacing: 0px;
+                                                                    border-collapse: collapse;
+                                                                  "
+                                                                >
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td
+                                                                        style="
+                                                                          width: 35px;
+                                                                        "
+                                                                      >
+                                                                        <a
+                                                                          href="#"
+                                                                          target="_blank"
+                                                                          tabindex="-1"
+                                                                        >
+                                                                          <img
+                                                                            src="https://cdn.tools.unlayer.com/social/icons/circle/youtube.png"
+                                                                            width="35"
+                                                                            height="35"
+                                                                            style="
+                                                                              font-size: 13px;
+                                                                              width: 100%;
+                                                                              height: 35px;
+                                                                              text-decoration: none;
+                                                                              outline: none;
+                                                                              display: block;
+                                                                              border: 0px;
+                                                                            "
+                                                                          />
+                                                                        </a>
+                                                                      </td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  style="
+                    max-width: 660px;
+                    margin: 0px auto;
+                    background: rgb(255, 255, 255);
+                  "
+                >
+                  <table
+                    align="center"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    role="presentation"
+                    style="width: 100%; background: rgb(255, 255, 255)"
+                  >
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            text-align: center;
+                            padding: 0px 0px 10px;
+                            font-size: 0px;
+                            direction: ltr;
+                          "
+                        >
+                          <div style="max-width: 660px; margin: 0px auto">
+                            <table
+                              align="center"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              style="width: 100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      text-align: center;
+                                      padding: 0px;
+                                      font-size: 0px;
+                                      direction: ltr;
+                                    "
+                                  >
+                                    <div
+                                      class="mj-column-per-100 mj-outlook-group-fix"
+                                      style="
+                                        width: 100%;
+                                        vertical-align: top;
+                                        display: inline-block;
+                                        direction: ltr;
+                                        text-align: left;
+                                        font-size: 0px;
+                                      "
+                                    >
+                                      <table
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        role="presentation"
+                                        width="100%"
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              style="
+                                                padding: 0px;
+                                                vertical-align: top;
+                                                border: none;
+                                              "
+                                            >
+                                              <table
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                                role="presentation"
+                                                width="100%"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      align="center"
+                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.street"
+                                                      style="
+                                                        word-break: break-word;
+                                                        padding: 3px 0px;
+                                                        font-size: 0px;
+                                                      "
+                                                    >
+                                                      <div
+                                                        contenteditable="true"
+                                                        data-content_editable-type="rich_text"
+                                                        data-content_editable-idx="content.children.[0].data.value.street"
+                                                        style="
+                                                          color: rgb(8, 38, 61);
+                                                          text-align: center;
+                                                          line-height: 24px;
+                                                          font-weight: 400;
+                                                          font-size: 14px;
+                                                          font-family: Arial,
+                                                            sans-serif;
+                                                        "
+                                                      >
+                                                        Tweet World Travel
+                                                        Group: 554 Magill Road,
+                                                        Magill SA 5072,
+                                                        Australia
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div style="max-width: 660px; margin: 0px auto">
+                            <table
+                              align="center"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              style="width: 100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      text-align: center;
+                                      padding: 0px;
+                                      font-size: 0px;
+                                      direction: ltr;
+                                    "
+                                  >
+                                    <div
+                                      class="mj-column-per-100 mj-outlook-group-fix"
+                                      style="
+                                        width: 100%;
+                                        vertical-align: top;
+                                        display: inline-block;
+                                        direction: ltr;
+                                        text-align: left;
+                                        font-size: 0px;
+                                      "
+                                    >
+                                      <table
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        role="presentation"
+                                        width="100%"
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              style="
+                                                padding: 0px;
+                                                vertical-align: top;
+                                                border: none;
+                                              "
+                                            >
+                                              <table
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                                role="presentation"
+                                                width="100%"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      align="center"
+                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.phoneAndLink"
+                                                      style="
+                                                        word-break: break-word;
+                                                        padding: 3px 0px;
+                                                        font-size: 0px;
+                                                      "
+                                                    >
+                                                      <div
+                                                        contenteditable="true"
+                                                        data-content_editable-type="rich_text"
+                                                        data-content_editable-idx="content.children.[0].data.value.phoneAndLink"
+                                                        style="
+                                                          color: rgb(8, 38, 61);
+                                                          text-align: center;
+                                                          line-height: 24px;
+                                                          font-weight: 400;
+                                                          font-size: 14px;
+                                                          font-family: Arial,
+                                                            sans-serif;
+                                                        "
+                                                      >
+                                                        ACN: 1234 2657 910 |
+                                                        Website:
+                                                        www.tweetworldtravel.com
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  style="
+                    max-width: 660px;
+                    margin: 0px auto;
+                    background: rgb(255, 255, 255);
+                  "
+                >
+                  <table
+                    align="center"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    role="presentation"
+                    style="width: 100%; background: rgb(255, 255, 255)"
+                  >
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            text-align: center;
+                            padding: 0px 0px 10px;
+                            font-size: 0px;
+                            direction: ltr;
+                          "
+                        >
+                          <div
+                            class="mj-column-per-75 mj-outlook-group-fix"
+                            style="
+                              width: 100%;
+                              vertical-align: top;
+                              display: inline-block;
+                              direction: ltr;
+                              text-align: left;
+                              font-size: 0px;
+                            "
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              width="100%"
+                              style="vertical-align: top"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      word-break: break-word;
+                                      padding: 0px;
+                                      font-size: 0px;
+                                    "
+                                  >
+                                    <div
+                                      style="
+                                        max-width: 495px;
+                                        margin: 0px auto;
+                                        background: rgb(255, 255, 255);
+                                      "
+                                    >
+                                      <table
+                                        align="center"
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        role="presentation"
+                                        style="
+                                          width: 100%;
+                                          background: rgb(255, 255, 255);
+                                        "
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              style="
+                                                text-align: center;
+                                                padding: 0px;
+                                                font-size: 0px;
+                                                direction: ltr;
+                                              "
+                                            >
+                                              <div
+                                                class="mj-column-per-35 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.term"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 3px
+                                                                    0px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <div
+                                                                  contenteditable="true"
+                                                                  data-content_editable-type="rich_text"
+                                                                  data-content_editable-idx="content.children.[0].data.value.term"
+                                                                  style="
+                                                                    color: rgb(
+                                                                      8,
+                                                                      38,
+                                                                      61
+                                                                    );
+                                                                    text-align: center;
+                                                                    line-height: 24px;
+                                                                    font-weight: 400;
+                                                                    font-size: 14px;
+                                                                    font-family: Arial,
+                                                                      sans-serif;
+                                                                  "
+                                                                >
+                                                                  *Terms and
+                                                                  Conditions
+                                                                </div>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+
+                                              <div
+                                                class="mj-column-per-3 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 0px
+                                                                    3px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <div
+                                                                  style="
+                                                                    color: rgb(
+                                                                      8,
+                                                                      38,
+                                                                      61
+                                                                    );
+                                                                    text-align: center;
+                                                                    line-height: 24px;
+                                                                    font-weight: 400;
+                                                                    font-size: 14px;
+                                                                    font-family: Arial,
+                                                                      sans-serif;
+                                                                  "
+                                                                >
+                                                                  |
+                                                                </div>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+
+                                              <div
+                                                class="mj-column-per-20 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 3px
+                                                                    0px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <div
+                                                                  style="
+                                                                    color: rgb(
+                                                                      8,
+                                                                      38,
+                                                                      61
+                                                                    );
+                                                                    text-align: center;
+                                                                    line-height: 24px;
+                                                                    font-weight: 400;
+                                                                    font-size: 14px;
+                                                                    font-family: Arial,
+                                                                      sans-serif;
+                                                                  "
+                                                                >
+                                                                  <a
+                                                                    href="https://newsletters.tweetworldtravel.com/unsubscribe?c=[_campaign_id_]&amp;a=[_unsubscribe_slug_]"
+                                                                    tabindex="-1"
+                                                                    style="
+                                                                      color: rgb(
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                      );
+                                                                      text-decoration: none;
+                                                                    "
+                                                                    >Unsubscribe</a
+                                                                  >
+                                                                </div>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+
+                                              <div
+                                                class="mj-column-per-3 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 0px
+                                                                    3px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <div
+                                                                  style="
+                                                                    color: rgb(
+                                                                      8,
+                                                                      38,
+                                                                      61
+                                                                    );
+                                                                    text-align: center;
+                                                                    line-height: 24px;
+                                                                    font-weight: 400;
+                                                                    font-size: 14px;
+                                                                    font-family: Arial,
+                                                                      sans-serif;
+                                                                  "
+                                                                >
+                                                                  |
+                                                                </div>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+
+                                              <div
+                                                class="mj-column-per-20 mj-outlook-group-fix"
+                                                style="
+                                                  width: 100%;
+                                                  vertical-align: top;
+                                                  display: inline-block;
+                                                  direction: ltr;
+                                                  text-align: left;
+                                                  font-size: 0px;
+                                                "
+                                              >
+                                                <table
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation"
+                                                  width="100%"
+                                                >
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style="
+                                                          padding: 0px;
+                                                          vertical-align: top;
+                                                        "
+                                                      >
+                                                        <table
+                                                          border="0"
+                                                          cellpadding="0"
+                                                          cellspacing="0"
+                                                          role="presentation"
+                                                          width="100%"
+                                                        >
+                                                          <tbody>
+                                                            <tr>
+                                                              <td
+                                                                align="center"
+                                                                class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.account"
+                                                                style="
+                                                                  word-break: break-word;
+                                                                  padding: 3px
+                                                                    0px;
+                                                                  font-size: 0px;
+                                                                "
+                                                              >
+                                                                <div
+                                                                  contenteditable="true"
+                                                                  data-content_editable-type="rich_text"
+                                                                  data-content_editable-idx="content.children.[0].data.value.account"
+                                                                  style="
+                                                                    color: rgb(
+                                                                      8,
+                                                                      38,
+                                                                      61
+                                                                    );
+                                                                    text-align: center;
+                                                                    line-height: 24px;
+                                                                    font-weight: 400;
+                                                                    font-size: 14px;
+                                                                    font-family: Arial,
+                                                                      sans-serif;
+                                                                  "
+                                                                >
+                                                                  My Account
+                                                                </div>
+                                                              </td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div
+          id="easy-email-extensions-InteractivePrompt-FocusTooltip"
+          style="
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            left: 0px;
+            top: 0px;
+            z-index: 1;
+          "
+        >
+          <style>
+            .email-block {
+              position: relative;
+            }
+          </style>
+          <div style="position: absolute; z-index: 9999; right: 0px; top: 50%">
+            <div data-type="footer_block" draggable="true" style="cursor: grab">
+              <div
+                style="
+                  position: absolute;
+                  background-color: var(--selected-color);
+                  color: rgb(255, 255, 255);
+                  height: 28px;
+                  width: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  transform: translate(-50%, -50%);
+                  border-radius: 50%;
+                  cursor: grab;
+                  pointer-events: auto;
+                  -webkit-user-drag: element;
+                "
+              >
+                <div
+                  class="iconfont icon-move"
+                  style="
+                    cursor: grab;
+                    pointer-events: auto;
+                    color: rgb(255, 255, 255);
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              position: absolute;
+              font-size: 14px;
+              z-index: 2;
+              left: 0px;
+              top: 0px;
+              width: 100%;
+              height: 100%;
+              outline-offset: -2px;
+              outline: 2px solid var(--selected-color);
+            "
+          ></div>
+          <div
+            style="
+              position: absolute;
+              font-size: 14px;
+              z-index: 3;
+              left: 0px;
+              top: 0px;
+              width: 0%;
+              height: 100%;
+            "
+          >
+            <div
+              id="easy-email-extensions-InteractivePrompt-Toolbar"
+              style="height: 0px; z-index: 100"
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  line-height: 22px;
+                  pointer-events: auto;
+                  color: rgb(255, 255, 255);
+                  transform: translateY(-100%);
+                  display: inline-flex;
+                "
+              >
+                <div
+                  style="
+                    color: rgb(255, 255, 255);
+                    background-color: var(--selected-color);
+                    height: 22px;
+                    display: inline-flex;
+                    padding: 1px 5px;
+                    box-sizing: border-box;
+                    white-space: nowrap;
+                    max-width: 300px;
+                    overflow: hidden;
+                  "
+                >
+                  Footer
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    pointer-events: auto;
+                  "
+                >
+                  <div
+                    class="iconfont icon-back-parent"
+                    style="
+                      color: rgb(255, 255, 255);
+                      background-color: var(--selected-color);
+                      height: 22px;
+                      font-size: 12px;
+                      line-height: 22px;
+                      width: 22px;
+                      display: flex;
+                      pointer-events: auto;
+                      cursor: pointer;
+                      justify-content: center;
+                    "
+                  ></div>
+                  <div
+                    class="iconfont icon-copy"
+                    style="
+                      color: rgb(255, 255, 255);
+                      background-color: var(--selected-color);
+                      height: 22px;
+                      font-size: 14px;
+                      line-height: 22px;
+                      width: 22px;
+                      display: flex;
+                      pointer-events: auto;
+                      cursor: pointer;
+                      justify-content: center;
+                    "
+                  ></div>
+                  <div
+                    class="iconfont icon-delete"
+                    style="
+                      color: rgb(255, 255, 255);
+                      background-color: var(--selected-color);
+                      height: 22px;
+                      font-size: 14px;
+                      line-height: 22px;
+                      width: 22px;
+                      display: flex;
+                      pointer-events: auto;
+                      cursor: pointer;
+                      justify-content: center;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+`;
+};
 export const footerGeneral = () => {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -4175,9 +7102,9 @@ export const fakeTemplateFooter = [
     name: "footer",
   },
   {
-    id: 2,
-    content: footerGeneral(),
-    name: "footerGeneral",
+    id: 3,
+    content: footerBlock(),
+    name: "footerBlock",
   },
   {
     id: 3,

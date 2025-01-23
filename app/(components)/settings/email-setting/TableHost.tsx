@@ -109,7 +109,6 @@ const TableHost = () => {
       }
     });
   };
-  
 
   return (
     <>
@@ -202,7 +201,11 @@ const TableHost = () => {
           <div>
             <Pagination
               currentPage={page}
-              pageSize={Math.ceil((emailSetting?.meta?.total ?? 0) / 10)}
+              pageSize={
+                Math.ceil((emailSetting?.meta?.total ?? 0) / 10) === 0
+                  ? 1
+                  : Math.ceil((emailSetting?.meta?.total ?? 0) / 10)
+              }
               handleChangePage={handleChangePage}
               className="mt-6"
             />

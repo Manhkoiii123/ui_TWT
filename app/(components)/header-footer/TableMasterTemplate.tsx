@@ -1,16 +1,18 @@
 "use client";
 import {
-  useMutationDeleteAudience,
-  useQueryGetAudiences,
-} from "@/api/audiences/audienceApi";
-import ModelCreateEditCloneAudience from "@/app/(components)/audience-manager/ModelCreateEditCloneAudience";
-import ModelViewAudience from "@/app/(components)/audience-manager/ModelViewAudience";
-import SheetLogAudience from "@/app/(components)/audience-manager/SheetLogAudience";
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import Pagination from "@/components/custom-pagination/Pagination";
-import CustomSelect from "@/components/custom-select/CustomSelect";
-import Loading from "@/components/Loading";
-import { Button } from "@/components/ui/button";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
 import {
   Table,
   TableBody,
@@ -19,72 +21,54 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import CustomSelect from "@/components/custom-select/CustomSelect";
+import { TTemplate } from "@/types/template";
+import { useEffect, useState } from "react";
 import { convertDate } from "@/lib/utils";
-import { TAudience } from "@/types/audience";
-import { useQueryClient } from "@tanstack/react-query";
-import {
-  ColumnDef,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { Plus } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
 import Swal from "sweetalert2";
+import { useMutationDeleteTemplate } from "@/api/templates/templatesApi";
+import { useQueryClient } from "@tanstack/react-query";
+import Loading from "@/components/Loading";
 
-const AudienceManagerClient = () => {
-  const [isOpenCreateEditClone, setIsOpenCreateEditClone] = useState(false);
-  const [isOpenLog, setIsOpenLog] = useState(false);
-  const [typeCustomSelect, setTypeCustomSelect] = useState<
-    "create" | "edit" | "clone"
-  >("create");
-  const [isOpenView, setIsOpenView] = useState(false);
-  const [selectedAudience, setSelectedAudience] = useState<TAudience | null>(
-    null
-  );
+type Props = {
+  templates: TTemplate[] | undefined;
+  isLoading: boolean;
+};
+const TableMasterTemplate = ({ templates, isLoading }: Props) => {
   const router = useRouter();
   const currentPage = Number(useSearchParams().get("page")) || 1;
-  const [page, setPage] = useState(currentPage);
-
-  const { data: audiences, isLoading: isLoadingAudiences } =
-    useQueryGetAudiences({
-      page: page,
-    });
-  const { mutate: mutateDeleteAudience } = useMutationDeleteAudience();
   const queryClient = useQueryClient();
-  const handleChangePage = (pageNumber: number) => {
-    setPage(pageNumber);
-    const pathname = "/audience-manager";
-    const query = { page: String(pageNumber) };
-    const queryString = new URLSearchParams(query).toString();
-    const url = `${pathname}?${queryString}`;
-    router.push(url);
-  };
-  const columns: ColumnDef<any>[] = [
+  const [isOpenView, setIsOpenView] = useState(false);
+  const [htmlContent, setHtmlContent] = useState("");
+  const { mutate: mutateDeleteTemplate } = useMutationDeleteTemplate();
+
+  const columns: ColumnDef<TTemplate>[] = [
     {
-      accessorKey: "title",
+      id: "index",
+      header: "No",
+      cell: (info) => (currentPage - 1) * 10 + info.row.index + 1,
+    },
+    {
+      accessorKey: "name",
       header: "Title",
     },
-    // {
-    //   accessorKey: "description",
-    //   header: "Description",
-    // },
     {
-      accessorKey: "created_by.name",
-      header: "Created By",
+      accessorKey: "position",
+      header: "Position",
     },
     {
       accessorKey: "created_at",
-      header: "Created On",
+      header: "Created At",
       cell: (info) => {
         const date = convertDate(info.getValue() as string);
         return date;
       },
     },
   ];
+
   const table = useReactTable({
-    data: audiences?.data ?? [],
+    data: templates ?? [],
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
@@ -98,10 +82,10 @@ const AudienceManagerClient = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        mutateDeleteAudience(id, {
+        mutateDeleteTemplate(id, {
           onSuccess: () => {
             queryClient.invalidateQueries({
-              queryKey: ["audiences"],
+              queryKey: ["templates"],
             });
             Swal.fire("Deleted!", "Your file has been deleted.", "success");
             callback();
@@ -113,24 +97,15 @@ const AudienceManagerClient = () => {
       }
     });
   };
+
   return (
-    <div>
-      <Button
-        className="mb-4"
-        onClick={() => {
-          setIsOpenCreateEditClone(true);
-          setTypeCustomSelect("create");
-        }}
-      >
-        Add Audience
-        <Plus />
-      </Button>
-      {isLoadingAudiences && (
+    <>
+      {isLoading && (
         <div className="flex justify-center items-center w-[100%] h-[calc(100vh-200px)]">
           <Loading />
         </div>
       )}
-      {!isLoadingAudiences && (
+      {!isLoading && (
         <div>
           <Table>
             <TableHeader>
@@ -179,23 +154,15 @@ const AudienceManagerClient = () => {
                                   label: "View",
                                   action: () => {
                                     setIsOpenView(true);
-                                    setSelectedAudience(row.original);
-                                  },
-                                },
-                                {
-                                  label: "Clone",
-                                  action: () => {
-                                    setIsOpenCreateEditClone(true);
-                                    setSelectedAudience(row.original);
-                                    setTypeCustomSelect("clone");
+                                    setHtmlContent(row.original.content);
                                   },
                                 },
                                 {
                                   label: "Edit",
                                   action: () => {
-                                    setIsOpenCreateEditClone(true);
-                                    setSelectedAudience(row.original);
-                                    setTypeCustomSelect("edit");
+                                    router.push(
+                                      `/header-footer/edit?id=${row.original.id}`
+                                    );
                                   },
                                 },
                                 {
@@ -209,8 +176,7 @@ const AudienceManagerClient = () => {
                                 {
                                   label: "View History",
                                   action: () => {
-                                    setIsOpenLog(true);
-                                    setSelectedAudience(row.original);
+                                    console.log("view history template");
                                   },
                                 },
                               ]}
@@ -233,44 +199,67 @@ const AudienceManagerClient = () => {
               )}
             </TableBody>
           </Table>
-          <div>
-            <Pagination
-              currentPage={page}
-              pageSize={
-                Math.ceil((audiences?.meta?.total ?? 0) / 10) === 0
-                  ? 1
-                  : Math.ceil((audiences?.meta?.total ?? 0) / 10)
-              }
-              handleChangePage={handleChangePage}
-              className="mt-6"
+
+          {isOpenView && (
+            <ViewTemplate
+              isOpen={isOpenView}
+              setIsOpen={setIsOpenView}
+              htmlContent={htmlContent}
             />
-          </div>
+          )}
         </div>
       )}
-      {isOpenCreateEditClone && (
-        <ModelCreateEditCloneAudience
-          type={typeCustomSelect}
-          isOpen={isOpenCreateEditClone}
-          setIsOpen={setIsOpenCreateEditClone}
-          dataSelect={selectedAudience}
-        />
-      )}
-      {isOpenView && (
-        <ModelViewAudience
-          isOpen={isOpenView}
-          setIsOpen={setIsOpenView}
-          data={selectedAudience}
-        />
-      )}
-      {isOpenLog && (
-        <SheetLogAudience
-          isOpen={isOpenLog}
-          setIsOpen={setIsOpenLog}
-          data={selectedAudience}
-        />
-      )}
-    </div>
+    </>
   );
 };
 
-export default AudienceManagerClient;
+export default TableMasterTemplate;
+export const ViewTemplate = ({
+  isOpen,
+  htmlContent,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+  htmlContent: string;
+}) => {
+  const [doc, setDoc] = useState<Document>();
+  const [styles, setStyles] = useState("");
+  useEffect(() => {
+    const decodedHtml = JSON.parse('"' + htmlContent + '"');
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(decodedHtml, "text/html");
+    setDoc(doc);
+
+    const styleTags = doc.querySelectorAll("style");
+    let styleContent = "";
+    styleTags.forEach((tag) => {
+      styleContent += tag.innerHTML;
+    });
+
+    setStyles(styleContent);
+  }, [htmlContent]);
+  return (
+    <Dialog open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
+      <DialogContent className="max-h-[80vh] overflow-x-auto">
+        <DialogHeader>
+          <DialogTitle className="text-gray-800 font-medium text-[12px] leading-[1.6rem] border-b border-gray-200 pb-[10px]">
+            Preview Template
+          </DialogTitle>
+          <DialogDescription>
+            {doc?.body.innerHTML && (
+              <>
+                <style>{styles}</style>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: doc.body.innerHTML,
+                  }}
+                />
+              </>
+            )}
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  );
+};

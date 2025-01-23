@@ -71,6 +71,11 @@ export const menuLink = [
         name: "Email Settings",
         link: "/email-settings",
       },
+      {
+        id: 4,
+        name: "Header & Footer",
+        link: "/header-footer",
+      },
     ],
   },
   {

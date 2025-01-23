@@ -26,6 +26,11 @@ import {
   divider,
   fakeTemplateHeader,
   footerGeneral,
+  header2,
+  headerGeneral,
+  menuHeader,
+  footerBlock,
+  footerContact,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -46,10 +51,13 @@ import {
   createCampaignState,
   useCreateCampaignZustand,
 } from "@/zustands/createCampaignZustand";
+import { useMutationCreateMasterTemplate } from "@/api/master-templates/masterTemplatesApi";
 type Props = {
   isCreateTemplate?: boolean;
+  isCreateFooterHeader?: boolean;
   templateContent?: string;
   templateName?: string;
+  templatePosition?: string;
   idEdit?: string | null;
   trigger?: any;
   imageUrl?: string;
@@ -57,6 +65,7 @@ type Props = {
   templateFooter?: string;
 };
 const GrapeComponent = ({
+  isCreateFooterHeader = false,
   isCreateTemplate = true,
   templateContent,
   templateName,
@@ -65,6 +74,7 @@ const GrapeComponent = ({
   imageUrl,
   templateHeader,
   templateFooter,
+  templatePosition,
 }: Props) => {
   const templateCampaign = useCreateCampaignZustand(
     (state: createCampaignState) => state.templateCampaign
@@ -150,6 +160,10 @@ const GrapeComponent = ({
   const queryClient = useQueryClient();
   const { mutate: mutateCreateTemplate, isPending: isPendingCreateTemplate } =
     useMutationCreateTemplate();
+  const {
+    mutate: mutateCreateMasterTemplate,
+    isPending: isPendingCreateMasterTemplate,
+  } = useMutationCreateMasterTemplate();
   const { mutate: mutateEditTemplate, isPending: isPendingEditTemplate } =
     useMutationEditTemplate();
 
@@ -401,7 +415,7 @@ const GrapeComponent = ({
         });
       }
 
-      if (isCreateTemplate) {
+      if (isCreateTemplate && !isCreateFooterHeader) {
         editor.BlockManager.add("layoutCard2", {
           label: "2 column product",
           content: layoutCard2(column1Props),
@@ -456,6 +470,64 @@ const GrapeComponent = ({
         editor.BlockManager.add("contentShowcase", {
           label: "Content Showcase",
           content: contentShowcase(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          </div>`,
+        });
+      }
+      if (isCreateFooterHeader) {
+        editor.BlockManager.add("header1", {
+          label: "Header basic",
+          content: header(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("header2", {
+          label: "Header basic 2",
+          content: header2(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("headerGeneral", {
+          label: "Header General",
+          content: headerGeneral(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("menuHeader", {
+          label: "Header menu",
+          content: menuHeader(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("footer", {
+          label: "Footer 1",
+          content: footer(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("footerBlock", {
+          label: "Footer 2",
+          content: footerBlock(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("footerContact", {
+          label: "Contact",
+          content: footerContact(),
           category: "Custom",
           media: `<div>
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
@@ -724,6 +796,27 @@ const GrapeComponent = ({
       }
     }
   };
+  const handleCreateOrEditMasterTemplate = async () => {
+    if (trigger) {
+      const isValid = await trigger();
+      if (!isValid) return;
+      const payload = {
+        name: templateName as string,
+        position: templatePosition as string,
+        content: JSON.stringify(contentCreateOrEdit).slice(1, -1),
+      };
+      if (!templateContent) {
+        mutateCreateMasterTemplate(payload, {
+          onSuccess: () => {
+            toast({ title: "Create template successfully" });
+            router.push("/header-footer");
+          },
+        });
+      }else{
+
+      }
+    }
+  };
 
   return (
     <div>
@@ -739,12 +832,22 @@ const GrapeComponent = ({
 
       {isCreateTemplate && (
         <Button
-          disabled={isPendingCreateTemplate || isPendingUploadImage}
+          disabled={
+            isPendingCreateTemplate ||
+            isPendingUploadImage ||
+            isPendingCreateMasterTemplate
+          }
           id="exportEditorHtmlCssButton"
           className="mt-4 block ml-auto w-[120px]"
-          onClick={handleCreateOrEditTemplate}
+          onClick={
+            isCreateFooterHeader
+              ? handleCreateOrEditMasterTemplate
+              : handleCreateOrEditTemplate
+          }
         >
-          {isPendingCreateTemplate || isPendingEditTemplate ? (
+          {isPendingCreateTemplate ||
+          isPendingEditTemplate ||
+          isPendingCreateMasterTemplate ? (
             <Loading />
           ) : templateContent ? (
             "Edit"
