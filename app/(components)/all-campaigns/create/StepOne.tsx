@@ -25,6 +25,7 @@ type Props = {
   handleNext: () => void;
   selectAutomation: string;
   handleSelectAutomation: (value: string) => void;
+  handleCloseModel: () => void;
 };
 const StepOne = ({
   handleValueChange,
@@ -34,18 +35,19 @@ const StepOne = ({
   handleNext,
   selectAutomation,
   handleSelectAutomation,
+  handleCloseModel,
 }: Props) => {
   const [isOpenModalError, setIsOpenModalError] = useState(false);
   const [messageError, setMessageError] = useState("");
   const idTemplate = useCreateCampaignZustand(
     (state: createCampaignState) => state.idTemplate
   );
-  const removeIdTemplate = useCreateCampaignZustand(
-    (state: createCampaignState) => state.removeIdTemplate
-  );
+  // const removeIdTemplate = useCreateCampaignZustand(
+  //   (state: createCampaignState) => state.removeIdTemplate
+  // );
   const handleChangeAutomationOption = (value: string) => {
     handleValueChange(value);
-    removeIdTemplate();
+    // removeIdTemplate();
   };
 
   const handleSubmitStepOne = () => {
@@ -122,7 +124,10 @@ const StepOne = ({
             />
           </div>
         )}
-        <div className="flex justify-end my-4">
+        <div className="flex justify-between my-4">
+          <Button onClick={handleCloseModel} variant={"outline"}>
+            Previous
+          </Button>
           <Button type="submit" onClick={() => handleSubmitStepOne()}>
             Next Step
           </Button>

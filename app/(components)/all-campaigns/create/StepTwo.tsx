@@ -39,6 +39,7 @@ const StepTwo = ({ handleBack, dataCreate, is_manual, group }: Props) => {
       id_template_body: idTemplate!,
       schedule_send_at: new Date(dataCreate!.releaseDate).toISOString(),
     };
+    console.log("convertData", convertData);
     mutateCreateCampain(convertData, {
       onSuccess: () => {
         handleBack();
