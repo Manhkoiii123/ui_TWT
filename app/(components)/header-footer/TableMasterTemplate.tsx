@@ -27,9 +27,9 @@ import { useEffect, useState } from "react";
 import { convertDate } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 import Swal from "sweetalert2";
-import { useMutationDeleteTemplate } from "@/api/templates/templatesApi";
 import { useQueryClient } from "@tanstack/react-query";
 import Loading from "@/components/Loading";
+import { useMutationDeleteMasterTemplate } from "@/api/master-templates/masterTemplatesApi";
 
 type Props = {
   templates: TTemplate[] | undefined;
@@ -41,7 +41,8 @@ const TableMasterTemplate = ({ templates, isLoading }: Props) => {
   const queryClient = useQueryClient();
   const [isOpenView, setIsOpenView] = useState(false);
   const [htmlContent, setHtmlContent] = useState("");
-  const { mutate: mutateDeleteTemplate } = useMutationDeleteTemplate();
+  const { mutate: mutateDeleteMasterTemplate } =
+    useMutationDeleteMasterTemplate();
 
   const columns: ColumnDef<TTemplate>[] = [
     {
@@ -82,10 +83,10 @@ const TableMasterTemplate = ({ templates, isLoading }: Props) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        mutateDeleteTemplate(id, {
+        mutateDeleteMasterTemplate(id, {
           onSuccess: () => {
             queryClient.invalidateQueries({
-              queryKey: ["templates"],
+              queryKey: ["master-templates"],
             });
             Swal.fire("Deleted!", "Your file has been deleted.", "success");
             callback();

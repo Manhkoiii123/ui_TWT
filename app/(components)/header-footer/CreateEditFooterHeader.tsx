@@ -109,7 +109,7 @@ const CreateEditFooterHeader = () => {
                     <FormItem>
                       <Select
                         onValueChange={field.onChange}
-                        defaultValue={field.value}
+                        value={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>

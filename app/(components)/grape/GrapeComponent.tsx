@@ -51,7 +51,10 @@ import {
   createCampaignState,
   useCreateCampaignZustand,
 } from "@/zustands/createCampaignZustand";
-import { useMutationCreateMasterTemplate } from "@/api/master-templates/masterTemplatesApi";
+import {
+  useMutationCreateMasterTemplate,
+  useMutationEditMasterTemplate,
+} from "@/api/master-templates/masterTemplatesApi";
 type Props = {
   isCreateTemplate?: boolean;
   isCreateFooterHeader?: boolean;
@@ -164,6 +167,10 @@ const GrapeComponent = ({
     mutate: mutateCreateMasterTemplate,
     isPending: isPendingCreateMasterTemplate,
   } = useMutationCreateMasterTemplate();
+  const {
+    mutate: mutateEditMasterTemplate,
+    isPending: isPendingEditMasterTemplate,
+  } = useMutationEditMasterTemplate();
   const { mutate: mutateEditTemplate, isPending: isPendingEditTemplate } =
     useMutationEditTemplate();
 
@@ -808,12 +815,20 @@ const GrapeComponent = ({
       if (!templateContent) {
         mutateCreateMasterTemplate(payload, {
           onSuccess: () => {
-            toast({ title: "Create template successfully" });
+            toast({ title: "Create master template successfully" });
             router.push("/header-footer");
           },
         });
-      }else{
-
+      } else {
+        mutateEditMasterTemplate(
+          { id: Number(idEdit), data: payload },
+          {
+            onSuccess: () => {
+              toast({ title: "Edit master template successfully" });
+              router.push("/header-footer");
+            },
+          }
+        );
       }
     }
   };
