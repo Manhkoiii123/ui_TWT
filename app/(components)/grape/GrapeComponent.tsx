@@ -489,7 +489,7 @@ const GrapeComponent = ({
           content: header(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/header_basic.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("header2", {
@@ -497,7 +497,7 @@ const GrapeComponent = ({
           content: header2(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/header_basic_2.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("headerGeneral", {
@@ -505,7 +505,7 @@ const GrapeComponent = ({
           content: headerGeneral(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/header_general.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("menuHeader", {
@@ -513,7 +513,7 @@ const GrapeComponent = ({
           content: menuHeader(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/menu.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("footer", {
@@ -521,7 +521,7 @@ const GrapeComponent = ({
           content: footer(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/footer_1.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("footerBlock", {
@@ -529,7 +529,7 @@ const GrapeComponent = ({
           content: footerBlock(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/footer_2.jpg"/>
           </div>`,
         });
         editor.BlockManager.add("footerContact", {
@@ -537,7 +537,7 @@ const GrapeComponent = ({
           content: footerContact(),
           category: "Custom",
           media: `<div>
-          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/footer_contact.jpg"/>
           </div>`,
         });
       }

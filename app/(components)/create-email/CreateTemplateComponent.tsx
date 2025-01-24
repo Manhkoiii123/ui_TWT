@@ -19,17 +19,15 @@ import {
 } from "@/components/ui/select";
 import LeftIcon from "@/icon/LeftIcon";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import GrapeComponent from "@/app/(components)/grape/GrapeComponent";
 import { useQueryGetTemplateById } from "@/api/templates/templatesApi";
 import Loading from "@/components/Loading";
-import {
-  fakeTemplateFooter,
-  fakeTemplateHeader,
-} from "@/app/(components)/grape/content";
+
+import { useQueryGetMasterTemplates } from "@/api/master-templates/masterTemplatesApi";
 const formSchema = z.object({
   templateName: z.string().min(1, { message: "Please enter a title" }),
 });
@@ -47,6 +45,52 @@ const CreateTemplateComponent = () => {
       templateName: "",
     },
   });
+  const { data: listHeaderFooter, isLoading: isLoadingListHeaderFooter } =
+    useQueryGetMasterTemplates({
+      page: 1,
+      per_page: 99999,
+    });
+
+  const templateHeaderList = useMemo(() => {
+    if (listHeaderFooter) {
+      const tmpHeader = listHeaderFooter.data.filter(
+        (item) => item.position === "header"
+      );
+      return tmpHeader.map((item) => {
+        const cleanHtmlString = item.content.replace(/\\n|\\/g, "");
+
+        const content = () => {
+          return cleanHtmlString;
+        };
+        return {
+          id: item.id,
+          name: item.name,
+          content: content,
+        };
+      });
+    }
+    return [];
+  }, [listHeaderFooter]);
+  const templateFooterList = useMemo(() => {
+    if (listHeaderFooter) {
+      const tmpFooter = listHeaderFooter.data.filter(
+        (item) => item.position === "footer"
+      );
+      return tmpFooter.map((item) => {
+        const cleanHtmlString = item.content.replace(/\\n|\\/g, "");
+
+        const content = () => {
+          return cleanHtmlString;
+        };
+        return {
+          id: item.id,
+          name: item.name,
+          content: content,
+        };
+      });
+    }
+    return [];
+  }, [listHeaderFooter]);
   const { setValue, watch, trigger } = form;
   const watchTemplateName = watch("templateName");
   useEffect(() => {
@@ -67,20 +111,24 @@ const CreateTemplateComponent = () => {
   };
 
   const handleValueChangeHeader = (value: string) => {
-    const selectedItem = fakeTemplateHeader.find((item) => item.name === value);
+    const selectedItem = templateHeaderList.find(
+      (item) => String(item.id) === value
+    );
     if (selectedItem) {
       setTemplateHeader(selectedItem.content);
     }
   };
   const handleValueChangeFooter = (value: string) => {
-    const selectedItem = fakeTemplateFooter.find((item) => item.name === value);
+    const selectedItem = templateFooterList.find(
+      (item) => String(item.id) === value
+    );
     if (selectedItem) {
       setTemplateFooter(selectedItem.content);
     }
   };
   return (
     <>
-      {isLoadingTemplate && (
+      {(isLoadingTemplate || isLoadingListHeaderFooter) && (
         <div className="flex justify-center items-center w-[100%] h-[calc(100vh-200px)]">
           <Loading />
         </div>
@@ -127,8 +175,8 @@ const CreateTemplateComponent = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {fakeTemplateHeader.map((item) => (
-                    <SelectItem key={item.id} value={item.name}>
+                  {templateHeaderList.map((item) => (
+                    <SelectItem key={item.id} value={String(item.id)}>
                       {item.name}
                     </SelectItem>
                   ))}
@@ -141,8 +189,8 @@ const CreateTemplateComponent = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {fakeTemplateFooter.map((item) => (
-                    <SelectItem key={item.id} value={item.name}>
+                  {templateFooterList.map((item) => (
+                    <SelectItem key={item.id} value={String(item.id)}>
                       {item.name}
                     </SelectItem>
                   ))}

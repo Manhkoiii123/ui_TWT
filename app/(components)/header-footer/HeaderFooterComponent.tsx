@@ -26,7 +26,6 @@ const HeaderFooterComponent = () => {
   const { data: templates, isLoading } = useQueryGetMasterTemplates({
     page: page,
   });
-  console.log("aaaa", templates);
   return (
     <div className="bg-white p-4 shadow-sm max-h-[calc(100vh-178px)]">
       <Button className="bg-primary mb-4" onClick={handleNavigate}>

@@ -22,7 +22,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import CustomSelect from "@/components/custom-select/CustomSelect";
-import { TTemplate } from "@/types/template";
 import { useEffect, useState } from "react";
 import { convertDate } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -30,9 +29,10 @@ import Swal from "sweetalert2";
 import { useQueryClient } from "@tanstack/react-query";
 import Loading from "@/components/Loading";
 import { useMutationDeleteMasterTemplate } from "@/api/master-templates/masterTemplatesApi";
+import { TMasterTemplateRes } from "@/types/master-template";
 
 type Props = {
-  templates: TTemplate[] | undefined;
+  templates: TMasterTemplateRes[] | undefined;
   isLoading: boolean;
 };
 const TableMasterTemplate = ({ templates, isLoading }: Props) => {
@@ -44,7 +44,7 @@ const TableMasterTemplate = ({ templates, isLoading }: Props) => {
   const { mutate: mutateDeleteMasterTemplate } =
     useMutationDeleteMasterTemplate();
 
-  const columns: ColumnDef<TTemplate>[] = [
+  const columns: ColumnDef<TMasterTemplateRes>[] = [
     {
       id: "index",
       header: "No",

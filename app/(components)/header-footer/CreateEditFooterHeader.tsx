@@ -45,6 +45,7 @@ const CreateEditFooterHeader = () => {
   });
   const { setValue, watch, trigger } = form;
   const watchTitle = watch("title");
+  const watchPosition = watch("position");
   useEffect(() => {
     if (dataTemplate) {
       setValue("title", dataTemplate.name);
@@ -135,7 +136,7 @@ const CreateEditFooterHeader = () => {
               isCreateFooterHeader
               trigger={trigger}
               templateName={watchTitle}
-              templatePosition={watch("position")}
+              templatePosition={watchPosition}
               templateContent={dataTemplate?.content}
               idEdit={idEdit}
             />

@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import apiClient from "@/api/apiClient";
-import { TMasterTemplate } from "@/types/master-template";
+import {
+  MasterTemplateResponse,
+  TMasterTemplate,
+} from "@/types/master-template";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 type TCreateEditMasterTemplate = {
@@ -13,10 +16,16 @@ export const masterTemplateApis = {
     const res = await apiClient.post("/master-templates", data);
     return res.data;
   },
-  get: async (data: { page: number }): Promise<any> => {
-    const res: any = await apiClient.get("/master-templates", {
-      params: data,
-    });
+  get: async (data: {
+    page: number;
+    per_page?: number;
+  }): Promise<MasterTemplateResponse> => {
+    const res: MasterTemplateResponse = await apiClient.get(
+      "/master-templates",
+      {
+        params: data,
+      }
+    );
     return res;
   },
   getMasterTemplateById: async (id: number): Promise<TMasterTemplate> => {
@@ -38,7 +47,10 @@ export const useMutationCreateMasterTemplate = () => {
       masterTemplateApis.create(data),
   });
 };
-export const useQueryGetMasterTemplates = (data: { page: number }) => {
+export const useQueryGetMasterTemplates = (data: {
+  page: number;
+  per_page?: number;
+}) => {
   return useQuery({
     queryKey: ["master-templates", data.page],
     queryFn: () => masterTemplateApis.get(data),
