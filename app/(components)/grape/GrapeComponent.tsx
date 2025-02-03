@@ -24,13 +24,14 @@ import {
   header,
   footer,
   divider,
-  fakeTemplateHeader,
   footerGeneral,
   header2,
   headerGeneral,
   menuHeader,
   footerBlock,
   footerContact,
+  threeProduct,
+  intro,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -480,6 +481,22 @@ const GrapeComponent = ({
           category: "Custom",
           media: `<div>
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/content_show_case.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("threeProduct", {
+          label: "Three product horizontal",
+          content: threeProduct(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/three.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("intro", {
+          label: "Introduction",
+          content: intro(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/intro.jpg"/>
           </div>`,
         });
       }
