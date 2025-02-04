@@ -259,7 +259,7 @@ const GrapeComponent = ({
         };
         mutateCreateCampainTemplate(dataCreateCampaignTemplate, {
           onSuccess: () => {
-            router.push("/all-campaigns?type=all");
+            router.push(`/all-campaigns/preview/${data.id}`);
           },
         });
       },
@@ -821,7 +821,6 @@ const GrapeComponent = ({
         content: JSON.stringify(contentCreateOrEdit).slice(1, -1),
         category: "Custom",
       };
-      console.log("aaaaaaaaaaa", payload);
 
       const processTemplate = (imageUrl: string) => {
         const finalPayload = { ...payload, thumbnail: imageUrl };
@@ -944,6 +943,7 @@ const GrapeComponent = ({
             Previous
           </Button>
           <Button
+            id="exportEditorHtmlCssButton"
             disabled={isPendingCreateCampainTemplate || isPendingCreateCampain}
             onClick={handleSave}
           >
