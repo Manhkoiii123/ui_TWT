@@ -64,6 +64,7 @@ const CampainItem = ({ item }: { item: DetailCampaign }) => {
       }
     });
   };
+
   return (
     <>
       <div className="flex gap-5 mt-3 p-3">
