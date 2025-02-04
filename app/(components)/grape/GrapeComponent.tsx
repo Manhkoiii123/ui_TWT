@@ -3,8 +3,8 @@
 "use client";
 import juice from "juice";
 import html2canvas from "html2canvas";
-import { useEffect, useMemo, useRef } from "react";
-import grapesjs, { Asset, Component, Editor } from "grapesjs";
+import { useEffect, useRef } from "react";
+import grapesjs, { Component, Editor } from "grapesjs";
 import { useState } from "react";
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
 import grapesjsBlocksBasic from "grapesjs-blocks-basic";
@@ -48,14 +48,15 @@ import {
 } from "@/api/upload/uploadApi";
 import { useQueryClient } from "@tanstack/react-query";
 import ImageCropModal, { ICroppedImageReturn } from "@/components/ImageCrop";
-import {
-  createCampaignState,
-  useCreateCampaignZustand,
-} from "@/zustands/createCampaignZustand";
+
 import {
   useMutationCreateMasterTemplate,
   useMutationEditMasterTemplate,
 } from "@/api/master-templates/masterTemplatesApi";
+import {
+  useMutationCreateCampain,
+  useMutationCreateTemplateCampaign,
+} from "@/api/campains/campainsApi";
 type Props = {
   isCreateTemplate?: boolean;
   isCreateFooterHeader?: boolean;
@@ -67,11 +68,26 @@ type Props = {
   imageUrl?: string;
   templateHeader?: string;
   templateFooter?: string;
+  isCreateCampaign?: boolean;
+  handleBackStepOne?: () => void;
+  templateCampaign?: string;
+  is_manual?: boolean;
+  group?: string;
+  dataCreate?: {
+    campaignName: string;
+    audience: {
+      id: number;
+      label: string;
+    }[];
+    hostEmail: string;
+    releaseDate: Date;
+  } | null;
 };
 const GrapeComponent = ({
   isCreateFooterHeader = false,
   isCreateTemplate = true,
   templateContent,
+  templateCampaign,
   templateName,
   idEdit,
   trigger,
@@ -79,17 +95,19 @@ const GrapeComponent = ({
   templateHeader,
   templateFooter,
   templatePosition,
+  isCreateCampaign = false,
+  handleBackStepOne,
+  dataCreate,
+  is_manual,
+  group,
 }: Props) => {
-  const templateCampaign = useCreateCampaignZustand(
-    (state: createCampaignState) => state.templateCampaign
-  );
   const router = useRouter();
   const { toast } = useToast();
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [fileToUpload, setFileToUpload] = useState<File | null>(null);
   const [editor, setEditor] = useState<Editor | null>();
   const [contentCreateOrEdit, setContentCreateOrEdit] = useState(
-    templateContent || ""
+    templateContent || templateCampaign || ""
   );
   const { images, fetchNextPage, isFetchingNextPage, hasNextPage } =
     useQueryGetImages();
@@ -162,6 +180,10 @@ const GrapeComponent = ({
     });
   }
   const queryClient = useQueryClient();
+  const {
+    mutate: mutateCreateCampainTemplate,
+    isPending: isPendingCreateCampainTemplate,
+  } = useMutationCreateTemplateCampaign();
   const { mutate: mutateCreateTemplate, isPending: isPendingCreateTemplate } =
     useMutationCreateTemplate();
   const {
@@ -174,6 +196,8 @@ const GrapeComponent = ({
   } = useMutationEditMasterTemplate();
   const { mutate: mutateEditTemplate, isPending: isPendingEditTemplate } =
     useMutationEditTemplate();
+  const { mutate: mutateCreateCampain, isPending: isPendingCreateCampain } =
+    useMutationCreateCampain();
 
   const { mutate: mutateUploadImage, isPending: isPendingUploadImage } =
     useMutationUploadImage();
@@ -213,6 +237,31 @@ const GrapeComponent = ({
       },
       onError: (error) => {
         console.error("Upload error:", error);
+      },
+    });
+  };
+
+  const handleSave = () => {
+    const convertData = {
+      group: group as string,
+      title: dataCreate!.campaignName,
+      audiences: Number(dataCreate!.audience.map((item) => String(item.id))[0]),
+      schedule_send_at: new Date(dataCreate!.releaseDate).toISOString(),
+      mail_setting_id: Number(dataCreate!.hostEmail),
+      is_manual: is_manual as boolean,
+    };
+    mutateCreateCampain(convertData, {
+      onSuccess: (data: { id: number }) => {
+        const dataCreateCampaignTemplate = {
+          campaign_id: data.id,
+          body_builder: contentCreateOrEdit,
+          body_html: contentCreateOrEdit,
+        };
+        mutateCreateCampainTemplate(dataCreateCampaignTemplate, {
+          onSuccess: () => {
+            router.push("/all-campaigns?type=all");
+          },
+        });
       },
     });
   };
@@ -772,6 +821,7 @@ const GrapeComponent = ({
         content: JSON.stringify(contentCreateOrEdit).slice(1, -1),
         category: "Custom",
       };
+      console.log("aaaaaaaaaaa", payload);
 
       const processTemplate = (imageUrl: string) => {
         const finalPayload = { ...payload, thumbnail: imageUrl };
@@ -887,6 +937,19 @@ const GrapeComponent = ({
             "Create"
           )}
         </Button>
+      )}
+      {isCreateCampaign && (
+        <div className="flex justify-between mt-4">
+          <Button onClick={handleBackStepOne} variant={"outline"}>
+            Previous
+          </Button>
+          <Button
+            disabled={isPendingCreateCampainTemplate || isPendingCreateCampain}
+            onClick={handleSave}
+          >
+            Save Campain
+          </Button>
+        </div>
       )}
       {/* {!isCreateTemplate && (
         <div className="flex items-center justify-end">

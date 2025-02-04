@@ -1,12 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ICreateCampain {
   title: string;
-  id_template: number;
-  id_template_body?: number;
   group: string;
-  audiences: string[];
+  // audiences: string[];
+  audiences: number;
   schedule_send_at: string;
-  mail_setting_id: number;
   is_manual: boolean;
+  mail_setting_id: number;
+}
+export interface ICreateCampaignTemplate {
+  campaign_id: number;
+  body_builder: string;
+  body_html: string;
 }
 interface TemplateBody {
   id: number;
@@ -39,4 +44,10 @@ export interface ICreateCampainResponse {
   updated_by: number;
   created_at: string;
   updated_at: string;
+}
+export interface ICreateCampaignTemplateResponse {
+  id: number;
+  campaign_id: number;
+  body_builder: any;
+  body_html: string;
 }
