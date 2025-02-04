@@ -51,3 +51,40 @@ export interface ICreateCampaignTemplateResponse {
   body_builder: any;
   body_html: string;
 }
+export interface DetailCampaign {
+  id: number;
+  title: string;
+  status: number;
+  status_label: string;
+  template_body: TemplateBodyRes;
+  group: string;
+  status_send: number;
+  archive: number;
+  archived_by: any;
+  is_manual: boolean;
+  audiences: number;
+  schedule_send_at: string;
+  mail_setting_id: number;
+  job_id: any;
+  published_at: any;
+  published_by: any;
+  created_by: CreatedBy;
+  updated_by: any;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface TemplateBodyRes {
+  id: number;
+  campaign_id: number;
+  body_builder: string;
+  body_html: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface CreatedBy {
+  id: number;
+  name: string;
+  email: string;
+}
