@@ -58,15 +58,15 @@ export interface DetailCampaign {
   title: string;
   status: number;
   status_label: string;
-  template_body: TemplateBodyRes;
+  template_body: TemplateBodyResponse;
   group: string;
   status_send: number;
   archive: number;
   archived_by: any;
   is_manual: boolean;
-  audiences: number;
+  audience: Audience;
   schedule_send_at: string;
-  mail_setting_id: number;
+  mail_setting: MailSetting;
   job_id: any;
   published_at: any;
   published_by: any;
@@ -76,13 +76,29 @@ export interface DetailCampaign {
   updated_at: string;
 }
 
-export interface TemplateBodyRes {
+export interface TemplateBodyResponse {
   id: number;
   campaign_id: number;
   body_builder: string;
   body_html: string;
   created_at: string;
   updated_at: string;
+}
+
+export interface Audience {
+  id: number;
+  title: string;
+  type: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface MailSetting {
+  id: number;
+  mailer: string;
+  address: string;
+  name: string;
+  region: any;
 }
 
 export interface CreatedBy {
