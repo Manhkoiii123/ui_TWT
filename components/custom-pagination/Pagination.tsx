@@ -7,6 +7,7 @@ interface Props {
   handleChangePage: (pageNumber: number) => void;
   isShow?: boolean;
   totalItems?: number;
+  per_page?: number;
   className?: string;
 }
 export default function Pagination({
@@ -16,10 +17,11 @@ export default function Pagination({
   totalItems,
   isShow = false,
   className = "",
+  per_page = 10,
 }: Props) {
   const page = Number(currentPage);
-  const startItem = (page - 1) * pageSize + 1;
-  const endItem = Math.min(page * pageSize, totalItems || 0);
+  const startItem = (page - 1) * per_page + 1;
+  const endItem = Math.min(page * per_page, totalItems || 0);
   const range = 2;
   const renderPagination = () => {
     let dotAfter = false;

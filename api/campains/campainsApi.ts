@@ -5,6 +5,7 @@ import {
   ICreateCampaignTemplateResponse,
   ICreateCampain,
   ICreateCampainResponse,
+  ListCampaignResponse,
 } from "@/types/campaign";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
@@ -23,6 +24,16 @@ export const campainsApi = {
     const res = await apiClient.get(`/campaigns/${id}`);
     return res.data as DetailCampaign;
   },
+  getList: async (data: { page: number }): Promise<ListCampaignResponse> => {
+    const res: ListCampaignResponse = await apiClient.get("/campaigns", {
+      params: data,
+    });
+    return res;
+  },
+  deleteCampaign: async (id: number) => {
+    const res = await apiClient.delete(`/campaigns/${id}`);
+    return res;
+  },
 };
 
 export const useMutationCreateCampain = () => {
@@ -40,5 +51,16 @@ export const useQueryGetCampaignDetail = (id: string) => {
   return useQuery({
     queryKey: ["campaign", id],
     queryFn: () => campainsApi.getCampaignDetail(id),
+  });
+};
+export const useQueryGetListCampain = (data: { page: number }) => {
+  return useQuery({
+    queryKey: ["campaign", data.page],
+    queryFn: () => campainsApi.getList(data),
+  });
+};
+export const useMutationDeleteCampain = () => {
+  return useMutation({
+    mutationFn: (id: number) => campainsApi.deleteCampaign(id),
   });
 };
