@@ -1,6 +1,4 @@
-import { useMutationCreateCampain } from "@/api/campains/campainsApi";
 import GrapeComponent from "@/app/(components)/grape/GrapeComponent";
-import { Button } from "@/components/ui/button";
 import {
   createCampaignState,
   useCreateCampaignZustand,
@@ -23,43 +21,23 @@ type Props = {
   } | null;
 };
 const StepTwo = ({ handleBack, dataCreate, is_manual, group }: Props) => {
-  const idTemplate = useCreateCampaignZustand(
-    (state: createCampaignState) => state.idTemplate
-  );
-  const { mutate: mutateCreateCampain, isPending: isPendingCreate } =
-    useMutationCreateCampain();
-  const handleSave = () => {
-    const convertData = {
-      is_manual,
-      group,
-      mail_setting_id: Number(dataCreate?.hostEmail),
-      title: dataCreate!.campaignName,
-      audiences: dataCreate!.audience.map((item) => item.label),
-      id_template: idTemplate!,
-      id_template_body: idTemplate!,
-      schedule_send_at: new Date(dataCreate!.releaseDate).toISOString(),
-    };
-    console.log("convertData", convertData);
-    mutateCreateCampain(convertData, {
-      onSuccess: () => {
-        handleBack();
-      },
-    });
-  };
   const handleBackStepOne = () => {
     handleBack();
   };
+  const templateCampaign = useCreateCampaignZustand(
+    (state: createCampaignState) => state.templateCampaign
+  );
   return (
     <div>
-      <GrapeComponent isCreateTemplate={false} />
-      <div className="flex justify-between mt-4">
-        <Button onClick={handleBackStepOne} variant={"outline"}>
-          Previous
-        </Button>
-        <Button disabled={isPendingCreate} onClick={handleSave}>
-          Save Campain
-        </Button>
-      </div>
+      <GrapeComponent
+        handleBackStepOne={handleBackStepOne}
+        isCreateTemplate={false}
+        isCreateCampaign={true}
+        templateCampaign={templateCampaign}
+        dataCreate={dataCreate}
+        is_manual={is_manual}
+        group={group}
+      />
     </div>
   );
 };

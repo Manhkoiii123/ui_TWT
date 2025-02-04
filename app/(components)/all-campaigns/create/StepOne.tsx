@@ -64,6 +64,7 @@ const StepOne = ({
       handleNext();
     }
   };
+
   const fakeAutomations = useMemo(() => {
     return [
       { id: 9, name: "Last Minute Deals with Tweet Tours" },
