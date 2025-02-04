@@ -1,3 +1,5 @@
+import { PaginationLinks, PaginationMeta } from "@/types/template";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ICreateCampain {
   title: string;
@@ -87,4 +89,9 @@ export interface CreatedBy {
   id: number;
   name: string;
   email: string;
+}
+export interface ListCampaignResponse {
+  data: DetailCampaign[];
+  links: PaginationLinks;
+  meta: PaginationMeta;
 }

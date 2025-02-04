@@ -236,11 +236,8 @@ const AudienceManagerClient = () => {
           <div>
             <Pagination
               currentPage={page}
-              pageSize={
-                Math.ceil((audiences?.meta?.total ?? 0) / 10) === 0
-                  ? 1
-                  : Math.ceil((audiences?.meta?.total ?? 0) / 10)
-              }
+              pageSize={audiences?.meta?.last_page ?? 0}
+              per_page={audiences?.meta?.per_page ?? 0}
               handleChangePage={handleChangePage}
               className="mt-6"
             />
