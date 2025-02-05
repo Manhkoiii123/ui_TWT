@@ -56,6 +56,8 @@ import {
 import {
   useMutationCreateCampain,
   useMutationCreateTemplateCampaign,
+  useMutationEditCampain,
+  useMutationEditTemplateCampaign,
 } from "@/api/campains/campainsApi";
 type Props = {
   isCreateTemplate?: boolean;
@@ -82,6 +84,7 @@ type Props = {
     hostEmail: string;
     releaseDate: Date;
   } | null;
+  isEditCampaign?: boolean;
 };
 const GrapeComponent = ({
   isCreateFooterHeader = false,
@@ -100,6 +103,7 @@ const GrapeComponent = ({
   dataCreate,
   is_manual,
   group,
+  isEditCampaign = false,
 }: Props) => {
   const router = useRouter();
   const { toast } = useToast();
@@ -180,6 +184,8 @@ const GrapeComponent = ({
     });
   }
   const queryClient = useQueryClient();
+  const { mutate: mutateEditCampaign, isPending: isPendingEditCampaign } =
+    useMutationEditCampain();
   const {
     mutate: mutateCreateCampainTemplate,
     isPending: isPendingCreateCampainTemplate,
@@ -198,6 +204,10 @@ const GrapeComponent = ({
     useMutationEditTemplate();
   const { mutate: mutateCreateCampain, isPending: isPendingCreateCampain } =
     useMutationCreateCampain();
+  const {
+    mutate: mutateEditTemplateCampain,
+    isPending: isPendingEditTemplateCampain,
+  } = useMutationEditTemplateCampaign();
 
   const { mutate: mutateUploadImage, isPending: isPendingUploadImage } =
     useMutationUploadImage();
@@ -250,21 +260,49 @@ const GrapeComponent = ({
       mail_setting_id: Number(dataCreate!.hostEmail),
       is_manual: is_manual as boolean,
     };
-    mutateCreateCampain(convertData, {
-      onSuccess: (data: { id: number }) => {
-        const dataCreateCampaignTemplate = {
-          campaign_id: data.id,
-          body_builder: contentCreateOrEdit,
-          body_html: contentCreateOrEdit,
-        };
-        mutateCreateCampainTemplate(dataCreateCampaignTemplate, {
+    if (isEditCampaign) {
+      mutateEditCampaign(
+        {
+          id: Number(localStorage.getItem("idEditCampaign")),
+          data: convertData,
+        },
+        {
           onSuccess: () => {
-            router.push(`/all-campaigns/preview/${data.id}`);
-            queryClient.invalidateQueries({ queryKey: ["campaign"] });
+            const dataEditCampaignTemplate = {
+              campaign_id: Number(localStorage.getItem("idEditCampaign")),
+              body_builder: contentCreateOrEdit,
+              body_html: contentCreateOrEdit,
+            };
+            mutateEditTemplateCampain(dataEditCampaignTemplate, {
+              onSuccess: () => {
+                router.push(
+                  `/all-campaigns/preview/${Number(
+                    localStorage.getItem("idEditCampaign")
+                  )}`
+                );
+                queryClient.invalidateQueries({ queryKey: ["campaign"] });
+              },
+            });
           },
-        });
-      },
-    });
+        }
+      );
+    } else if (isCreateCampaign) {
+      mutateCreateCampain(convertData, {
+        onSuccess: (data: { id: number }) => {
+          const dataCreateCampaignTemplate = {
+            campaign_id: data.id,
+            body_builder: contentCreateOrEdit,
+            body_html: contentCreateOrEdit,
+          };
+          mutateCreateCampainTemplate(dataCreateCampaignTemplate, {
+            onSuccess: () => {
+              router.push(`/all-campaigns/preview/${data.id}`);
+              queryClient.invalidateQueries({ queryKey: ["campaign"] });
+            },
+          });
+        },
+      });
+    }
   };
 
   useEffect(() => {
@@ -938,17 +976,22 @@ const GrapeComponent = ({
           )}
         </Button>
       )}
-      {isCreateCampaign && (
+      {(isCreateCampaign || isEditCampaign) && (
         <div className="flex justify-between mt-4">
           <Button onClick={handleBackStepOne} variant={"outline"}>
             Previous
           </Button>
           <Button
             id="exportEditorHtmlCssButton"
-            disabled={isPendingCreateCampainTemplate || isPendingCreateCampain}
+            disabled={
+              isPendingCreateCampainTemplate ||
+              isPendingCreateCampain ||
+              isPendingEditTemplateCampain
+            }
             onClick={handleSave}
           >
-            Save Campain
+            {isEditCampaign && "Save Campain"}
+            {isCreateCampaign && "Create Campain"}
           </Button>
         </div>
       )}

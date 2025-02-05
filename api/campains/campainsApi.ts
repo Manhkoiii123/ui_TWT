@@ -37,6 +37,16 @@ export const campainsApi = {
     const res = await apiClient.delete(`/campaigns/${id}`);
     return res;
   },
+  edit: async (id: number, data: ICreateCampain) => {
+    const res = await apiClient.put(`/campaigns/${id}`, data);
+    return res;
+  },
+  editTemplate: async (
+    data: ICreateCampaignTemplate
+  ): Promise<ICreateCampaignTemplateResponse> => {
+    const res = await apiClient.put(`/campaign/template/`, data);
+    return res.data;
+  },
 };
 
 export const useMutationCreateCampain = () => {
@@ -50,10 +60,17 @@ export const useMutationCreateTemplateCampaign = () => {
       campainsApi.createTemplate(data),
   });
 };
-export const useQueryGetCampaignDetail = (id: string) => {
+export const useMutationEditTemplateCampaign = () => {
+  return useMutation({
+    mutationFn: (data: ICreateCampaignTemplate) =>
+      campainsApi.editTemplate(data),
+  });
+};
+export const useQueryGetCampaignDetail = (id: string, enabled?: boolean) => {
   return useQuery({
     queryKey: ["campaign", id],
     queryFn: () => campainsApi.getCampaignDetail(id),
+    enabled: enabled,
   });
 };
 export const useQueryGetListCampain = (data: {
@@ -68,5 +85,11 @@ export const useQueryGetListCampain = (data: {
 export const useMutationDeleteCampain = () => {
   return useMutation({
     mutationFn: (id: number) => campainsApi.deleteCampaign(id),
+  });
+};
+export const useMutationEditCampain = () => {
+  return useMutation({
+    mutationFn: (data: { id: number; data: ICreateCampain }) =>
+      campainsApi.edit(data.id, data.data),
   });
 };
