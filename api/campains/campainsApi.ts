@@ -24,7 +24,10 @@ export const campainsApi = {
     const res = await apiClient.get(`/campaigns/${id}`);
     return res.data as DetailCampaign;
   },
-  getList: async (data: { page: number }): Promise<ListCampaignResponse> => {
+  getList: async (data: {
+    page: number;
+    per_page?: number;
+  }): Promise<ListCampaignResponse> => {
     const res: ListCampaignResponse = await apiClient.get("/campaigns", {
       params: data,
     });
@@ -53,7 +56,10 @@ export const useQueryGetCampaignDetail = (id: string) => {
     queryFn: () => campainsApi.getCampaignDetail(id),
   });
 };
-export const useQueryGetListCampain = (data: { page: number }) => {
+export const useQueryGetListCampain = (data: {
+  page: number;
+  per_page?: number;
+}) => {
   return useQuery({
     queryKey: ["campaign", data.page],
     queryFn: () => campainsApi.getList(data),

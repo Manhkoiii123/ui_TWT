@@ -20,7 +20,7 @@ const PreviewComponent = () => {
           <div className="space-y-4">
             <div className="mt-6 bg-gray-100 p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-800">
-                Basic Infomation
+                Basic Infomation :
               </h3>
               <div className="space-y-2 mt-2 pl-6">
                 <p className="text-gray-600">
@@ -47,7 +47,9 @@ const PreviewComponent = () => {
               </div>
             </div>
             <div className="mt-6 bg-gray-100 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-800">Audience</h3>
+              <h3 className="text-lg font-semibold text-gray-800">
+                Audience :{" "}
+              </h3>
               <div className="space-y-2 mt-2 pl-6">
                 <p className="text-gray-600">
                   <strong>Title:</strong> {data?.audience?.title}
@@ -62,7 +64,7 @@ const PreviewComponent = () => {
             </div>
             <div className="mt-6 bg-gray-100 p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-800">
-                Mail setting
+                Mail setting :
               </h3>
               <div className="space-y-2 mt-2 pl-6">
                 <p className="text-gray-600">
@@ -80,7 +82,7 @@ const PreviewComponent = () => {
 
           <div className="mt-6 bg-gray-100 p-4 rounded-lg">
             <h3 className="text-lg font-semibold text-gray-800">
-              Template Body
+              Template Body :
             </h3>
             <div className="border p-4 rounded-md bg-white mt-2">
               <div

@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 
 type CustomMultipleSelectProps = {
   placeholder?: string;
-  value: { id: number; label: string }[];
-  onChange: (value: { id: number; label: string }[]) => void;
-  allOptions: { id: number; label: string }[];
+  value: { id: string | number; label: string }[];
+  onChange: (value: { id: string | number; label: string }[]) => void;
+  allOptions: { id: string | number; label: string }[];
 };
 
 const CustomMultipleSelect = ({
@@ -40,13 +40,13 @@ const CustomMultipleSelect = ({
       !selectedOptions.some((o) => o.id === option.id)
   );
 
-  const addOption = (option: { id: number; label: string }) => {
+  const addOption = (option: { id: string | number; label: string }) => {
     const newSelectOptions = [...selectedOptions, option];
     handleSelect(newSelectOptions);
     setSearchQuery("");
   };
 
-  const removeOption = (option: { id: number; label: string }) => {
+  const removeOption = (option: { id: string | number; label: string }) => {
     const newSelectOptions = selectedOptions.filter((o) => o.id !== option.id);
     handleSelect(newSelectOptions);
   };
