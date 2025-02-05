@@ -40,10 +40,19 @@ const ModelCreateEditCloneAudience = ({
   } = useForm<FieldValues>({});
   const queryClient = useQueryClient();
   const encryptionOptions = [
-    { id: 1, label: "Marketing" },
-    { id: 2, label: "Marketing1" },
-    { id: 3, label: "Marketing2" },
-    { id: 4, label: "Marketing3" },
+    { label: "Employee", id: "Employee" },
+    { label: "Travel Agent", id: "Travel Agent" },
+    { label: "Business Partner", id: "Business Partner" },
+    { label: "Distributor", id: "Distributor" },
+    { label: "Tour Operator", id: "Tour Operator" },
+    { label: "Corporate", id: "Corporate" },
+    { label: "Supplier", id: "Supplier" },
+    { label: "Passenger", id: "Passenger" },
+    { label: "Tour Guide", id: "Tour Guide" },
+    { label: "Emergency", id: "Emergency" },
+    { label: "Client", id: "Client" },
+    { label: "Other", id: "Other" },
+    { label: "Undefined", id: "Undefined" },
   ];
   const { mutate: mutateCreateAudience, isPending: isPendingCreateAudience } =
     useMutateCreateAudience();

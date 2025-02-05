@@ -260,6 +260,7 @@ const GrapeComponent = ({
         mutateCreateCampainTemplate(dataCreateCampaignTemplate, {
           onSuccess: () => {
             router.push(`/all-campaigns/preview/${data.id}`);
+            queryClient.invalidateQueries({ queryKey: ["campaign"] });
           },
         });
       },
