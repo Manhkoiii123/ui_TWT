@@ -10,10 +10,12 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { DetailCampaign } from "@/types/campaign";
 import { useQueryClient } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
 const CampainItem = ({ item }: { item: DetailCampaign }) => {
+  const router = useRouter();
   const [isOpenView, setIsOpenView] = useState(false);
   const [htmlContent, setHtmlContent] = useState("");
   const format = (isoDate: string) => {
@@ -117,8 +119,14 @@ const CampainItem = ({ item }: { item: DetailCampaign }) => {
               },
               {
                 label: "Edit",
-                action: () => {},
-                disable: true,
+                action: () => {
+                  router.push("/all-campaigns/update");
+                  localStorage.setItem(
+                    "idEditCampaign",
+                    JSON.stringify(item.id)
+                  );
+                },
+                // disable: true,
               },
               {
                 label: "Clone",

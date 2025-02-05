@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
@@ -25,6 +25,11 @@ import { Button } from "@/components/ui/button";
 import ModalActionTemplate from "@/app/(components)/all-campaigns/ModalActionTemplate";
 import { useQueryGetAudiences } from "@/api/audiences/audienceApi";
 import { useQueryGetEmailSetting } from "@/api/emailSetting/emailSettingApi";
+import { useQueryGetCampaignDetail } from "@/api/campains/campainsApi";
+import {
+  createCampaignState,
+  useCreateCampaignZustand,
+} from "@/zustands/createCampaignZustand";
 
 const formSchema = z.object({
   campaignName: z.string().min(1).max(50),
@@ -46,7 +51,23 @@ const formSchema = z.object({
   }),
 });
 
-const CreateCampainComponent = () => {
+const CreateCampainComponent = ({ isEdit = false }: { isEdit?: boolean }) => {
+  const [campaignId, setCampaignId] = useState<string | null>(null);
+  const setIdTemplate = useCreateCampaignZustand(
+    (state: createCampaignState) => state.setIdTemplate
+  );
+  const setTemplateCampaign = useCreateCampaignZustand(
+    (state: createCampaignState) => state.setTemplateCampaign
+  );
+  useEffect(() => {
+    setCampaignId(localStorage.getItem("idEditCampaign"));
+  }, []);
+
+  const { data: dataCampaignDetail } = useQueryGetCampaignDetail(
+    campaignId || "",
+    campaignId !== null && isEdit
+  );
+
   const [dataCreate, setDataCreate] = useState<z.infer<
     typeof formSchema
   > | null>(null);
@@ -56,6 +77,7 @@ const CreateCampainComponent = () => {
   const handleSelectAutomation = (value: string) => {
     setSelectAutomation(value);
   };
+
   const handleValueChange = (value: string) => {
     setSelectedValue(value);
   };
@@ -87,6 +109,44 @@ const CreateCampainComponent = () => {
       audience: [],
     },
   });
+  const { reset, setValue } = form;
+  useEffect(() => {
+    if (dataCampaignDetail && isEdit) {
+      setSelectedValue(dataCampaignDetail.is_manual ? "manual" : "automate");
+      setIdTemplate(dataCampaignDetail.template_body.id);
+      setTemplateCampaign(dataCampaignDetail.template_body.body_html);
+    }
+    if (dataCampaignDetail && isEdit) {
+      if (dataCampaignDetail.schedule_send_at) {
+        setValue("releaseDate", new Date(dataCampaignDetail.schedule_send_at));
+      }
+      reset({
+        campaignName: dataCampaignDetail?.title || "",
+        hostEmail: String(dataCampaignDetail?.mail_setting?.id) || "",
+        releaseDate: dataCampaignDetail?.schedule_send_at
+          ? new Date(dataCampaignDetail.schedule_send_at)
+          : undefined,
+        audience: [
+          {
+            id: Number(dataCampaignDetail?.audience?.id),
+            label: dataCampaignDetail?.audience?.title,
+          },
+        ],
+        // audience:
+        //   dataCampaignDetail?.audience?.map((a) => ({
+        //     id: a.id,
+        //     label: a.title,
+        //   })) || [],
+      });
+    }
+  }, [
+    dataCampaignDetail,
+    isEdit,
+    reset,
+    setIdTemplate,
+    setTemplateCampaign,
+    setValue,
+  ]);
   function onSubmit(values: z.infer<typeof formSchema>) {
     if (Object.keys(form.formState.errors).length === 0) {
       setDataCreate(values);
@@ -170,10 +230,7 @@ const CreateCampainComponent = () => {
                       <p className="text-[14px] font-thin">Required</p>
                     </div>
                   </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
                       <SelectTrigger className="placeholder:text-[#ccc]">
                         <SelectValue
