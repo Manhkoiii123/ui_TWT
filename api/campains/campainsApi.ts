@@ -1,5 +1,6 @@
 import apiClient from "@/api/apiClient";
 import {
+  CampaignEditResponse,
   DetailCampaign,
   ICreateCampaignTemplate,
   ICreateCampaignTemplateResponse,
@@ -17,7 +18,7 @@ export const campainsApi = {
   createTemplate: async (
     data: ICreateCampaignTemplate
   ): Promise<ICreateCampaignTemplateResponse> => {
-    const res = await apiClient.post("/campaigns/template", data);
+    const res = await apiClient.post("/campaigns-templates", data);
     return res.data;
   },
   getCampaignDetail: async (id: string) => {
@@ -37,14 +38,21 @@ export const campainsApi = {
     const res = await apiClient.delete(`/campaigns/${id}`);
     return res;
   },
-  edit: async (id: number, data: ICreateCampain) => {
-    const res = await apiClient.put(`/campaigns/${id}`, data);
-    return res;
+  edit: async (
+    id: number,
+    data: ICreateCampain
+  ): Promise<CampaignEditResponse> => {
+    const res: { data: CampaignEditResponse } = await apiClient.put(
+      `/campaigns/${id}`,
+      data
+    );
+    return res.data;
   },
   editTemplate: async (
+    id: number,
     data: ICreateCampaignTemplate
   ): Promise<ICreateCampaignTemplateResponse> => {
-    const res = await apiClient.put(`/campaign/template/`, data);
+    const res = await apiClient.put(`/campaigns-templates/${id}`, data);
     return res.data;
   },
 };
@@ -62,8 +70,8 @@ export const useMutationCreateTemplateCampaign = () => {
 };
 export const useMutationEditTemplateCampaign = () => {
   return useMutation({
-    mutationFn: (data: ICreateCampaignTemplate) =>
-      campainsApi.editTemplate(data),
+    mutationFn: (data: { id: number; data: ICreateCampaignTemplate }) =>
+      campainsApi.editTemplate(data.id, data.data),
   });
 };
 export const useQueryGetCampaignDetail = (id: string, enabled?: boolean) => {

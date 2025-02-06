@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import DownIcon from "@/icon/DownIcon";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 type TOption = {
   label: string;
   action: any;
@@ -14,6 +14,9 @@ type TOption = {
 };
 const CustomSelect = ({ options }: { options: TOption[] }) => {
   const [selectedOption, setSelectedOption] = useState(options[0].label);
+  useEffect(() => {
+    setSelectedOption(options[0].label);
+  }, [options]);
   const handleCallBack = () => setSelectedOption(options[0].label);
   const handleOptionSelect = (option: TOption) => {
     setSelectedOption(option.label);
