@@ -111,3 +111,28 @@ export interface ListCampaignResponse {
   links: PaginationLinks;
   meta: PaginationMeta;
 }
+export interface CampaignEditResponse {
+  id: number;
+  title: string;
+  status: number;
+  status_label: string;
+  template_body: TemplateBody;
+  group: string;
+  status_send: number;
+  archive: number;
+  archived_by: any;
+  is_manual: boolean;
+  schedule_send_at: string;
+  job_id: any;
+  published_at: any;
+  created_at: string;
+  updated_at: string;
+}
+export interface TemplateBodyEdit {
+  id: number;
+  campaign_id: number;
+  body_builder: string;
+  body_html: string;
+  created_at: string;
+  updated_at: string;
+}

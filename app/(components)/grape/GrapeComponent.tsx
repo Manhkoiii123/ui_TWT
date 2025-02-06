@@ -267,22 +267,28 @@ const GrapeComponent = ({
           data: convertData,
         },
         {
-          onSuccess: () => {
+          onSuccess: (data) => {
             const dataEditCampaignTemplate = {
               campaign_id: Number(localStorage.getItem("idEditCampaign")),
               body_builder: contentCreateOrEdit,
               body_html: contentCreateOrEdit,
             };
-            mutateEditTemplateCampain(dataEditCampaignTemplate, {
-              onSuccess: () => {
-                router.push(
-                  `/all-campaigns/preview/${Number(
-                    localStorage.getItem("idEditCampaign")
-                  )}`
-                );
-                queryClient.invalidateQueries({ queryKey: ["campaign"] });
+            mutateEditTemplateCampain(
+              {
+                id: data.template_body.id,
+                data: dataEditCampaignTemplate,
               },
-            });
+              {
+                onSuccess: () => {
+                  router.push(
+                    `/all-campaigns/preview/${Number(
+                      localStorage.getItem("idEditCampaign")
+                    )}`
+                  );
+                  queryClient.invalidateQueries({ queryKey: ["campaign"] });
+                },
+              }
+            );
           },
         }
       );

@@ -181,6 +181,7 @@ const AudienceClient = () => {
               </Tabs>
             </SheetHeader>
             <TableAudience
+              isSub={isSubscribe}
               columns={columns}
               data={audiencesViaTKG?.data}
               isLoading={isLoadingAudiencesViaTKG}

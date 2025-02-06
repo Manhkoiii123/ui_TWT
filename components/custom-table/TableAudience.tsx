@@ -40,6 +40,7 @@ type Props = {
   isLoading?: boolean;
   totalPage?: number;
   total?: number;
+  isSub?: string;
 };
 export function TableAudience({
   columns,
@@ -51,6 +52,7 @@ export function TableAudience({
   isLoading,
   totalPage,
   total,
+  isSub,
 }: Props) {
   const startItem = (page - 1) * limit + 1;
   const endItem = Math.min(page * limit, total || 0);
@@ -220,7 +222,10 @@ export function TableAudience({
                           <CustomSelect
                             options={[
                               {
-                                label: "Unsubscribe",
+                                label:
+                                  isSub === "subscribers"
+                                    ? "Unsubscribe"
+                                    : "Subscribe",
                                 action: () => {},
                               },
                               {
