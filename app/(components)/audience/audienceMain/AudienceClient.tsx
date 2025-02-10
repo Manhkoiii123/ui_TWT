@@ -145,6 +145,7 @@ const AudienceClient = () => {
             handleChangeOpenSheetListAudience={
               handleChangeOpenSheetListAudience
             }
+            handleSelectSub={handleSelectSub}
           />
           <RecentGrowth />
           <EmailMarketingEngagement />
