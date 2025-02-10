@@ -30,6 +30,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { TAudienceViaTKG } from "@/types/audience";
 import CustomSelect from "@/components/custom-select/CustomSelect";
 import Loading from "@/components/Loading";
+import { useMutationSubAndUnSubEmail } from "@/api/campains/campainsApi";
+import { useQueryClient } from "@tanstack/react-query";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { useState } from "react";
 type Props = {
   columns: ColumnDef<TAudienceViaTKG>[];
   data: TAudienceViaTKG[] | undefined;
@@ -61,6 +72,30 @@ export function TableAudience({
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const { mutate: mutateSubAndUnSubEmail } = useMutationSubAndUnSubEmail();
+  const queryClient = useQueryClient();
+  const handleClickSubAndUnSub = () => {
+    setIsDialogOpen(true);
+  };
+  const handleChangeSub = (status: boolean) => {
+    mutateSubAndUnSubEmail(
+      {
+        email,
+        status,
+      },
+      {
+        onSuccess: () => {
+          queryClient.invalidateQueries({
+            queryKey: ["list-audience-via-tkg"],
+          });
+          setIsDialogOpen(false);
+        },
+        onError: () => {},
+      }
+    );
+  };
   // const [selectedRows, setSelectedRows] = useState<TAudienceViaTKG[]>([]);
 
   // useEffect(() => {
@@ -226,7 +261,10 @@ export function TableAudience({
                                   isSub === "subscribers"
                                     ? "Unsubscribe"
                                     : "Subscribe",
-                                action: () => {},
+                                action: () => {
+                                  setEmail(row.original.email);
+                                  handleClickSubAndUnSub();
+                                },
                               },
                               {
                                 label: "View History",
@@ -251,6 +289,29 @@ export function TableAudience({
               </TableBody>
             </Table>
           </div>
+
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>
+                  Change this? You can&apos;t revert this.
+                </DialogTitle>
+                <DialogDescription>
+                  Are you sure you want to change this? This action cannot be
+                  undone.
+                </DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <Button
+                  variant="destructive"
+                  onClick={() => handleChangeSub(isSub !== "subscribers")}
+                >
+                  Yes, Change it!
+                </Button>
+                <Button variant="outline">Cancel</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </>
       )}
     </>

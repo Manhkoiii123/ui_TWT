@@ -116,7 +116,7 @@ export interface CampaignEditResponse {
   title: string;
   status: number;
   status_label: string;
-  template_body: TemplateBody;
+  template_body: TemplateBodyEdit;
   group: string;
   status_send: number;
   archive: number;
