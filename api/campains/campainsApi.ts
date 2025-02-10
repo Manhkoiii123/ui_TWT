@@ -55,6 +55,10 @@ export const campainsApi = {
     const res = await apiClient.put(`/campaigns-templates/${id}`, data);
     return res.data;
   },
+  subAndUnSubEmail: async (data: { email: string; status: boolean }) => {
+    const res = await apiClient.post(`/subscriber-status`, data);
+    return res.data;
+  },
 };
 
 export const useMutationCreateCampain = () => {
@@ -99,5 +103,11 @@ export const useMutationEditCampain = () => {
   return useMutation({
     mutationFn: (data: { id: number; data: ICreateCampain }) =>
       campainsApi.edit(data.id, data.data),
+  });
+};
+export const useMutationSubAndUnSubEmail = () => {
+  return useMutation({
+    mutationFn: (data: { email: string; status: boolean }) =>
+      campainsApi.subAndUnSubEmail(data),
   });
 };

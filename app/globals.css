@@ -37,8 +37,13 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --gjs-left-width: 15%
   }
-
+@media (max-width: 1024px) {
+    :root {
+      --gjs-left-width: 27%;
+    }
+  }
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
