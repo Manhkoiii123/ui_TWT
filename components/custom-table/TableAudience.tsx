@@ -65,7 +65,7 @@ export function TableAudience({
   total,
   isSub,
 }: Props) {
-  const startItem = (page - 1) * limit + 1;
+  const startItem = total !== 0 ? (page - 1) * limit + 1 : 0;
   const endItem = Math.min(page * limit, total || 0);
   const table = useReactTable({
     data: data || [],
@@ -193,7 +193,7 @@ export function TableAudience({
                       onClick={() => {
                         handleChangePage(page - 1);
                       }}
-                      disabled={page === 1}
+                      disabled={page === 1 || (total || 0) === 0}
                     >
                       <span className="sr-only">Go to previous page</span>
                       <ChevronLeft />
@@ -204,7 +204,7 @@ export function TableAudience({
                       onClick={() => {
                         handleChangePage(page + 1);
                       }}
-                      disabled={page === totalPage}
+                      disabled={page === totalPage || (total || 0) === 0}
                     >
                       <span className="sr-only">Go to next page</span>
                       <ChevronRight />
