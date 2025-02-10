@@ -19,13 +19,13 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import UsersIcon from "@/icon/UsersIcon";
 import { TAudienceViaTKG } from "@/types/audience";
 import { ColumnDef } from "@tanstack/react-table";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useMemo, useState } from "react";
 
 const AudienceClient = () => {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
@@ -55,20 +55,21 @@ const AudienceClient = () => {
   }));
   const audiencesData = useMemo(() => {
     return [
-      // {
-      //   queryString: "website",
-      //   label: "All Audience",
-      //   link: "",
-      //   icon: <UsersIcon />,
-      // },
+      {
+        queryString: "website",
+        label: "All Audience",
+        link: "all",
+        icon: <UsersIcon />,
+        id: "all",
+      },
       ...(audiencesConvert || []),
     ];
   }, [audiencesConvert]);
-  useEffect(() => {
-    if (!searchParams.get("website")) {
-      router.push(`/audience?website=${audiencesData[0]?.id}`);
-    }
-  }, [audiencesData, router, searchParams]);
+  // useEffect(() => {
+  //   if (!searchParams.get("website")) {
+  //     router.push(`/audience?website=${audiencesData[0]?.id}`);
+  //   }
+  // }, [audiencesData, router, searchParams]);
 
   const typeToCallVIA = useMemo(() => {
     const query = searchParams.get("website");
@@ -80,12 +81,20 @@ const AudienceClient = () => {
   const { data: audiencesViaTKG, isLoading: isLoadingAudiencesViaTKG } =
     useQueryGetAudiencesViaTKG(
       {
-        type: typeToCallVIA ? JSON.parse(typeToCallVIA) : [],
+        type:
+          searchParams.get("website") === "all"
+            ? []
+            : typeToCallVIA
+            ? JSON.parse(typeToCallVIA)
+            : [],
         pageNumber: page,
         pageSize: limit,
         isSubscribeNewsletter: isSubscribe === "subscribers",
       },
-      Boolean(typeToCallVIA && isOpenSheetListAudience)
+      Boolean(
+        (typeToCallVIA || searchParams.get("website") === "all") &&
+          isOpenSheetListAudience
+      )
     );
 
   const columns: ColumnDef<TAudienceViaTKG>[] = [
@@ -164,14 +173,20 @@ const AudienceClient = () => {
               <Tabs defaultValue="subscribers" className="w-[100%] pb-4">
                 <TabsList className="flex w-full gap-10">
                   <TabsTrigger
-                    onClick={() => handleSelectSub("subscribers")}
+                    onClick={() => {
+                      handleSelectSub("subscribers");
+                      handleChangePage(1);
+                    }}
                     className="py-2"
                     value="subscribers"
                   >
                     SUBSCRIBERS
                   </TabsTrigger>
                   <TabsTrigger
-                    onClick={() => handleSelectSub("unsubscribers")}
+                    onClick={() => {
+                      handleSelectSub("unsubscribers");
+                      handleChangePage(1);
+                    }}
                     className="py-2"
                     value="unsubscribers"
                   >

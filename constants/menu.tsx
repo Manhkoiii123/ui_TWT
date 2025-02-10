@@ -22,7 +22,7 @@ export const menuLink = [
   {
     id: 2,
     name: "Audience",
-    link: "/audience",
+    link: "/audience?website=all",
     icon: <FaUserCog size={20} />,
   },
   {
