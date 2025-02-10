@@ -9,8 +9,12 @@ type Props = {
   data: TAudienceViaTKG[] | undefined;
   isOpenSheetListAudience: boolean;
   handleChangeOpenSheetListAudience: (value: boolean) => void;
+  handleSelectSub: (value: string) => void;
 };
-const ManageAudience = ({ handleChangeOpenSheetListAudience }: Props) => {
+const ManageAudience = ({
+  handleChangeOpenSheetListAudience,
+  handleSelectSub,
+}: Props) => {
   return (
     <div className=" w-[100%] h-auto bg-white p-6 rounded-xl flex flex-col gap-3">
       <div className="flex items-start gap-2">
@@ -44,6 +48,7 @@ const ManageAudience = ({ handleChangeOpenSheetListAudience }: Props) => {
         <div
           className="flex items-center gap-4 cursor-pointer"
           onClick={() => {
+            handleSelectSub("subscribers");
             handleChangeOpenSheetListAudience(true);
           }}
         >
