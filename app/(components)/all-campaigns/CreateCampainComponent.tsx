@@ -112,19 +112,19 @@ const CreateCampainComponent = ({ isEdit = false }: { isEdit?: boolean }) => {
   const { reset, setValue } = form;
   useEffect(() => {
     if (dataCampaignDetail && isEdit) {
-      setSelectedValue(dataCampaignDetail.is_manual ? "manual" : "automate");
-      setIdTemplate(dataCampaignDetail.template_body.id);
-      setTemplateCampaign(dataCampaignDetail.template_body.body_html);
+      setSelectedValue(dataCampaignDetail?.is_manual ? "manual" : "automate");
+      setIdTemplate(dataCampaignDetail?.template_body?.id);
+      setTemplateCampaign(dataCampaignDetail?.template_body?.body_html);
     }
     if (dataCampaignDetail && isEdit) {
-      if (dataCampaignDetail.schedule_send_at) {
-        setValue("releaseDate", new Date(dataCampaignDetail.schedule_send_at));
+      if (dataCampaignDetail?.schedule_send_at) {
+        setValue("releaseDate", new Date(dataCampaignDetail?.schedule_send_at));
       }
       reset({
         campaignName: dataCampaignDetail?.title || "",
         hostEmail: String(dataCampaignDetail?.mail_setting?.id) || "",
         releaseDate: dataCampaignDetail?.schedule_send_at
-          ? new Date(dataCampaignDetail.schedule_send_at)
+          ? new Date(dataCampaignDetail?.schedule_send_at)
           : undefined,
         audience: [
           {
