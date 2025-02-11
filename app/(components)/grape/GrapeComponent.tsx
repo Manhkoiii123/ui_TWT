@@ -32,6 +32,8 @@ import {
   footerContact,
   threeProduct,
   intro,
+  // purchaseTemplate,
+  haveAQuestion,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -593,6 +595,30 @@ const GrapeComponent = ({
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/intro.jpg"/>
           </div>`,
         });
+        // editor.BlockManager.add("purchaseTemplate", {
+        //   label: "Purchase template",
+        //   content: purchaseTemplate(),
+        //   category: "Custom",
+        //   media: `<div>
+        //   <img style="width:200px ;height:50px;object-fit:contain;" src="/images/purchase.jpg"/>
+        //   </div>`,
+        // });
+        editor.BlockManager.add("haveAQuestion", {
+          label: "Have a question",
+          content: haveAQuestion(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/have_a_question.jpg"/>
+          </div>`,
+        });
+        // editor.BlockManager.add("header_template_purchase", {
+        //   label: "Information purchase",
+        //   content: header_template_purchase(),
+        //   category: "Custom",
+        //   media: `<div>
+        //   <img style="width:200px ;height:50px;object-fit:contain;" src="/images/header_purchase.jpg"/>
+        //   </div>`,
+        // });
       }
       if (isCreateFooterHeader) {
         editor.BlockManager.add("header1", {
