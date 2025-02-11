@@ -133,7 +133,7 @@ const CreateTemplateComponent = () => {
           <Loading />
         </div>
       )}
-      {!isLoadingTemplate && (
+      {!isLoadingTemplate && !isLoadingListHeaderFooter && (
         <>
           <Button variant={"outline"} onClick={handleBackList}>
             <LeftIcon />
