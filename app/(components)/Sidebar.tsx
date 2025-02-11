@@ -16,7 +16,7 @@ const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
   const isActive = (link: string, isSub: boolean) => {
     return (
       pathName === link ||
-      (link.includes(pathName) && pathName !== "/" && !isSub) ||
+      (link.includes(pathName) && pathName !== "/") ||
       (pathName.startsWith(`${link}`) && isSub)
     );
   };
