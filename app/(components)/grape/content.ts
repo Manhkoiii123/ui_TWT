@@ -2726,135 +2726,9 @@ export const divider = () => {
 `;
 };
 export const footerBlock = () => {
-  return `<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
->
-  <head>
-    <title></title>
+  return `
 
-    <style type="text/css">
-      #outlook a {
-        padding: 0;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-      }
-      table,
-      td {
-        border-collapse: collapse;
-        mso-table-lspace: 0pt;
-        mso-table-rspace: 0pt;
-      }
-      img {
-        border: 0;
-        height: auto;
-        line-height: 100%;
-        outline: none;
-        text-decoration: none;
-        -ms-interpolation-mode: bicubic;
-      }
-      p {
-        display: block;
-        margin: 13px 0;
-      }
-    </style>
-
-    <style type="text/css">
-      @media only screen and (min-width: 480px) {
-        .mj-column-per-33-333333333333336 {
-          width: 33.333333333333336% !important;
-          max-width: 33.333333333333336%;
-        }
-        .mj-column-per-20 {
-          width: 20% !important;
-          max-width: 20%;
-        }
-        .mj-column-per-100 {
-          width: 100% !important;
-          max-width: 100%;
-        }
-        .mj-column-per-50 {
-          width: 50% !important;
-          max-width: 50%;
-        }
-        .mj-column-per-45 {
-          width: 45% !important;
-          max-width: 45%;
-        }
-        .mj-column-per-25 {
-          width: 25% !important;
-          max-width: 25%;
-        }
-        .mj-column-per-75 {
-          width: 75% !important;
-          max-width: 75%;
-        }
-        .mj-column-per-35 {
-          width: 35% !important;
-          max-width: 35%;
-        }
-        .mj-column-per-3 {
-          width: 3% !important;
-          max-width: 3%;
-        }
-      }
-    </style>
-    <style media="screen and (min-width:480px)">
-      .moz-text-html .mj-column-per-33-333333333333336 {
-        width: 33.333333333333336% !important;
-        max-width: 33.333333333333336%;
-      }
-      .moz-text-html .mj-column-per-20 {
-        width: 20% !important;
-        max-width: 20%;
-      }
-      .moz-text-html .mj-column-per-100 {
-        width: 100% !important;
-        max-width: 100%;
-      }
-      .moz-text-html .mj-column-per-50 {
-        width: 50% !important;
-        max-width: 50%;
-      }
-      .moz-text-html .mj-column-per-45 {
-        width: 45% !important;
-        max-width: 45%;
-      }
-      .moz-text-html .mj-column-per-25 {
-        width: 25% !important;
-        max-width: 25%;
-      }
-      .moz-text-html .mj-column-per-75 {
-        width: 75% !important;
-        max-width: 75%;
-      }
-      .moz-text-html .mj-column-per-35 {
-        width: 35% !important;
-        max-width: 35%;
-      }
-      .moz-text-html .mj-column-per-3 {
-        width: 3% !important;
-        max-width: 3%;
-      }
-    </style>
-
-    <style type="text/css">
-      @media only screen and (max-width: 479px) {
-        table.mj-full-width-mobile {
-          width: 100% !important;
-        }
-        td.mj-full-width-mobile {
-          width: auto !important;
-        }
-      }
-    </style>
-    <style type="text/css"></style>
-  </head>
+ 
   <body style="background-color: rgb(255, 255, 255); word-spacing: normal">
     <div
       class="email-block node-idx-content node-type-page"
@@ -2913,7 +2787,7 @@ export const footerBlock = () => {
                           "
                         >
                           <div
-                            class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
+                            class="mj-outlook-group-fix"
                             style="
                               width: 100%;
                               vertical-align: top;
@@ -2921,6 +2795,8 @@ export const footerBlock = () => {
                               direction: ltr;
                               text-align: left;
                               font-size: 0px;
+                              width: 33.333333333333336% !important;
+                              max-width: 33.333333333333336%;
                             "
                           >
                             <table
@@ -2976,7 +2852,7 @@ export const footerBlock = () => {
                           </div>
 
                           <div
-                            class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
+                            class="mj-outlook-group-fix"
                             style="
                               width: 100%;
                               vertical-align: top;
@@ -2984,6 +2860,8 @@ export const footerBlock = () => {
                               direction: ltr;
                               text-align: left;
                               font-size: 0px;
+                              width: 33.333333333333336% !important;
+                              max-width: 33.333333333333336%;
                             "
                           >
                             <table
@@ -3040,13 +2918,15 @@ export const footerBlock = () => {
                           </div>
 
                           <div
-                            class="mj-column-per-33-333333333333336 mj-outlook-group-fix"
+                            class="mj-outlook-group-fix"
                             style="
                               width: 100%;
                               display: inline-block;
                               direction: ltr;
                               text-align: left;
                               font-size: 0px;
+                              width: 33.333333333333336% !important;
+                              max-width: 33.333333333333336%;
                             "
                           >
                             <table
@@ -3126,7 +3006,7 @@ export const footerBlock = () => {
                           "
                         >
                           <div
-                            class="mj-column-per-20 mj-outlook-group-fix"
+                            class= mj-outlook-group-fix"
                             style="
                               width: 100%;
                               vertical-align: top;
@@ -3134,6 +3014,8 @@ export const footerBlock = () => {
                               direction: ltr;
                               text-align: left;
                               font-size: 0px;
+                              width: 20% !important;
+                              max-width: 20%;
                             "
                           >
                             <table
@@ -3221,14 +3103,15 @@ export const footerBlock = () => {
                                                       "
                                                     >
                                                       <div
-                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        class= mj-outlook-group-fix"
                                                         style="
                                                           width: 100%;
                                                           vertical-align: top;
                                                           display: inline-block;
                                                           direction: ltr;
                                                           text-align: left;
-                                                          font-size: 0px;
+                                                          font-size: 0px; width: 100% !important;
+        max-width: 100%;
                                                         "
                                                       >
                                                         <table
@@ -3348,14 +3231,15 @@ export const footerBlock = () => {
                           </div>
 
                           <div
-                            class="mj-column-per-20 mj-outlook-group-fix"
+                            class= mj-outlook-group-fix"
                             style="
                               width: 100%;
                               vertical-align: top;
                               display: inline-block;
                               direction: ltr;
                               text-align: left;
-                              font-size: 0px;
+                              font-size: 0px; width: 20% !important;
+          max-width: 20%;
                             "
                           >
                             <table
@@ -3443,14 +3327,15 @@ export const footerBlock = () => {
                                                       "
                                                     >
                                                       <div
-                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        class= mj-outlook-group-fix"
                                                         style="
                                                           width: 100%;
                                                           vertical-align: top;
                                                           display: inline-block;
                                                           direction: ltr;
                                                           text-align: left;
-                                                          font-size: 0px;
+                                                          font-size: 0px; width: 100% !important;
+        max-width: 100%;
                                                         "
                                                       >
                                                         <table
@@ -3569,13 +3454,14 @@ export const footerBlock = () => {
                           </div>
 
                           <div
-                            class="mj-column-per-20 mj-outlook-group-fix"
+                            class= mj-outlook-group-fix"
                             style="
                               width: 100%;
                               vertical-align: top;
                               display: inline-block;
                               direction: ltr;
-                              text-align: left;
+                              text-align: left; width: 20% !important;
+          max-width: 20%;
                               font-size: 0px;
                             "
                           >
@@ -3664,14 +3550,15 @@ export const footerBlock = () => {
                                                       "
                                                     >
                                                       <div
-                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        class= mj-outlook-group-fix"
                                                         style="
                                                           width: 100%;
                                                           vertical-align: top;
                                                           display: inline-block;
                                                           direction: ltr;
                                                           text-align: left;
-                                                          font-size: 0px;
+                                                          font-size: 0px; width: 100% !important;
+        max-width: 100%;
                                                         "
                                                       >
                                                         <table
@@ -3790,14 +3677,15 @@ export const footerBlock = () => {
                           </div>
 
                           <div
-                            class="mj-column-per-20 mj-outlook-group-fix"
+                            class= mj-outlook-group-fix"
                             style="
                               width: 100%;
                               vertical-align: top;
                               display: inline-block;
                               direction: ltr;
                               text-align: left;
-                              font-size: 0px;
+                              font-size: 0px; width: 20% !important;
+          max-width: 20%;
                             "
                           >
                             <table
@@ -3885,14 +3773,15 @@ export const footerBlock = () => {
                                                       "
                                                     >
                                                       <div
-                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        class= mj-outlook-group-fix"
                                                         style="
                                                           width: 100%;
                                                           vertical-align: top;
                                                           display: inline-block;
                                                           direction: ltr;
                                                           text-align: left;
-                                                          font-size: 0px;
+                                                          font-size: 0px; width: 100% !important;
+        max-width: 100%;
                                                         "
                                                       >
                                                         <table
@@ -4011,13 +3900,14 @@ export const footerBlock = () => {
                           </div>
 
                           <div
-                            class="mj-column-per-20 mj-outlook-group-fix"
+                            class= mj-outlook-group-fix"
                             style="
                               width: 100%;
                               vertical-align: top;
                               display: inline-block;
                               direction: ltr;
-                              text-align: left;
+                              text-align: left; width: 20% !important;
+          max-width: 20%;
                               font-size: 0px;
                             "
                           >
@@ -4106,14 +3996,15 @@ export const footerBlock = () => {
                                                       "
                                                     >
                                                       <div
-                                                        class="mj-column-per-100 mj-outlook-group-fix"
+                                                        class= mj-outlook-group-fix"
                                                         style="
                                                           width: 100%;
                                                           vertical-align: top;
                                                           display: inline-block;
                                                           direction: ltr;
                                                           text-align: left;
-                                                          font-size: 0px;
+                                                          font-size: 0px; width: 100% !important;
+        max-width: 100%;
                                                         "
                                                       >
                                                         <table
@@ -4235,1422 +4126,14 @@ export const footerBlock = () => {
                     </tbody>
                   </table>
                 </div>
-
-                <div
-                  style="
-                    max-width: 660px;
-                    margin: 0px auto;
-                    background: rgb(255, 255, 255);
-                  "
-                >
-                  <table
-                    align="center"
-                    border="0"
-                    cellpadding="0"
-                    cellspacing="0"
-                    role="presentation"
-                    style="width: 100%; background: rgb(255, 255, 255)"
-                  >
-                    <tbody>
-                      <tr>
-                        <td
-                          style="
-                            text-align: center;
-                            padding: 0px;
-                            font-size: 0px;
-                            direction: ltr;
-                          "
-                        >
-                          <div
-                            class="mj-column-per-50 mj-outlook-group-fix"
-                            style="
-                              width: 100%;
-                              vertical-align: top;
-                              display: inline-block;
-                              direction: ltr;
-                              text-align: left;
-                              font-size: 0px;
-                            "
-                          >
-                            <table
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              role="presentation"
-                              width="100%"
-                            >
-                              <tbody>
-                                <tr>
-                                  <td style="padding: 0px; vertical-align: top">
-                                    <table
-                                      border="0"
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                      role="presentation"
-                                      width="100%"
-                                    >
-                                      <tbody>
-                                        <tr>
-                                          <td
-                                            align="center"
-                                            style="
-                                              word-break: break-word;
-                                              padding: 25px 10px 10px;
-                                              font-size: 0px;
-                                            "
-                                          >
-                                            <p
-                                              style="
-                                                width: 100%;
-                                                margin: 0px auto;
-                                                font-size: 1px;
-                                                border-top: 1px solid
-                                                  rgb(204, 204, 204);
-                                              "
-                                            ></p>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div
-                  style="
-                    max-width: 660px;
-                    margin: 0px auto;
-                    background: rgb(255, 255, 255);
-                  "
-                >
-                  <table
-                    align="center"
-                    border="0"
-                    cellpadding="0"
-                    cellspacing="0"
-                    role="presentation"
-                    style="width: 100%; background: rgb(255, 255, 255)"
-                  >
-                    <tbody>
-                      <tr>
-                        <td
-                          style="
-                            text-align: center;
-                            padding: 0px;
-                            font-size: 0px;
-                            direction: ltr;
-                          "
-                        >
-                          <div
-                            class="mj-column-per-45 mj-outlook-group-fix"
-                            style="
-                              width: 100%;
-                              vertical-align: top;
-                              display: inline-block;
-                              direction: ltr;
-                              text-align: left;
-                              font-size: 0px;
-                            "
-                          >
-                            <table
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              role="presentation"
-                              width="100%"
-                              style="vertical-align: top"
-                            >
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style="
-                                      word-break: break-word;
-                                      padding: 20px 0px;
-                                      font-size: 0px;
-                                    "
-                                  >
-                                    <div
-                                      style="max-width: 297px; margin: 0px auto"
-                                    >
-                                      <table
-                                        align="center"
-                                        border="0"
-                                        cellpadding="0"
-                                        cellspacing="0"
-                                        role="presentation"
-                                        style="width: 100%"
-                                      >
-                                        <tbody>
-                                          <tr>
-                                            <td
-                                              style="
-                                                text-align: center;
-                                                padding: 20px 0px;
-                                                font-size: 0px;
-                                                direction: ltr;
-                                              "
-                                            >
-                                              <div
-                                                class="mj-column-per-25 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 0px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <table
-                                                                  border="0"
-                                                                  cellpadding="0"
-                                                                  cellspacing="0"
-                                                                  role="presentation"
-                                                                  style="
-                                                                    border-spacing: 0px;
-                                                                    border-collapse: collapse;
-                                                                  "
-                                                                >
-                                                                  <tbody>
-                                                                    <tr>
-                                                                      <td
-                                                                        style="
-                                                                          width: 35px;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="#"
-                                                                          target="_blank"
-                                                                          tabindex="-1"
-                                                                        >
-                                                                          <img
-                                                                            src="https://cdn.tools.unlayer.com/social/icons/circle/twitter.png"
-                                                                            width="35"
-                                                                            height="35"
-                                                                            style="
-                                                                              font-size: 13px;
-                                                                              width: 100%;
-                                                                              height: 35px;
-                                                                              text-decoration: none;
-                                                                              outline: none;
-                                                                              display: block;
-                                                                              border: 0px;
-                                                                            "
-                                                                          />
-                                                                        </a>
-                                                                      </td>
-                                                                    </tr>
-                                                                  </tbody>
-                                                                </table>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-
-                                              <div
-                                                class="mj-column-per-25 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 0px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <table
-                                                                  border="0"
-                                                                  cellpadding="0"
-                                                                  cellspacing="0"
-                                                                  role="presentation"
-                                                                  style="
-                                                                    border-spacing: 0px;
-                                                                    border-collapse: collapse;
-                                                                  "
-                                                                >
-                                                                  <tbody>
-                                                                    <tr>
-                                                                      <td
-                                                                        style="
-                                                                          width: 35px;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="#"
-                                                                          target="_blank"
-                                                                          tabindex="-1"
-                                                                        >
-                                                                          <img
-                                                                            src="https://cdn.tools.unlayer.com/social/icons/circle/facebook.png"
-                                                                            width="35"
-                                                                            height="35"
-                                                                            style="
-                                                                              font-size: 13px;
-                                                                              width: 100%;
-                                                                              height: 35px;
-                                                                              text-decoration: none;
-                                                                              outline: none;
-                                                                              display: block;
-                                                                              border: 0px;
-                                                                            "
-                                                                          />
-                                                                        </a>
-                                                                      </td>
-                                                                    </tr>
-                                                                  </tbody>
-                                                                </table>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-
-                                              <div
-                                                class="mj-column-per-25 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 0px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <table
-                                                                  border="0"
-                                                                  cellpadding="0"
-                                                                  cellspacing="0"
-                                                                  role="presentation"
-                                                                  style="
-                                                                    border-spacing: 0px;
-                                                                    border-collapse: collapse;
-                                                                  "
-                                                                >
-                                                                  <tbody>
-                                                                    <tr>
-                                                                      <td
-                                                                        style="
-                                                                          width: 35px;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="#"
-                                                                          target="_blank"
-                                                                          tabindex="-1"
-                                                                        >
-                                                                          <img
-                                                                            src="https://cdn.tools.unlayer.com/social/icons/circle/linkedin.png"
-                                                                            width="35"
-                                                                            height="35"
-                                                                            style="
-                                                                              font-size: 13px;
-                                                                              width: 100%;
-                                                                              height: 35px;
-                                                                              text-decoration: none;
-                                                                              outline: none;
-                                                                              display: block;
-                                                                              border: 0px;
-                                                                            "
-                                                                          />
-                                                                        </a>
-                                                                      </td>
-                                                                    </tr>
-                                                                  </tbody>
-                                                                </table>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-
-                                              <div
-                                                class="mj-column-per-25 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 0px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <table
-                                                                  border="0"
-                                                                  cellpadding="0"
-                                                                  cellspacing="0"
-                                                                  role="presentation"
-                                                                  style="
-                                                                    border-spacing: 0px;
-                                                                    border-collapse: collapse;
-                                                                  "
-                                                                >
-                                                                  <tbody>
-                                                                    <tr>
-                                                                      <td
-                                                                        style="
-                                                                          width: 35px;
-                                                                        "
-                                                                      >
-                                                                        <a
-                                                                          href="#"
-                                                                          target="_blank"
-                                                                          tabindex="-1"
-                                                                        >
-                                                                          <img
-                                                                            src="https://cdn.tools.unlayer.com/social/icons/circle/youtube.png"
-                                                                            width="35"
-                                                                            height="35"
-                                                                            style="
-                                                                              font-size: 13px;
-                                                                              width: 100%;
-                                                                              height: 35px;
-                                                                              text-decoration: none;
-                                                                              outline: none;
-                                                                              display: block;
-                                                                              border: 0px;
-                                                                            "
-                                                                          />
-                                                                        </a>
-                                                                      </td>
-                                                                    </tr>
-                                                                  </tbody>
-                                                                </table>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div
-                  style="
-                    max-width: 660px;
-                    margin: 0px auto;
-                    background: rgb(255, 255, 255);
-                  "
-                >
-                  <table
-                    align="center"
-                    border="0"
-                    cellpadding="0"
-                    cellspacing="0"
-                    role="presentation"
-                    style="width: 100%; background: rgb(255, 255, 255)"
-                  >
-                    <tbody>
-                      <tr>
-                        <td
-                          style="
-                            text-align: center;
-                            padding: 0px 0px 10px;
-                            font-size: 0px;
-                            direction: ltr;
-                          "
-                        >
-                          <div style="max-width: 660px; margin: 0px auto">
-                            <table
-                              align="center"
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              role="presentation"
-                              style="width: 100%"
-                            >
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style="
-                                      text-align: center;
-                                      padding: 0px;
-                                      font-size: 0px;
-                                      direction: ltr;
-                                    "
-                                  >
-                                    <div
-                                      class="mj-column-per-100 mj-outlook-group-fix"
-                                      style="
-                                        width: 100%;
-                                        vertical-align: top;
-                                        display: inline-block;
-                                        direction: ltr;
-                                        text-align: left;
-                                        font-size: 0px;
-                                      "
-                                    >
-                                      <table
-                                        border="0"
-                                        cellpadding="0"
-                                        cellspacing="0"
-                                        role="presentation"
-                                        width="100%"
-                                      >
-                                        <tbody>
-                                          <tr>
-                                            <td
-                                              style="
-                                                padding: 0px;
-                                                vertical-align: top;
-                                                border: none;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      align="center"
-                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.street"
-                                                      style="
-                                                        word-break: break-word;
-                                                        padding: 3px 0px;
-                                                        font-size: 0px;
-                                                      "
-                                                    >
-                                                      <div
-                                                        contenteditable="true"
-                                                        data-content_editable-type="rich_text"
-                                                        data-content_editable-idx="content.children.[0].data.value.street"
-                                                        style="
-                                                          color: rgb(8, 38, 61);
-                                                          text-align: center;
-                                                          line-height: 24px;
-                                                          font-weight: 400;
-                                                          font-size: 14px;
-                                                          font-family: Arial,
-                                                            sans-serif;
-                                                        "
-                                                      >
-                                                        Tweet World Travel
-                                                        Group: 554 Magill Road,
-                                                        Magill SA 5072,
-                                                        Australia
-                                                      </div>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-
-                          <div style="max-width: 660px; margin: 0px auto">
-                            <table
-                              align="center"
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              role="presentation"
-                              style="width: 100%"
-                            >
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style="
-                                      text-align: center;
-                                      padding: 0px;
-                                      font-size: 0px;
-                                      direction: ltr;
-                                    "
-                                  >
-                                    <div
-                                      class="mj-column-per-100 mj-outlook-group-fix"
-                                      style="
-                                        width: 100%;
-                                        vertical-align: top;
-                                        display: inline-block;
-                                        direction: ltr;
-                                        text-align: left;
-                                        font-size: 0px;
-                                      "
-                                    >
-                                      <table
-                                        border="0"
-                                        cellpadding="0"
-                                        cellspacing="0"
-                                        role="presentation"
-                                        width="100%"
-                                      >
-                                        <tbody>
-                                          <tr>
-                                            <td
-                                              style="
-                                                padding: 0px;
-                                                vertical-align: top;
-                                                border: none;
-                                              "
-                                            >
-                                              <table
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                width="100%"
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      align="center"
-                                                      class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.phoneAndLink"
-                                                      style="
-                                                        word-break: break-word;
-                                                        padding: 3px 0px;
-                                                        font-size: 0px;
-                                                      "
-                                                    >
-                                                      <div
-                                                        contenteditable="true"
-                                                        data-content_editable-type="rich_text"
-                                                        data-content_editable-idx="content.children.[0].data.value.phoneAndLink"
-                                                        style="
-                                                          color: rgb(8, 38, 61);
-                                                          text-align: center;
-                                                          line-height: 24px;
-                                                          font-weight: 400;
-                                                          font-size: 14px;
-                                                          font-family: Arial,
-                                                            sans-serif;
-                                                        "
-                                                      >
-                                                        ACN: 1234 2657 910 |
-                                                        Website:
-                                                        www.tweetworldtravel.com
-                                                      </div>
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div
-                  style="
-                    max-width: 660px;
-                    margin: 0px auto;
-                    background: rgb(255, 255, 255);
-                  "
-                >
-                  <table
-                    align="center"
-                    border="0"
-                    cellpadding="0"
-                    cellspacing="0"
-                    role="presentation"
-                    style="width: 100%; background: rgb(255, 255, 255)"
-                  >
-                    <tbody>
-                      <tr>
-                        <td
-                          style="
-                            text-align: center;
-                            padding: 0px 0px 10px;
-                            font-size: 0px;
-                            direction: ltr;
-                          "
-                        >
-                          <div
-                            class="mj-column-per-75 mj-outlook-group-fix"
-                            style="
-                              width: 100%;
-                              vertical-align: top;
-                              display: inline-block;
-                              direction: ltr;
-                              text-align: left;
-                              font-size: 0px;
-                            "
-                          >
-                            <table
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              role="presentation"
-                              width="100%"
-                              style="vertical-align: top"
-                            >
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style="
-                                      word-break: break-word;
-                                      padding: 0px;
-                                      font-size: 0px;
-                                    "
-                                  >
-                                    <div
-                                      style="
-                                        max-width: 495px;
-                                        margin: 0px auto;
-                                        background: rgb(255, 255, 255);
-                                      "
-                                    >
-                                      <table
-                                        align="center"
-                                        border="0"
-                                        cellpadding="0"
-                                        cellspacing="0"
-                                        role="presentation"
-                                        style="
-                                          width: 100%;
-                                          background: rgb(255, 255, 255);
-                                        "
-                                      >
-                                        <tbody>
-                                          <tr>
-                                            <td
-                                              style="
-                                                text-align: center;
-                                                padding: 0px;
-                                                font-size: 0px;
-                                                direction: ltr;
-                                              "
-                                            >
-                                              <div
-                                                class="mj-column-per-35 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.term"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 3px
-                                                                    0px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <div
-                                                                  contenteditable="true"
-                                                                  data-content_editable-type="rich_text"
-                                                                  data-content_editable-idx="content.children.[0].data.value.term"
-                                                                  style="
-                                                                    color: rgb(
-                                                                      8,
-                                                                      38,
-                                                                      61
-                                                                    );
-                                                                    text-align: center;
-                                                                    line-height: 24px;
-                                                                    font-weight: 400;
-                                                                    font-size: 14px;
-                                                                    font-family: Arial,
-                                                                      sans-serif;
-                                                                  "
-                                                                >
-                                                                  *Terms and
-                                                                  Conditions
-                                                                </div>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-
-                                              <div
-                                                class="mj-column-per-3 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 0px
-                                                                    3px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <div
-                                                                  style="
-                                                                    color: rgb(
-                                                                      8,
-                                                                      38,
-                                                                      61
-                                                                    );
-                                                                    text-align: center;
-                                                                    line-height: 24px;
-                                                                    font-weight: 400;
-                                                                    font-size: 14px;
-                                                                    font-family: Arial,
-                                                                      sans-serif;
-                                                                  "
-                                                                >
-                                                                  |
-                                                                </div>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-
-                                              <div
-                                                class="mj-column-per-20 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 3px
-                                                                    0px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <div
-                                                                  style="
-                                                                    color: rgb(
-                                                                      8,
-                                                                      38,
-                                                                      61
-                                                                    );
-                                                                    text-align: center;
-                                                                    line-height: 24px;
-                                                                    font-weight: 400;
-                                                                    font-size: 14px;
-                                                                    font-family: Arial,
-                                                                      sans-serif;
-                                                                  "
-                                                                >
-                                                                  <a
-                                                                    href="https://newsletters.tweetworldtravel.com/unsubscribe?c=[_campaign_id_]&amp;a=[_unsubscribe_slug_]"
-                                                                    tabindex="-1"
-                                                                    style="
-                                                                      color: rgb(
-                                                                        0,
-                                                                        0,
-                                                                        0
-                                                                      );
-                                                                      text-decoration: none;
-                                                                    "
-                                                                    >Unsubscribe</a
-                                                                  >
-                                                                </div>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-
-                                              <div
-                                                class="mj-column-per-3 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 0px
-                                                                    3px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <div
-                                                                  style="
-                                                                    color: rgb(
-                                                                      8,
-                                                                      38,
-                                                                      61
-                                                                    );
-                                                                    text-align: center;
-                                                                    line-height: 24px;
-                                                                    font-weight: 400;
-                                                                    font-size: 14px;
-                                                                    font-family: Arial,
-                                                                      sans-serif;
-                                                                  "
-                                                                >
-                                                                  |
-                                                                </div>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-
-                                              <div
-                                                class="mj-column-per-20 mj-outlook-group-fix"
-                                                style="
-                                                  width: 100%;
-                                                  vertical-align: top;
-                                                  display: inline-block;
-                                                  direction: ltr;
-                                                  text-align: left;
-                                                  font-size: 0px;
-                                                "
-                                              >
-                                                <table
-                                                  border="0"
-                                                  cellpadding="0"
-                                                  cellspacing="0"
-                                                  role="presentation"
-                                                  width="100%"
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style="
-                                                          padding: 0px;
-                                                          vertical-align: top;
-                                                        "
-                                                      >
-                                                        <table
-                                                          border="0"
-                                                          cellpadding="0"
-                                                          cellspacing="0"
-                                                          role="presentation"
-                                                          width="100%"
-                                                        >
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                align="center"
-                                                                class="node-contenteditable-type-text node-contenteditable-idx-content.children.[0].data.value.account"
-                                                                style="
-                                                                  word-break: break-word;
-                                                                  padding: 3px
-                                                                    0px;
-                                                                  font-size: 0px;
-                                                                "
-                                                              >
-                                                                <div
-                                                                  contenteditable="true"
-                                                                  data-content_editable-type="rich_text"
-                                                                  data-content_editable-idx="content.children.[0].data.value.account"
-                                                                  style="
-                                                                    color: rgb(
-                                                                      8,
-                                                                      38,
-                                                                      61
-                                                                    );
-                                                                    text-align: center;
-                                                                    line-height: 24px;
-                                                                    font-weight: 400;
-                                                                    font-size: 14px;
-                                                                    font-family: Arial,
-                                                                      sans-serif;
-                                                                  "
-                                                                >
-                                                                  My Account
-                                                                </div>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
               </td>
             </tr>
           </tbody>
         </table>
-
-        <div
-          id="easy-email-extensions-InteractivePrompt-FocusTooltip"
-          style="
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            left: 0px;
-            top: 0px;
-            z-index: 1;
-          "
-        >
-          <style>
-            .email-block {
-              position: relative;
-            }
-          </style>
-          <div style="position: absolute; z-index: 9999; right: 0px; top: 50%">
-            <div data-type="footer_block" draggable="true" style="cursor: grab">
-              <div
-                style="
-                  position: absolute;
-                  background-color: var(--selected-color);
-                  color: rgb(255, 255, 255);
-                  height: 28px;
-                  width: 28px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  transform: translate(-50%, -50%);
-                  border-radius: 50%;
-                  cursor: grab;
-                  pointer-events: auto;
-                  -webkit-user-drag: element;
-                "
-              >
-                <div
-                  class="iconfont icon-move"
-                  style="
-                    cursor: grab;
-                    pointer-events: auto;
-                    color: rgb(255, 255, 255);
-                  "
-                ></div>
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              position: absolute;
-              font-size: 14px;
-              z-index: 2;
-              left: 0px;
-              top: 0px;
-              width: 100%;
-              height: 100%;
-              outline-offset: -2px;
-              outline: 2px solid var(--selected-color);
-            "
-          ></div>
-          <div
-            style="
-              position: absolute;
-              font-size: 14px;
-              z-index: 3;
-              left: 0px;
-              top: 0px;
-              width: 0%;
-              height: 100%;
-            "
-          >
-            <div
-              id="easy-email-extensions-InteractivePrompt-Toolbar"
-              style="height: 0px; z-index: 100"
-            >
-              <div
-                style="
-                  font-size: 14px;
-                  line-height: 22px;
-                  pointer-events: auto;
-                  color: rgb(255, 255, 255);
-                  transform: translateY(-100%);
-                  display: inline-flex;
-                "
-              >
-                <div
-                  style="
-                    color: rgb(255, 255, 255);
-                    background-color: var(--selected-color);
-                    height: 22px;
-                    display: inline-flex;
-                    padding: 1px 5px;
-                    box-sizing: border-box;
-                    white-space: nowrap;
-                    max-width: 300px;
-                    overflow: hidden;
-                  "
-                >
-                  Footer
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    pointer-events: auto;
-                  "
-                >
-                  <div
-                    class="iconfont icon-back-parent"
-                    style="
-                      color: rgb(255, 255, 255);
-                      background-color: var(--selected-color);
-                      height: 22px;
-                      font-size: 12px;
-                      line-height: 22px;
-                      width: 22px;
-                      display: flex;
-                      pointer-events: auto;
-                      cursor: pointer;
-                      justify-content: center;
-                    "
-                  ></div>
-                  <div
-                    class="iconfont icon-copy"
-                    style="
-                      color: rgb(255, 255, 255);
-                      background-color: var(--selected-color);
-                      height: 22px;
-                      font-size: 14px;
-                      line-height: 22px;
-                      width: 22px;
-                      display: flex;
-                      pointer-events: auto;
-                      cursor: pointer;
-                      justify-content: center;
-                    "
-                  ></div>
-                  <div
-                    class="iconfont icon-delete"
-                    style="
-                      color: rgb(255, 255, 255);
-                      background-color: var(--selected-color);
-                      height: 22px;
-                      font-size: 14px;
-                      line-height: 22px;
-                      width: 22px;
-                      display: flex;
-                      pointer-events: auto;
-                      cursor: pointer;
-                      justify-content: center;
-                    "
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </body>
-</html>
+
 `;
 };
 export const footerGeneral = () => {
@@ -9122,6 +7605,378 @@ export const haveAQuestion = () => {
                                 </td>
                               </tr>
                             </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>`;
+};
+
+export const footer_contact = () => {
+  return ` <table
+              class="row row-10"
+              align="center"
+              width="100%"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              role="presentation"
+              style="
+                mso-table-lspace: 0pt;
+                mso-table-rspace: 0pt;
+                background-size: auto;
+                color: #000000;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      class="row-content stack"
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      role="presentation"
+                      style="
+                        mso-table-lspace: 0pt;
+                        mso-table-rspace: 0pt;
+                        background-size: auto;
+                        color: #000000;
+                        width: 640px;
+                        margin: 0 auto;
+                      "
+                      width="640"
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            class="column column-1"
+                            width="100%"
+                            style="
+                              mso-table-lspace: 0pt;
+                              mso-table-rspace: 0pt;
+                              font-weight: 400;
+                              text-align: left;
+                              padding-bottom: 10px;
+                              padding-top: 10px;
+                              vertical-align: top;
+                              border-top: 0px;
+                              border-right: 0px;
+                              border-bottom: 0px;
+                              border-left: 0px;
+                            "
+                          >
+                            
+                            <table
+                              class="paragraph_block block-4"
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                                word-break: break-word;
+                              "
+                            >
+                              <tr>
+                                <td
+                                  class="pad"
+                                  style="
+                                    padding-bottom: 10px;
+                                    padding-left: 30px;
+                                    padding-right: 30px;
+                                    padding-top: 10px;
+                                  "
+                                >
+                                  <div
+                                    style="
+                                      color: #000;
+                                      font-family: Trebuchet MS, Lucida Grande,
+                                        Lucida Sans Unicode, Lucida Sans, Tahoma,
+                                        sans-serif;
+                                      font-size: 16px;
+                                      line-height: 180%;
+                                      text-align: center;
+                                      mso-line-height-alt: 28.8px;
+                                    "
+                                  >
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      <div style="word-break: break-word"
+                                        ><div style="word-break: break-word;color: #000;"
+                                          >Tweet World Travel Group: 554 Magill Road, Magill SA 5072, Australia </div
+                                        ><div style="word-break: break-word;color: #000;"
+                                          >ACN: 1234 2657 910 | Website: www.tweetworldtravel.com</div
+                                        ></div
+                                      >
+                                    </p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              class="social_block block-5"
+                              width="100%"
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                            >
+                              <tr>
+                                <td class="pad">
+                                  <div class="alignment" align="center">
+                                    <table
+                                      class="social-table"
+                                      width="144px"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="10"
+                                      role="presentation"
+                                      style="
+                                        mso-table-lspace: 0pt;
+                                        mso-table-rspace: 0pt;
+                                        display: inline-block;
+                                      "
+                                    >
+                                      <tr>
+                                        <td style="padding: 0 2px 0 2px">
+                                          <a
+                                            href="https://www.facebook.com"
+                                            target="_blank"
+                                            ><img
+                                              src="https://cdn.tools.unlayer.com/social/icons/circle/facebook.png"
+                                              width="32"
+                                              height="auto"
+                                              alt="Facebook"
+                                              title="facebook"
+                                              style="
+                                                display: block;
+                                                height: auto;
+                                                border: 0;
+                                              "
+                                          /></a>
+                                        </td>
+                                        <td style="padding: 0 2px 0 2px">
+                                          <a
+                                            href="https://www.twitter.com"
+                                            target="_blank"
+                                            ><img
+                                              src="https://cdn.tools.unlayer.com/social/icons/circle/twitter.png"
+                                              width="32"
+                                              height="auto"
+                                              alt="Twitter"
+                                              title="twitter"
+                                              style="
+                                                display: block;
+                                                height: auto;
+                                                border: 0;
+                                              "
+                                          /></a>
+                                        </td>
+                                        <td style="padding: 0 2px 0 2px">
+                                          <a
+                                            href="https://www.linkedin.com"
+                                            target="_blank"
+                                            ><img
+                                              src="https://cdn.tools.unlayer.com/social/icons/circle/linkedin.png"
+                                              width="32"
+                                              height="auto"
+                                              alt="Linkedin"
+                                              title="linkedin"
+                                              style="
+                                                display: block;
+                                                height: auto;
+                                                border: 0;
+                                              "
+                                          /></a>
+                                        </td>
+                                        <td style="padding: 0 2px 0 2px">
+                                          <a
+                                            href="https://www.youtube.com"
+                                            target="_blank"
+                                            ><img
+                                              src="	https://cdn.tools.unlayer.com/social/icons/circle/youtube.png"
+                                              width="32"
+                                              height="auto"
+                                              alt="youtube"
+                                              title="Youtube"
+                                              style="
+                                                display: block;
+                                                height: auto;
+                                                border: 0;
+                                              "
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              class="menu_block block-6"
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                            >
+                              <tr>
+                                <td
+                                  class="pad"
+                                  style="
+                                    color: #000;
+                                    font-family: inherit;
+                                    font-size: 14px;
+                                    text-align: center;
+                                  "
+                                >
+                                  <table
+                                    width="100%"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                    border="0"
+                                    role="presentation"
+                                    style="
+                                      mso-table-lspace: 0pt;
+                                      mso-table-rspace: 0pt;
+                                    "
+                                  >
+                                    <tr>
+                                      <td
+                                        class="alignment"
+                                        style="
+                                          text-align: center;
+                                          font-size: 0px;
+                                        "
+                                      >
+                                        <div class="menu-links">
+                                          <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style=""><tr style="text-align:center;"><!
+                                          [endif]-->[endif]--><!--[if mso]><td style="padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px"><!
+                                          [endif]--><a
+                                            href="www.example.com"
+                                            target="_self"
+                                            style="
+                                              mso-hide: false;
+                                              padding-top: 5px;
+                                              padding-bottom: 5px;
+                                              padding-left: 5px;
+                                              padding-right: 5px;
+                                              display: inline-block;
+                                              color: #000;
+                                              font-family: Trebuchet MS,
+                                                Lucida Grande,
+                                                Lucida Sans Unicode, Lucida Sans,
+                                                Tahoma, sans-serif;
+                                              font-size: 14px;
+                                              text-decoration: none;
+                                              letter-spacing: normal;
+                                            "
+                                            >Terms & Condition</a
+                                          >><!--[if mso]></td><td><!
+                                          [endif]--><span
+                                            class="sep"
+                                            style="
+                                              word-break: break-word;
+                                              font-size: 14px;
+                                              font-family: Trebuchet MS,
+                                                Lucida Grande,
+                                                Lucida Sans Unicode, Lucida Sans,
+                                                Tahoma, sans-serif;
+                                              color: #000;
+                                            "
+                                            >|</span
+                                          >><!--[if mso]></td><!
+                                          [endif]-->[endif]--><!--[if mso]><td style="padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px"><!
+                                          [endif]--><a
+                                            href="www.example.com"
+                                            target="_self"
+                                            style="
+                                              mso-hide: false;
+                                              padding-top: 5px;
+                                              padding-bottom: 5px;
+                                              padding-left: 5px;
+                                              padding-right: 5px;
+                                              display: inline-block;
+                                              color: #000;
+                                              font-family: Trebuchet MS,
+                                                Lucida Grande,
+                                                Lucida Sans Unicode, Lucida Sans,
+                                                Tahoma, sans-serif;
+                                              font-size: 14px;
+                                              text-decoration: none;
+                                              letter-spacing: normal;
+                                            "
+                                            >Contact Us</a
+                                          >><!--[if mso]></td><td><!
+                                          [endif]--><span
+                                            class="sep"
+                                            style="
+                                              word-break: break-word;
+                                              font-size: 14px;
+                                              font-family: Trebuchet MS,
+                                                Lucida Grande,
+                                                Lucida Sans Unicode, Lucida Sans,
+                                                Tahoma, sans-serif;
+                                              color: #000;
+                                            "
+                                            >|</span
+                                          >><!--[if mso]></td><!
+                                          [endif]-->[endif]--><!--[if mso]><td style="padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px"><!
+                                          [endif]--><a
+                                            href="www.example.com"
+                                            target="_self"
+                                            style="
+                                              mso-hide: false;
+                                              padding-top: 5px;
+                                              padding-bottom: 5px;
+                                              padding-left: 5px;
+                                              padding-right: 5px;
+                                              display: inline-block;
+                                              color: #000;
+                                              font-family: Trebuchet MS,
+                                                Lucida Grande,
+                                                Lucida Sans Unicode, Lucida Sans,
+                                                Tahoma, sans-serif;
+                                              font-size: 14px;
+                                              text-decoration: none;
+                                              letter-spacing: normal;
+                                            "
+                                            >Unsubscribe</a
+                                          >><!--[if mso]></td><!
+                                          [endif]-->[endif]--><!--[if mso]></tr></table><![endif]-->
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                            <div
+                              class="spacer_block block-7"
+                              style="
+                                height: 40px;
+                                line-height: 40px;
+                                font-size: 1px;
+                              "
+                            >
+                              &#8202;
+                            </div>
                           </td>
                         </tr>
                       </tbody>

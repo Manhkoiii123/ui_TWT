@@ -34,6 +34,7 @@ import {
   intro,
   // purchaseTemplate,
   haveAQuestion,
+  footer_contact,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -675,6 +676,14 @@ const GrapeComponent = ({
           category: "Custom",
           media: `<div>
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/footer_contact.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("footer_contact", {
+          label: "Footer social",
+          content: footer_contact(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/footer_social.jpg"/>
           </div>`,
         });
       }
