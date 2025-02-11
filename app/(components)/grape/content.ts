@@ -7401,1533 +7401,1533 @@ export const intro = () => {
 						</tbody>
 					</table>`;
 };
-export const purchaseTemplate = () => {
-  return `<table
-  class="row row-5"
-  align="center"
-  width="100%"
-  border="0"
-  cellpadding="0"
-  cellspacing="0"
-  role="presentation"
-  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-size: auto"
->
-  <tbody>
-    <tr>
-      <td>
-        <table
-          class="row-content stack"
-          align="center"
-          border="0"
-          cellpadding="0"
-          cellspacing="0"
-          role="presentation"
-          style="
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-            background-color: #f6f5f1;
-            border-radius: 0;
-            color: #000000;
-            background-size: auto;
-            border-left: 30px solid transparent;
-            border-right: 30px solid transparent;
-            width: 650px;
-            margin: 0 auto;
-          "
-          width="650"
-        >
-          <tbody>
-            <tr>
-              <td
-                class="column column-1"
-                width="100%"
-                style="
-                  mso-table-lspace: 0pt;
-                  mso-table-rspace: 0pt;
-                  font-weight: 400;
-                  text-align: left;
-                  vertical-align: top;
-                  border-top: 0px;
-                  border-right: 0px;
-                  border-bottom: 0px;
-                  border-left: 0px;
-                "
-              >
-                <table
-                  class="button_block block-1"
-                  width="100%"
-                  border="0"
-                  cellpadding="25"
-                  cellspacing="0"
-                  role="presentation"
-                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
-                >
-                  <tr>
-                    <td class="pad">
-                      <div class="alignment" align="center">
-                        <a
-                          href="http://www.example.com"
-                          target="_blank"
-                          style="color: #222222; text-decoration: none"
-                          >><!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"  href="http://www.example.com"  style="height:39px;width:202px;v-text-anchor:middle;" arcsize="25%" fillcolor="#f2c9c4">
-<v:stroke dashstyle="Solid" weight="1px" color="#222222"/>
-<w:anchorlock/>
-<v:textbox inset="0px,0px,0px,0px">
-<center dir="false" style="color:#222222;font-family:Arial, sans-serif;font-size:14px">
-<!
-                          [endif]--><span
-                            class="button"
-                            style="
-                              background-color: #f2c9c4;
-                              border-bottom: 1px solid #222222;
-                              border-left: 1px solid #222222;
-                              border-radius: 10px;
-                              border-right: 1px solid #222222;
-                              border-top: 1px solid #222222;
-                              color: #222222;
-                              display: inline-block;
-                              font-family: 'Helvetica Neue', Helvetica, Arial,
-                                sans-serif;
-                              font-size: 14px;
-                              font-weight: 400;
-                              mso-border-alt: none;
-                              padding-bottom: 5px;
-                              padding-top: 5px;
-                              padding-left: 30px;
-                              padding-right: 30px;
-                              text-align: center;
-                              width: auto;
-                              word-break: keep-all;
-                              letter-spacing: 2px;
-                            "
-                            ><span
-                              style="
-                                margin: 0;
-                                word-break: break-word;
-                                line-height: 28px;
-                              "
-                              >REVIEW AND PAY</span
-                            ></span
-                          >><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a</a
-                        >
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-                <table
-                  class="paragraph_block block-2"
-                  width="100%"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    mso-table-lspace: 0pt;
-                    mso-table-rspace: 0pt;
-                    word-break: break-word;
-                  "
-                >
-                  <tr>
-                    <td class="pad">
-                      <div
-                        style="
-                          color: #222222;
-                          font-family: TimesNewRoman, 'Times New Roman', Times,
-                            Beskerville, Georgia, serif;
-                          font-size: 24px;
-                          font-weight: 400;
-                          letter-spacing: -1px;
-                          line-height: 120%;
-                          text-align: left;
-                          mso-line-height-alt: 28.799999999999997px;
-                        "
-                      >
-                        <p style="margin: 0; word-break: break-word">
-                          Dear <em>Jane</em>,
-                        </p>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-                <table
-                  class="paragraph_block block-3"
-                  width="100%"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    mso-table-lspace: 0pt;
-                    mso-table-rspace: 0pt;
-                    word-break: break-word;
-                  "
-                >
-                  <tr>
-                    <td class="pad" style="padding-top: 10px">
-                      <div
-                        style="
-                          color: #222222;
-                          direction: ltr;
-                          font-family: 'Helvetica Neue', Helvetica, Arial,
-                            sans-serif;
-                          font-size: 16px;
-                          font-weight: 400;
-                          letter-spacing: 0px;
-                          line-height: 120%;
-                          text-align: left;
-                          mso-line-height-alt: 19.2px;
-                        "
-                      >
-                        <p style="margin: 0">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod.<br /><br />Thank you,<br />Your
-                          name
-                        </p>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<table
-  class="row row-6"
-  align="center"
-  width="100%"
-  border="0"
-  cellpadding="0"
-  cellspacing="0"
-  role="presentation"
-  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
->
-  <tbody>
-    <tr>
-      <td>
-        <table
-          class="row-content stack"
-          align="center"
-          border="0"
-          cellpadding="0"
-          cellspacing="0"
-          role="presentation"
-          style="
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-            background-color: #f6f5f1;
-            border-radius: 0;
-            color: #000000;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-top: 20px solid transparent;
-            width: 650px;
-            margin: 0 auto;
-          "
-          width="650"
-        >
-          <tbody>
-            <tr>
-              <td
-                class="column column-1"
-                width="100%"
-                style="
-                  mso-table-lspace: 0pt;
-                  mso-table-rspace: 0pt;
-                  font-weight: 400;
-                  text-align: left;
-                  padding-bottom: 30px;
-                  vertical-align: top;
-                  border-top: 0px;
-                  border-right: 0px;
-                  border-bottom: 0px;
-                  border-left: 0px;
-                "
-              >
-                <table
-                  class="table_block mobile_hide block-1"
-                  width="100%"
-                  border="0"
-                  cellpadding="10"
-                  cellspacing="0"
-                  role="presentation"
-                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
-                >
-                  <tr>
-                    <td class="pad">
-                      <table
-                        style="
-                          mso-table-lspace: 0pt;
-                          mso-table-rspace: 0pt;
-                          border-collapse: collapse;
-                          width: 100%;
-                          table-layout: fixed;
-                          direction: ltr;
-                          background-color: #ffffff;
-                          font-family: 'Helvetica Neue', Helvetica, Arial,
-                            sans-serif;
-                          font-weight: 400;
-                          color: #222222;
-                          text-align: right;
-                          letter-spacing: 0px;
-                        "
-                        width="100%"
-                      >
-                        <thead
-                          style="
-                            vertical-align: top;
-                            background-color: #eddab2;
-                            color: #222222;
-                            font-size: 16px;
-                            line-height: 120%;
-                          "
-                        >
-                          <tr>
-                            <th
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                font-weight: 700;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                                text-align: right;
-                              "
-                            >
-                              <strong>Service</strong>
-                            </th>
-                            <th
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                font-weight: 700;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                                text-align: right;
-                              "
-                            >
-                              Qty
-                            </th>
-                            <th
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                font-weight: 700;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                                text-align: right;
-                              "
-                            >
-                              Price
-                            </th>
-                            <th
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                font-weight: 700;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                                text-align: right;
-                              "
-                            >
-                              Total
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody
-                          style="
-                            vertical-align: top;
-                            font-size: 14px;
-                            line-height: 120%;
-                          "
-                        >
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              SEO
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>1</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Website Design
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>1</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                          </tr>
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Social Media
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>1</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Content
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>1</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                          </tr>
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              PPC Ads
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>1</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                          </tr>
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Subtotal
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Taxes (%)
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <p>$100</p>
-                            </td>
-                          </tr>
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <strong>GRAND TOTAL</strong>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <strong><p>$100</p></strong>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-                <table
-                  class="table_block desktop_hide block-2"
-                  width="100%"
-                  border="0"
-                  cellpadding="10"
-                  cellspacing="0"
-                  role="presentation"
-                  style="
-                    mso-table-lspace: 0pt;
-                    mso-table-rspace: 0pt;
-                    mso-hide: all;
-                    display: none;
-                    max-height: 0;
-                    overflow: hidden;
-                  "
-                >
-                  <tr>
-                    <td class="pad">
-                      <table
-                        style="
-                          mso-table-lspace: 0pt;
-                          mso-table-rspace: 0pt;
-                          mso-hide: all;
-                          display: none;
-                          max-height: 0;
-                          overflow: hidden;
-                          border-collapse: collapse;
-                          width: 100%;
-                          table-layout: fixed;
-                          direction: ltr;
-                          background-color: #ffffff;
-                          font-family: 'Helvetica Neue', Helvetica, Arial,
-                            sans-serif;
-                          font-weight: 400;
-                          color: #222222;
-                          text-align: right;
-                          letter-spacing: 0px;
-                        "
-                        width="100%"
-                      >
-                        <thead
-                          style="
-                            vertical-align: top;
-                            background-color: #eddab2;
-                            color: #222222;
-                            font-size: 11px;
-                            line-height: 120%;
-                          "
-                        >
-                          <tr>
-                            <th
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                font-weight: 700;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                                text-align: right;
-                              "
-                            >
-                              <strong>Service</strong>
-                            </th>
-                            <th
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                font-weight: 700;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                                text-align: right;
-                              "
-                            >
-                              Qty
-                            </th>
-                            <th
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                font-weight: 700;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                                text-align: right;
-                              "
-                            >
-                              Price
-                            </th>
-                            <th
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                font-weight: 700;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                                text-align: right;
-                              "
-                            >
-                              Total
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody
-                          style="
-                            vertical-align: top;
-                            font-size: 11px;
-                            line-height: 120%;
-                          "
-                        >
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              SEO
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              1
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Website Design
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              1
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                          </tr>
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Social Media
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              1
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Content
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              1
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                          </tr>
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              PPC Ads
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              1
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $100
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                          </tr>
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Subtotal
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $500.00
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              Taxes (%)
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              $65.00
-                            </td>
-                          </tr>
-                          <tr style="background-color: #f9f9f9">
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              &#8203;
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <strong>GRAND TOTAL</strong>
-                            </td>
-                            <td
-                              width="25%"
-                              style="
-                                padding: 10px;
-                                word-break: break-word;
-                                border-top: 1px solid transparent;
-                                border-right: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
-                                border-left: 1px solid transparent;
-                              "
-                            >
-                              <strong>$565.00</strong>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-                <table
-                  class="button_block block-3"
-                  width="100%"
-                  border="0"
-                  cellpadding="25"
-                  cellspacing="0"
-                  role="presentation"
-                  style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
-                >
-                  <tr>
-                    <td class="pad">
-                      <div class="alignment" align="center">
-                        <a
-                          href="http://www.example.com"
-                          target="_blank"
-                          style="color: #ffffff; text-decoration: none"
-                          >><!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"  href="http://www.example.com"  style="height:38px;width:232px;v-text-anchor:middle;" arcsize="27%" fillcolor="#222222">
-<v:stroke dashstyle="Solid" weight="0px" color="#222222"/>
-<w:anchorlock/>
-<v:textbox inset="0px,0px,0px,0px">
-<center dir="false" style="color:#ffffff;font-family:Arial, sans-serif;font-size:14px">
-<!
-                          [endif]--><span
-                            class="button"
-                            style="
-                              background-color: #222222;
-                              border-bottom: 0px solid transparent;
-                              border-left: 0px solid transparent;
-                              border-radius: 10px;
-                              border-right: 0px solid transparent;
-                              border-top: 0px solid transparent;
-                              color: #ffffff;
-                              display: inline-block;
-                              font-family: 'Helvetica Neue', Helvetica, Arial,
-                                sans-serif;
-                              font-size: 14px;
-                              font-weight: 400;
-                              mso-border-alt: none;
-                              padding-bottom: 5px;
-                              padding-top: 5px;
-                              padding-left: 30px;
-                              padding-right: 30px;
-                              text-align: center;
-                              width: auto;
-                              word-break: keep-all;
-                              letter-spacing: 2px;
-                            "
-                            ><span
-                              style="
-                                margin: 0;
-                                word-break: break-word;
-                                line-height: 28px;
-                              "
-                              >DOWNLOAD INVOICE</span
-                            ></span
-                          >><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a</a
-                        >
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </tbody>
-</table>`;
-};
+// export const purchaseTemplate = () => {
+//   return `<table
+//   class="row row-5"
+//   align="center"
+//   width="100%"
+//   border="0"
+//   cellpadding="0"
+//   cellspacing="0"
+//   role="presentation"
+//   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-size: auto"
+// >
+//   <tbody>
+//     <tr>
+//       <td>
+//         <table
+//           class="row-content stack"
+//           align="center"
+//           border="0"
+//           cellpadding="0"
+//           cellspacing="0"
+//           role="presentation"
+//           style="
+//             mso-table-lspace: 0pt;
+//             mso-table-rspace: 0pt;
+//             background-color: #f6f5f1;
+//             border-radius: 0;
+//             color: #000000;
+//             background-size: auto;
+//             border-left: 30px solid transparent;
+//             border-right: 30px solid transparent;
+//             width: 650px;
+//             margin: 0 auto;
+//           "
+//           width="650"
+//         >
+//           <tbody>
+//             <tr>
+//               <td
+//                 class="column column-1"
+//                 width="100%"
+//                 style="
+//                   mso-table-lspace: 0pt;
+//                   mso-table-rspace: 0pt;
+//                   font-weight: 400;
+//                   text-align: left;
+//                   vertical-align: top;
+//                   border-top: 0px;
+//                   border-right: 0px;
+//                   border-bottom: 0px;
+//                   border-left: 0px;
+//                 "
+//               >
+//                 <table
+//                   class="button_block block-1"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="25"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+//                 >
+//                   <tr>
+//                     <td class="pad">
+//                       <div class="alignment" align="center">
+//                         <a
+//                           href="http://www.example.com"
+//                           target="_blank"
+//                           style="color: #222222; text-decoration: none"
+//                           >><!--[if mso]>
+// <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"  href="http://www.example.com"  style="height:39px;width:202px;v-text-anchor:middle;" arcsize="25%" fillcolor="#f2c9c4">
+// <v:stroke dashstyle="Solid" weight="1px" color="#222222"/>
+// <w:anchorlock/>
+// <v:textbox inset="0px,0px,0px,0px">
+// <center dir="false" style="color:#222222;font-family:Arial, sans-serif;font-size:14px">
+// <!
+//                           [endif]--><span
+//                             class="button"
+//                             style="
+//                               background-color: #f2c9c4;
+//                               border-bottom: 1px solid #222222;
+//                               border-left: 1px solid #222222;
+//                               border-radius: 10px;
+//                               border-right: 1px solid #222222;
+//                               border-top: 1px solid #222222;
+//                               color: #222222;
+//                               display: inline-block;
+//                               font-family: 'Helvetica Neue', Helvetica, Arial,
+//                                 sans-serif;
+//                               font-size: 14px;
+//                               font-weight: 400;
+//                               mso-border-alt: none;
+//                               padding-bottom: 5px;
+//                               padding-top: 5px;
+//                               padding-left: 30px;
+//                               padding-right: 30px;
+//                               text-align: center;
+//                               width: auto;
+//                               word-break: keep-all;
+//                               letter-spacing: 2px;
+//                             "
+//                             ><span
+//                               style="
+//                                 margin: 0;
+//                                 word-break: break-word;
+//                                 line-height: 28px;
+//                               "
+//                               >REVIEW AND PAY</span
+//                             ></span
+//                           >><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a</a
+//                         >
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 </table>
+//                 <table
+//                   class="paragraph_block block-2"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="0"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="
+//                     mso-table-lspace: 0pt;
+//                     mso-table-rspace: 0pt;
+//                     word-break: break-word;
+//                   "
+//                 >
+//                   <tr>
+//                     <td class="pad">
+//                       <div
+//                         style="
+//                           color: #222222;
+//                           font-family: TimesNewRoman, 'Times New Roman', Times,
+//                             Beskerville, Georgia, serif;
+//                           font-size: 24px;
+//                           font-weight: 400;
+//                           letter-spacing: -1px;
+//                           line-height: 120%;
+//                           text-align: left;
+//                           mso-line-height-alt: 28.799999999999997px;
+//                         "
+//                       >
+//                         <p style="margin: 0; word-break: break-word">
+//                           Dear <em>Jane</em>,
+//                         </p>
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 </table>
+//                 <table
+//                   class="paragraph_block block-3"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="0"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="
+//                     mso-table-lspace: 0pt;
+//                     mso-table-rspace: 0pt;
+//                     word-break: break-word;
+//                   "
+//                 >
+//                   <tr>
+//                     <td class="pad" style="padding-top: 10px">
+//                       <div
+//                         style="
+//                           color: #222222;
+//                           direction: ltr;
+//                           font-family: 'Helvetica Neue', Helvetica, Arial,
+//                             sans-serif;
+//                           font-size: 16px;
+//                           font-weight: 400;
+//                           letter-spacing: 0px;
+//                           line-height: 120%;
+//                           text-align: left;
+//                           mso-line-height-alt: 19.2px;
+//                         "
+//                       >
+//                         <p style="margin: 0">
+//                           Lorem ipsum dolor sit amet, consectetur adipiscing
+//                           elit, sed do eiusmod.<br /><br />Thank you,<br />Your
+//                           name
+//                         </p>
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 </table>
+//               </td>
+//             </tr>
+//           </tbody>
+//         </table>
+//       </td>
+//     </tr>
+//   </tbody>
+// </table>
+// <table
+//   class="row row-6"
+//   align="center"
+//   width="100%"
+//   border="0"
+//   cellpadding="0"
+//   cellspacing="0"
+//   role="presentation"
+//   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+// >
+//   <tbody>
+//     <tr>
+//       <td>
+//         <table
+//           class="row-content stack"
+//           align="center"
+//           border="0"
+//           cellpadding="0"
+//           cellspacing="0"
+//           role="presentation"
+//           style="
+//             mso-table-lspace: 0pt;
+//             mso-table-rspace: 0pt;
+//             background-color: #f6f5f1;
+//             border-radius: 0;
+//             color: #000000;
+//             border-left: 20px solid transparent;
+//             border-right: 20px solid transparent;
+//             border-top: 20px solid transparent;
+//             width: 650px;
+//             margin: 0 auto;
+//           "
+//           width="650"
+//         >
+//           <tbody>
+//             <tr>
+//               <td
+//                 class="column column-1"
+//                 width="100%"
+//                 style="
+//                   mso-table-lspace: 0pt;
+//                   mso-table-rspace: 0pt;
+//                   font-weight: 400;
+//                   text-align: left;
+//                   padding-bottom: 30px;
+//                   vertical-align: top;
+//                   border-top: 0px;
+//                   border-right: 0px;
+//                   border-bottom: 0px;
+//                   border-left: 0px;
+//                 "
+//               >
+//                 <table
+//                   class="table_block mobile_hide block-1"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="10"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+//                 >
+//                   <tr>
+//                     <td class="pad">
+//                       <table
+//                         style="
+//                           mso-table-lspace: 0pt;
+//                           mso-table-rspace: 0pt;
+//                           border-collapse: collapse;
+//                           width: 100%;
+//                           table-layout: fixed;
+//                           direction: ltr;
+//                           background-color: #ffffff;
+//                           font-family: 'Helvetica Neue', Helvetica, Arial,
+//                             sans-serif;
+//                           font-weight: 400;
+//                           color: #222222;
+//                           text-align: right;
+//                           letter-spacing: 0px;
+//                         "
+//                         width="100%"
+//                       >
+//                         <thead
+//                           style="
+//                             vertical-align: top;
+//                             background-color: #eddab2;
+//                             color: #222222;
+//                             font-size: 16px;
+//                             line-height: 120%;
+//                           "
+//                         >
+//                           <tr>
+//                             <th
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 font-weight: 700;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                                 text-align: right;
+//                               "
+//                             >
+//                               <strong>Service</strong>
+//                             </th>
+//                             <th
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 font-weight: 700;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                                 text-align: right;
+//                               "
+//                             >
+//                               Qty
+//                             </th>
+//                             <th
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 font-weight: 700;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                                 text-align: right;
+//                               "
+//                             >
+//                               Price
+//                             </th>
+//                             <th
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 font-weight: 700;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                                 text-align: right;
+//                               "
+//                             >
+//                               Total
+//                             </th>
+//                           </tr>
+//                         </thead>
+//                         <tbody
+//                           style="
+//                             vertical-align: top;
+//                             font-size: 14px;
+//                             line-height: 120%;
+//                           "
+//                         >
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               SEO
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>1</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                           </tr>
+//                           <tr>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Website Design
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>1</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                           </tr>
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Social Media
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>1</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                           </tr>
+//                           <tr>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Content
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>1</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                           </tr>
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               PPC Ads
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>1</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                           </tr>
+//                           <tr>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                           </tr>
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Subtotal
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                           </tr>
+//                           <tr>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Taxes (%)
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <p>$100</p>
+//                             </td>
+//                           </tr>
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <strong>GRAND TOTAL</strong>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <strong><p>$100</p></strong>
+//                             </td>
+//                           </tr>
+//                         </tbody>
+//                       </table>
+//                     </td>
+//                   </tr>
+//                 </table>
+//                 <table
+//                   class="table_block desktop_hide block-2"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="10"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="
+//                     mso-table-lspace: 0pt;
+//                     mso-table-rspace: 0pt;
+//                     mso-hide: all;
+//                     display: none;
+//                     max-height: 0;
+//                     overflow: hidden;
+//                   "
+//                 >
+//                   <tr>
+//                     <td class="pad">
+//                       <table
+//                         style="
+//                           mso-table-lspace: 0pt;
+//                           mso-table-rspace: 0pt;
+//                           mso-hide: all;
+//                           display: none;
+//                           max-height: 0;
+//                           overflow: hidden;
+//                           border-collapse: collapse;
+//                           width: 100%;
+//                           table-layout: fixed;
+//                           direction: ltr;
+//                           background-color: #ffffff;
+//                           font-family: 'Helvetica Neue', Helvetica, Arial,
+//                             sans-serif;
+//                           font-weight: 400;
+//                           color: #222222;
+//                           text-align: right;
+//                           letter-spacing: 0px;
+//                         "
+//                         width="100%"
+//                       >
+//                         <thead
+//                           style="
+//                             vertical-align: top;
+//                             background-color: #eddab2;
+//                             color: #222222;
+//                             font-size: 11px;
+//                             line-height: 120%;
+//                           "
+//                         >
+//                           <tr>
+//                             <th
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 font-weight: 700;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                                 text-align: right;
+//                               "
+//                             >
+//                               <strong>Service</strong>
+//                             </th>
+//                             <th
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 font-weight: 700;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                                 text-align: right;
+//                               "
+//                             >
+//                               Qty
+//                             </th>
+//                             <th
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 font-weight: 700;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                                 text-align: right;
+//                               "
+//                             >
+//                               Price
+//                             </th>
+//                             <th
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 font-weight: 700;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                                 text-align: right;
+//                               "
+//                             >
+//                               Total
+//                             </th>
+//                           </tr>
+//                         </thead>
+//                         <tbody
+//                           style="
+//                             vertical-align: top;
+//                             font-size: 11px;
+//                             line-height: 120%;
+//                           "
+//                         >
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               SEO
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               1
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                           </tr>
+//                           <tr>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Website Design
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               1
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                           </tr>
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Social Media
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               1
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                           </tr>
+//                           <tr>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Content
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               1
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                           </tr>
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               PPC Ads
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               1
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $100
+//                             </td>
+//                           </tr>
+//                           <tr>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                           </tr>
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Subtotal
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $500.00
+//                             </td>
+//                           </tr>
+//                           <tr>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               Taxes (%)
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               $65.00
+//                             </td>
+//                           </tr>
+//                           <tr style="background-color: #f9f9f9">
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               &#8203;
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <strong>GRAND TOTAL</strong>
+//                             </td>
+//                             <td
+//                               width="25%"
+//                               style="
+//                                 padding: 10px;
+//                                 word-break: break-word;
+//                                 border-top: 1px solid transparent;
+//                                 border-right: 1px solid transparent;
+//                                 border-bottom: 1px solid transparent;
+//                                 border-left: 1px solid transparent;
+//                               "
+//                             >
+//                               <strong>$565.00</strong>
+//                             </td>
+//                           </tr>
+//                         </tbody>
+//                       </table>
+//                     </td>
+//                   </tr>
+//                 </table>
+//                 <table
+//                   class="button_block block-3"
+//                   width="100%"
+//                   border="0"
+//                   cellpadding="25"
+//                   cellspacing="0"
+//                   role="presentation"
+//                   style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+//                 >
+//                   <tr>
+//                     <td class="pad">
+//                       <div class="alignment" align="center">
+//                         <a
+//                           href="http://www.example.com"
+//                           target="_blank"
+//                           style="color: #ffffff; text-decoration: none"
+//                           >><!--[if mso]>
+// <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"  href="http://www.example.com"  style="height:38px;width:232px;v-text-anchor:middle;" arcsize="27%" fillcolor="#222222">
+// <v:stroke dashstyle="Solid" weight="0px" color="#222222"/>
+// <w:anchorlock/>
+// <v:textbox inset="0px,0px,0px,0px">
+// <center dir="false" style="color:#ffffff;font-family:Arial, sans-serif;font-size:14px">
+// <!
+//                           [endif]--><span
+//                             class="button"
+//                             style="
+//                               background-color: #222222;
+//                               border-bottom: 0px solid transparent;
+//                               border-left: 0px solid transparent;
+//                               border-radius: 10px;
+//                               border-right: 0px solid transparent;
+//                               border-top: 0px solid transparent;
+//                               color: #ffffff;
+//                               display: inline-block;
+//                               font-family: 'Helvetica Neue', Helvetica, Arial,
+//                                 sans-serif;
+//                               font-size: 14px;
+//                               font-weight: 400;
+//                               mso-border-alt: none;
+//                               padding-bottom: 5px;
+//                               padding-top: 5px;
+//                               padding-left: 30px;
+//                               padding-right: 30px;
+//                               text-align: center;
+//                               width: auto;
+//                               word-break: keep-all;
+//                               letter-spacing: 2px;
+//                             "
+//                             ><span
+//                               style="
+//                                 margin: 0;
+//                                 word-break: break-word;
+//                                 line-height: 28px;
+//                               "
+//                               >DOWNLOAD INVOICE</span
+//                             ></span
+//                           >><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a</a
+//                         >
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 </table>
+//               </td>
+//             </tr>
+//           </tbody>
+//         </table>
+//       </td>
+//     </tr>
+//   </tbody>
+// </table>`;
+// };
 export const haveAQuestion = () => {
   return ` <table
               class="row row-7"
