@@ -113,6 +113,12 @@ const CampainItem = ({ item }: { item: DetailCampaign }) => {
                 },
               },
               {
+                label: "Preview",
+                action: () => {
+                  router.push(`/all-campaigns/preview/${item.id}`);
+                },
+              },
+              {
                 label: "Launch",
                 action: () => {},
                 disable: true,

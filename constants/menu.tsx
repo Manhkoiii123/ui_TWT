@@ -22,7 +22,7 @@ export const menuLink = [
   {
     id: 2,
     name: "Audience",
-    link: "/audience?website=all",
+    link: "/audiences?website=all",
     icon: <FaUserCog size={20} />,
   },
   {
@@ -34,7 +34,7 @@ export const menuLink = [
       {
         id: 1,
         name: "All Campaign",
-        link: "/all-campaigns",
+        link: "/all-campaigns?type=all",
       },
       {
         id: 2,
