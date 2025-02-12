@@ -4,8 +4,8 @@ import { PaginationLinks, PaginationMeta } from "@/types/template";
 export interface ICreateCampain {
   title: string;
   group: string;
-  // audiences: string[];
-  audiences: number;
+  audiences: string[];
+  // audiences: number;
   schedule_send_at: string;
   is_manual: boolean;
   mail_setting_id: number;

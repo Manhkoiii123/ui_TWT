@@ -1,7 +1,7 @@
 import apiClient from "@/api/apiClient";
 import { TAudienceResponse, TAudienceViaTKGResponse } from "@/types/audience";
 import { useMutation, useQuery } from "@tanstack/react-query";
-// import qs from "qs";
+import qs from "qs";
 export type TCreateAudience = {
   title: string;
   type: string[];
@@ -34,16 +34,16 @@ export const audienceApi = {
     type: string[];
     isSubscribeNewsletter?: boolean;
   }): Promise<TAudienceViaTKGResponse> => {
-    // const queryString = qs.stringify(data, {
-    //   arrayFormat: "brackets",
-    //   encodeValuesOnly: true,
-    // });
-    const res: TAudienceViaTKGResponse = await apiClient.get(
-      `/list-audience-via-tkg?pageSize=${data.pageSize}&pageNumber=${data.pageNumber}&type[]=Passenger&hasEmail=true&isSubscribeNewsletter=${data.isSubscribeNewsletter}`
-    );
+    const queryString = qs.stringify(data, {
+      arrayFormat: "brackets",
+      encodeValuesOnly: true,
+    });
     // const res: TAudienceViaTKGResponse = await apiClient.get(
-    //   `/list-audience-via-tkg?${queryString}`
+    //   `/list-audience-via-tkg?pageSize=${data.pageSize}&pageNumber=${data.pageNumber}&type[]=Passenger&hasEmail=true&isSubscribeNewsletter=${data.isSubscribeNewsletter}`
     // );
+    const res: TAudienceViaTKGResponse = await apiClient.get(
+      `/list-audience-via-tkg?${queryString}`
+    );
     return res;
   },
 };

@@ -28,9 +28,6 @@ const TemplatesEmail = () => {
   });
   return (
     <div className="bg-white p-4 shadow-sm max-h-[calc(100vh-178px)]">
-      <Button className="bg-primary mb-4" onClick={handleNavigate}>
-        Create New <PlusIcon />
-      </Button>
       <Suspense
         fallback={
           <div className="h-screen">
@@ -38,23 +35,27 @@ const TemplatesEmail = () => {
           </div>
         }
       >
+        <Button className="bg-primary mb-4" onClick={handleNavigate}>
+          Create New <PlusIcon />
+        </Button>
         <TableTemplateEmail templates={templates?.data} isLoading={isLoading} />
+        <div>
+          <Pagination
+            currentPage={page}
+            pageSize={
+              Math.ceil((templates?.meta?.total ?? 0) / 10) === 0
+                ? 1
+                : Math.ceil((templates?.meta?.total ?? 0) / 10)
+            }
+            handleChangePage={handleChangePage}
+            className="mt-6"
+          />
+        </div>
       </Suspense>
-
-      <div>
-        <Pagination
-          currentPage={page}
-          pageSize={
-            Math.ceil((templates?.meta?.total ?? 0) / 10) === 0
-              ? 1
-              : Math.ceil((templates?.meta?.total ?? 0) / 10)
-          }
-          handleChangePage={handleChangePage}
-          className="mt-6"
-        />
-      </div>
     </div>
   );
 };
 
 export default TemplatesEmail;
+
+
