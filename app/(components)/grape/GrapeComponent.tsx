@@ -35,6 +35,12 @@ import {
   // purchaseTemplate,
   haveAQuestion,
   footer_contact,
+  blog_1,
+  blog_2,
+  header_contact,
+  footer_full,
+  listBlog,
+  template_purchase,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -596,14 +602,7 @@ const GrapeComponent = ({
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/intro.jpg"/>
           </div>`,
         });
-        // editor.BlockManager.add("purchaseTemplate", {
-        //   label: "Purchase template",
-        //   content: purchaseTemplate(),
-        //   category: "Custom",
-        //   media: `<div>
-        //   <img style="width:200px ;height:50px;object-fit:contain;" src="/images/purchase.jpg"/>
-        //   </div>`,
-        // });
+       
         editor.BlockManager.add("haveAQuestion", {
           label: "Have a question",
           content: haveAQuestion(),
@@ -612,14 +611,39 @@ const GrapeComponent = ({
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/have_a_question.jpg"/>
           </div>`,
         });
-        // editor.BlockManager.add("header_template_purchase", {
-        //   label: "Information purchase",
-        //   content: header_template_purchase(),
-        //   category: "Custom",
-        //   media: `<div>
-        //   <img style="width:200px ;height:50px;object-fit:contain;" src="/images/header_purchase.jpg"/>
-        //   </div>`,
-        // });
+        editor.BlockManager.add("blog_1", {
+          label: "Blog template 1",
+          content: blog_1(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/blog_1.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("blog_2", {
+          label: "Blog template 2",
+          content: blog_2(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/blog_2.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("listBlog", {
+          label: "List blog",
+          content: listBlog(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/listBlog.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("template_purchase", {
+          label: "Template purchase",
+          content: template_purchase(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/template_purchase.jpg"/>
+          </div>`,
+        });
+       
       }
       if (isCreateFooterHeader) {
         editor.BlockManager.add("header1", {
@@ -654,6 +678,14 @@ const GrapeComponent = ({
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/menu.jpg"/>
           </div>`,
         });
+        editor.BlockManager.add("header_contact", {
+          label: "Header contact",
+          content: header_contact(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/header_contact.jpg"/>
+          </div>`,
+        });
         editor.BlockManager.add("footer", {
           label: "Footer 1",
           content: footer(),
@@ -684,6 +716,14 @@ const GrapeComponent = ({
           category: "Custom",
           media: `<div>
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/footer_social.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("footer_full", {
+          label: "Footer template",
+          content: footer_full(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/footer_full.jpg"/>
           </div>`,
         });
       }
