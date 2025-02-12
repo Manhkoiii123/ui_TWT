@@ -41,6 +41,10 @@ import {
   footer_full,
   listBlog,
   template_purchase,
+  template_list_blog,
+  template_list_blog_2,
+  template_team,
+  template_Ads,
 } from "@/app/(components)/grape/content";
 import { Button } from "@/components/ui/button";
 import {
@@ -264,7 +268,7 @@ const GrapeComponent = ({
     const convertData = {
       group: group as string,
       title: dataCreate!.campaignName,
-      audiences: Number(dataCreate!.audience.map((item) => String(item.id))[0]),
+      audiences: dataCreate!.audience.map((item) => String(item.id)),
       schedule_send_at: new Date(dataCreate!.releaseDate).toISOString(),
       mail_setting_id: Number(dataCreate!.hostEmail),
       is_manual: is_manual as boolean,
@@ -602,7 +606,7 @@ const GrapeComponent = ({
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/intro.jpg"/>
           </div>`,
         });
-       
+
         editor.BlockManager.add("haveAQuestion", {
           label: "Have a question",
           content: haveAQuestion(),
@@ -635,6 +639,22 @@ const GrapeComponent = ({
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/listBlog.jpg"/>
           </div>`,
         });
+        editor.BlockManager.add("template_list_blog", {
+          label: "List blog template",
+          content: template_list_blog(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/template_list_blog.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("template_list_blog_2", {
+          label: "List blog template 2",
+          content: template_list_blog_2(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/template_list_blog_2.jpg"/>
+          </div>`,
+        });
         editor.BlockManager.add("template_purchase", {
           label: "Template purchase",
           content: template_purchase(),
@@ -643,7 +663,22 @@ const GrapeComponent = ({
           <img style="width:200px ;height:50px;object-fit:contain;" src="/images/template_purchase.jpg"/>
           </div>`,
         });
-       
+        editor.BlockManager.add("template_team", {
+          label: "Template team",
+          content: template_team(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/template_team.jpg"/>
+          </div>`,
+        });
+        editor.BlockManager.add("template_Ads", {
+          label: "Template advertise",
+          content: template_Ads(),
+          category: "Custom",
+          media: `<div>
+          <img style="width:200px ;height:50px;object-fit:contain;" src="/images/template_Ads.jpg"/>
+          </div>`,
+        });
       }
       if (isCreateFooterHeader) {
         editor.BlockManager.add("header1", {

@@ -1,6 +1,9 @@
 "use client";
 
-import { useQueryGetCampaignDetail } from "@/api/campains/campainsApi";
+import {
+  useMutationSendmail,
+  useQueryGetCampaignDetail,
+} from "@/api/campains/campainsApi";
 import Loading from "@/components/Loading";
 import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
@@ -8,7 +11,10 @@ import { useParams } from "next/navigation";
 const PreviewComponent = () => {
   const { id } = useParams();
   const { data, isLoading } = useQueryGetCampaignDetail(id as string);
-
+  const { mutate: mutateAsyncSendMail } = useMutationSendmail();
+  const handleSend = () => {
+    mutateAsyncSendMail(id as string);
+  };
   return (
     <>
       {isLoading && (
@@ -32,7 +38,7 @@ const PreviewComponent = () => {
                 </p>
               </div>
 
-              <Button variant={"outline"} className="">
+              <Button variant={"outline"} className="" onClick={handleSend}>
                 Launch
               </Button>
             </div>

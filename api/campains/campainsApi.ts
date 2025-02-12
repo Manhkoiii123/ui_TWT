@@ -59,6 +59,10 @@ export const campainsApi = {
     const res = await apiClient.post(`/subscriber-status`, data);
     return res.data;
   },
+  sendMail: async (id: string) => {
+    const res = await apiClient.get(`/campaigns/schedule/${id}`);
+    return res;
+  },
 };
 
 export const useMutationCreateCampain = () => {
@@ -109,5 +113,10 @@ export const useMutationSubAndUnSubEmail = () => {
   return useMutation({
     mutationFn: (data: { email: string; status: boolean }) =>
       campainsApi.subAndUnSubEmail(data),
+  });
+};
+export const useMutationSendmail = () => {
+  return useMutation({
+    mutationFn: (id: string) => campainsApi.sendMail(id),
   });
 };
