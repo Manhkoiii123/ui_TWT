@@ -64,7 +64,7 @@ export interface DetailCampaign {
   archive: number;
   archived_by: any;
   is_manual: boolean;
-  audience: Audience;
+  audiences: Audience[];
   schedule_send_at: string;
   mail_setting: MailSetting;
   job_id: any;

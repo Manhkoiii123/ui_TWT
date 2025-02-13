@@ -126,17 +126,12 @@ const CreateCampainComponent = ({ isEdit = false }: { isEdit?: boolean }) => {
         releaseDate: dataCampaignDetail?.schedule_send_at
           ? new Date(dataCampaignDetail?.schedule_send_at)
           : undefined,
-        audience: [
-          {
-            id: Number(dataCampaignDetail?.audience?.id),
-            label: dataCampaignDetail?.audience?.title,
-          },
-        ],
-        // audience:
-        //   dataCampaignDetail?.audience?.map((a) => ({
-        //     id: a.id,
-        //     label: a.title,
-        //   })) || [],
+
+        audience:
+          dataCampaignDetail?.audiences?.map((a) => ({
+            id: a.id,
+            label: a.title,
+          })) || [],
       });
     }
   }, [

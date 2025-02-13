@@ -6,6 +6,7 @@ import {
 } from "@/api/campains/campainsApi";
 import Loading from "@/components/Loading";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { useParams } from "next/navigation";
 
 const PreviewComponent = () => {
@@ -77,19 +78,20 @@ const PreviewComponent = () => {
               <div className="flex gap-0 lg:gap-4 flex-col lg:flex-row">
                 <div className="mt-6 bg-gray-100 p-4 rounded-lg flex-1">
                   <h3 className="text-lg font-semibold text-gray-800">
-                    Audience :{" "}
+                    Audience:
                   </h3>
-                  <div className="space-y-2 mt-2 pl-6">
-                    <p className="text-gray-600">
-                      <strong>Title:</strong> {data?.audience?.title}
-                    </p>
-                    <p className="text-gray-600">
-                      <strong>Type:</strong>{" "}
-                      {data?.audience?.type
-                        ? JSON.parse(data?.audience?.type).join(", ")
-                        : ""}
-                    </p>
-                  </div>
+                  {data?.audiences.map((item, index) => (
+                    <div className="space-y-2 mt-2 pl-6" key={index}>
+                      <p className="text-gray-600">
+                        <strong>Title:</strong> {item?.title}
+                      </p>
+                      <p className="text-gray-600">
+                        <strong>Type:</strong>{" "}
+                        {item?.type ? JSON.parse(item?.type).join(", ") : ""}
+                      </p>
+                      <Separator />
+                    </div>
+                  ))}
                 </div>
                 <div className="mt-6 bg-gray-100 p-4 rounded-lg flex-1">
                   <h3 className="text-lg font-semibold text-gray-800">

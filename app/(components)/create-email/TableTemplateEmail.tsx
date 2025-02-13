@@ -38,14 +38,16 @@ type Props = {
   templates: TTemplate[] | undefined;
   isLoading: boolean;
   isPreview?: boolean;
+  page?: number;
 };
 const TableTemplateEmail = ({
   templates,
   isLoading,
   isPreview = false,
+  page,
 }: Props) => {
   const router = useRouter();
-  const currentPage = Number(useSearchParams().get("page")) || 1;
+  const currentPage = Number(useSearchParams().get("page")) || page || 1;
   const queryClient = useQueryClient();
   const [isOpenView, setIsOpenView] = useState(false);
 

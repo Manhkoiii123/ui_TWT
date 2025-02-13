@@ -32,7 +32,11 @@ const ModalActionTemplate = ({
   dataCreate,
 }: Props) => {
   const [stepCreate, setStepCreate] = useState(1);
-  const { data: templates, isLoading } = useQueryGetTemplates({ page: 1 });
+  const [page, setPage] = useState(1);
+  const handleChangePage = (pageNumber: number) => {
+    setPage(pageNumber);
+  };
+  const { data: templates, isLoading } = useQueryGetTemplates({ page });
 
   const handleNext = () => {
     setStepCreate((prev) => prev + 1);
@@ -59,6 +63,8 @@ const ModalActionTemplate = ({
           </SheetTitle>
           {stepCreate === 1 && (
             <StepOne
+              page={page}
+              handleChangePage={handleChangePage}
               selectedValue={selectedValue}
               handleValueChange={handleValueChange}
               templates={templates}
