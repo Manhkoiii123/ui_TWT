@@ -13,8 +13,10 @@ import { useParams } from "next/navigation";
 const PreviewComponent = () => {
   const { id } = useParams();
   const { data, isLoading } = useQueryGetCampaignDetail(id as string);
-  const { mutate: mutateAsyncSendMail } = useMutationSendmail();
-  const { mutate: mutateAsyncUnSendMail } = useMutationUnSendmail();
+  const { mutate: mutateAsyncSendMail, isPending: isPendingSend } =
+    useMutationSendmail();
+  const { mutate: mutateAsyncUnSendMail, isPending: isPendingUnSend } =
+    useMutationUnSendmail();
   const handleSend = () => {
     mutateAsyncSendMail(id as string);
   };
@@ -36,21 +38,48 @@ const PreviewComponent = () => {
                 <h1 className="text-3xl font-bold text-gray-800">
                   Campaign Details : {data?.title}
                 </h1>
+
                 <p className="text-gray-600">
-                  <strong>Send At:</strong>{" "}
-                  {new Date(data?.schedule_send_at as string).toLocaleString(
-                    "en-GB"
+                  <strong>Status:</strong>{" "}
+                  <span className="text-blue-600">{data?.status_label}</span>
+                  {data?.status === 2 && (
+                    <span>
+                      {" "}
+                      (
+                      {new Date(data?.updated_at as string).toLocaleString(
+                        "en-GB"
+                      )}
+                      )
+                    </span>
                   )}
                 </p>
+                {data?.status === 0 && (
+                  <p className="text-gray-600">
+                    <strong>Send At:</strong>{" "}
+                    {new Date(data?.schedule_send_at as string).toLocaleString(
+                      "en-GB"
+                    )}
+                  </p>
+                )}
               </div>
 
-              {data?.status !== 2 && (
-                <Button variant={"outline"} className="" onClick={handleSend}>
+              {data?.status === 0 && (
+                <Button
+                  variant={"outline"}
+                  className=""
+                  onClick={handleSend}
+                  disabled={isPendingSend}
+                >
                   Launch
                 </Button>
               )}
-              {data?.status === 2 && (
-                <Button variant={"outline"} className="" onClick={handleUnSend}>
+              {data?.status === 1 && (
+                <Button
+                  variant={"outline"}
+                  className=""
+                  onClick={handleUnSend}
+                  disabled={isPendingUnSend}
+                >
                   Cancel launch
                 </Button>
               )}
@@ -75,6 +104,7 @@ const PreviewComponent = () => {
                       "en-GB"
                     )}
                   </p>
+
                   <p className="text-gray-600">
                     <strong>Created By:</strong> {data?.created_by?.name}(
                     {data?.created_by?.email})
