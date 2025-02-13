@@ -1,5 +1,6 @@
 import ModelError from "@/app/(components)/all-campaigns/create/ModelError";
 import TableTemplateEmail from "@/app/(components)/create-email/TableTemplateEmail";
+import Pagination from "@/components/custom-pagination/Pagination";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -26,6 +27,8 @@ type Props = {
   selectAutomation: string;
   handleSelectAutomation: (value: string) => void;
   handleCloseModel: () => void;
+  page: number;
+  handleChangePage: (value: number) => void;
 };
 const StepOne = ({
   handleValueChange,
@@ -36,6 +39,8 @@ const StepOne = ({
   selectAutomation,
   handleSelectAutomation,
   handleCloseModel,
+  page,
+  handleChangePage,
 }: Props) => {
   const [isOpenModalError, setIsOpenModalError] = useState(false);
   const [messageError, setMessageError] = useState("");
@@ -45,6 +50,7 @@ const StepOne = ({
   // const removeIdTemplate = useCreateCampaignZustand(
   //   (state: createCampaignState) => state.removeIdTemplate
   // );
+
   const handleChangeAutomationOption = (value: string) => {
     handleValueChange(value);
     // removeIdTemplate();
@@ -122,7 +128,20 @@ const StepOne = ({
               isLoading={isLoading}
               templates={templates?.data}
               isPreview={true}
+              page={page}
             />
+            <div>
+              <Pagination
+                currentPage={page}
+                pageSize={
+                  Math.ceil((templates?.meta?.total ?? 0) / 10) === 0
+                    ? 1
+                    : Math.ceil((templates?.meta?.total ?? 0) / 10)
+                }
+                handleChangePage={handleChangePage}
+                className="mt-6"
+              />
+            </div>
           </div>
         )}
         <div className="flex justify-between my-4">
