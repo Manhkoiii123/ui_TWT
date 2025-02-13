@@ -2144,6 +2144,9 @@ export const header = () => {
                             title="I'm an image"
                             height="auto"
                           />
+                          <a href="#" style="display:none">
+   [_image_checkread_]
+</a>
                         </div>
                       </div>
                     </td>
@@ -2311,6 +2314,9 @@ export const header2 = () => {
                             title="I'm an image"
                             height="auto"
                           />
+                          <a href="#" style="display:none">
+   [_image_checkread_]
+</a>
                         </div>
                       </div>
                     </td>
@@ -2530,7 +2536,9 @@ export const footer = () => {
                             target="_blank"
                             style="text-decoration: underline"
                             tabindex="-1"
-                            ><font color="#4a90e2">Unsubscribe</font></a
+                            ><font color="#4a90e2">
+              Unsubscribe <span style="display:none">[_unsubcriber_slug_]</span>
+                            </font></a
                           >
                         </div>
                       </div>
@@ -2844,17 +2852,18 @@ export const footerBlock = () => {
             <a href="#" style="color: #0077cc; text-decoration: none"
               >Terms and Conditions</a
             >
-            |
-            <a href="#" style="color: #0077cc; text-decoration: none"
-              >Unsubscribe</a
-            >
+            
             |
             <a href="#" style="color: #0077cc; text-decoration: none"
               >My Account</a
             >
+            |
+            <a href="#" style="color: #0077cc; text-decoration: none">
+              Unsubscribe <span style="display:none">[_unsubcriber_slug_]</span>
+            </a>
           </p>
         </td>
-      </tr>
+      </tr>   
     </table>
   </body>
 </html>
@@ -2930,7 +2939,9 @@ export const footerGeneral = () => {
               </p>
               <p style="font-size: 12px; color: #333; margin: 5px 0;">
                 *<a href="#" style="color: #1778b9; text-decoration: none;">Terms and Conditions</a> | 
-                <a href="#" style="color: #1778b9; text-decoration: none;">Unsubscribe</a> | 
+                <a href="#" style="color: #0077cc; text-decoration: none">
+              Unsubscribe <span style="display:none">[_unsubcriber_slug_]</span>
+            </a> | 
                 <a href="#" style="color: #1778b9; text-decoration: none;">My Account</a>
               </p>
             </td>
@@ -4051,6 +4062,9 @@ export const menuHeader = () => {
                 width="100%"
               >
                 <tr>
+                <a href="#" style="display:none">
+   [_image_checkread_]
+</a>
                   <td align="center" style="padding: 10px">
                     <a
                       href="#"
@@ -4120,6 +4134,9 @@ export const header_contact = () => {
 														<tr>
 															<td class="pad" style="padding-bottom:10px;padding-left:5px;padding-right:5px;padding-top:10px;width:100%;">
 																<div class="alignment" align="left" style="line-height:10px">
+                                <a href="#" style="display:none">
+   [_image_checkread_]
+</a>
 																	<div style="max-width: 121.333px;"><a href="http://example.com" target="_blank" style="outline:none" tabindex="-1"><img src="https://twt-agent-portal.s3.ap-southeast-2.amazonaws.com/development/image-library/Logo/tweet-world-travel-logo-1695885641.png" style="display: block; height: auto; border: 0; width: 100%;" width="121.333" alt="Your Logo" title="Your Logo" height="auto"></a></div>
 																</div>
 															</td>
@@ -5216,7 +5233,9 @@ export const footer_contact = () => {
                                               text-decoration: none;
                                               letter-spacing: normal;
                                             "
-                                            >Unsubscribe</a
+                                            >
+              Unsubscribe <span style="display:none">[_unsubcriber_slug_]</span>
+                                            </a
                                           >><!--[if mso]></td><!
                                           [endif]-->[endif]--><!--[if mso]></tr></table><![endif]-->
                                         </div>
@@ -5729,7 +5748,9 @@ export const footer_full = () => {
 														<tr>
 															<td class="pad" style="padding-bottom:5px;padding-left:20px;padding-right:20px;padding-top:10px;">
 																<div style="color:#000000;direction:ltr;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:180%;text-align:left;mso-line-height-alt:25.2px;">
-																	<p style="margin: 0;"><a href="http://example.com" target="_blank" style="text-decoration: none; color: #000000;" rel="noopener">Unsuscribe</a></p>
+																	<p style="margin: 0;"><a href="http://example.com" target="_blank" style="text-decoration: none; color: #000000;" rel="noopener">
+              Unsubscribe <span style="display:none">[_unsubcriber_slug_]</span>
+            </a></p>
 																</div>
 															</td>
 														</tr>

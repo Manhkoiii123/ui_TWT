@@ -2,6 +2,7 @@
 
 import {
   useMutationSendmail,
+  useMutationUnSendmail,
   useQueryGetCampaignDetail,
 } from "@/api/campains/campainsApi";
 import Loading from "@/components/Loading";
@@ -13,8 +14,12 @@ const PreviewComponent = () => {
   const { id } = useParams();
   const { data, isLoading } = useQueryGetCampaignDetail(id as string);
   const { mutate: mutateAsyncSendMail } = useMutationSendmail();
+  const { mutate: mutateAsyncUnSendMail } = useMutationUnSendmail();
   const handleSend = () => {
     mutateAsyncSendMail(id as string);
+  };
+  const handleUnSend = () => {
+    mutateAsyncUnSendMail(id as string);
   };
   return (
     <>
@@ -39,9 +44,16 @@ const PreviewComponent = () => {
                 </p>
               </div>
 
-              <Button variant={"outline"} className="" onClick={handleSend}>
-                Launch
-              </Button>
+              {data?.status !== 2 && (
+                <Button variant={"outline"} className="" onClick={handleSend}>
+                  Launch
+                </Button>
+              )}
+              {data?.status === 2 && (
+                <Button variant={"outline"} className="" onClick={handleUnSend}>
+                  Cancel launch
+                </Button>
+              )}
             </div>
 
             <div className="">
@@ -89,7 +101,7 @@ const PreviewComponent = () => {
                         <strong>Type:</strong>{" "}
                         {item?.type ? JSON.parse(item?.type).join(", ") : ""}
                       </p>
-                      <Separator />
+                      {index !== data.audiences.length - 1 && <Separator />}
                     </div>
                   ))}
                 </div>

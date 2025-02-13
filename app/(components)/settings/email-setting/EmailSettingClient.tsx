@@ -1,30 +1,28 @@
 "use client";
 
+import EmailTrackingSetting from "@/app/(components)/settings/email-setting/EmailTrackingSetting";
 import TableHost from "@/app/(components)/settings/email-setting/TableHost";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const EmailSettingClient = () => {
   return (
     <div>
-      <Tabs defaultValue="" className="w-[100%] pb-4 mt-0">
+      <Tabs defaultValue="config" className="w-[100%] pb-4 mt-0">
         <TabsList className="flex w-full gap-10 text-[14px] text-[#6b7280]">
-          <TabsTrigger
-            // onClick={() => handleSelectSub("")}
-            className="py-2 "
-            value=""
-          >
+          <TabsTrigger className="py-2 " value="config">
             HOST CONFIG
           </TabsTrigger>
-          <TabsTrigger
-            // onClick={() => handleSelectSub("calendar")}
-            className="py-2"
-            value="calendar"
-          >
+          <TabsTrigger className="py-2" value="email-tracking">
             EMAIL TRACKING
           </TabsTrigger>
         </TabsList>
+        <TabsContent className="py-4" value="config">
+          <TableHost />
+        </TabsContent>
+        <TabsContent className="py-4" value="email-tracking">
+          <EmailTrackingSetting />
+        </TabsContent>
       </Tabs>
-      <TableHost />
     </div>
   );
 };
