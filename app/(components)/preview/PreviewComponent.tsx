@@ -8,9 +8,11 @@ import {
 import Loading from "@/components/Loading";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useQueryClient } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 
 const PreviewComponent = () => {
+  const queryClient = useQueryClient();
   const { id } = useParams();
   const { data, isLoading } = useQueryGetCampaignDetail(id as string);
   const { mutate: mutateAsyncSendMail, isPending: isPendingSend } =
@@ -18,10 +20,22 @@ const PreviewComponent = () => {
   const { mutate: mutateAsyncUnSendMail, isPending: isPendingUnSend } =
     useMutationUnSendmail();
   const handleSend = () => {
-    mutateAsyncSendMail(id as string);
+    mutateAsyncSendMail(id as string, {
+      onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: ["campaign", id],
+        });
+      },
+    });
   };
   const handleUnSend = () => {
-    mutateAsyncUnSendMail(id as string);
+    mutateAsyncUnSendMail(id as string, {
+      onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: ["campaign", id],
+        });
+      },
+    });
   };
   return (
     <>

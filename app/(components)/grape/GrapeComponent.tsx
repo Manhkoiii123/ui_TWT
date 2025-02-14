@@ -266,7 +266,7 @@ const GrapeComponent = ({
 
   const handleSave = () => {
     const convertData = {
-      group: group as string,
+      group: group || "group",
       title: dataCreate!.campaignName,
       audiences: dataCreate!.audience.map((item) => String(item.id)),
       schedule_send_at: new Date(dataCreate!.releaseDate).toISOString(),
