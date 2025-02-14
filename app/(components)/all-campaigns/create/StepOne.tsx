@@ -1,3 +1,4 @@
+import { useQueryEmailTracking } from "@/api/emailSetting/emailSettingApi";
 import ModelError from "@/app/(components)/all-campaigns/create/ModelError";
 import TableTemplateEmail from "@/app/(components)/create-email/TableTemplateEmail";
 import Pagination from "@/components/custom-pagination/Pagination";
@@ -71,16 +72,23 @@ const StepOne = ({
     }
   };
 
-  const fakeAutomations = useMemo(() => {
-    return [
-      { id: 9, name: "Last Minute Deals with Tweet Tours" },
-      { id: 8, name: "2-for -1 Deals OVC" },
-      { id: 7, name: "European River Cruise on sales" },
-      { id: 6, name: "CroisiEurope New itineraris" },
-      { id: 5, name: "New Product for Tweet Tours" },
-      { id: 4, name: "Last Minute Deals" },
-    ];
-  }, []);
+  const { data: dataEmailTracking } = useQueryEmailTracking();
+  const automations = useMemo(() => {
+    // return [
+    //   { id: 9, name: "Last Minute Deals with Tweet Tours" },
+    //   { id: 8, name: "2-for -1 Deals OVC" },
+    //   { id: 7, name: "European River Cruise on sales" },
+    //   { id: 6, name: "CroisiEurope New itineraris" },
+    //   { id: 5, name: "New Product for Tweet Tours" },
+    //   { id: 4, name: "Last Minute Deals" },
+    // ];
+    const convert = dataEmailTracking?.map((item) => ({
+      id: item.id,
+      name: item.title,
+    }));
+    return convert;
+  }, [dataEmailTracking]);
+
   return (
     <>
       <div className="ml-4">
@@ -113,7 +121,7 @@ const StepOne = ({
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                {fakeAutomations.map((automation) => (
+                {automations?.map((automation) => (
                   <SelectItem key={automation.id} value={automation.name}>
                     {automation.name}
                   </SelectItem>
